@@ -1,6 +1,6 @@
 # BMI analysis
 
-We work on the latest GIANT+Biiobank data on BMI.
+We work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018).
 
 ## Pathway analysis
 
