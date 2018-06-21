@@ -11,3 +11,13 @@ Topics will be exposited at the [wiki page](https://github.com/jinghuazhao/Omics
 * [TWAS](https://github.com/jinghuazhao/Omics-projects/wiki/TWAS)
 * [Mendelian randomisation](https://github.com/jinghuazhao/Omics-projects/wiki/Mendelian-radnomisation)
 * [Predictive analytics](https://github.com/jinghuazhao/Omics-projects/wiki/Predictive-analytics)
+
+These are related to several repositories on GitHub.
+
+* [FM-pipeline](https://github.com/jinghuazhao/FM-pipeline)
+* [PW-pipeline](https://github.com/jinghuazhao/PW-pipeline)
+* [TWAS-pipeline](https://github.com/jinghuazhao/TWAS-pipeline)
+* [EWAS-fusion](https://github.com/jinghuazhao/EWAS-fusion)
+* [Mixed-Models](https://github.com/jinghuazhao/Mixed-Models)
+
+along with [software-notes](https://github.com/jinghuazhao/software-notes) which details many technical issues.
