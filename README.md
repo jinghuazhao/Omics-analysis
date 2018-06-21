@@ -1,6 +1,6 @@
-# Omics-projects
+# Omics-analysis
 
-Examples of Omics data analysis
+Omics projects
 
 This repository seeds comprehensive analysis of several traits of interest.
 
