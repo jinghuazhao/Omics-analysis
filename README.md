@@ -1,2 +1,3 @@
 # Omics-projects
-Omics (data analysis) projects
+
+Examples of Omics data analysis
