@@ -32,6 +32,15 @@ We then generate [BMI.xlsx](BMI.xlsx) as in [PW-pipelne](https://github.com/jing
 
 This is detailed in [software-notes/DEPICT](https://github.com/jinghuazhao/software-notes/tree/master/DEPICT) together with [PW-pipeline/wiki](https://github.com/jinghuazhao/PW-pipeline/wiki) for the latest GIANT+UKBB pathway analysis.
 
+## --- Partitioned heritabilty ---
+
+Information for the documentation example is available from [software-notes](https://github.com/jinghuazhao/software-notes/). Here we carry on with the .gz file above.
+```bash
+gunzip -c Meta-analysis_Locke_et_al%2BUKBiobank_2018.txt.gz > BMI.txt
+python munge_sumstats.py --sumstats ldsc.txt --a1 Tested_Allele --a2 Other_allele --merge-alleles w_hm3.snplist --out ldsc --a1-inc
+```
+where we fix the header with appropriate command-line parameters.
+
 ## References
 
 Yengo L, et al. Meta-analysis of genome-wide association studies for height and body mass index in ~700,000 individuals of European ancestry. BioRxiv,
