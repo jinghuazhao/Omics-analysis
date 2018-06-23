@@ -60,6 +60,8 @@ python ldsc.py --h2 ldsc.sumstats.gz\
 ```
 for [ldsc_baseline.results](ldsc_CNS.results) and [ldsc_baseline.log](ldsc_CNS.log).
 
+## --- TWAS ---
+
 ## References
 
 Yengo L, et al. Meta-analysis of genome-wide association studies for height and body mass index in ~700,000 individuals of European ancestry. BioRxiv,
