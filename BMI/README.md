@@ -93,6 +93,23 @@ Max chi^2 = 1416.756
 Conversion finished at Sat Jun 23 00:46:44 2018
 Total time elapsed: 8.0h:23.0m:47.25s
 ```
+and we carry on with
+```bash
+python ldsc.py --h2 ldsc.sumstats.gz\
+        --ref-ld-chr baseline_v1.1/baseline.\
+        --w-ld-chr 1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.\
+        --overlap-annot\
+        --frqfile-chr 1000G_Phase3_frq/1000G.EUR.QC.\
+        --out ldsc_baseline
+
+python ldsc.py --h2 ldsc.sumstats.gz\
+        --w-ld-chr 1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.\
+        --ref-ld-chr 1000G_Phase3_cell_type_groups/cell_type_group.3.,baseline_v1.1/baseline.\
+        --overlap-annot\
+        --frqfile-chr 1000G_Phase3_frq/1000G.EUR.QC.\
+        --out ldsc_CNS\
+        --print-coefficients
+```
 
 ## References
 
