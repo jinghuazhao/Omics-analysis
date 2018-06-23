@@ -14,7 +14,7 @@ gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | awk '
 }' | gzip -f > BMI.txt.gz
 
 ```
-where we opt to customise the header rather than the DEPICT configuration file. Moreover, the (hg19) chromosomal positions are *eventually* back in the data which would facilitate GCTA-COJO analysis and mirrors [SUMSTATS](https://github.com/jinghuazhao/SUMSTATS).
+where we opt to customise the header rather than the DEPICT configuration file. Moreover, the (hg19) chromosomal positions are *eventually* back in the data which would facilitate GCTA-COJO analysis and mirrors https://github.com/jinghuazhao/SUMSTATS.
 
 As usual, we make a call to [BMI.cfg](BMI.cfg) via
 ```bash
