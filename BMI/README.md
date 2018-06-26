@@ -68,7 +68,7 @@ We employ the analysis between BMI-T2D from DIAGRAM,
 wget -qO- https://portals.broadinstitute.org/collaboration/giant/images/e/e2/Meta-analysis_Locke_et_al+UKBiobank_2018_top_941_from_COJO_analysis_UPDATED.txt.gz > BMI-COJO.gz
 R --no-save -q < MR.R > MR.log
 ```
-and call [MR.R](MR.R) to generate [MR.log](MRC.log) and [MR.pdf](MR.pdf).
+and call [MR.R](MR.R) to generate [MR.log](MR.log) and [MR.pdf](MR.pdf).
 
 ## --- TWAS ---
 
