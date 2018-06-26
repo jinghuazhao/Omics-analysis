@@ -63,7 +63,7 @@ for [ldsc_baseline.results](ldsc_CNS.results) and [ldsc_baseline.log](ldsc_CNS.l
 
 ## --- Mendelian Randomisation ---
 
-We employ the analysis between BMI-T2D from DIAGRAM,
+A documented example on BMI-lung cancer is adapted in [software-notes](https://github.com/jinghuazhao/software-notes). We employ the analysis between BMI-T2D from DIAGRAM,
 ```bash
 wget -qO- https://portals.broadinstitute.org/collaboration/giant/images/e/e2/Meta-analysis_Locke_et_al+UKBiobank_2018_top_941_from_COJO_analysis_UPDATED.txt.gz > BMI-COJO.gz
 R --no-save -q < MR.R > MR.log
