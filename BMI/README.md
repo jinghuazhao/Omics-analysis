@@ -81,6 +81,7 @@ mr_heterogeneity(dat)
 mr_pleiotropy_test(dat)
 mr_singlesnp(dat)
 mr_leaveoneout(dat)
+pdf("MR.pdf")
 mr_scatter_plot(mr_results, dat)
 mr_forest_plot(res_single)
 mr_leaveoneout_plot(res_loo)
@@ -95,6 +96,7 @@ mr_maxlik(MRInputObject, model = "default", distribution = "normal", alpha = 0.0
 mr_median(MRInputObject, weighting = "weighted", distribution = "normal", alpha = 0.05, iterations = 10000, seed = 314159265)
 mr_allmethods(MRInputObject, method = "all")
 mr_plot(MRInputObject, error = TRUE, orientate = FALSE, interactive = TRUE, labels = TRUE, line = "ivw")
+dev.off()
 END
 ```
 where both `TwoSampleMR` and `MendelianRandomization` packages are used.
