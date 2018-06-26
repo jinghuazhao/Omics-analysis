@@ -9,7 +9,7 @@ Topics will be elaborated at the [wiki page](https://github.com/jinghuazhao/Omic
 * [Fine-mapping](https://github.com/jinghuazhao/Omics-projects/wiki/Fine-mapping)
 * [Pathway analysis](https://github.com/jinghuazhao/Omics-projects/wiki/pathway-analysis)
 * [TWAS](https://github.com/jinghuazhao/Omics-projects/wiki/TWAS)
-* [Mendelian randomisation](https://github.com/jinghuazhao/Omics-projects/wiki/Mendelian-radnomisation)
+* [Mendelian randomisation](https://github.com/jinghuazhao/Omics-projects/wiki/Mendelian-randomisation)
 * [Predictive analytics](https://github.com/jinghuazhao/Omics-projects/wiki/Predictive-analytics)
 
 These are related to several repositories on GitHub.
