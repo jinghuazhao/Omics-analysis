@@ -5,7 +5,7 @@ We work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018).
 ## --- Pathway analysis ---
 
 ```bash
-wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al%2BUKBiobank_2018.txt.gz
+wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
 gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | awk '
 {
    FS=OFS="\t"
