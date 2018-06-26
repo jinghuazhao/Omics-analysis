@@ -60,6 +60,45 @@ python ldsc.py --h2 ldsc.sumstats.gz\
 ```
 for [ldsc_baseline.results](ldsc_CNS.results) and [ldsc_baseline.log](ldsc_CNS.log).
 
+
+## --- Mendelian Randomisation ---
+
+We employ two-sample Mendelian Randomisation analysis using the data with the mega-meta-analysis from DIAGRAM,
+```bash
+wget -qO- https://portals.broadinstitute.org/collaboration/giant/images/e/e2/Meta-analysis_Locke_et_al+UKBiobank_2018_top_941_from_COJO_analysis_UPDATED.txt.gz > BMI-COJO.gz
+R --vanilla -q <<END
+gz <- gzfile("BMI-COJO.gz")
+d <- read.delim(gz,as.is=TRUE)
+library(TwoSampleMR)
+exposure_dat <- format_data(d, type="exposure", snp_col = "SNP", effect_allele_col = "Tested_Allele", other_allele_col = "Other_Allele",
+                            eaf_col = "Freq_Tested_Allele_in_HRS", beta_col = "BETA_COJO", se_col = "SE_COJO", pval_col = "P_COJO", samplesize_col = "N")
+ao <- available_outcomes()
+subset(ao,consortium=="DIAGRAM")
+outcome_dat <- extract_outcome_data(exposure_dat$SNP, 23, proxies = 1, rsq = 0.8, align_alleles = 1, palindromes = 1, maf_threshold = 0.3)
+dat <- harmonise_data(exposure_dat, outcome_dat, action = 2)
+mr_results <- mr(dat)
+mr_heterogeneity <- mr_heterogeneity(dat)
+mr_pleiotropy_test <- mr_pleiotropy_test(dat)
+res_single <- mr_singlesnp(dat)
+res_loo <- mr_leaveoneout(dat)
+p1 <- mr_scatter_plot(mr_results, dat)
+p2 <- mr_forest_plot(res_single)
+p3 <- mr_leaveoneout_plot(res_loo)
+p4 <- mr_funnel_plot(res_single)
+
+library(MendelianRandomization)
+MRInputObject <- with(dat, mr_input(bx = beta.exposure, bxse = se.exposure, by = beta.outcome, byse = se.outcome,
+                                    exposure = "Body mass index", outcome = "Lung cancer", snps = SNP))
+IVW <- mr_ivw(MRInputObject, model = "default", robust = FALSE, penalized = FALSE, weights = "simple", distribution = "normal", alpha = 0.05)
+Egger <- mr_egger(MRInputObject, robust = FALSE, penalized = FALSE, distribution = "normal", alpha = 0.05)
+MaxLik <- mr_maxlik(MRInputObject, model = "default", distribution = "normal", alpha = 0.05)
+Median <- mr_median(MRInputObject, weighting = "weighted", distribution = "normal", alpha = 0.05, iterations = 10000, seed = 314159265)
+MR_all <- mr_allmethods(MRInputObject, method = "all")
+p <- mr_plot(MRInputObject, error = TRUE, orientate = FALSE, interactive = TRUE, labels = TRUE, line = "ivw")
+END
+```
+Note the similarity with the BMI-lung cancer example shown in software-notes.
+
 ## --- TWAS ---
 
 ## References
