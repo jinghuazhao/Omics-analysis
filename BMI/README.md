@@ -17,7 +17,7 @@ gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | awk '
 }' | gzip -f > BMI.txt.gz
 
 ```
-where we opt to customise the header rather than the DEPICT configuration file. Moreover, the (hg19) chromosomal positions are *eventually* back in the data which would facilitate GCTA --cojo analysis and mirrors https://github.com/jinghuazhao/SUMSTATS.
+where we opt to customise the header/column rather than the DEPICT configuration file. Moreover, the (hg19) chromosomal positions are *eventually* back in the data which would facilitate GCTA --cojo analysis and mirrors https://github.com/jinghuazhao/SUMSTATS.
 
 As usual, we make a call to [BMI.cfg](BMI.cfg) via
 ```bash
@@ -106,7 +106,7 @@ do
                                 --ref_ld_chr LDREF/1000G.EUR. --chr $chr --out fusion.$chr.dat
 done
 ```
-Note again a header is customised and results are obtained by chromosome.
+Note again the header/column is customised differently from its DEPICT counterpart and results are obtained by chromosome.
 
 Two additional aspects are useful to explore:
 
