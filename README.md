@@ -17,4 +17,4 @@ along with [software-notes](https://github.com/jinghuazhao/software-notes) which
 
 ### Resources
 
-This is also in [wiki](https://github.com/jinghuazhao/Omics-projects/wiki/Resources).
+This is also a [wiki section](https://github.com/jinghuazhao/Omics-projects/wiki/Resources).
