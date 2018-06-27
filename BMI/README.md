@@ -128,7 +128,7 @@ done
 ```
 which are CAVIAR.EQTL.Z, CAVIAR.GWAS.Z, CAVIAR.LD triplets with prefix caviar.genename.
 
-### Colocaolisation
+### Colocalisation
 
 This is furnished with `--coloc_P --GWASN`
 ```bash
@@ -145,7 +145,7 @@ Rscript FUSION.assoc_test.R \
 --out coloc$chr.dat
 done
 ```
-and the output has additional columns added to the TWAS output(s).
+and the output has additional columns COLOC.PP0, COLOC.PP1, COLOC.PP2, COLOC.PP3, COLOC.PP added to the TWAS output(s).
 
 ## References
 
