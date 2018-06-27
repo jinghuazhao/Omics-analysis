@@ -4,7 +4,7 @@ We work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018), including 
 ```bash
 wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
 ```
-the latter as used in Mendelian Randomisation analysis below is downloaded on the fly.
+the latter as used in Mendelian Randomisation analysis below is downloaded on the fly. We would refer [software-notes](https://github.com/jinghuazhao/software-notes) where information specific software can be seen from their respective directories.
 
 ## --- Pathway analysis ---
 
@@ -33,7 +33,7 @@ Follow instruction and remove the directory. It is very slow-going, ~20 hours on
 We then generate [BMI.xlsx](BMI.xlsx) as in [PW-pipelne](https://github.com/jinghuazhao/PW-pipeline/wiki). While there are 859 genesets with FDR<0.05, tissue enrichment shows compelingly an overwhelming role of the nervous system.
 
 
-This is detailed in [software-notes/DEPICT](https://github.com/jinghuazhao/software-notes/tree/master/DEPICT) together with [PW-pipeline/wiki](https://github.com/jinghuazhao/PW-pipeline/wiki) for the latest GIANT+UKBB pathway analysis.
+This is detailed in [software-notes](https://github.com/jinghuazhao/software-notes) together with [PW-pipeline/wiki](https://github.com/jinghuazhao/PW-pipeline/wiki) for the latest GIANT+UKBB pathway analysis.
 
 ## --- Partitioned heritabilty ---
 
