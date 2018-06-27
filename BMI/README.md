@@ -4,7 +4,7 @@ We work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018), including 
 ```bash
 wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
 ```
-and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded below on the fly. We would refern to [software-notes](https://github.com/jinghuazhao/software-notes) where information specific software can be seen from their respective directories.
+and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded below on the fly. We would refer to [software-notes](https://github.com/jinghuazhao/software-notes) where information specific software can be seen from their respective directories.
 
 ## --- Pathway analysis ---
 
