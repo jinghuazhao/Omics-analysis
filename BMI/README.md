@@ -106,7 +106,7 @@ do
                                 --ref_ld_chr LDREF/1000G.EUR. --chr $chr --out fusion.$chr.dat
 done
 ```
-Note again a header is customised and results are obtained by chromosome. Additionally, we can do colocalisation analysis.
+Note again a header is customised and results are obtained by chromosome. Additionally, we can do prepare for fine-mapping, colocalisation analysis.
 
 ## References
 
