@@ -32,7 +32,7 @@ Follow instruction and remove the directory. It is very slow-going, ~20 hours on
 
 We then generate [BMI.xlsx](BMI.xlsx) as in [PW-pipelne](https://github.com/jinghuazhao/PW-pipeline/wiki). While there are 859 genesets with FDR<0.05, tissue enrichment shows compelingly an overwhelming role of the nervous system.
 
-This is detailed in [software-notes](https://github.com/jinghuazhao/software-notes) together with [PW-pipeline/wiki](https://github.com/jinghuazhao/PW-pipeline/wiki) for the latest GIANT+UKBB pathway analysis.
+This is detailed from [PW-pipeline/wiki](https://github.com/jinghuazhao/PW-pipeline/wiki) for the latest GIANT+UKBB pathway analysis.
 
 ## --- Partitioned heritabilty ---
 
