@@ -106,7 +106,46 @@ do
                                 --ref_ld_chr LDREF/1000G.EUR. --chr $chr --out fusion.$chr.dat
 done
 ```
-Note again a header is customised and results are obtained by chromosome. Additionally, we can do prepare for fine-mapping, colocalisation analysis.
+Note again a header is customised and results are obtained by chromosome.
+
+Additionally, we can do prepare for fine-mapping, colocalisation analysis.
+
+### Fine-mapping
+
+The option `--caviar` enables the program to generate input files for `CARIAR`,
+```bash
+for chr in $(seq 22)
+do
+Rscript FUSION.assoc_test.R \
+--sumstats fusion.txt \
+--weights /home/jhz22/D/mrc/genetics/FUSION/GE/CMC.BRAIN.RNASEQ.pos \
+--weights_dir /home/jhz22/D/mrc/genetics/FUSION/GE/ \
+--ref_ld_chr /home/jhz22/D/genetics/fusion_twas/LDREF/1000G.EUR. \
+--chr $chr \
+--caviar \
+--out caviar
+done
+```
+which are CAVIAR.EQTL.Z, CAVIAR.GWAS.Z, CAVIAR.LD triplets with prefix caviar.genename.
+
+### Colocaolisation
+
+This is furnished with `--coloc_P --GWASN`
+```bash
+for chr in $(seq 22)
+do
+Rscript FUSION.assoc_test.R \
+--sumstats fusion.txt \
+--weights /home/jhz22/D/mrc/genetics/FUSION/GE/CMC.BRAIN.RNASEQ.pos \
+--weights_dir /home/jhz22/D/mrc/genetics/FUSION/GE/ \
+--ref_ld_chr /home/jhz22/D/genetics/fusion_twas/LDREF/1000G.EUR. \
+--chr $chr \
+--coloc_P 5e-8 \
+--GWASN 70000 \
+--out coloc$chr.dat
+done
+```
+and the output has additional columns added to the TWAS output(s).
 
 ## References
 
