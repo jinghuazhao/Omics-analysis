@@ -38,7 +38,7 @@ This is detailed from [PW-pipeline/wiki](https://github.com/jinghuazhao/PW-pipel
 
 Information for the documentation example is available from [software-notes](https://github.com/jinghuazhao/software-notes/). Here we carry on with the .gz file above.
 ```bash
-gunzip -c Meta-analysis_Locke_et_al%2BUKBiobank_2018.txt.gz > ldsc.txt
+gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz > ldsc.txt
 python munge_sumstats.py --sumstats ldsc.txt --a1 Tested_Allele --a2 Other_allele --merge-alleles w_hm3.snplist --out ldsc --a1-inc
 ```
 where we fix the header with appropriate command-line parameters. We see [ldsc.sumstats.gz](ldsc.sumstats.gz) and [ldsc.log](ldsc.log) and carry on with
