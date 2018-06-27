@@ -91,7 +91,22 @@ cd /home/jhz22/D/genetics/hakyimlab/MetaXcan/software
 ```
 where instead of chromosome-specific summary statistics as shown in [software-notes](https://github.com/jinghuazhao/software-notes) we use `ldsc.txt` created above directly with results contained in [MX.csv](MX.csv) and screen output [MX.log](MX.log).
 
-We would also be tempting to contrast results with FUSION, especially with its coverage of various brain regions.
+We would also be tempting to contrast results with FUSION,
+```bash
+gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | awk '
+{
+   FS=OFS="\t"
+   if(NR==1) print "SNP","A1","A2","Z"
+   else print $3,$4,$5,$7/$8
+}' > fusion.txt
+for chr in $(seq 22)
+do
+    Rscript FUSION.assoc_test.R --sumstats fusion.txt \
+                                --weight1s WEIGHTS/NTR.BLOOD.RNAARR.pos --weights_dir WEIGHTS/ \
+                                --ref_ld_chr LDREF/1000G.EUR. --chr $chr --out fusion.$chr.dat
+done
+```
+Note again a header is customised and results are obtained by chromosome. Additionally, we can do colocalisation analysis.
 
 ## References
 
