@@ -108,7 +108,7 @@ done
 ```
 Note again a header is customised and results are obtained by chromosome.
 
-Additionally, we can do prepare for fine-mapping, colocalisation analysis.
+Two additional aspects are useful to explore:
 
 ### Fine-mapping
 
