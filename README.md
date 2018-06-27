@@ -2,7 +2,7 @@
 
 Omics projects
 
-This repository seeds comprehensive analysis of several traits, as contained in individual directories.
+This repository seeds comprehensive analysis of several traits as contained in their named directories.
 
 Topic will be elaborated at the [wiki page](https://github.com/jinghuazhao/Omics-analysis/wiki),
 
