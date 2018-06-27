@@ -28,7 +28,7 @@ where the `DEPICT_v1_rel194.tar.gz` version is used. Once started, there was com
 Retrieving background loci
 Exiting.. To few background files in data/backgrounds/nloci723_nperm500_kb500_rsq0.1_mhc25000000-35000000_colld0.5-collection-1000genomespilot-depict-150429/. Please remove the folder, rerun DEPICT and contact tunepers@broadinstitute.org if the error prevails.
 ```
-Follow instruction and remove the directory. It is very slow-going, ~20 hours on our Linux note but surprisingly half that time under my Windows 10 whose directory zipped and then unzipped under Linux and run`depict.py`there.
+Follow instruction and remove the directory. It is very slow-going, ~20 hours on our Linux node but surprisingly half that time under my Windows 10 whose directory zipped and then unzipped under Linux and run`depict.py`there.
 
 We then generate [BMI.xlsx](BMI.xlsx) as in [PW-pipelne](https://github.com/jinghuazhao/PW-pipeline/wiki). While there are 859 genesets with FDR<0.05, tissue enrichment shows compelingly an overwhelming role of the nervous system.
 
