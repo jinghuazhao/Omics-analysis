@@ -1,11 +1,14 @@
 # BMI analysis
 
-We work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018).
+We work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018), including both the genomewide and GCTA --cojo results.
+```bash
+wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
+```
+the latter as used in Mendelian Randomisation analysis below is downloaded on the fly.
 
 ## --- Pathway analysis ---
 
 ```bash
-wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
 gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | awk '
 {
    FS=OFS="\t"
@@ -14,7 +17,7 @@ gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | awk '
 }' | gzip -f > BMI.txt.gz
 
 ```
-where we opt to customise the header rather than the DEPICT configuration file. Moreover, the (hg19) chromosomal positions are *eventually* back in the data which would facilitate GCTA-COJO analysis and mirrors https://github.com/jinghuazhao/SUMSTATS.
+where we opt to customise the header rather than the DEPICT configuration file. Moreover, the (hg19) chromosomal positions are *eventually* back in the data which would facilitate GCTA --cojo analysis and mirrors https://github.com/jinghuazhao/SUMSTATS.
 
 As usual, we make a call to [BMI.cfg](BMI.cfg) via
 ```bash
