@@ -112,7 +112,7 @@ Two additional aspects are useful to explore:
 
 ### Fine-mapping
 
-The option `--caviar` enables the program to generate input files for `CARIAR`,
+In line with the fact that both TWAS and GWAS z scores are available, the option `--caviar` natually put them as input files for `CARIAR`,
 ```bash
 for chr in $(seq 22)
 do
