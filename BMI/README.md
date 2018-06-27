@@ -72,6 +72,45 @@ and call [MR.R](MR.R) to generate [MR.log](MR.log) and [MR.pdf](MR.pdf).
 
 ## --- TWAS ---
 
+We start with `MetaXcan` as follows,
+```bash
+cd /home/jhz22/D/genetics/hakyimlab/MetaXcan/software
+
+./MetaXcan.py \
+--model_db_path /home/jhz22/D/genetics/hakyimlab/PredictDB/GTEx-V7_HapMap-2017-11-29/gtex_v7_Brain_Amygdala_imputed_europeans_tw_0.5_signif.db \
+--covariance /home/jhz22/D/genetics/hakyimlab/PredictDB/GTEx-V7_HapMap-2017-11-29/gtex_v7_Brain_Amygdala_imputed_eur_covariances.txt.gz \
+--gwas_file ldsc.txt \
+--snp_column SNP \
+--effect_allele_column Tested_Allele \
+--non_effect_allele_column Other_Allele \
+--beta_column BETA \
+--pvalue_column P \
+--output_file MX.csv
+```
+where instead of chromosome-specific summary statistics we use `ldsc.txt` created above directly with results contained in [MX.csv](MX.csv). The screen output is as follows,
+```
+INFO - Processing GWAS command line parameters
+INFO - Building beta for ldsc.txt and /home/jhz22/D/genetics/hakyimlab/PredictDB/GTEx-V7_HapMap-2017-11-29/gtex_v7_Brain_Amygdala_imputed_europeans_tw_0.5_signif.db
+INFO - Reading input gwas with special handling: ldsc.txt
+INFO - Processing input gwas
+INFO - Successfully parsed input gwas in 4.09205794334 seconds
+INFO - Started metaxcan process
+INFO - Loading model from: /home/jhz22/D/genetics/hakyimlab/PredictDB/GTEx-V7_HapMap-2017-11-29/gtex_v7_Brain_Amygdala_imputed_europeans_tw_0.5_signif.db
+INFO - Loading covariance data from: /home/jhz22/D/genetics/hakyimlab/PredictDB/GTEx-V7_HapMap-2017-11-29/gtex_v7_Brain_Amygdala_imputed_eur_covariances.txt.gz
+INFO - Processing input gwas
+INFO - Started metaxcan association
+INFO - 10 % of model's snps found so far in the gwas study
+INFO - 20 % of model's snps found so far in the gwas study
+INFO - 30 % of model's snps found so far in the gwas study
+INFO - 40 % of model's snps found so far in the gwas study
+INFO - 50 % of model's snps found so far in the gwas study
+INFO - 60 % of model's snps found so far in the gwas study
+INFO - 70 % of model's snps found so far in the gwas study
+INFO - 80 % of model's snps found so far in the gwas study
+INFO - 80 % of model's snps used
+INFO - Sucessfully processed metaxcan association in 28.323292017 seconds
+```
+
 ## References
 
 Yengo L, et al. Meta-analysis of genome-wide association studies for height and body mass index in ~700,000 individuals of European ancestry. BioRxiv,
