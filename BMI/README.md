@@ -130,7 +130,7 @@ which are CAVIAR.EQTL.Z, CAVIAR.GWAS.Z, CAVIAR.LD triplets with prefix caviar.ge
 
 ### Colocalisation
 
-This is furnished with `--coloc_P --GWASN`
+This is furnished with `--coloc_P --GWASN`,
 ```bash
 for chr in $(seq 22)
 do
