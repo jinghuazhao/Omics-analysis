@@ -13,4 +13,8 @@ The [wiki page](https://github.com/jinghuazhao/Omics-analysis/wiki) will elabora
 * [EWAS-fusion](https://github.com/jinghuazhao/EWAS-fusion)
 * [Mixed-Models](https://github.com/jinghuazhao/Mixed-Models)
 
-along with [software-notes](https://github.com/jinghuazhao/software-notes) which detail many technical issues. Some useful [resources](https://github.com/jinghuazhao/Omics-projects/wiki/Resources) are also listed.
+along with [software-notes](https://github.com/jinghuazhao/software-notes) which detail many technical issues.
+
+### Resources
+
+This is also in [wiki](https://github.com/jinghuazhao/Omics-projects/wiki/Resources).
