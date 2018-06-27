@@ -4,7 +4,7 @@ Omics projects
 
 This repository seeds comprehensive analysis of several traits as contained in their named directories.
 
-Topics will be elaborated at the [wiki page](https://github.com/jinghuazhao/Omics-analysis/wiki),
+The [wiki page](https://github.com/jinghuazhao/Omics-analysis/wiki) will elaborate the following topics,
 
 * [Fine-mapping](https://github.com/jinghuazhao/Omics-projects/wiki/Fine-mapping)
 * [Pathway analysis](https://github.com/jinghuazhao/Omics-projects/wiki/pathway-analysis)
