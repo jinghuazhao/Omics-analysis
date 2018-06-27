@@ -87,7 +87,7 @@ cd /home/jhz22/D/genetics/hakyimlab/MetaXcan/software
 --pvalue_column P \
 --output_file MX.csv
 ```
-where instead of chromosome-specific summary statistics we use `ldsc.txt` created above directly with results contained in [MX.csv](MX.csv). The screen output is as follows,
+where instead of chromosome-specific summary statistics as shown in [software-notes](https://github.com/jinghuazhao/software-notes) we use `ldsc.txt` created above directly with results contained in [MX.csv](MX.csv). The screen output is as follows,
 ```
 INFO - Processing GWAS command line parameters
 INFO - Building beta for ldsc.txt and /home/jhz22/D/genetics/hakyimlab/PredictDB/GTEx-V7_HapMap-2017-11-29/gtex_v7_Brain_Amygdala_imputed_europeans_tw_0.5_signif.db
