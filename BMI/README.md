@@ -145,7 +145,7 @@ Rscript FUSION.assoc_test.R \
 --out coloc$chr.dat
 done
 ```
-and the output has additional columns COLOC.PP0, COLOC.PP1, COLOC.PP2, COLOC.PP3, COLOC.PP added.
+and the output has additional columns COLOC.PP0, COLOC.PP1, COLOC.PP2, COLOC.PP3, COLOC.PP.
 
 ## References
 
