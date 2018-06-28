@@ -6,7 +6,7 @@ unzip  TransEthnic_T2D_GWAS.MegaMeta.2014OCT16.zip
 ```
 gives `diagram.mega-meta.txt`.
 
-### Pathway analysis
+## --- Pathway analysis ---
 
 As before we prepare for DEPICT file,
 ```bash
