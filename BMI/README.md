@@ -145,15 +145,6 @@ Rscript FUSION.assoc_test.R \
 --out coloc$chr.dat
 done
 ```
-and the output has additional columns 
-
-**Column** |  **Statistics**
-----------|-----------------------------------------
-COLOC.PP0 | no association
-COLOC.PP1 | functional association only
-COLOC.PP2 | GWAS association only
-COLOC.PP3 | independent functional/GWAS associations 
-COLOC.PP  | colocalized functional/GWAS associations
 
 ### Prediction
 
