@@ -16,4 +16,4 @@ awk '{
 }' diagram.mega-meta.txt | gzip -f > T2D.txt.gz
 
 ```
-and [T2D.cfg][T2D.cfg] slightly changed from its BMI counterpart.
+and [T2D.cfg](T2D.cfg) slightly changed from its BMI counterpart.
