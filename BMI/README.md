@@ -147,6 +147,10 @@ done
 ```
 and the output has additional columns COLOC.PP0, COLOC.PP1, COLOC.PP2, COLOC.PP3, COLOC.PP for statistics corresponding to no association, functional association only, GWAS association only, independent functional/GWAS associations, colocalized functional/GWAS associations.
 
+### Prediction
+
+See [software-notes](https://github.com/jinghuazhao/software-notes) on the use of `utils/make_score.R` which is based on the best model.
+
 ## References
 
 Yengo L, et al. Meta-analysis of genome-wide association studies for height and body mass index in ~700,000 individuals of European ancestry. BioRxiv,
