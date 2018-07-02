@@ -11,6 +11,7 @@ The [wiki page](https://github.com/jinghuazhao/Omics-analysis/wiki) will elabora
 * [SUMSTATS](https://github.com/jinghuazhao/SUMSTATS)
 * [TWAS-pipeline](https://github.com/jinghuazhao/TWAS-pipeline)
 * [EWAS-fusion](https://github.com/jinghuazhao/EWAS-fusion)
+* [hess-pipeline](https://github.com/jinghuazhao/hess-pipeline)
 * [Mixed-Models](https://github.com/jinghuazhao/Mixed-Models)
 
 along with [software-notes](https://github.com/jinghuazhao/software-notes) which detail many technical issues.
