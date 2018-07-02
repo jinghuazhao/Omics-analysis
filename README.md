@@ -2,7 +2,7 @@
 
 Omics projects
 
-Seeding comprehensive analysis of several traits as contained in their named directories (e.g., [BMI](BMI)), the [wiki page](https://github.com/jinghuazhao/Omics-analysis/wiki) elaborates several topics, including fine-mapping, pathway analysis, TWAS, Mendelian randomisation and predictive analytics, linking to technical issues documented in [software-notes](https://github.com/jinghuazhao/software-notes) and my repositories below,
+Seeding comprehensive analysis of several traits as contained in their named directories (e.g., [BMI](BMI)), the [wiki page](https://github.com/jinghuazhao/Omics-analysis/wiki) elaborates several topics, including fine-mapping, pathway analysis, TWAS, Mendelian randomisation and predictive analytics, linking also to technical issues documented in [software-notes](https://github.com/jinghuazhao/software-notes) and my repositories below,
 
 * [SUMSTATS](https://github.com/jinghuazhao/SUMSTATS)
 * [FM-pipeline](https://github.com/jinghuazhao/FM-pipeline)
