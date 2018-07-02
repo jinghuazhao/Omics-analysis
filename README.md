@@ -12,6 +12,4 @@ Seeding comprehensive analysis of several traits as contained in their named dir
 * [EWAS-fusion](https://github.com/jinghuazhao/EWAS-fusion)
 * [Mixed-Models](https://github.com/jinghuazhao/Mixed-Models)
 
-### Resources
-
-This is also a [wiki section](https://github.com/jinghuazhao/Omics-projects/wiki/Resources).
+A [wiki section on resources](https://github.com/jinghuazhao/Omics-projects/wiki/Resources) gives additional information.
