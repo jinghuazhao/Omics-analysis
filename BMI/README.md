@@ -152,7 +152,7 @@ See [software-notes](https://github.com/jinghuazhao/software-notes) on the use o
 
 ### Approximately independent LD blocks
 
-We can use the approximately independent LD blocks genomewide or a specific gene, e.g., MC4R,
+We can use these blocks genomewide or a specific gene, e.g., MC4R,
 ```bash
 awk 'NR>1' ldsc.txt | sort -k1,1n -k2,2n | awk '
 {
