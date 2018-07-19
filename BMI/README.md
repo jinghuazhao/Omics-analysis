@@ -150,6 +150,43 @@ done
 
 See [software-notes](https://github.com/jinghuazhao/software-notes) on the use of `utils/make_score.R`, which is based on the best model.
 
+### Approximately independent LD blocks
+
+We can use the approximately independent LD blocks genomewide or a specific gene, e.g., MC4R,
+```bash
+awk 'NR>1' ldsc.txt | sort -k1,1n -k2,2n | awk '
+{
+  OFS="\t"
+  if (NR==1) print "#chrom", "Start", "End", "SNP", "A1", "A2", "FreqA1", "BETA", "SE", "P", "N"
+  print "chr" $1, $2-1, $2, $3, $4, $5, $6, $7, $8, $9, $10
+}' > BMI.bed
+
+# EUR.bed is now with FM-pipeline
+intersectBed -a BMI.bed -b EUR.bed -loj | cut -f12-14 --complement > BMI.txt
+
+cut -f4,10 BMI.txt > BMI.snpandp
+# gene-based association
+vegas2v2 -G -snpandp BMI.snpandp -custom $PWD/g1000p3_EUR -glist glist-hg19 -out genes
+# pathway-based association
+awk '(NR>1){OFS="\t";gsub(/"/,"",$0);print $2,$8}' genes.out > BMI.geneandp
+vegas2v2 -P -geneandp BMI.geneandp -glist glist-hg19 -geneandpath biosystems20160324.vegas2pathSYM -out pathways
+
+# grep MC4R glist-hg19 --> 18 58038563 58040001 MC4R
+# 1439 bp
+# EUR.bed -- > 1563   chr18 57630483 59020751 region1563
+# 1390268 bp
+
+awk /region1563/ BMI.txt > MC4R.txt
+
+# wc -l MC4R.txt
+# 1342 SNPs
+
+cut -f4,10 MC4R.txt > MC4R.snpandp
+echo MC4R > MC4R.genelist
+vegas2v2 -G -snpandp MC4R.snpandp -custom $PWD/g1000p3_EUR -glist glist-hg19 -genelist MC4R.genelist -out MC4R
+```
+The reason to use ldsc.txt is to allow for the possibility of finemapping.
+
 ## References
 
 Yengo L, et al. Meta-analysis of genome-wide association studies for height and body mass index in ~700,000 individuals of European ancestry. BioRxiv,
