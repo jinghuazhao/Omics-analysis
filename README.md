@@ -21,4 +21,4 @@ Additional information is given in [a wiki section](https://github.com/jinghuazh
 4. Commit your change. Include a commit message describing the correction. Please note that if your commit message is not clear, the correction will not be accepted.
 5. Submit a pull request.
 
-Thank you for your contribution!
+Thank you!
