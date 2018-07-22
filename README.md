@@ -11,4 +11,14 @@ Seeding comprehensive analysis of several traits as contained in their named dir
 [EWAS-fusion](https://github.com/jinghuazhao/EWAS-fusion),
 [Mixed-Models](https://github.com/jinghuazhao/Mixed-Models).
 
-Additional information is given in [a wiki section](https://github.com/jinghuazhao/Omics-projects/wiki/Resources).
+Additional information is given in [a wiki section](https://github.com/jinghuazhao/Omics-projects/wiki/Resources). To ensure success of the long-term project, it is expected that the site could eventually be enriched by many practitioners.
+
+## How to Contribute (adapted from [Apress](https://github.com/apress))
+
+1. Make sure you have a GitHub account.
+2. Fork the repository.
+3. Create a new branch on which to make your change, e.g. `git checkout -b my_code_contribution`
+4. Commit your change. Include a commit message describing the correction. Please note that if your commit message is not clear, the correction will not be accepted.
+5. Submit a pull request.
+
+Thank you for your contribution!
