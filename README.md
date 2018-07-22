@@ -13,7 +13,7 @@ Seeding comprehensive analysis of several traits as contained in their named dir
 
 Additional information is given in [a wiki section](https://github.com/jinghuazhao/Omics-projects/wiki/Resources). You are welcome to enriched this site, which is a long-term project.
 
-## How to Contribute (adapted from [Apress](https://github.com/apress))
+## How to contribute (adapted from [Apress](https://github.com/apress))
 
 1. Make sure you have a GitHub account.
 2. Fork the repository.
