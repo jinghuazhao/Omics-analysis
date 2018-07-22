@@ -11,7 +11,7 @@ Seeding comprehensive analysis in their named directories (e.g., [BMI](BMI)), th
 [EWAS-fusion](https://github.com/jinghuazhao/EWAS-fusion).
 for fine-mapping, pathway analysis, TWAS, Mendelian randomisation, predictive analytics and other information as highlighted in the [wiki page](https://github.com/jinghuazhao/Omics-analysis/wiki).
 
-Efforts are highly welcome this site's enrichment as a long-term project, which will also serve as templates for a variety of other traits.
+Efforts are highly welcome for this site's enrichment as a long-term project, to be used as templates for a variety of other traits.
 
 ## How to contribute (adapted from [Apress](https://github.com/apress))
 
