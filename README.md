@@ -11,7 +11,7 @@ Seeding comprehensive analysis of several traits as contained in their named dir
 [EWAS-fusion](https://github.com/jinghuazhao/EWAS-fusion),
 [Mixed-Models](https://github.com/jinghuazhao/Mixed-Models).
 
-Additional information is given in [a wiki section](https://github.com/jinghuazhao/Omics-projects/wiki/Resources). To ensure success of the long-term project, it is expected that the site could eventually be enriched by many practitioners.
+Additional information is given in [a wiki section](https://github.com/jinghuazhao/Omics-projects/wiki/Resources). It is expected that this is a long-term project, and the site could eventually be enriched by many practitioners.
 
 ## How to Contribute (adapted from [Apress](https://github.com/apress))
 
