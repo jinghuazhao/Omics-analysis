@@ -9,7 +9,7 @@ Seeding comprehensive analysis in their named directories (e.g., [BMI](BMI)), th
 [hess-pipeline](https://github.com/jinghuazhao/hess-pipeline),
 [TWAS-pipeline](https://github.com/jinghuazhao/TWAS-pipeline),
 [EWAS-fusion](https://github.com/jinghuazhao/EWAS-fusion).
-for fine-mapping, pathway analysis, TWAS, Mendelian randomisation, predictive analytics and other information as highlighted in the [wiki page](https://github.com/jinghuazhao/Omics-analysis/wiki).
+for fine-mapping, pathway analysis, TWAS, Mendelian randomisation, predictive analytics and other topics as highlighted in the [wiki page](https://github.com/jinghuazhao/Omics-analysis/wiki).
 
 Efforts are highly welcome for this site's enrichment as a long-term project, to be used as templates for many other traits.
 
