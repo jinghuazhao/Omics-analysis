@@ -187,6 +187,14 @@ vegas2v2 -G -snpandp MC4R.snpandp -custom $PWD/g1000p3_EUR -glist glist-hg19 -ge
 ```
 The reason to use ldsc.txt is to allow for the possibility of finemapping.
 
+### Colocalisation analysis
+
+This can be explored with https://github.com/joepickrell/gwas-pw. Assuming that bmi_height.gz has per-SNP z values and variances, the analysis proceeds with
+```bash
+gwas-pw -i bmi_height.gz -bed EUR.bed -phenos BMI HEIGHT
+````
+giving results on four models (1. BMI only, 2. HEIGHT only, 3. both, 4. separate) significance.
+
 ## References
 
 Yengo L, et al. Meta-analysis of genome-wide association studies for height and body mass index in ~700,000 individuals of European ancestry. BioRxiv,
