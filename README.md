@@ -10,15 +10,3 @@ Seeding comprehensive analysis in their named directories (e.g., [BMI](BMI)), th
 [TWAS-pipeline](https://github.com/jinghuazhao/TWAS-pipeline),
 [EWAS-fusion](https://github.com/jinghuazhao/EWAS-fusion).
 for fine-mapping, pathway analysis, TWAS, Mendelian randomisation, predictive analytics and other topics as highlighted in the [wiki page](https://github.com/jinghuazhao/Omics-analysis/wiki).
-
-Efforts are highly welcome for this site's enrichment as a long-term project, to be used as templates for many other traits.
-
-## How to contribute (adapted from [Apress](https://github.com/apress))
-
-1. Make sure you have a GitHub account.
-2. Fork the repository.
-3. Create a new branch on which to make your change, e.g. `git checkout -b my_code_contribution`
-4. Commit your change. Include a commit message describing the correction. Please note that if your commit message is not clear, the correction will not be accepted.
-5. Submit a pull request.
-
-Thank you!
