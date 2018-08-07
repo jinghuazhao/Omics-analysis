@@ -18,3 +18,11 @@ awk '{
 
 ```
 and [T2D.cfg](T2D.cfg) slightly changed from its BMI counterpart.
+
+## mtCOJO analysis
+
+The drawback of the summary statistics above is that it does not contain effect allele frequencies and we now turn to more recent version,
+```bash
+unzip T2D_European
+```
+the rsid are all missing though.
