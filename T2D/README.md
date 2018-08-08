@@ -53,4 +53,4 @@ echo gsmr_example > mtcojo_ref_data.txt
 echo -e "t2d t2d_test.raw 0.176306984 0.09\nbmi bmi_test.raw" > mtcojo_summary_data.list
 gcta64 --mbfile mtcojo_ref_data.txt --mtcojo-file mtcojo_summary_data.list --ref-ld-chr eur_w_ld_chr/ --w-ld-chr eur_w_ld_chr/ --out test_mtcojo_result
 ```
-which proceeds with no complaints thouugh the results won't be sensible in this case.
+which proceeds with no complaints though the results won't be sensible in this case.
