@@ -39,12 +39,11 @@ awk '
 ```
 Since the summary statistics does not contain effect allele frequencies and we assign a random variable to run through.
 
-Now we download and unpack the LD scores,
+Now we download and unpack the LD scores from https://data.broadinstitute.org/alkesgroup/LDSCORE/,
 ```bash
 wget -qO- https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_ref_ld_chr.tar.bz2 | tar xfvz -
 wget -qO- https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_w_ld_chr.tar.bz2 | tar xvfz -
 ```
-from https://data.broadinstitute.org/alkesgroup/LDSCORE/.
 
 At last we could trick GCTA with [test_data.zip](http://cnsgenomics.com/software/gsmr/static/test_data.zip)
 ```bash
