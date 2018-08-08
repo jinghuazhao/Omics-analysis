@@ -21,7 +21,7 @@ and [T2D.cfg](T2D.cfg) slightly changed from its BMI counterpart.
 
 ## --- mtCOJO analysis ---
 
-For this analysis, a most up-to-date version of GCTA is required. To imitate the documentation script, we regenerate the `bmi_test.raw` as follows
+For this analysis, the latest version of GCTA is required. To imitate the documentation script, we regenerate the `bmi_test.raw` as follows
 ```bash
 gunzip -c /home/jhz22/D/genetics/broad/ftp/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | \
 awk '{OFS="\t"; if(NR==1) {print "SNP","A1","A2","freq","b","se","p","N"} else print $3,$4,$5,$6,$7,$8,$9,$10}' | \
