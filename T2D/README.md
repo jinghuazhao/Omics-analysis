@@ -45,7 +45,7 @@ wget -qO- https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_ref_ld_chr.tar.
 wget -qO- https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_w_ld_chr.tar.bz2 | tar xvfz -
 ```
 
-At last we could trick GCTA with [test_data.zip](http://cnsgenomics.com/software/gsmr/static/test_data.zip)
+At last we could trick GCTA with GSMR's [test_data.zip](http://cnsgenomics.com/software/gsmr/static/test_data.zip)
 ```bash
 wget http://cnsgenomics.com/software/gsmr/static/test_data.zip
 unzip test_data
