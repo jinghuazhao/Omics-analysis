@@ -20,7 +20,7 @@ unzip cad.additive.Oct2015.pub.zip
 ```
 giving `cad.add.160614.website.txt.
 
-The steps for pathway analysis by MAGMA as as follows,
+The steps for pathway analysis by MAGMA is as follows,
 
 The GWAS summary data can either be formatted with R,
 ```r
