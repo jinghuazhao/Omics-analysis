@@ -20,7 +20,9 @@ unzip cad.additive.Oct2015.pub.zip
 ```
 giving `cad.add.160614.website.txt.
 
-The steps for pathway analysis by MAGMA is as follows,
+## -- Pathway analysis --
+
+MAGMA is illustrated here,
 
 The GWAS summary data can either be formatted with R,
 ```r
@@ -44,3 +46,27 @@ magma --bfile g1000_eur --pval CAD.pval ncol=NOBS --gene-annot CAD.genes.annot -
 # http://software.broadinstitute.org/gsea/downloads.jsp
 magma --gene-results CAD.genes.raw --set-annot msigdb.v6.2.entrez.gmt self-contained --model fwer --out CAD
 ```
+
+## -- MR --
+
+We examine MMP-12 and CAD
+
+```bash
+# 31/8/2018 JHZ
+
+# MMP12 (UCSC uc001phk.3) at chr11:102733464-102745764
+# MMP12 (RefSeq) at chr11:102733460-102745764
+
+gunzip -c MMP12.4496.60.2/MMP12.4496.60.2_chrom_11_meta_final_v1.tsv.gz | awk 'NR==1||($3>=102733464 && $3<=102745764)' > MMP12.txt
+awk 'NR==1||($2==11 && $3>=102733464 && $3<=102745764)' cad.add.160614.website.txt > CAD.txt
+
+# /c/Users/jhz22/R-3.5.1/bin/x64/Rterm
+/c/Users/jhz22/R-3.5.1/bin/R --no-save  < MMP12.R
+
+# PhenoScanner
+
+awk '(NR>1) {print "chr" $2 ":" $3}' MMP12.txt > MMP12.ps.txt
+awk '(NR>1) {print $1}' CAD.txt > CAD.ps.txt
+```
+THe analogous coding for TwoSampleMR as with MendelianRandomization in [software-notes](https://github.com/jinghuazhao/software-notes)
+is contained in [MMP12.R](MMP12.R).
