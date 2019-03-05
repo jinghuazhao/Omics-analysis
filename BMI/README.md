@@ -202,5 +202,5 @@ giving results on four models (1. BMI only, 2. HEIGHT only, 3. both, 4. separate
 
 ## References
 
-Yengo L, et al. Meta-analysis of genome-wide association studies for height and body mass index in ~700,000 individuals of European ancestry. BioRxiv,
-https://www.biorxiv.org/content/early/2018/03/02/274654
+Yengo L, et al (2018). Meta-analysis of genome-wide association studies for height and body mass index in ~700,000 individuals of European ancestry. *Hum Mol Genet* 27(20):3641–3649, BioRxiv,
+https://www.biorxiv.org/content/10.1101/274654v2.
