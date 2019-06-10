@@ -1,11 +1,11 @@
 # BMI
 
 ---
-* [Pathway analysis]()
-* [Partitioned heritabilty]()
-* [Mendelian Randomisation]()
-* [TWAS]()
-* [References]()
+* [Pathway analysis](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#pathway-analysis)
+* [Partitioned heritabilty](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#partitioned-heritability)
+* [Mendelian Randomisation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#mendlelian-randomisation)
+* [TWAS](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#twas)
+* [References](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#references)
 ---
 
 As a follow-up to the earlier GIANT analysis, we have in the directory results from PhenoScanner for the 97 SNPs described in the SUMSTATS repository
