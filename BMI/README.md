@@ -29,10 +29,10 @@ and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded b
   awk '(NR>1 && $9<=1e-8)' | \
   sort -k1,1n -k2,2n
 ) > BMI.dat
-```
-where `BMI.R` selects independent signals as follows,
-```r
 module load gcc/5.2.0
+```
+where the `module` command prepares for appropriate version of R is enabled and `BMI.R` selects independent signals as follows,
+```r
 R --no-save -q < BMI.R > BMI.out
 options(echo=FALSE)
 BMI <- read.delim("BMI.dat",as.is=TRUE)
