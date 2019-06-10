@@ -49,9 +49,16 @@ for(chr in chrs)
 
 As a follow-up to the earlier GIANT analysis, we have in the directory results from PhenoScanner for the 97 SNPs described in the SUMSTATS repository
 ```bash
-module load phenoscanner/phenoscanner_v1.1
+module load phenoscanner/phenoscanner_v2
 phenoscanner -c All -l No -p 0.00001 -i 97.snps -o 97
 ```
+For the GIANT+UKB data above, the setup is
+```bash
+awk 'NR>1' BMI.dat | \
+cut -f3 > BMI.rsid
+phenoscanner -c All -l No -p 0.00001 -i BMI.rsid -o BMI
+```
+in both cases, results could be expanded by allowing for LD.
 
 ## Pathway analysis
 
