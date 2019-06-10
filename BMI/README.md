@@ -2,6 +2,7 @@
 
 ---
 * [Independent signals](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#independent-signals)
+* [Annotation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#annotation)
 * [Pathway analysis](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#pathway-analysis)
 * [Partitioned heritabilty](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#partitioned-heritabilty)
 * [Mendelian Randomisation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#mendelian-randomisation)
