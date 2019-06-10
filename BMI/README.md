@@ -9,11 +9,6 @@
 * [References](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#references)
 ---
 
-As a follow-up to the earlier GIANT analysis, we have in the directory results from PhenoScanner for the 97 SNPs described in the SUMSTATS repository
-```bash
-module load phenoscanner/phenoscanner_v1.1
-phenoscanner -c All -l No -p 0.00001 -i 97.snps -o 97
-```
 We next work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018), including both the genomewide
 ```bash
 wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
@@ -47,6 +42,14 @@ for(chr in chrs)
   row.names(ps) <- 1:nrow(ps)
   sentinels(ps,"BMI",1)
 }
+```
+
+## Annotation
+
+As a follow-up to the earlier GIANT analysis, we have in the directory results from PhenoScanner for the 97 SNPs described in the SUMSTATS repository
+```bash
+module load phenoscanner/phenoscanner_v1.1
+phenoscanner -c All -l No -p 0.00001 -i 97.snps -o 97
 ```
 
 ## Pathway analysis
