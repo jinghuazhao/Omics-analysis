@@ -1,12 +1,17 @@
 # T2D
 
+---
+* [Pathway analysis]()
+* [mtCOJO analysis]()
+---
+
 The diagram summary statistics used in the BMI-T2D analysis is available from http://www.diagram-consortium.org/downloads.html. It is necessary to check the box in front of "I agree with the terms above." to download the file, `TransEthnic_T2D_GWAS.MegaMeta.2014OCT16.zip`, so
 ```bash
 unzip  TransEthnic_T2D_GWAS.MegaMeta.2014OCT16.zip 
 ```
 gives `diagram.mega-meta.txt`.
 
-## --- Pathway analysis ---
+## Pathway analysis
 
 As before we prepare for DEPICT file,
 ```bash
@@ -19,7 +24,7 @@ awk '{
 ```
 and [T2D.cfg](T2D.cfg) slightly changed from its BMI counterpart.
 
-## --- mtCOJO analysis ---
+## mtCOJO analysis
 
 For this analysis, the latest version of GCTA is required. To imitate the documentation script, we regenerate the `bmi_test.raw` as follows
 ```bash
