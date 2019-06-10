@@ -1,5 +1,10 @@
 # CAD/MI
 
+---
+* [Pathway analysis]()
+* [MR]()
+---
+
 The summary statistics is from http://www.cardiogramplusc4d.org/, notably
 * [CARDIoGRAM GWA meta-analysis](http://www.cardiogramplusc4d.org/media/cardiogramplusc4d-consortium/data-downloads/cardiogram_gwas_results.zip)
 
@@ -20,7 +25,7 @@ unzip cad.additive.Oct2015.pub.zip
 ```
 giving `cad.add.160614.website.txt.
 
-## -- Pathway analysis --
+## Pathway analysis
 
 MAGMA is illustrated here,
 
@@ -47,7 +52,7 @@ magma --bfile g1000_eur --pval CAD.pval ncol=NOBS --gene-annot CAD.genes.annot -
 magma --gene-results CAD.genes.raw --set-annot msigdb.v6.2.entrez.gmt self-contained --model fwer --out CAD
 ```
 
-## -- MR --
+## MR
 
 We examine MMP-12 and CAD as in the Nature paper, the input data is generated with [MMP12.sh](MMP12.sh).
 
