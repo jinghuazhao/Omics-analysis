@@ -1,9 +1,10 @@
 # BMI
 
 ---
+* [Independent signals]()
 * [Pathway analysis](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#pathway-analysis)
-* [Partitioned heritabilty](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#partitioned-heritability)
-* [Mendelian Randomisation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#mendlelian-randomisation)
+* [Partitioned heritabilty](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#partitioned-heritabilty)
+* [Mendelian Randomisation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#mendelian-randomisation)
 * [TWAS](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#twas)
 * [References](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#references)
 ---
@@ -18,6 +19,35 @@ We next work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018), inclu
 wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
 ```
 and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded below on the fly. We would refer to [software-notes](https://github.com/jinghuazhao/software-notes) where information specific software can be seen from their respective directories.
+
+## Independent signals
+```bash
+(
+  zcat Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz | \
+  head -1
+  zcat Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz | \
+  awk '(NR>1 && $9<=1e-8)' | \
+  sort -k1,1n -k2,2n
+) > BMI.dat
+```
+where `BMI.R` selects independent signals as follows,
+```r
+module load gcc/5.2.0
+R --no-save -q < BMI.R > BMI.out
+options(echo=FALSE)
+BMI <- read.delim("BMI.dat",as.is=TRUE)
+require(reshape)
+BMI <- rename(BMI,c(CHR="Chrom",POS="End",SNP="MarkerName",BETA="Effect",SE="StdErr",P="P.value"))
+require(gap)
+chrs <- with(BMI,unique(Chrom))
+for(chr in chrs)
+{
+  print(chr)
+  ps <- subset(BMI[c("Chrom","End","MarkerName","Effect","StdErr","P.value")],Chrom==chr)
+  row.names(ps) <- 1:nrow(ps)
+  sentinels(ps,"BMI",1)
+}
+```
 
 ## Pathway analysis
 
