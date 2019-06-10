@@ -41,7 +41,7 @@ for(chr in chrs)
   print(chr)
   ps <- subset(BMI[c("Chrom","End","MarkerName","Effect","StdErr","P.value")],Chrom==chr)
   row.names(ps) <- 1:nrow(ps)
-  sentinels(ps,"BMI",1)
+  sentinels(ps,chr,1)
 }
 ```
 
