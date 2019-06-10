@@ -31,7 +31,7 @@ and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded b
 ) > BMI.dat
 module load gcc/5.2.0
 ```
-where the `module` command prepares for appropriate version of R is enabled and `BMI.R` selects independent signals as follows,
+where the `module` command prepares for appropriate version of R to be enabled and `BMI.R` selects independent signals as follows,
 ```r
 R --no-save -q < BMI.R > BMI.out
 options(echo=FALSE)
