@@ -1,8 +1,8 @@
 # CAD/MI
 
 ---
-* [Pathway analysis]()
-* [MR]()
+* [Pathway analysis](https://github.com/jinghuazhao/Omics-analysis/tree/master/CAD#pathway-analysis)
+* [MR](https://github.com/jinghuazhao/Omics-analysis/tree/master/CAD#mr)
 ---
 
 The summary statistics is from http://www.cardiogramplusc4d.org/, notably
