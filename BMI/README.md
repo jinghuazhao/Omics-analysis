@@ -1,5 +1,13 @@
 # BMI
 
+---
+* [Pathway analysis]()
+* [Partitioned heritabilty]()
+* [Mendelian Randomisation]()
+* [TWAS]()
+* [References]()
+---
+
 As a follow-up to the earlier GIANT analysis, we have in the directory results from PhenoScanner for the 97 SNPs described in the SUMSTATS repository
 ```bash
 module load phenoscanner/phenoscanner_v1.1
@@ -11,7 +19,7 @@ wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-ana
 ```
 and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded below on the fly. We would refer to [software-notes](https://github.com/jinghuazhao/software-notes) where information specific software can be seen from their respective directories.
 
-## --- Pathway analysis ---
+## Pathway analysis
 
 ```bash
 gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | awk '
@@ -39,7 +47,7 @@ We then generate [BMI.xlsx](BMI.xlsx) as in [PW-pipelne](https://github.com/jing
 
 This is detailed from [PW-pipeline/wiki](https://github.com/jinghuazhao/PW-pipeline/wiki) for the analysis.
 
-## --- Partitioned heritabilty ---
+## Partitioned heritabilty
 
 Information for the documentation example is available from [software-notes](https://github.com/jinghuazhao/software-notes/). Here we carry on with the .gz file above.
 ```bash
@@ -68,7 +76,7 @@ python ldsc.py --h2 ldsc.sumstats.gz\
 for [ldsc_baseline.results](ldsc_CNS.results) and [ldsc_baseline.log](ldsc_CNS.log).
 
 
-## --- Mendelian Randomisation ---
+## Mendelian Randomisation
 
 A documented example on BMI-lung cancer is adapted in [software-notes](https://github.com/jinghuazhao/software-notes) but our focus here is on BMI-T2D from DIAGRAM,
 ```bash
@@ -77,7 +85,7 @@ R --no-save -q < MR.R > MR.log
 ```
 and call [MR.R](MR.R) to generate [MR.log](MR.log) and [MR.pdf](MR.pdf).
 
-## --- TWAS ---
+## TWAS
 
 We start with `MetaXcan` as follows,
 ```bash
