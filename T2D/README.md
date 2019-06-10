@@ -1,8 +1,8 @@
 # T2D
 
 ---
-* [Pathway analysis]()
-* [mtCOJO analysis]()
+* [Pathway analysis](https://github.com/jinghuazhao/Omics-analysis/tree/master/T2D#pathway-analysis)
+* [mtCOJO analysis](https://github.com/jinghuazhao/Omics-analysis/tree/master/T2D#mtcojo-analysis)
 ---
 
 The diagram summary statistics used in the BMI-T2D analysis is available from http://www.diagram-consortium.org/downloads.html. It is necessary to check the box in front of "I agree with the terms above." to download the file, `TransEthnic_T2D_GWAS.MegaMeta.2014OCT16.zip`, so
