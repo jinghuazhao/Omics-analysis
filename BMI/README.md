@@ -31,7 +31,7 @@ R --no-save -q < BMI.R > BMI.out
 where the `module` command prepares for appropriate version of R to be enabled and `BMI.R` selects independent signals as follows,
 ```r
 options(echo=FALSE)
-BMI <- read.delim("BMI.dat",as.is=TRUE)
+BMI <- read.delim("BMI.dat",as.is=TRUE)[c("CHR","POS","SNP","BETA","SE","P")]
 require(reshape)
 BMI <- rename(BMI,c(CHR="Chrom",POS="End",SNP="MarkerName",BETA="Effect",SE="StdErr",P="P.value"))
 require(gap)
