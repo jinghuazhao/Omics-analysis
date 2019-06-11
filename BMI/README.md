@@ -26,10 +26,10 @@ and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded b
   sort -k1,1n -k2,2n
 ) > BMI.dat
 module load gcc/5.2.0
+R --no-save -q < BMI.R > BMI.out
 ```
 where the `module` command prepares for appropriate version of R to be enabled and `BMI.R` selects independent signals as follows,
 ```r
-R --no-save -q < BMI.R > BMI.out
 options(echo=FALSE)
 BMI <- read.delim("BMI.dat",as.is=TRUE)
 require(reshape)
