@@ -1,4 +1,4 @@
-# BMI
+<img src="BMI.png" width="200" height="200" align="right">
 
 ---
 * [Visualisation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#visualisation)
