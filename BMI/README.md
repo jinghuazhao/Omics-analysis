@@ -23,9 +23,9 @@ The first thing is to see the Manhattan plot; in this case the P values could be
 truncated version.
 ```r
 gz <- gzfile("Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz")
+BMI <- within(read.delim(gz,as.is=TRUE), {Z <- BETA/SE})
 library(Rmpfr)
 within(subset(BMI, P==0), {P <- format(2*pnorm(mpfr(abs(BETA/SE),100),lower.tail=FALSE))})
-BMI <- within(read.delim(gz,as.is=TRUE), {Z <- BETA/SE})
 library(gap)
 png("BMI.png", res=300, units="in", width=9, height=6)
 par(oma=c(0,0,0,0), mar=c(5,6.5,1,1))
