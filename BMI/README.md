@@ -1,6 +1,7 @@
 # BMI
 
 ---
+* [Visualisation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#visualisation)
 * [Independent signals](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#independent-signals)
 * [Annotation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#annotation)
 * [Pathway analysis](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#pathway-analysis)
@@ -15,6 +16,30 @@ We next work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018), inclu
 wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
 ```
 and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded below on the fly. We would refer to [software-notes](https://github.com/jinghuazhao/software-notes) where information specific software can be seen from their respective directories.
+
+### Visualisation
+
+The first thing is to see the Manhattan plot; in this case the P values could be extremely small and we resort to a
+truncated version.
+```r
+gz <- gzfile("Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz")
+library(Rmpfr)
+within(subset(BMI, P==0), {P <- format(2*pnorm(mpfr(abs(BETA/SE),100),lower.tail=FALSE))})
+BMI <- within(read.delim(gz,as.is=TRUE), {Z <- BETA/SE})
+png("BMI.png", res=300, units="in", width=9, height=6)
+par(oma=c(0,0,0,0), mar=c(5,6.5,1,1))
+mhtplot.trunc(BMI, chr="CHR", bp="POS", p="P", snp="SNP", z = "Z",
+              suggestiveline=FALSE, genomewideline=-log10(1e-8), logp = TRUE,
+              cex.mtext=2, cex.text=0.7,
+              mtext.line=4, y.brk1=200, y.brk2=280, cex.axis=2, cex.y=2, cex=2,
+              y.ax.space=20,
+              col = c("blue4", "skyblue")
+)
+dev.off()
+```
+Note especially those P values equal to zero -- from R/Rmpfr the minimum is approximately 1e-450. Nevertheless, it is safer
+to generate -log10(P) on the fly -- indeed chromosome.16 stands out which would not be so should we restrict ourselves only
+to nonzero P values.
 
 ## Independent signals
 ```bash
