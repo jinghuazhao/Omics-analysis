@@ -26,20 +26,19 @@ gz <- gzfile("Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz")
 BMI <- within(read.delim(gz,as.is=TRUE), {Z <- BETA/SE})
 library(Rmpfr)
 within(subset(BMI, P==0), {P <- format(2*pnorm(mpfr(abs(BETA/SE),100),lower.tail=FALSE))})
-library(gap)
 png("BMI.png", res=300, units="in", width=9, height=6)
 par(oma=c(0,0,0,0), mar=c(5,6.5,1,1))
 mhtplot.trunc(BMI, chr="CHR", bp="POS", p="P", snp="SNP", z = "Z",
               suggestiveline=FALSE, genomewideline=-log10(1e-8), logp = TRUE,
-              cex.mtext=2, cex.text=0.7,
-              mtext.line=4, y.brk1=200, y.brk2=280, cex.axis=2, cex.y=2, cex=0.5,
+              cex.mtext=0.6, cex.text=0.7,
+              mtext.line=4, y.brk1=200, y.brk2=280, cex.axis=0.6, cex.y=0.6, cex=0.5,
               y.ax.space=20,
               col = c("blue4", "skyblue")
 )
 dev.off()
 ```
-Note especially those P values equal to zero -- from R/Rmpfr the minimum is approximately 1e-450. Nevertheless, it is safer
-to generate -log10(P) on the fly -- indeed chromosome.16 stands out which would not be so should we restrict ourselves only
+Note especially those P values equal to zero -- from `R/Rmpfr` the minimum is approximately 1e-450. Nevertheless, it is safer
+to generate -log10(P) on the fly -- in [the plot](BMI.png) chromosome.16 stands out which would not be so should we restrict ourselves only
 to nonzero P values.
 
 ## Independent signals
