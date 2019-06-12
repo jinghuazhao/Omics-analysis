@@ -66,7 +66,7 @@ chrs <- with(BMI,unique(Chrom))
 for(chr in chrs)
 {
   print(chr)
-  ps <- subset(BMI[c("Chrom","End","MarkerName","Effect","StdErr","P.value")],Chrom==chr)
+  ps <- subset(BMI[c("Chrom","End","MarkerName","Effect","StdErr")],Chrom==chr)
   row.names(ps) <- 1:nrow(ps)
   sentinels(ps,chr,1)
 }
