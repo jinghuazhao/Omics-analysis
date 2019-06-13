@@ -89,7 +89,7 @@ It is noted that awk has problem dealing with very small values and the code is 
 
 R --no-save -q < BMI.R > BMI.out
 ```
-Then BMI.out has 632 entries instead of 626, i.e., six were recovered. Note also the magic value is obtained from `qnorm(1-0.5e-8)` from R.
+Then BMI.out has 632 entries instead of 626, i.e., six were recovered. Note also the magic value 5.730729 is obtained from `qnorm(1-0.5e-8)` from R.
 
 ## Annotation
 
