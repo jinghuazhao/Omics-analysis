@@ -2,7 +2,7 @@
 
 Omics projects of several traits
 
-Seeding comprehensive analysis in their named directories (e.g., [BMI](BMI)), the repository links to technical issues documented in [physalia](https://github.com/jinghuazhao/physalia), [Mixed-Models](https://github.com/jinghuazhao/Mixed-Models), [software-notes](https://github.com/jinghuazhao/software-notes) and oher sister repositories: 
+Seeding comprehensive analysis in their named directories (e.g., [BMI](BMI)), the repository links to technical issues documented in [physalia](https://github.com/jinghuazhao/physalia), [Mixed-Models](https://github.com/jinghuazhao/Mixed-Models), [software-notes](https://github.com/jinghuazhao/software-notes) and other sister repositories: 
 [SUMSTATS](https://github.com/jinghuazhao/SUMSTATS),
 [FM-pipeline](https://github.com/jinghuazhao/FM-pipeline),
 [PW-pipeline](https://github.com/jinghuazhao/PW-pipeline),
