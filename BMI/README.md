@@ -71,6 +71,25 @@ for(chr in chrs)
   sentinels(ps,chr,1)
 }
 ```
+It is noted that awk has problem dealing with very small values and the code is altered slightly as follows,
+```bash
+(
+  zcat Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz | \
+  head -1
+  zcat Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz | \
+  awk '
+    function abs(x)
+    {
+      if (x<0) return -x;
+      else return x;
+    }
+    (NR>1 && abs($7/$8) >= 5.730729)' | \
+  sort -k1,1n -k2,2n
+) > BMI.dat
+
+R --no-save -q < BMI.R > BMI.out
+```
+Then BMI.out has 632 entries instead of 626, i.e., six were recovered. Note also the magic value is obtained from `qnorm(1-0.5e-8)` from R.
 
 ## Annotation
 
