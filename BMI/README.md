@@ -2,6 +2,8 @@
 
 <img src="BMI.png" width="600" height="400" align="right">
 
+---
+
 * [Visualisation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#visualisation)
 * [Independent signals](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#independent-signals)
 * [Annotation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#annotation)
@@ -10,6 +12,8 @@
 * [Mendelian Randomisation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#mendelian-randomisation)
 * [TWAS](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#twas)
 * [References](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#references)
+
+---
 
 We next work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018), including both the genomewide
 ```bash
