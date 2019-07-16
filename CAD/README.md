@@ -98,7 +98,7 @@ echo $INF/INTERVAL/INTERVAL > gsmr_ref_data
 echo IL.6 $INF/work/IL.6.ma > gsmr_exposure
 echo CAD gsmr_outcome.txt > gsmr_outcome
 
-gcta-1.9 --mbfile gsmr_ref_data --gsmr-file gsmr_exposure gsmr_outcome --gsmr-direction 0 --out gsmr_result
+gcta-1.9 --mbfile gsmr_ref_data --gsmr-file gsmr_exposure gsmr_outcome --gsmr-direction 0 --effect-plot --out gsmr_result
 
 R --no-save -q <<END
   source("http://cnsgenomics.com/software/gcta/static/gsmr_plot.r")
