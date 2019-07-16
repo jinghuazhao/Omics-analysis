@@ -108,3 +108,5 @@ R --no-save -q <<END
 END
 ```
 where we use IL.6 as exposure data; the effect-size plots are generated.
+
+Note that `gcta-1.9` indcates GCTA 1.9.x is necessary since the `--mfile` option is not recognised by GCTA 1.26.0.
