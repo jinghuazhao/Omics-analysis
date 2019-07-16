@@ -1,8 +1,8 @@
 # CAD/MI
 
 ---
-* [Pathway analysis](https://github.com/jinghuazhao/Omics-analysis/tree/master/CAD#pathway-analysis)
 * [MR](https://github.com/jinghuazhao/Omics-analysis/tree/master/CAD#mr)
+* [Pathway analysis](https://github.com/jinghuazhao/Omics-analysis/tree/master/CAD#pathway-analysis)
 ---
 
 The summary statistics is from http://www.cardiogramplusc4d.org/, notably
@@ -24,33 +24,6 @@ wget http://www.cardiogramplusc4d.org/media/cardiogramplusc4d-consortium/data-do
 unzip cad.additive.Oct2015.pub.zip
 ```
 giving `cad.add.160614.website.txt.
-
-## Pathway analysis
-
-MAGMA is illustrated here,
-
-The GWAS summary data can either be formatted with R,
-```r
-R --no-save <<END
-d <- read.delim("`cad.add.160614.website.txt",as.is=TRUE)
-db <- "CAD"
-write.table(d[c("SNP","CHR","BP")],file=paste0(db,".snploc"),quote=FALSE,row.name=FALSE,col.names=FALSE,sep="\t")
-write.table(d[c("SNP","P","NOBS")],file=paste0(db,".pval"),quote=FALSE,row.name=FALSE,sep="\t")
-END
-```
-or more efficiently with bash before pathway analysis
-```bash
-awk -vOFS="\t" '{print $2,$1,$4}' g1000_eur.bim > g1000_eur.snploc
-awk -vOFS="\t" '{if(NR==1) print "SNP", "P", "NOBS"; else print $1,$11,1000}' `cad.add.160614.website.txt > CAD.pval
-
-# Annotation
-magma --annotate window=50,50 --snp-loc g1000_eur.snploc --gene-loc NCBI37.3.gene.loc --out CAD
-# Gene analysis - SNP p-values
-magma --bfile g1000_eur --pval CAD.pval ncol=NOBS --gene-annot CAD.genes.annot --out CAD
-# Pathway analysis
-# http://software.broadinstitute.org/gsea/downloads.jsp
-magma --gene-results CAD.genes.raw --set-annot msigdb.v6.2.entrez.gmt self-contained --model fwer --out CAD
-```
 
 ## MR
 
@@ -110,3 +83,30 @@ END
 where we use IL.6 as exposure data; the effect-size plots are generated.
 
 Note that `gcta-1.9` indcates GCTA 1.9.x is necessary since the `--mfile` option is not recognised by GCTA 1.26.0.
+
+## Pathway analysis
+
+MAGMA is illustrated here,
+
+The GWAS summary data can either be formatted with R,
+```r
+R --no-save <<END
+d <- read.delim("`cad.add.160614.website.txt",as.is=TRUE)
+db <- "CAD"
+write.table(d[c("SNP","CHR","BP")],file=paste0(db,".snploc"),quote=FALSE,row.name=FALSE,col.names=FALSE,sep="\t")
+write.table(d[c("SNP","P","NOBS")],file=paste0(db,".pval"),quote=FALSE,row.name=FALSE,sep="\t")
+END
+```
+or more efficiently with bash before pathway analysis
+```bash
+awk -vOFS="\t" '{print $2,$1,$4}' g1000_eur.bim > g1000_eur.snploc
+awk -vOFS="\t" '{if(NR==1) print "SNP", "P", "NOBS"; else print $1,$11,1000}' `cad.add.160614.website.txt > CAD.pval
+
+# Annotation
+magma --annotate window=50,50 --snp-loc g1000_eur.snploc --gene-loc NCBI37.3.gene.loc --out CAD
+# Gene analysis - SNP p-values
+magma --bfile g1000_eur --pval CAD.pval ncol=NOBS --gene-annot CAD.genes.annot --out CAD
+# Pathway analysis
+# http://software.broadinstitute.org/gsea/downloads.jsp
+magma --gene-results CAD.genes.raw --set-annot msigdb.v6.2.entrez.gmt self-contained --model fwer --out CAD
+```
