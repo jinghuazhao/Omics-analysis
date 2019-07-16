@@ -31,10 +31,11 @@ awk '
 # 13 n_studies
 
 export INF=/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/INF
-export gsmr_exposure=$INF/work/IL.6.ma
-
 echo $INF/INTERVAL/INTERVAL > gsmr_ref_data
-gcta-1.9 --mbfile gsmr_ref_data --gsmr-file $gsmr_exposure gsmr_outcome.txt --gsmr-direction 0 --out gsmr_result
+echo IL.6 $INF/work/IL.6.ma > gsmr_exposure
+echo CAD gsmr_outcome.txt > gsmr_outcome
+
+gcta-1.9 --mbfile gsmr_ref_data --gsmr-file gsmr_exposure gsmr_outcome --gsmr-direction 0 --out gsmr_result
 
 R --no-save -q <<END
   source("http://cnsgenomics.com/software/gcta/static/gsmr_plot.r")
