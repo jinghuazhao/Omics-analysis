@@ -12,3 +12,5 @@ Seeding comprehensive analysis in their named directories (e.g., [BMI](BMI)), th
 for fine-mapping, pathway analysis, TWAS, Mendelian randomisation, predictive analytics and other topics as highlighted in the [wiki page](https://github.com/jinghuazhao/Omics-analysis/wiki).
 
 Earlier or broader aspects have been reflected in the following repositories: [Haplotype-Analysis](https://github.com/jinghuazhao/Haplotype-Analysis), [misc](https://github.com/jinghuazhao/misc), [R](https://github.com/jinghuazhao/R).
+
+External links, https://github.com/Nealelab/UK_Biobank_GWAS.
