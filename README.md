@@ -13,4 +13,9 @@ for fine-mapping, pathway analysis, TWAS, Mendelian randomisation, predictive an
 
 Earlier or broader aspects have been reflected in the following repositories: [Haplotype-Analysis](https://github.com/jinghuazhao/Haplotype-Analysis), [misc](https://github.com/jinghuazhao/misc), [R](https://github.com/jinghuazhao/R).
 
-External links, https://github.com/Nealelab/UK_Biobank_GWAS and http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf.
+External links, UKBiobank:
+
+* AMS, https://www.ukbiobank.ac.uk/wp-content/uploads/2019/09/Access_019-Access-Management-System-User-Guide-V4.0.pdf
+* Accessing data guide, http://biobank.ctsu.ox.ac.uk/crystal/exinfo.cgi?src=AccessingData
+* Imputation, http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf
+* GWAS sumstats, https://github.com/Nealelab/UK_Biobank_GWAS 
