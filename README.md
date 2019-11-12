@@ -1,6 +1,6 @@
 # Omics-analysis
 
-Omics projects of several traits
+## Omics projects of several traits
 
 Seeding comprehensive analysis in their named directories (e.g., [BMI](BMI)), the repository links to technical issues documented in [physalia](https://github.com/jinghuazhao/physalia), [Mixed-Models](https://github.com/jinghuazhao/Mixed-Models), [software-notes](https://github.com/jinghuazhao/software-notes) and other sister repositories: 
 [SUMSTATS](https://github.com/jinghuazhao/SUMSTATS),
@@ -13,7 +13,7 @@ for fine-mapping, pathway analysis, TWAS, Mendelian randomisation, predictive an
 
 Earlier or broader aspects have been reflected in the following repositories: [Haplotype-Analysis](https://github.com/jinghuazhao/Haplotype-Analysis), [misc](https://github.com/jinghuazhao/misc), [R](https://github.com/jinghuazhao/R).
 
-Gene annotation,
+## Gene annotation
 
 ```r
 library(biomaRt)
@@ -23,7 +23,7 @@ filter <- listFilters(ensembl)
 gene <- getBM(attributes = c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol'), mart = ensembl)
 ```
 
-External links, UKBiobank:
+## External links, UKBiobank:
 
 * AMS, https://www.ukbiobank.ac.uk/wp-content/uploads/2019/09/Access_019-Access-Management-System-User-Guide-V4.0.pdf
 * Accessing data guide, http://biobank.ctsu.ox.ac.uk/crystal/exinfo.cgi?src=AccessingData
