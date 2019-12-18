@@ -1,8 +1,10 @@
 # Omics-analysis
 
-<img src="eQTL/eQTL.png" width="400" height="450" align="right">
+<img src="eQTL/eQTL.png" width="400" height="500" align="right">
 
 ## Power of eQTL studies
+
+This is according to [eQTL.R](eQTL/eQTL.R).
 
 ## Omics projects of several traits
 
