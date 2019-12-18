@@ -1,6 +1,6 @@
 # Omics-analysis
 
-<img src="eQTL/eQTL.png" width="400" height="500" align="right">
+<img src="eQTL/eQTL.png" width="300" height="500" align="right">
 
 ## Power of eQTL studies
 
