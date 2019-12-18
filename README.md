@@ -1,4 +1,4 @@
-<img src="eQTL/eQTL.png" height="350" width="400" align="right">
+<img src="eQTL/eQTL.png" height="400" width="500" align="right">
 
 ## Power of eQTL studies
 
