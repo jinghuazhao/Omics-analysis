@@ -1,7 +1,7 @@
 # 18-12-2019 JHZ
 
-m <- 6
-designs <- 1:6
+n.designs <- 6
+designs <- 1:n.designs
 N <- 50 * designs
 n.grids <- 100
 
@@ -15,7 +15,7 @@ require(powerEQTL)
 png("eQTL.png", res=300, height=4.5, width=6, units="in")
 plot(MAF,grids,type="n",ylab="Power")
 mtext(expression(paste("Power Estimation for eQTL Studies of 240 SNPs (",alpha," = 0.05)")),1,line=4.5)
-colors <- hcl.colors(m)
+colors <- hcl.colors(n.designs)
 for (design in designs)
 {
   power.SLR <- rep(NA,n.grids)
