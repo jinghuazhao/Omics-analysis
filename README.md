@@ -25,7 +25,7 @@ gene <- getBM(attributes = c('ensembl_gene_id', 'chromosome_name', 'start_positi
 
 ## Power of eQTL studies
 
-An example is shown with [eQTL.png](eQTL/eQTL.png).
+![Power of eQTL study by SLR](eQTL/eQTL.png).
 
 ## External links, UKBiobank
 
