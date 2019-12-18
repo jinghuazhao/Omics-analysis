@@ -1,7 +1,5 @@
 <img src="eQTL/eQTL.png" height="350" width="400" align="right">
 
-# Omics-analysis
-
 ## Power of eQTL studies
 
 This is according to [eQTL.R](eQTL/eQTL.R).
