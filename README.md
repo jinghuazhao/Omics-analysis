@@ -2,7 +2,7 @@
 
 ## Power of eQTL studies
 
-![Power of eQTL study by SLR](eQTL/eQTL.png).
+<img src="eQTL/eQTL.png" width="300" height="300" align="right">
 
 ## Omics projects of several traits
 
