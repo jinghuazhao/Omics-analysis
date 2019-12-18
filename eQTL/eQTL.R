@@ -12,7 +12,7 @@ MAF <- c(0.5, 1.0, 2.0, 5.0, 10.0, 20.0)/100
 MAF <- seq(0.005, n.grids/2, by=0.5) / n.grids
 
 require(powerEQTL)
-png("eQTL.png", res=300, height=5, width=3.5, units="in")
+png("eQTL.png", res=300, height=6, width=6, units="in")
 plot(MAF,grids,type="n",ylab="Power")
 title(main=expression(paste("Power Estimation for eQTL Studies of 240 SNPs (",alpha," = 0.05)")))
 colors <- hcl.colors(m)
@@ -21,11 +21,12 @@ for (design in designs)
   power.SLR <- rep(NA,n.grids)
   for (j in index) power.SLR[j] <- powerEQTL.SLR(MAF = MAF[j], typeI = 0.05, nTests = 240, slope = 0.13,
                                                  myntotal = N[design], mystddev = 0.13, verbose = FALSE)
+# As in INF/doc:
 #  power.ANOVA2 <- rep(NA,n.grids)
 #  for (j in index) power.ANOVA2[j] <- powerEQTL.ANOVA2(effsize = 0.8,
 #                                                       MAF = MAF[j], typeI = 0.05, nTests = 240,
 #                                                       myntotal = N[design], verbose = FALSE)
   lines(MAF,power.SLR,col=colors[design])
 }
-legend("topleft", inset=.02, title="Sample size (N)", paste(N), col=colors, horiz=FALSE, cex=0.8, lty=designs)
+legend("bottomright", inset=.02, title="Sample size (N)", paste(N), col=colors, horiz=FALSE, cex=0.8, lty=designs)
 dev.off()
