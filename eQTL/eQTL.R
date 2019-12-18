@@ -1,4 +1,4 @@
-# 17-12-2019 JHZ
+# 18-12-2019 JHZ
 
 m <- 6
 designs <- 1:6
@@ -8,13 +8,13 @@ n.grids <- 100
 index <- 1:n.grids
 grids <- index / n.grids
 
-MAF <- c(0.5, 1.0, 2.0, 5.0, 10.0, 20.0)/100
+# MAF <- c(0.5, 1.0, 2.0, 5.0, 10.0, 20.0)/100
 MAF <- seq(0.005, n.grids/2, by=0.5) / n.grids
 
 require(powerEQTL)
 png("eQTL.png", res=300, height=4.5, width=6, units="in")
 plot(MAF,grids,type="n",ylab="Power")
-title(main=expression(paste("Power Estimation for eQTL Studies of 240 SNPs (",alpha," = 0.05)")))
+mtext(expression(paste("Power Estimation for eQTL Studies of 240 SNPs (",alpha," = 0.05)")),1,line=4.5)
 colors <- hcl.colors(m)
 for (design in designs)
 {
