@@ -1,5 +1,9 @@
 # Omics-analysis
 
+## Power of eQTL studies
+
+![Power of eQTL study by SLR](eQTL/eQTL.png).
+
 ## Omics projects of several traits
 
 Seeding comprehensive analysis in their named directories (e.g., [BMI](BMI)), the repository links to technical issues documented in [physalia](https://github.com/jinghuazhao/physalia), [Mixed-Models](https://github.com/jinghuazhao/Mixed-Models), [software-notes](https://github.com/jinghuazhao/software-notes) and other sister repositories: 
@@ -22,10 +26,6 @@ attr <- listAttributes(ensembl)
 filter <- listFilters(ensembl)
 gene <- getBM(attributes = c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol'), mart = ensembl)
 ```
-
-## Power of eQTL studies
-
-![Power of eQTL study by SLR](eQTL/eQTL.png).
 
 ## External links, UKBiobank
 
