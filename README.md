@@ -23,6 +23,10 @@ filter <- listFilters(ensembl)
 gene <- getBM(attributes = c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol'), mart = ensembl)
 ```
 
+## Power of eQTL studies
+
+An example is given here [eQTL.png](eQTL/eQTL.png).
+
 ## External links, UKBiobank
 
 * [AMS](http://amsportal.ukbiobank.ac.uk/), https://www.ukbiobank.ac.uk/wp-content/uploads/2019/09/Access_019-Access-Management-System-User-Guide-V4.0.pdf
