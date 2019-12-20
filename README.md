@@ -1,6 +1,6 @@
 <img src="eQTL/eQTL.png" height="400" width="500" align="right">
 
-## Power of eQTL studies
+## Power of eQTL (also pQTL) studies
 
 This is according to [eQTL.R](eQTL/eQTL.R).
 
