@@ -19,6 +19,7 @@ Earlier or broader aspects have been reflected in the following repositories: [H
 
 ## Gene annotation
 
+The following script gives information on genes from ENSEMBL as well as attributes (columns) that contains `gene`.
 ```r
 library(biomaRt)
 ensembl <- useMart("ensembl", dataset="hsapiens_gene_ensembl", host="grch37.ensembl.org", path="/biomart/martservice")
