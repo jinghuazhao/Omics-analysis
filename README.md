@@ -23,8 +23,9 @@ Earlier or broader aspects have been reflected in the following repositories: [H
 library(biomaRt)
 ensembl <- useMart("ensembl", dataset="hsapiens_gene_ensembl", host="grch37.ensembl.org", path="/biomart/martservice")
 attr <- listAttributes(ensembl)
-filter <- listFilters(ensembl)
 gene <- getBM(attributes = c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol'), mart = ensembl)
+filter <- listFilters(ensembl)
+searchFilters(mart = ensembl, pattern = "gene")
 ```
 
 ## UK Biobank and other links
