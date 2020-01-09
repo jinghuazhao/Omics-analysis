@@ -1,6 +1,6 @@
 <img src="eQTL/eQTL.png" height="400" width="500" align="right">
 
-This figure was produced with [eQTL.R](eQTL/eQTL.R).
+The figure was produced with [eQTL.R](eQTL/eQTL.R).
 
 ## Omics projects of traits
 
