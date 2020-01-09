@@ -31,6 +31,10 @@ searchFilters(mart = ensembl, pattern = "gene")
 
 LDlink: https://ldlink.nci.nih.gov/?tab=home.
 
+## GTEx
+
+https://www.gtexportal.org/home/
+
 ## UK Biobank and other links
 
 * [AMS](http://amsportal.ukbiobank.ac.uk/), https://www.ukbiobank.ac.uk/wp-content/uploads/2019/09/Access_019-Access-Management-System-User-Guide-V4.0.pdf
