@@ -29,9 +29,9 @@ filter <- listFilters(ensembl)
 searchFilters(mart = ensembl, pattern = "gene")
 ```
 
-## LDlink
+## Linkage disequilibrium
 
-This is https://ldlink.nci.nih.gov/?tab=home.
+LDlink: https://ldlink.nci.nih.gov/?tab=home.
 
 ## UK Biobank and other links
 
