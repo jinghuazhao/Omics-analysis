@@ -15,7 +15,9 @@ for fine-mapping, pathway analysis, TWAS, Mendelian randomisation, predictive an
 
 Earlier or broader aspects have been reflected in the following repositories: [Haplotype-Analysis](https://github.com/jinghuazhao/Haplotype-Analysis), [misc](https://github.com/jinghuazhao/misc), [R](https://github.com/jinghuazhao/R).
 
-## Gene annotation
+## Resources
+
+### --- Gene annotation ---
 
 The following script gives information on genes from ENSEMBL as well as attributes (columns) that contains `gene`.
 ```r
@@ -27,13 +29,21 @@ filter <- listFilters(ensembl)
 searchFilters(mart = ensembl, pattern = "gene")
 ```
 
-## Linkage disequilibrium
+### --- Linkage disequilibrium ---
 
 LDlink: https://ldlink.nci.nih.gov/?tab=home.
 
-## GTEx
+### --- GTEx ---
 
 https://www.gtexportal.org/home/
+
+### --- PredictDB data repository ---
+
+http://predictdb.org/
+
+### --- TWAS-fusion ---
+
+http://gusevlab.org/projects/fusion/
 
 ## UK Biobank and other links
 
