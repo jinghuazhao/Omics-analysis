@@ -1,8 +1,6 @@
 <img src="eQTL/eQTL.png" height="400" width="500" align="right">
 
-## Power of eQTL studies
-
-This is according to [eQTL.R](eQTL/eQTL.R).
+This figure shows power of eQTL studies according to [eQTL.R](eQTL/eQTL.R).
 
 ## Omics projects of traits
 
