@@ -45,7 +45,7 @@ http://predictdb.org/
 
 http://gusevlab.org/projects/fusion/
 
-## UK Biobank and other links
+### --- UK Biobank and other links ---
 
 * [AMS](http://amsportal.ukbiobank.ac.uk/), https://www.ukbiobank.ac.uk/wp-content/uploads/2019/09/Access_019-Access-Management-System-User-Guide-V4.0.pdf
 * Accessing data guide, http://biobank.ctsu.ox.ac.uk/crystal/exinfo.cgi?src=AccessingData
