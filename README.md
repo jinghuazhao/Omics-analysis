@@ -1,6 +1,6 @@
 <img src="eQTL/eQTL.png" height="400" width="500" align="right">
 
-## Omics projects of traits
+## Omics projects of complex traits
 
 Seeding comprehensive analysis in their named directories (e.g., [BMI](BMI)), the repository links to technical issues documented in [physalia](https://github.com/jinghuazhao/physalia), [Mixed-Models](https://github.com/jinghuazhao/Mixed-Models), [software-notes](https://github.com/jinghuazhao/software-notes) and other sister repositories: 
 [SUMSTATS](https://github.com/jinghuazhao/SUMSTATS),
