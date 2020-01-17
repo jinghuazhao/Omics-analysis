@@ -45,9 +45,15 @@ http://predictdb.org/
 
 http://www.roadmapepigenomics.org/
 
-### --- TWAS-fusion ---
+### --- TWAS ---
+
+https://github.com/hakyimlab/MetaXcan
 
 http://gusevlab.org/projects/fusion/
+
+### --- GWAS Catalog ---
+
+https://www.ebi.ac.uk/gwas/
 
 ### --- Biobanks and other links ---
 
