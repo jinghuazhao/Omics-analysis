@@ -55,7 +55,7 @@ http://gusevlab.org/projects/fusion/
 
 https://www.ebi.ac.uk/gwas/
 
-### --- Biobanks and other links ---
+### --- Biobanks ---
 
 * UK Biobank
   * [AMS](http://amsportal.ukbiobank.ac.uk/), https://www.ukbiobank.ac.uk/wp-content/uploads/2019/09/Access_019-Access-Management-System-User-Guide-V4.0.pdf
@@ -64,4 +64,8 @@ https://www.ebi.ac.uk/gwas/
   * [GWAS sumstats](http://www.nealelab.is/blog/2019/9/16/biomarkers-gwas-results) and [GitHub](https://github.com/Nealelab/UK_Biobank_GWAS).
 * China Kadoorie Biobank
   * https://www.ckbiobank.org/
+
+### --- Other links ---
+
+* [NCBI account](https://www.ncbi.nlm.nih.gov/myncbi/) ([settings](https://www.ncbi.nlm.nih.gov/account/settings/)).
 * [Institute of Translational Genomics](https://github.com/hmgu-itg).
