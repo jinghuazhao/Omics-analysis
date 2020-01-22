@@ -17,7 +17,7 @@ The figure on the right was produced with [eQTL.R](eQTL/eQTL.R).
 
 ## Resources
 
-### --- Gene annotation ---
+### --- Annotation ---
 
 The following script gives information on genes from ENSEMBL as well as attributes (columns) that contains `gene`.
 ```r
@@ -28,6 +28,7 @@ gene <- getBM(attributes = c('ensembl_gene_id', 'chromosome_name', 'start_positi
 filter <- listFilters(ensembl)
 searchFilters(mart = ensembl, pattern = "gene")
 ```
+See also [https://sites.google.com/site/jpopgen/wgsa](https://sites.google.com/site/jpopgen/wgsa) for precompiled annotation.
 
 ### --- Linkage disequilibrium ---
 
