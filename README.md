@@ -34,6 +34,10 @@ See also [https://sites.google.com/site/jpopgen/wgsa](https://sites.google.com/s
 
 LDlink: https://ldlink.nci.nih.gov/?tab=home.
 
+### --- FUMA GWAS ---
+
+https://fuma.ctglab.nl/
+
 ### --- GTEx ---
 
 https://www.gtexportal.org/home/
