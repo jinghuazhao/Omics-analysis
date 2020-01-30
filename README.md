@@ -42,6 +42,10 @@ https://www.gtexportal.org/home/
 
 http://predictdb.org/
 
+## RegulomeDB ---
+
+http://regulomedb.org/
+
 ### --- Roadmap ---
 
 http://www.roadmapepigenomics.org/
