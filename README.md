@@ -36,7 +36,7 @@ LDlink: https://ldlink.nci.nih.gov/?tab=home.
 
 ### --- FUMA GWAS ---
 
-https://fuma.ctglab.nl/
+https://fuma.ctglab.nl/ (https://github.com/Kyoko-wtnb/FUMA-webapp/)
 
 ### --- GTEx ---
 
