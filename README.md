@@ -71,6 +71,7 @@ https://www.ebi.ac.uk/gwas/
   * Accessing data guide, http://biobank.ctsu.ox.ac.uk/crystal/exinfo.cgi?src=AccessingData.
   * Imputation, http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf.
   * [PHESANT](https://github.com/MRCIEU/PHESANT).
+  * [Showcase User Guide](http://biobank.ctsu.ox.ac.uk/~bbdatan/ShowcaseUserGuide.pdf).
   * [GWAS sumstats](http://www.nealelab.is/blog/2019/9/16/biomarkers-gwas-results) and [GitHub](https://github.com/Nealelab/UK_Biobank_GWAS).
 * China Kadoorie Biobank
   * https://www.ckbiobank.org/.
