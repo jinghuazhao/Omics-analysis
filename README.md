@@ -47,7 +47,7 @@ https://fuma.ctglab.nl/ (https://github.com/Kyoko-wtnb/FUMA-webapp/)
 
 http://predictdb.org/
 
-## RegulomeDB ---
+### --- RegulomeDB ---
 
 http://regulomedb.org/
 
