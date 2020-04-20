@@ -38,7 +38,7 @@ LDlink: https://ldlink.nci.nih.gov/?tab=home.
 
 https://fuma.ctglab.nl/ (https://github.com/Kyoko-wtnb/FUMA-webapp/)
 
-### --- GTEx and eQTLGen---
+### --- GTEx and eQTLGen ---
 
 * https://www.gtexportal.org/home/
 * http://www.eqtlgen.org/
