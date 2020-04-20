@@ -38,9 +38,10 @@ LDlink: https://ldlink.nci.nih.gov/?tab=home.
 
 https://fuma.ctglab.nl/ (https://github.com/Kyoko-wtnb/FUMA-webapp/)
 
-### --- GTEx ---
+### --- GTEx and eQTLGen---
 
-https://www.gtexportal.org/home/
+* https://www.gtexportal.org/home/
+* http://www.eqtlgen.org/
 
 ### --- PredictDB data repository ---
 
