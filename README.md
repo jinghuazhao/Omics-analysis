@@ -83,3 +83,4 @@ https://www.ebi.ac.uk/gwas/
 * [NCBI account](https://www.ncbi.nlm.nih.gov/myncbi/) ([settings](https://www.ncbi.nlm.nih.gov/account/settings/)).
 * [Institute of Translational Genomics](https://github.com/hmgu-itg).
 * [SNiPA](https://snipa.helmholtz-muenchen.de/snipa3/).
+* [genego](https://portal.genego.com/).
