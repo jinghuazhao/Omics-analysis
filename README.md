@@ -43,6 +43,10 @@ https://fuma.ctglab.nl/ (https://github.com/Kyoko-wtnb/FUMA-webapp/)
 * https://www.gtexportal.org/home/
 * http://www.eqtlgen.org/
 
+### --- MR-base ---
+
+http://www.mrbase.org
+
 ### --- PredictDB data repository ---
 
 http://predictdb.org/
