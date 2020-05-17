@@ -24,7 +24,8 @@ The following script gives information on genes from ENSEMBL as well as attribut
 library(biomaRt)
 ensembl <- useMart("ensembl", dataset="hsapiens_gene_ensembl", host="grch37.ensembl.org", path="/biomart/martservice")
 attr <- listAttributes(ensembl)
-gene <- getBM(attributes = c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol'), mart = ensembl)
+attr_select <- c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol', 'transcription_start_site')
+gene <- getBM(attributes = attr_select, mart = ensembl)
 filter <- listFilters(ensembl)
 searchFilters(mart = ensembl, pattern = "gene")
 ```
