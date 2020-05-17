@@ -29,7 +29,13 @@ gene <- getBM(attributes = attr_select, mart = ensembl)
 filter <- listFilters(ensembl)
 searchFilters(mart = ensembl, pattern = "gene")
 ```
-See also [https://sites.google.com/site/jpopgen/wgsa](https://sites.google.com/site/jpopgen/wgsa) for precompiled annotation.
+See also [https://sites.google.com/site/jpopgen/wgsa](https://sites.google.com/site/jpopgen/wgsa) for precompiled annotation. Alternatively, 
+```r
+# GENCODE v19
+url <- "ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_19/gencode.v19.chr_patch_hapl_scaff.annotation.gtf.gz"
+gtf <- rtracklayer::import(url)
+gencode <- as.data.frame(gtf)
+```
 
 ### --- Linkage disequilibrium ---
 
