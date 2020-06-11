@@ -76,6 +76,10 @@ http://gusevlab.org/projects/fusion/
 
 https://www.ebi.ac.uk/gwas/
 
+### --- PGS Catalog ---
+
+https://www.pgscatalog.org/
+
 ### --- Biobanks ---
 
 * UK Biobank
