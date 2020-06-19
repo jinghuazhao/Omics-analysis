@@ -72,6 +72,10 @@ https://github.com/hakyimlab/MetaXcan
 
 http://gusevlab.org/projects/fusion/
 
+### --- eQTL Catalog ---
+
+https://www.ebi.ac.uk/eqtl/
+
 ### --- GWAS Catalog ---
 
 https://www.ebi.ac.uk/gwas/
