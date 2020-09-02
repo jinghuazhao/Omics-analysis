@@ -94,11 +94,13 @@ entrez_db_links("pubmed")
 pubmed_fields <- entrez_db_searchable("pubmed")
 # set_entrez_key("")
 Sys.getenv("ENTREZ_KEY")
+term <- "pQTLs OR (protein AND quantitative AND trait AND loci) AND human [MH] AND plasma"
 r <- entrez_search(db="pubmed",term=term,use_history=TRUE)
 class(r)
 names(r)
 with(r,web_history)
 unlink(paste("pubmed",c("fetch","summary"),sep="."))
+fields <- c("uid", "pubdate", "sortfirstauthor", "title", "source", "volume", "pages")
 for(i in seq(1,with(r,count),50))
 {
   cat(i+49, "records downloaded\r")
