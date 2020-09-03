@@ -116,6 +116,8 @@ asthma_variants <- entrez_link(dbfrom="omim", db="clinvar", cmd="neighbor_histor
 asthma_variants
 snp_links <- entrez_link(dbfrom="clinvar", db="snp", web_history=asthma_variants$web_histories$omim_clinvar, cmd="neighbor_history")
 all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
+# https://cran.r-project.org/web/packages/rentrez/vignettes/rentrez_tutorial.html
+# https://pubmed.ncbi.nlm.nih.gov/
 ```
 
 ### --- Biobanks ---
