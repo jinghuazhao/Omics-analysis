@@ -94,7 +94,7 @@ entrez_db_links("pubmed")
 pubmed_fields <- entrez_db_searchable("pubmed")
 # set_entrez_key("")
 Sys.getenv("ENTREZ_KEY")
-term <- "pQTLs OR (protein AND quantitative AND trait AND loci) AND human [MH] AND plasma"
+term <- "pQTLs OR (protein AND quantitative AND trait AND loci) AND human [MH] AND (plasma OR Serum)"
 r <- entrez_search(db="pubmed",term=term,use_history=TRUE)
 class(r)
 names(r)
