@@ -130,6 +130,7 @@ all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
   * [AMS](http://amsportal.ukbiobank.ac.uk/) (access@ukbiobank.ac.uk), https://www.ukbiobank.ac.uk/wp-content/uploads/2019/09/Access_019-Access-Management-System-User-Guide-V4.0.pdf.
   * Accessing data guide, http://biobank.ctsu.ox.ac.uk/crystal/exinfo.cgi?src=AccessingData.
   * Imputation, http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf.
+  * Geneatlas, http://geneatlas.roslin.ed.ac.uk/.
   * [PHESANT](https://github.com/MRCIEU/PHESANT).
   * [Showcase User Guide](http://biobank.ctsu.ox.ac.uk/~bbdatan/ShowcaseUserGuide.pdf).
   * [GWAS sumstats](http://www.nealelab.is/blog/2019/9/16/biomarkers-gwas-results) and [GitHub](https://github.com/Nealelab/UK_Biobank_GWAS).
