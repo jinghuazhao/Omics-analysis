@@ -124,6 +124,10 @@ snp_links <- entrez_link(dbfrom="clinvar", db="snp", web_history=asthma_variants
 all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
 ```
 
+### --- TWAS-hub ---
+
+http://twas-hub.org/
+
 ### --- Biobanks ---
 
 * UK Biobank
