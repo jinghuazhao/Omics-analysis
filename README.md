@@ -180,6 +180,7 @@ http://twas-hub.org/
   * https://www.ckbiobank.org/.
 * Japan Biobank
   * https://biobankjp.org/
+  * https://humandbs.biosciencedbc.jp/en/hum0014-v21
 
 ### --- Other links ---
 
