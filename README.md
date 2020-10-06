@@ -178,6 +178,8 @@ http://twas-hub.org/
   * COVID-19 [data](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19), [format](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19_tests) and [field](http://biobank.ctsu.ox.ac.uk/ukb/field.cgi?id=40100).
 * China Kadoorie Biobank
   * https://www.ckbiobank.org/.
+* Japan Biobank
+  * https://biobankjp.org/
 
 ### --- Other links ---
 
