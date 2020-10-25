@@ -22,6 +22,9 @@ The figure on the right was produced with [eQTL.R](eQTL/eQTL.R).
 The following script gives information on genes from ENSEMBL as well as attributes (columns) that contains `gene`.
 ```r
 library(biomaRt)
+listMarts()
+mart <- useMart("ENSEMBL_MART_FUNCGEN")
+listDatasets(mart)
 mart <- useMart("ensembl")
 listDatasets(mart)
 ensembl <- useMart("ensembl", dataset="hsapiens_gene_ensembl", host="grch37.ensembl.org", path="/biomart/martservice")
