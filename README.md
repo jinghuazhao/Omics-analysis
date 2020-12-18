@@ -190,6 +190,6 @@ http://twas-hub.org/
 ### --- Other links ---
 
 * [NCBI account](https://www.ncbi.nlm.nih.gov/myncbi/) ([settings](https://www.ncbi.nlm.nih.gov/account/settings/)).
-* [Institute of Translational Genomics](https://github.com/hmgu-itg).
+* [Institute of Translational Genomics](https://github.com/hmgu-itg) and [omicscience](https://omicscience.org/).
 * [SNiPA](https://snipa.helmholtz-muenchen.de/snipa3/).
 * [genego](https://portal.genego.com/).
