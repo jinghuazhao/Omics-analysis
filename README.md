@@ -89,7 +89,7 @@ https://fuma.ctglab.nl/ (https://github.com/Kyoko-wtnb/FUMA-webapp/)
 
 ### --- GTEx and eQTLGen ---
 
-* https://www.gtexportal.org/home/
+* https://www.gtexportal.org/home/ ([datasets](https://gtexportal.org/home/datasets))
 * http://www.eqtlgen.org/
 
 ### --- MR-Base ---
