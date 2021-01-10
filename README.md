@@ -94,7 +94,7 @@ https://fuma.ctglab.nl/ (https://github.com/Kyoko-wtnb/FUMA-webapp/)
 
 ### --- MR-Base ---
 
-http://www.mrbase.org
+http://www.mrbase.org ([MRCIEU demo](https://github.com/MRCIEU/ieu-gwas-db-demo/blob/master/IEU_GWAS_database.pdf))
 
 ### --- PredictDB data repository ---
 
