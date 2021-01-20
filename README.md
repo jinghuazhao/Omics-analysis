@@ -65,7 +65,7 @@ id <- function(ontology)
 data(go)
 goidname <- id(go)
 # EFO
-file <- "annotate/efo.obo"
+file <- "efo.obo"
 get_relation_names(file)
 efo <- get_ontology(file, extract_tags="everything")
 length(efo) # 89
@@ -76,8 +76,8 @@ efo_0000540 <- get_descendants(efo,"EFO:0000540")
 efo_0000540name <- efo$name[efo_0000540]
 isd <- data.frame(efo_0000540,efo_0000540name)
 save(efo,diseases,isd,efoidname,goidname, file="work/efo.rda")
-write.table(isd,file="work/efo_0000540.csv",col.names=FALSE,row.names=FALSE,sep=",")
-pdf("work/efo_0000540.pdf",height=15,width=15)
+write.table(isd,file="efo_0000540.csv",col.names=FALSE,row.names=FALSE,sep=",")
+pdf("efo_0000540.pdf",height=15,width=15)
 library(ontologyPlot)
 onto_plot(efo,efo_0000540)
 dev.off()
