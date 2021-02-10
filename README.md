@@ -92,9 +92,14 @@ https://fuma.ctglab.nl/ (https://github.com/Kyoko-wtnb/FUMA-webapp/)
 * https://www.gtexportal.org/home/ ([datasets](https://gtexportal.org/home/datasets))
 * http://www.eqtlgen.org/
 
-### --- MR-Base ---
+### --- MetaMapLite ---
 
-http://www.mrbase.org ([MRCIEU demo](https://github.com/MRCIEU/ieu-gwas-db-demo/))
+https://metamap.nlm.nih.gov/MetaMapLite.shtml
+
+### --- MR-Base/OpenGWAS ---
+
+* http://www.mrbase.org ([MRCIEU demo](https://github.com/MRCIEU/ieu-gwas-db-demo/))
+* https://gwas.mrcieu.ac.uk
 
 ### --- PredictDB data repository ---
 
