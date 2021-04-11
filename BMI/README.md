@@ -26,24 +26,28 @@ and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded b
 The first thing is to see the Manhattan plot; in this case the P values could be extremely small and we resort to a
 truncated version.
 ```r
+options(width=120)
 gz <- gzfile("Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz")
 BMI <- within(read.delim(gz,as.is=TRUE), {Z <- BETA/SE})
+print(subset(BMI[c("CHR","POS","SNP","P")],CHR!=16 & P<=1e-150))
 library(Rmpfr)
-within(subset(BMI, P==0), {P <- format(2*pnorm(mpfr(abs(BETA/SE),100),lower.tail=FALSE))})
+print(within(subset(BMI, P==0, select=c(CHR,POS,SNP,Z)), 
+             {P <- format(2*pnorm(mpfr(abs(Z),100),lower.tail=FALSE)); Pvalue <- pvalue(Z); log10P <- -log10p(Z)}))
 png("BMI.png", res=300, units="in", width=9, height=6)
 par(oma=c(0,0,0,0), mar=c(5,6.5,1,1))
-mhtplot.trunc(BMI, chr="CHR", bp="POS", p="P", snp="SNP", z = "Z",
+mhtplot.trunc(BMI, chr="CHR", bp="POS", z="Z", snp="SNP",
               suggestiveline=FALSE, genomewideline=-log10(1e-8), logp = TRUE,
               cex.mtext=0.6, cex.text=0.7,
+              annotatelog10P=156, annotateTop = FALSE, highlight=c("rs13021737","rs17817449","rs6567160"),
               mtext.line=4, y.brk1=200, y.brk2=280, cex.axis=0.6, cex.y=0.6, cex=0.5,
               y.ax.space=20,
               col = c("blue4", "skyblue")
 )
 dev.off()
 ```
-Note especially those P values equal to zero -- from `R/Rmpfr` the minimum is approximately 1e-450. Nevertheless, it is safer
+Note especially those P values equal to zero -- from `R/Rmpfr` the minimum is approximately 1.26e-479. Nevertheless, it is safer
 to generate -log10(P) on the fly -- in [the plot](BMI.png) chromosome.16 stands out which would not be so should we restrict ourselves only
-to nonzero P values.
+to nonzero P values. We went further to highlight three SNPs.
 
 ## Independent signals
 ```bash
