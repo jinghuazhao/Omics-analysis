@@ -45,7 +45,7 @@ mhtplot.trunc(BMI, chr="CHR", bp="POS", z="Z", snp="SNP",
 )
 dev.off()
 ```
-Note especially those P values equal to zero -- from `R/Rmpfr` the minimum is approximately 1.26e-479. Nevertheless, it is safer
+Note especially those P values equal to zero -- `pvalue()` and `R/Rmpfr` both give the minimum approximately 1.26e-479. Nevertheless, it is safer
 to generate -log10(P) on the fly -- in [the plot](BMI.png) chromosome.16 stands out which would not be so should we restrict ourselves only
 to nonzero P values. We went further to highlight three SNPs.
 
