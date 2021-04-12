@@ -39,7 +39,7 @@ mhtplot.trunc(BMI, chr="CHR", bp="POS", z="Z", snp="SNP",
               suggestiveline=FALSE, genomewideline=-log10(1e-8),
               cex.mtext=0.6, cex.text=0.7,
               annotatelog10P=156, annotateTop = FALSE, highlight=c("rs13021737","rs17817449","rs6567160"),
-              mtext.line=4, y.brk1=200, y.brk2=280, cex.axis=0.6, cex.y=0.6, cex=0.5,
+              mtext.line=4, y.brk1=200, y.brk2=280, cex.axis=1.5, cex.y=1.5, cex=0.5,
               y.ax.space=20,
               col = c("blue4", "skyblue")
 )
