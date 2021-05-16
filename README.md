@@ -195,7 +195,8 @@ http://twas-hub.org/
 ### --- Other links ---
 
 * [CALIBER](https://www.ucl.ac.uk/health-informatics/caliber)
-* [NCBI account](https://www.ncbi.nlm.nih.gov/myncbi/) ([settings](https://www.ncbi.nlm.nih.gov/account/settings/)).
-* [Institute of Translational Genomics](https://github.com/hmgu-itg) and [omicscience](https://omicscience.org/).
-* [SNiPA](https://snipa.helmholtz-muenchen.de/snipa3/).
 * [genego](https://portal.genego.com/).
+* [Institute of Translational Genomics](https://github.com/hmgu-itg) and [omicscience](https://omicscience.org/).
+* [idep](http://bioinformatics.sdstate.edu/idep/)
+* [NCBI account](https://www.ncbi.nlm.nih.gov/myncbi/) ([settings](https://www.ncbi.nlm.nih.gov/account/settings/)).
+* [SNiPA](https://snipa.helmholtz-muenchen.de/snipa3/).
