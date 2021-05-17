@@ -195,7 +195,6 @@ http://twas-hub.org/
 ### --- Other links ---
 
 * [CALIBER](https://www.ucl.ac.uk/health-informatics/caliber)
-* [CORUM](http://mips.helmholtz-muenchen.de/corum/)
 * [genego](https://portal.genego.com/).
 * [Institute of Translational Genomics](https://github.com/hmgu-itg) and [omicscience](https://omicscience.org/).
 * [idep](http://bioinformatics.sdstate.edu/idep/)
