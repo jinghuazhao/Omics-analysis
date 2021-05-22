@@ -171,6 +171,10 @@ snp_links <- entrez_link(dbfrom="clinvar", db="snp", web_history=asthma_variants
 all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
 ```
 
+### --- Sequence Ontology ---
+
+http://www.sequenceontology.org/
+
 ### --- TWAS-hub ---
 
 http://twas-hub.org/
@@ -180,6 +184,7 @@ http://twas-hub.org/
 * UK Biobank
   * [AMS](http://amsportal.ukbiobank.ac.uk/) (access@ukbiobank.ac.uk), https://www.ukbiobank.ac.uk/wp-content/uploads/2019/09/Access_019-Access-Management-System-User-Guide-V4.0.pdf.
   * Accessing data guide, http://biobank.ctsu.ox.ac.uk/crystal/exinfo.cgi?src=AccessingData.
+  * [DNAnexus](https://www.dnanexus.com/partnerships/ukbiobank)
   * Imputation, http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf.
   * Gene ATLAS, http://geneatlas.roslin.ed.ac.uk/.
   * [PHESANT](https://github.com/MRCIEU/PHESANT).
