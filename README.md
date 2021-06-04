@@ -131,6 +131,10 @@ https://www.ebi.ac.uk/gwas/
 
 https://www.pgscatalog.org/
 
+### --- PheWAS Catalogu ---
+
+https://phewascatalog.org/
+
 ### --- rentrez ---
 
 The relevant URLs are as follows, 
