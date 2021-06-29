@@ -191,6 +191,7 @@ http://twas-hub.org/
   * [DNAnexus](https://www.dnanexus.com/partnerships/ukbiobank)
   * Imputation, http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf.
   * Gene ATLAS, http://geneatlas.roslin.ed.ac.uk/.
+  * [genebass](https://genebass.org/)
   * [PHESANT](https://github.com/MRCIEU/PHESANT).
   * [Showcase User Guide](https://biobank.ctsu.ox.ac.uk/crystal/crystal/exinfo/ShowcaseUserGuide.pdf).
   * [Pan-UK Biobank](https://pan.ukbb.broadinstitute.org/), [GWAS sumstats](http://www.nealelab.is/blog/2019/9/16/biomarkers-gwas-results) and [GitHub](https://github.com/Nealelab/UK_Biobank_GWAS).
