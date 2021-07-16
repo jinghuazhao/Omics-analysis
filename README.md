@@ -135,7 +135,7 @@ https://www.ebi.ac.uk/gwas/
 
 https://www.pgscatalog.org/
 
-### --- PheWAS Catalogu ---
+### --- PheWAS Catalog ---
 
 https://phewascatalog.org/
 
