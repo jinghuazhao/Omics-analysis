@@ -101,6 +101,10 @@ https://metamap.nlm.nih.gov/MetaMapLite.shtml
 * http://www.mrbase.org ([MRCIEU demo](https://github.com/MRCIEU/ieu-gwas-db-demo/))
 * https://gwas.mrcieu.ac.uk
 
+### --- OmicsPred ---
+
+https://www.omicspred.org/
+
 ### --- PredictDB data repository ---
 
 http://predictdb.org/
