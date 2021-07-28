@@ -1,5 +1,5 @@
-<img src="eQTL/circos.png" height="800" width="800" align="right">
-<img src="eQTL/eQTL.png" height="800" width="800" align="right">
+<img src="eQTL/circos.png" height="1000" width="1000" align="right">
+<img src="eQTL/eQTL.png" height="1000" width="1000" align="right">
 
 ## Omics analysis of complex traits
 
