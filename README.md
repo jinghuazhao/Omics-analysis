@@ -15,6 +15,8 @@ Earlier or broader aspects have been reflected in the following repositories: [H
 
 The figure above was produced with [circos](http://circos.ca) and the figure below with [eQTL.R](eQTL/eQTL.R).
 
+<img src="eQTL/circos.png" height="800" width="800" align="right">
+
 ## Resources
 
 ### --- Annotation ---
