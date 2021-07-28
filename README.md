@@ -13,7 +13,7 @@ for fine-mapping, pathway analysis, TWAS, Mendelian randomisation, predictive an
 
 Earlier or broader aspects have been reflected in the following repositories: [Haplotype-Analysis](https://github.com/jinghuazhao/Haplotype-Analysis), [misc](https://github.com/jinghuazhao/misc), [R](https://github.com/jinghuazhao/R).
 
-The figure on the right was produced with [circos](http://circos.ca).
+The figure above was produced with [circos](http://circos.ca) and the figure below with [eQTL.R](eQTL/eQTL.R).
 
 ## Resources
 
