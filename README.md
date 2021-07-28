@@ -1,4 +1,4 @@
-<img src="eQTL/eQTL.png" height="400" width="500" align="right">
+<img src="eQTL/test.png" height="800" width="1000" align="right">
 
 ## Omics analysis of complex traits
 
@@ -13,7 +13,7 @@ for fine-mapping, pathway analysis, TWAS, Mendelian randomisation, predictive an
 
 Earlier or broader aspects have been reflected in the following repositories: [Haplotype-Analysis](https://github.com/jinghuazhao/Haplotype-Analysis), [misc](https://github.com/jinghuazhao/misc), [R](https://github.com/jinghuazhao/R).
 
-The figure on the right was produced with [eQTL.R](eQTL/eQTL.R).
+The figure on the right was produced with [test.R](eQTL/test.R).
 
 ## Resources
 
