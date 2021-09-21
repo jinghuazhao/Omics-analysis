@@ -208,8 +208,9 @@ http://twas-hub.org/
 
 ### --- Other links ---
 
-* [CALIBER](https://www.ucl.ac.uk/health-informatics/caliber)
+* [CALIBER](https://www.ucl.ac.uk/health-informatics/caliber).
 * [genego](https://portal.genego.com/).
+* [The Australian e-Health Research Centre](https://github.com/aehrc).
 * [Institute of Translational Genomics](https://github.com/hmgu-itg) and [omicscience](https://omicscience.org/).
 * [idep](http://bioinformatics.sdstate.edu/idep/)
 * [NCBI account](https://www.ncbi.nlm.nih.gov/myncbi/) ([settings](https://www.ncbi.nlm.nih.gov/account/settings/)).
