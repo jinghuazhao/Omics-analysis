@@ -46,6 +46,8 @@ gencode <- as.data.frame(gtf)
 
 LDlink: https://ldlink.nci.nih.gov/?tab=home.
 
+NyuWa Chinese Population Variant Database (NCVD): http://bigdata.ibp.ac.cn/NyuWa_variants/
+
 ### --- EFO ---
 
 https://www.ebi.ac.uk/efo/
