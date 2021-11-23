@@ -113,9 +113,7 @@ http://predictdb.org/
 
 ### --- Proteomic researches ---
 
-* https://hupo.org/human-proteome-project
-* https://www.nextprot.org/about/protein-existence
-* http://www.proteomexchange.org/
+* https://hupo.org/human-proteome-project (Resources, https://hupo.org/HPP-Resources)
 * https://www.topdownproteomics.org/
 
 ### --- RegulomeDB ---
