@@ -111,6 +111,12 @@ https://www.omicspred.org/
 
 http://predictdb.org/
 
+### --- Proteomic researches ---
+
+* https://www.nextprot.org/about/protein-existence
+* http://www.proteomexchange.org/
+* https://www.topdownproteomics.org/
+
 ### --- RegulomeDB ---
 
 http://regulomedb.org/
