@@ -113,6 +113,7 @@ http://predictdb.org/
 
 ### --- Proteomic researches ---
 
+* https://hupo.org/human-proteome-project
 * https://www.nextprot.org/about/protein-existence
 * http://www.proteomexchange.org/
 * https://www.topdownproteomics.org/
