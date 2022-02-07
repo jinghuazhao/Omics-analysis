@@ -216,6 +216,7 @@ http://twas-hub.org/
 ### --- Other links ---
 
 * [CALIBER](https://www.ucl.ac.uk/health-informatics/caliber).
+* [Galaxy Europe](https://usegalaxy.eu/)
 * [genego](https://portal.genego.com/).
 * [The Australian e-Health Research Centre](https://github.com/aehrc).
 * [Institute of Translational Genomics](https://github.com/hmgu-itg) and [omicscience](https://omicscience.org/).
