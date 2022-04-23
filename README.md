@@ -17,6 +17,10 @@ The figure below was generated with [eQTL.R](eQTL/eQTL.R).
 
 ## Resources
 
+### --- Glossary of Genetics ---
+
+[NHGRI Genetics glossary](https://www.genome.gov/genetics-glossary)
+
 ### --- Annotation ---
 
 The following script gives information on genes from ENSEMBL as well as attributes (columns) that contains `gene`.
