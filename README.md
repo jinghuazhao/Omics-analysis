@@ -224,6 +224,7 @@ http://twas-hub.org/
 ### --- Other links ---
 
 * [CALIBER](https://www.ucl.ac.uk/health-informatics/caliber).
+* deCode [summary statistics](https://www.decode.com/summarydata/)
 * [Galaxy Europe](https://usegalaxy.eu/)
 * [genego](https://portal.genego.com/).
 * [The Australian e-Health Research Centre](https://github.com/aehrc).
