@@ -93,6 +93,10 @@ dev.off()
 
 https://fuma.ctglab.nl/ (https://github.com/Kyoko-wtnb/FUMA-webapp/)
 
+### --- GRCh38 reference genome ---
+
+[https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/)
+
 ### --- GTEx and eQTLGen ---
 
 * https://www.gtexportal.org/home/ ([datasets](https://gtexportal.org/home/datasets))
