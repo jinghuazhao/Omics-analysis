@@ -23,6 +23,8 @@ The figure below was generated with [eQTL.R](eQTL/eQTL.R).
 
 ### --- Annotation ---
 
+[The Ensembl public MySQL Servers](https://www.ensembl.org/info/data/mysql.html)
+
 The following script gives information on genes from ENSEMBL as well as attributes (columns) that contains `gene`.
 ```r
 library(biomaRt)
@@ -226,6 +228,7 @@ http://twas-hub.org/
 * [CALIBER](https://www.ucl.ac.uk/health-informatics/caliber).
 * deCode [summary statistics](https://www.decode.com/summarydata/)
 * [Galaxy Europe](https://usegalaxy.eu/)
+* [Genome in a Bottle WGS samples](https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/)
 * [genego](https://portal.genego.com/).
 * [The Australian e-Health Research Centre](https://github.com/aehrc).
 * [Institute of Translational Genomics](https://github.com/hmgu-itg) and [omicscience](https://omicscience.org/).
