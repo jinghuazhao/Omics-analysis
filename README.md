@@ -134,6 +134,10 @@ http://regulomedb.org/
 
 http://www.roadmapepigenomics.org/
 
+### --- snakemake workflow catalogue ---
+
+[https://snakemake.github.io/snakemake-workflow-catalog/](https://snakemake.github.io/snakemake-workflow-catalog/)
+
 ### --- TWAS ---
 
 https://github.com/hakyimlab/MetaXcan
