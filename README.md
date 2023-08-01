@@ -50,13 +50,13 @@ gencode <- as.data.frame(gtf)
 
 ### --- Linkage disequilibrium ---
 
-LDlink: https://ldlink.nci.nih.gov/?tab=home.
+LDlink: <https://ldlink.nci.nih.gov/?tab=home.>
 
-NyuWa Chinese Population Variant Database (NCVD): http://bigdata.ibp.ac.cn/NyuWa_variants/
+NyuWa Chinese Population Variant Database (NCVD): <http://bigdata.ibp.ac.cn/NyuWa_variants/>
 
 ### --- EFO ---
 
-https://www.ebi.ac.uk/efo/
+<https://www.ebi.ac.uk/efo/>
 
 Example code,
 ```r
@@ -93,7 +93,7 @@ dev.off()
 
 ### --- FUMA GWAS ---
 
-https://fuma.ctglab.nl/ (https://github.com/Kyoko-wtnb/FUMA-webapp/)
+<https://fuma.ctglab.nl/> (<https://github.com/Kyoko-wtnb/FUMA-webapp/>)
 
 ### --- GRCh38 reference genome ---
 
@@ -101,72 +101,72 @@ https://fuma.ctglab.nl/ (https://github.com/Kyoko-wtnb/FUMA-webapp/)
 
 ### --- GTEx and eQTLGen ---
 
-* https://www.gtexportal.org/home/ ([datasets](https://gtexportal.org/home/datasets))
-* http://www.eqtlgen.org/
+* <https://www.gtexportal.org/home/> ([datasets](https://gtexportal.org/home/datasets))
+* <http://www.eqtlgen.org/>
 
 ### --- MetaMapLite ---
 
-https://metamap.nlm.nih.gov/MetaMapLite.shtml
+<https://metamap.nlm.nih.gov/MetaMapLite.shtml>
 
 ### --- MR-Base/OpenGWAS ---
 
-* http://www.mrbase.org ([MRCIEU demo](https://github.com/MRCIEU/ieu-gwas-db-demo/))
-* https://gwas.mrcieu.ac.uk
+* <http://www.mrbase.org> ([MRCIEU demo](https://github.com/MRCIEU/ieu-gwas-db-demo/))
+* <https://gwas.mrcieu.ac.uk>
 
 ### --- OmicsPred ---
 
-https://www.omicspred.org/
+<https://www.omicspred.org/>
 
 ### --- PredictDB data repository ---
 
-http://predictdb.org/
+<http://predictdb.org/>
 
 ### --- Proteomic researches ---
 
-* https://hupo.org/human-proteome-project (Resources, https://hupo.org/HPP-Resources)
-* https://www.topdownproteomics.org/
+* <https://hupo.org/human-proteome-project> (Resources, <https://hupo.org/HPP-Resources>)
+* <https://www.topdownproteomics.org/>
 
 ### --- RegulomeDB ---
 
-http://regulomedb.org/
+<http://regulomedb.org/>
 
 ### --- Roadmap ---
 
-http://www.roadmapepigenomics.org/
+<http://www.roadmapepigenomics.org/>
 
 ### --- snakemake workflow catalogue ---
 
-[https://snakemake.github.io/snakemake-workflow-catalog/](https://snakemake.github.io/snakemake-workflow-catalog/)
+<https://snakemake.github.io/snakemake-workflow-catalog/>
 
 ### --- TWAS ---
 
-https://github.com/hakyimlab/MetaXcan
+<https://github.com/hakyimlab/MetaXcan>
 
-http://gusevlab.org/projects/fusion/
+<http://gusevlab.org/projects/fusion/>
 
 ### --- eQTL Catalog ---
 
-https://www.ebi.ac.uk/eqtl/
+<https://www.ebi.ac.uk/eqtl/>
 
 ### --- GWAS Catalog ---
 
-https://www.ebi.ac.uk/gwas/
+<https://www.ebi.ac.uk/gwas/>
 
 ### --- PGS Catalog ---
 
-https://www.pgscatalog.org/
+<https://www.pgscatalog.org/>
 
 ### --- PheWAS Catalog ---
 
-https://phewascatalog.org/
+<https://phewascatalog.org/>
 
 ### --- rentrez ---
 
 The relevant URLs are as follows, 
 
-* https://cran.r-project.org/web/packages/rentrez/vignettes/rentrez_tutorial.html
-* https://pubmed.ncbi.nlm.nih.gov/
-* https://www.ncbi.nlm.nih.gov/pmc/pmctopmid/
+* <https://cran.r-project.org/web/packages/rentrez/vignettes/rentrez_tutorial.html>
+* <https://pubmed.ncbi.nlm.nih.gov/>
+* <https://www.ncbi.nlm.nih.gov/pmc/pmctopmid/>
 
 with example code,
 ```r
@@ -202,11 +202,11 @@ all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
 
 ### --- Sequence Ontology ---
 
-http://www.sequenceontology.org/
+<http://www.sequenceontology.org/>
 
 ### --- TWAS-hub ---
 
-http://twas-hub.org/
+<http://twas-hub.org/>
 
 ### --- Biobanks ---
 
@@ -222,10 +222,11 @@ http://twas-hub.org/
   * [Pan-UK Biobank](https://pan.ukbb.broadinstitute.org/), [GWAS sumstats](http://www.nealelab.is/blog/2019/9/16/biomarkers-gwas-results) and [GitHub](https://github.com/Nealelab/UK_Biobank_GWAS).
   * COVID-19 [data](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19), [format](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19_tests) and [field](http://biobank.ctsu.ox.ac.uk/ukb/field.cgi?id=40100).
 * China Kadoorie Biobank
-  * https://www.ckbiobank.org/.
+  * <https://www.ckbiobank.org/>
+  * <https://pheweb.ckbiobank.org/>
 * Japan Biobank
-  * https://biobankjp.org/
-  * https://humandbs.biosciencedbc.jp/en/hum0014-v21
+  * <https://biobankjp.org/>
+  * <https://humandbs.biosciencedbc.jp/en/hum0014-v21>
 
 ### --- Other links ---
 
