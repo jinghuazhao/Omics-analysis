@@ -221,8 +221,8 @@ all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
   * Accessing data guide, <http://biobank.ctsu.ox.ac.uk/crystal/exinfo.cgi?src=AccessingData>.
   * Data access Guide 3.2, <https://biobank.ndph.ox.ac.uk/~bbdatan/Data_Access_Guide_v3.2.pdf>
   * DNAnexus, [landing](https://ukbiobank.dnanexus.com/landing), [partnerships](https://www.dnanexus.com/partnerships/ukbiobank)
-  * Imputation, http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf.
-  * Gene ATLAS, http://geneatlas.roslin.ed.ac.uk/.
+  * Imputation, <http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf>.
+  * Gene ATLAS, <http://geneatlas.roslin.ed.ac.uk/>.
   * [genebass](https://genebass.org/)
   * [PHESANT](https://github.com/MRCIEU/PHESANT).
   * Online showcase, <https://biobank.ndph.ox.ac.uk/ukb/> ([Showcase User Guide](https://biobank.ctsu.ox.ac.uk/crystal/crystal/exinfo/ShowcaseUserGuide.pdf)).
