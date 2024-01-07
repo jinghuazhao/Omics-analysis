@@ -213,6 +213,10 @@ all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
 * China Kadoorie Biobank
   * <https://www.ckbiobank.org/>
   * <https://pheweb.ckbiobank.org/>
+* Estonian Biobank
+  * <https://genomics.ut.ee/en/>
+* FinGenn
+  * <https://www.finngen.fi/en>
 * Japan Biobank
   * <https://biobankjp.org/>
   * <https://humandbs.biosciencedbc.jp/en/hum0014-v21>
