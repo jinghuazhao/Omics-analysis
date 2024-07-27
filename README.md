@@ -242,6 +242,7 @@ all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
 * [Galaxy Europe](https://usegalaxy.eu/)
 * [Genome in a Bottle WGS samples](https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/)
 * [genego](https://portal.genego.com/).
+* MVP GWAS summary statistics, <https://ftp.ncbi.nlm.nih.gov/dbgap/studies/phs002453/analyses/GIA/>.
 * [The Australian e-Health Research Centre](https://github.com/aehrc).
 * [Institute of Translational Genomics](https://github.com/hmgu-itg) and [omicscience](https://omicscience.org/).
 * [idep](http://bioinformatics.sdstate.edu/idep/)
