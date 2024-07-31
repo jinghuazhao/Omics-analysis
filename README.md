@@ -230,6 +230,7 @@ all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
   * Imputation, <http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf>.
   * Gene ATLAS, <http://geneatlas.roslin.ed.ac.uk/>.
   * [genebass](https://genebass.org/).
+  * UKB-Biobank, <https://github.com/UK-Biobank> ([ukbrapR](https://github.com/lcpilling/ukbrapR), [ukbnmr](https://cran.r-project.org/package=ukbnmr))
   * [PHESANT](https://github.com/MRCIEU/PHESANT).
   * Online showcase, <https://biobank.ndph.ox.ac.uk/ukb/> ([Showcase User Guide](https://biobank.ctsu.ox.ac.uk/crystal/crystal/exinfo/ShowcaseUserGuide.pdf)).
   * [Pan-UK Biobank](https://pan.ukbb.broadinstitute.org/), [GWAS sumstats](http://www.nealelab.is/blog/2019/9/16/biomarkers-gwas-results) and [GitHub](https://github.com/Nealelab/UK_Biobank_GWAS).
