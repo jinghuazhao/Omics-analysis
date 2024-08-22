@@ -227,6 +227,7 @@ all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
   * AstraZeneca PheWAS Portal, <https://azphewas.com/> ([CGR Proteogenomics Portal](https://astrazeneca-cgr-publications.github.io/pqtl-browser/)).
   * Data access guide 3.2, <https://biobank.ndph.ox.ac.uk/~bbdatan/Data_Access_Guide_v3.2.pdf>.
   * DNAnexus, [GitHub](https://github.com/dnanexus), [landing](https://ukbiobank.dnanexus.com/landing), [partnerships](https://www.dnanexus.com/partnerships/ukbiobank)
+  * Evoker, <https://www.sanger.ac.uk/tool/evoker/>.
   * Imputation, <http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf>.
   * Gene ATLAS, <http://geneatlas.roslin.ed.ac.uk/>.
   * [genebass](https://genebass.org/).
