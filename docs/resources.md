@@ -1,10 +1,10 @@
 # Resources
 
-## --- Glossary of Genetics ---
+## Glossary of Genetics
 
 [NHGRI Genetics glossary](https://www.genome.gov/genetics-glossary)
 
-## --- Annotation ---
+## Annotation
 
 [The Ensembl public MySQL Servers](https://www.ensembl.org/info/data/mysql.html)
 
@@ -31,13 +31,13 @@ gtf <- rtracklayer::import(url)
 gencode <- as.data.frame(gtf)
 ```
 
-## --- Linkage disequilibrium ---
+## Linkage disequilibrium
 
 LDlink: <https://ldlink.nci.nih.gov/?tab=home.>
 
 NyuWa Chinese Population Variant Database (NCVD): <http://bigdata.ibp.ac.cn/NyuWa_variants/>
 
-## --- EFO ---
+## EFO
 
 <https://www.ebi.ac.uk/efo/>
 
@@ -74,76 +74,76 @@ onto_plot(efo,efo_0000540)
 dev.off()
 ```
 
-## --- FUMA GWAS ---
+## FUMA GWAS
 
 <https://fuma.ctglab.nl/> (<https://github.com/Kyoko-wtnb/FUMA-webapp/>)
 
-## --- GRCh38 reference genome ---
+## GRCh38 reference genome
 
 [https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/)
 
-## --- GTEx and eQTLGen ---
+## GTEx and eQTLGen
 
 * <https://www.gtexportal.org/home/> ([datasets](https://gtexportal.org/home/datasets))
 * <http://www.eqtlgen.org/>
 
-## --- MetaMapLite ---
+## MetaMapLite
 
 <https://metamap.nlm.nih.gov/MetaMapLite.shtml>
 
-## --- MR-Base/OpenGWAS ---
+## MR-Base/OpenGWAS
 
 * <http://www.mrbase.org> ([MRCIEU demo](https://github.com/MRCIEU/ieu-gwas-db-demo/))
 * <https://gwas.mrcieu.ac.uk>
 
-## --- OmicsPred ---
+## OmicsPred
 
 <https://www.omicspred.org/>
 
-## --- PredictDB data repository ---
+## PredictDB data repository
 
 <http://predictdb.org/>
 
-## --- Proteomic researches ---
+## Proteomic researches
 
 * <https://hupo.org/human-proteome-project> (Resources, <https://hupo.org/HPP-Resources>)
 * <https://www.topdownproteomics.org/>
 
-## --- RegulomeDB ---
+## RegulomeDB
 
 <http://regulomedb.org/>
 
-## --- Roadmap ---
+## Roadmap
 
 <http://www.roadmapepigenomics.org/>
 
-## --- snakemake workflow catalogue ---
+## snakemake workflow catalogue
 
 <https://snakemake.github.io/snakemake-workflow-catalog/>
 
-## --- TWAS ---
+## TWAS
 
 <https://github.com/hakyimlab/MetaXcan>
 
 <http://gusevlab.org/projects/fusion/>
 
-## --- eQTL Catalog ---
+## eQTL Catalog
 
 <https://www.ebi.ac.uk/eqtl/>
 
-## --- GWAS Catalog ---
+## GWAS Catalog
 
 <https://www.ebi.ac.uk/gwas/>
 
-## --- PGS Catalog ---
+## PGS Catalog
 
 <https://www.pgscatalog.org/>
 
-## --- PheWAS Catalog ---
+## PheWAS Catalog
 
 <https://phewascatalog.org/>
 
-## --- rentrez ---
+## rentrez
 
 The relevant URLs are as follows, 
 
@@ -183,15 +183,15 @@ snp_links <- entrez_link(dbfrom="clinvar", db="snp", web_history=asthma_variants
 all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
 ```
 
-## --- Sequence Ontology ---
+## Sequence Ontology
 
 <http://www.sequenceontology.org/>
 
-## --- TWAS-hub ---
+## TWAS-hub
 
 <http://twas-hub.org/>
 
-## --- Biobanks ---
+## Biobanks
 
 * China Kadoorie Biobank
   * <https://www.ckbiobank.org/>
@@ -220,7 +220,7 @@ all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
   * [Pan-UK Biobank](https://pan.ukbb.broadinstitute.org/), [GWAS sumstats](http://www.nealelab.is/blog/2019/9/16/biomarkers-gwas-results) and [GitHub](https://github.com/Nealelab/UK_Biobank_GWAS).
   * COVID-19 [data](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19), [format](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19_tests) and [field](http://biobank.ctsu.ox.ac.uk/ukb/field.cgi?id=40100).
 
-## --- Other links ---
+## Other links
 
 * [CALIBER](https://www.ucl.ac.uk/health-informatics/caliber).
 * deCode [summary statistics](https://www.decode.com/summarydata/)
