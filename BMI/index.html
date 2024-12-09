@@ -113,6 +113,10 @@
             
             <li class="nav-item" data-level="1"><a href="#bmi" class="nav-link">BMI</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#visualisation" class="nav-link">Visualisation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#independent-signals" class="nav-link">Independent signals</a>
               <ul class="nav flex-column">
               </ul>
@@ -150,23 +154,11 @@
 
 <h1 id="bmi">BMI</h1>
 <p><img src="BMI.png" width="600" height="400" align="right"></p>
-<hr />
-<ul>
-<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#visualisation">Visualisation</a></li>
-<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#independent-signals">Independent signals</a></li>
-<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#annotation">Annotation</a></li>
-<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#pathway-analysis">Pathway analysis</a></li>
-<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#partitioned-heritabilty">Partitioned heritabilty</a></li>
-<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#mendelian-randomisation">Mendelian Randomisation</a></li>
-<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#twas">TWAS</a></li>
-<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#references">References</a></li>
-</ul>
-<hr />
 <p>We next work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018), including both the genomewide</p>
 <pre><code class="language-bash">wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
 </code></pre>
 <p>and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded below on the fly. We would refer to <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> where information specific software can be seen from their respective directories.</p>
-<h3 id="visualisation">Visualisation</h3>
+<h2 id="visualisation">Visualisation</h2>
 <p>The first thing is to see the Manhattan plot; in this case the P values could be extremely small and we resort to a
 truncated version.</p>
 <pre><code class="language-r">options(width=120)
