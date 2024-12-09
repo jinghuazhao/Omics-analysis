@@ -194,31 +194,31 @@ all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
 ## Biobanks
 
 * China Kadoorie Biobank
-  * <https://www.ckbiobank.org/>
-  * <https://pheweb.ckbiobank.org/>
+    * <https://www.ckbiobank.org/>
+    * <https://pheweb.ckbiobank.org/>
 * Estonian Biobank
-  * <https://genomics.ut.ee/en/>
+    * <https://genomics.ut.ee/en/>
 * FinGenn
-  * <https://www.finngen.fi/en>
+    * <https://www.finngen.fi/en>
 * Japan Biobank
-  * <https://biobankjp.org/>
-  * <https://humandbs.biosciencedbc.jp/en/hum0014-v21>
+    * <https://biobankjp.org/>
+    * <https://humandbs.biosciencedbc.jp/en/hum0014-v21>
 * UK Biobank
-  * [AMS](https://ams.ukbiobank.ac.uk/ams/) (<mailto:access@ukbiobank.ac.uk>), [Access_019-Access-Management-System-User-Guide-V4.0.pdf](https://www.ukbiobank.ac.uk/wp-content/uploads/2019/09/Access_019-Access-Management-System-User-Guide-V4.0.pdf), [messages](https://bbams.ndph.ox.ac.uk/ams/resMessages).
-  * Accessing data guide, <http://biobank.ctsu.ox.ac.uk/crystal/exinfo.cgi?src=AccessingData>.
-  * Allele frequency browser, <https://afb.ukbiobank.ac.uk/>.
-  * AstraZeneca PheWAS Portal, <https://azphewas.com/> ([CGR Proteogenomics Portal](https://astrazeneca-cgr-publications.github.io/pqtl-browser/)).
-  * Data access guide 3.2, <https://biobank.ndph.ox.ac.uk/~bbdatan/Data_Access_Guide_v3.2.pdf>.
-  * DNAnexus, [GitHub](https://github.com/dnanexus), [landing](https://ukbiobank.dnanexus.com/landing), [partnerships](https://www.dnanexus.com/partnerships/ukbiobank)
-  * Evoker, <https://www.sanger.ac.uk/tool/evoker/>.
-  * Imputation, <http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf>.
-  * Gene ATLAS, <http://geneatlas.roslin.ed.ac.uk/>.
-  * [genebass](https://genebass.org/).
-  * UKB-Biobank, <https://github.com/UK-Biobank> ([ukbrapR](https://github.com/lcpilling/ukbrapR), [ukbnmr](https://cran.r-project.org/package=ukbnmr))
-  * [PHESANT](https://github.com/MRCIEU/PHESANT).
-  * Online showcase, <https://biobank.ndph.ox.ac.uk/ukb/> ([Showcase User Guide](https://biobank.ctsu.ox.ac.uk/crystal/crystal/exinfo/ShowcaseUserGuide.pdf)).
-  * [Pan-UK Biobank](https://pan.ukbb.broadinstitute.org/), [GWAS sumstats](http://www.nealelab.is/blog/2019/9/16/biomarkers-gwas-results) and [GitHub](https://github.com/Nealelab/UK_Biobank_GWAS).
-  * COVID-19 [data](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19), [format](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19_tests) and [field](http://biobank.ctsu.ox.ac.uk/ukb/field.cgi?id=40100).
+    * [AMS](https://ams.ukbiobank.ac.uk/ams/) (<mailto:access@ukbiobank.ac.uk>), [Access_019-Access-Management-System-User-Guide-V4.0.pdf](https://www.ukbiobank.ac.uk/wp-content/uploads/2019/09/Access_019-Access-Management-System-User-Guide-V4.0.pdf), [messages](https://bbams.ndph.ox.ac.uk/ams/resMessages).
+    * Accessing data guide, <http://biobank.ctsu.ox.ac.uk/crystal/exinfo.cgi?src=AccessingData>.
+    * Allele frequency browser, <https://afb.ukbiobank.ac.uk/>.
+    * AstraZeneca PheWAS Portal, <https://azphewas.com/> ([CGR Proteogenomics Portal](https://astrazeneca-cgr-publications.github.io/pqtl-browser/)).
+    * Data access guide 3.2, <https://biobank.ndph.ox.ac.uk/~bbdatan/Data_Access_Guide_v3.2.pdf>.
+    * DNAnexus, [GitHub](https://github.com/dnanexus), [landing](https://ukbiobank.dnanexus.com/landing), [partnerships](https://www.dnanexus.com/partnerships/ukbiobank)
+    * Evoker, <https://www.sanger.ac.uk/tool/evoker/>.
+    * Imputation, <http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf>.
+    * Gene ATLAS, <http://geneatlas.roslin.ed.ac.uk/>.
+    * [genebass](https://genebass.org/).
+    * UKB-Biobank, <https://github.com/UK-Biobank> ([ukbrapR](https://github.com/lcpilling/ukbrapR), [ukbnmr](https://cran.r-project.org/package=ukbnmr))
+    * [PHESANT](https://github.com/MRCIEU/PHESANT).
+    * Online showcase, <https://biobank.ndph.ox.ac.uk/ukb/> ([Showcase User Guide](https://biobank.ctsu.ox.ac.uk/crystal/crystal/exinfo/ShowcaseUserGuide.pdf)).
+    * [Pan-UK Biobank](https://pan.ukbb.broadinstitute.org/), [GWAS sumstats](http://www.nealelab.is/blog/2019/9/16/biomarkers-gwas-results) and [GitHub](https://github.com/Nealelab/UK_Biobank_GWAS).
+    * COVID-19 [data](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19), [format](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19_tests) and [field](http://biobank.ctsu.ox.ac.uk/ukb/field.cgi?id=40100).
 
 ## Other links
 
