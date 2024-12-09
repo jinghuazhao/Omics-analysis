@@ -2,7 +2,7 @@
 
 <img src="BMI.png" width="600" height="400" align="right">
 
-We next work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018), including both the genomewide
+We work on the GIANT+Biiobank data on BMI (Yengo et al. 2018), including both the genomewide
 ```bash
 wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
 ```
