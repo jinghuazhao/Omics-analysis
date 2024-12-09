@@ -13,4 +13,4 @@ Earlier or broader aspects have been reflected in the following repositories: [H
 
 The figure below was generated with [eQTL.R](eQTL/eQTL.R).
 
-<img src="eQTL/eQTL.png" height="400" width="500" align="right">
+<img src="eQTL/eQTL.png" height="400" width="500" align="center">
