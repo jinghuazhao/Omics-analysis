@@ -243,7 +243,7 @@ done
 
 See [software-notes](https://github.com/jinghuazhao/software-notes) on the use of `utils/make_score.R`, which is based on the best model.
 
-## Approximately independent LD blocks
+### Approximately independent LD blocks
 
 We can use these blocks genomewide or a specific gene, e.g., MC4R,
 ```bash
