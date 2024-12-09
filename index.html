@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <meta name="description" content="None">
         
         
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Index - Omics-analysis</title>
+        <title>Omics-analysis</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
@@ -26,7 +26,7 @@
         <script>hljs.highlightAll();</script> 
     </head>
 
-    <body>
+    <body class="homepage">
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href=".">Omics-analysis</a>
@@ -42,28 +42,15 @@
                             <li class="navitem">
                                 <a href="." class="nav-link"></a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">Omics analysis of complex traits</a>
+                            </li>
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="." class="dropdown-item active">Index</a>
-</li>
-                                    
-<li>
-    <a href="AF/" class="dropdown-item">Atrial Fibrillation</a>
-</li>
-                                    
-<li>
-    <a href="BMI/" class="dropdown-item">Index</a>
-</li>
-                                    
-<li>
-    <a href="CAD/" class="dropdown-item">CAD/MI</a>
-</li>
-                                    
-<li>
-    <a href="T2D/" class="dropdown-item">T2D</a>
+    <a href="resources.md - AF/README.md - BMI/README.md - CAD/README.md - T2D/README.md" class="dropdown-item">None</a>
 </li>
                                 </ul>
                             </li>
@@ -71,7 +58,7 @@
                                 <a href="genomics/" class="nav-link">Genomics</a>
                             </li>
                             <li class="navitem">
-                                <a href="proteomics.md" class="nav-link">Proteomics</a>
+                                <a href="proteomics/" class="nav-link">Proteomics</a>
                             </li>
                         </ul>
 
@@ -87,7 +74,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="AF/" class="nav-link">
+                                <a rel="next" href="genomics/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -112,12 +99,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#omics-analysis-of-complex-traits" class="nav-link">Omics analysis of complex traits</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#resources" class="nav-link">Resources</a>
+            <li class="nav-item" data-level="1"><a href="#omics-analysis-of-complex-traits" class="nav-link">Omics analysis of complex traits</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -126,7 +108,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="omics-analysis-of-complex-traits">Omics analysis of complex traits</h2>
+<h1 id="omics-analysis-of-complex-traits">Omics analysis of complex traits</h1>
 <p>Seeding comprehensive analysis in their named directories (e.g., <a href="BMI">BMI</a>), the repository links to technical issues documented in <a href="https://github.com/jinghuazhao/physalia">physalia</a>, <a href="https://github.com/jinghuazhao/Mixed-Models">Mixed-Models</a>, <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> and other sister repositories: 
 <a href="https://github.com/jinghuazhao/SUMSTATS">SUMSTATS</a>,
 <a href="https://github.com/jinghuazhao/FM-pipeline">FM-pipeline</a>,
@@ -137,194 +119,7 @@
 for fine-mapping, pathway analysis, TWAS, Mendelian randomisation, predictive analytics and other topics as highlighted in the <a href="https://github.com/jinghuazhao/Omics-analysis/wiki">wiki page</a>.</p>
 <p>Earlier or broader aspects have been reflected in the following repositories: <a href="https://github.com/jinghuazhao/Haplotype-Analysis">Haplotype-Analysis</a>, <a href="https://github.com/jinghuazhao/misc">misc</a>, <a href="https://github.com/jinghuazhao/R">R</a>.</p>
 <p>The figure below was generated with <a href="eQTL/eQTL.R">eQTL.R</a>.</p>
-<p><img src="eQTL/eQTL.png" height="400" width="500" align="right"></p>
-<h2 id="resources">Resources</h2>
-<h3 id="-glossary-of-genetics-">--- Glossary of Genetics ---</h3>
-<p><a href="https://www.genome.gov/genetics-glossary">NHGRI Genetics glossary</a></p>
-<h3 id="-annotation-">--- Annotation ---</h3>
-<p><a href="https://www.ensembl.org/info/data/mysql.html">The Ensembl public MySQL Servers</a></p>
-<p>The following script gives information on genes from ENSEMBL as well as attributes (columns) that contains <code>gene</code>.</p>
-<pre><code class="language-r">library(biomaRt)
-listMarts()
-mart &lt;- useMart(&quot;ENSEMBL_MART_FUNCGEN&quot;)
-listDatasets(mart)
-mart &lt;- useMart(&quot;ensembl&quot;)
-listDatasets(mart)
-ensembl &lt;- useMart(&quot;ensembl&quot;, dataset=&quot;hsapiens_gene_ensembl&quot;, host=&quot;grch37.ensembl.org&quot;, path=&quot;/biomart/martservice&quot;)
-attr &lt;- listAttributes(ensembl)
-attr_select &lt;- c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol', 'transcription_start_site')
-gene &lt;- getBM(attributes = attr_select, mart = ensembl)
-filter &lt;- listFilters(ensembl)
-searchFilters(mart = ensembl, pattern = &quot;gene&quot;)
-</code></pre>
-<p>See also <a href="https://sites.google.com/site/jpopgen/wgsa">https://sites.google.com/site/jpopgen/wgsa</a> for precompiled annotation. Alternatively, </p>
-<pre><code class="language-r"># GENCODE v19
-url &lt;- &quot;ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_19/gencode.v19.chr_patch_hapl_scaff.annotation.gtf.gz&quot;
-gtf &lt;- rtracklayer::import(url)
-gencode &lt;- as.data.frame(gtf)
-</code></pre>
-<h3 id="-linkage-disequilibrium-">--- Linkage disequilibrium ---</h3>
-<p>LDlink: <a href="https://ldlink.nci.nih.gov/?tab=home.">https://ldlink.nci.nih.gov/?tab=home.</a></p>
-<p>NyuWa Chinese Population Variant Database (NCVD): <a href="http://bigdata.ibp.ac.cn/NyuWa_variants/">http://bigdata.ibp.ac.cn/NyuWa_variants/</a></p>
-<h3 id="-efo-">--- EFO ---</h3>
-<p><a href="https://www.ebi.ac.uk/efo/">https://www.ebi.ac.uk/efo/</a></p>
-<p>Example code,</p>
-<pre><code class="language-r">library(ontologyIndex)
-
-id &lt;- function(ontology)
-{
-  inflammatory &lt;- grep(ontology$name,pattern=&quot;inflammatory&quot;)
-  immune &lt;- grep(ontology$name,pattern=&quot;immune&quot;)
-  inf &lt;- union(inflammatory,immune)
-  list(id=ontology$id[inf],name=ontology$name[inf])
-}
-# GO
-data(go)
-goidname &lt;- id(go)
-# EFO
-file &lt;- &quot;efo.obo&quot;
-get_relation_names(file)
-efo &lt;- get_ontology(file, extract_tags=&quot;everything&quot;)
-length(efo) # 89
-length(efo$id) # 27962
-efoidname &lt;- id(efo)
-diseases &lt;- get_descendants(efo,&quot;EFO:0000408&quot;)
-efo_0000540 &lt;- get_descendants(efo,&quot;EFO:0000540&quot;)
-efo_0000540name &lt;- efo$name[efo_0000540]
-isd &lt;- data.frame(efo_0000540,efo_0000540name)
-save(efo,diseases,isd,efoidname,goidname, file=&quot;work/efo.rda&quot;)
-write.table(isd,file=&quot;efo_0000540.csv&quot;,col.names=FALSE,row.names=FALSE,sep=&quot;,&quot;)
-pdf(&quot;efo_0000540.pdf&quot;,height=15,width=15)
-library(ontologyPlot)
-onto_plot(efo,efo_0000540)
-dev.off()
-</code></pre>
-<h3 id="-fuma-gwas-">--- FUMA GWAS ---</h3>
-<p><a href="https://fuma.ctglab.nl/">https://fuma.ctglab.nl/</a> (<a href="https://github.com/Kyoko-wtnb/FUMA-webapp/">https://github.com/Kyoko-wtnb/FUMA-webapp/</a>)</p>
-<h3 id="-grch38-reference-genome-">--- GRCh38 reference genome ---</h3>
-<p><a href="https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/">https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/</a></p>
-<h3 id="-gtex-and-eqtlgen-">--- GTEx and eQTLGen ---</h3>
-<ul>
-<li><a href="https://www.gtexportal.org/home/">https://www.gtexportal.org/home/</a> (<a href="https://gtexportal.org/home/datasets">datasets</a>)</li>
-<li><a href="http://www.eqtlgen.org/">http://www.eqtlgen.org/</a></li>
-</ul>
-<h3 id="-metamaplite-">--- MetaMapLite ---</h3>
-<p><a href="https://metamap.nlm.nih.gov/MetaMapLite.shtml">https://metamap.nlm.nih.gov/MetaMapLite.shtml</a></p>
-<h3 id="-mr-baseopengwas-">--- MR-Base/OpenGWAS ---</h3>
-<ul>
-<li><a href="http://www.mrbase.org">http://www.mrbase.org</a> (<a href="https://github.com/MRCIEU/ieu-gwas-db-demo/">MRCIEU demo</a>)</li>
-<li><a href="https://gwas.mrcieu.ac.uk">https://gwas.mrcieu.ac.uk</a></li>
-</ul>
-<h3 id="-omicspred-">--- OmicsPred ---</h3>
-<p><a href="https://www.omicspred.org/">https://www.omicspred.org/</a></p>
-<h3 id="-predictdb-data-repository-">--- PredictDB data repository ---</h3>
-<p><a href="http://predictdb.org/">http://predictdb.org/</a></p>
-<h3 id="-proteomic-researches-">--- Proteomic researches ---</h3>
-<ul>
-<li><a href="https://hupo.org/human-proteome-project">https://hupo.org/human-proteome-project</a> (Resources, <a href="https://hupo.org/HPP-Resources">https://hupo.org/HPP-Resources</a>)</li>
-<li><a href="https://www.topdownproteomics.org/">https://www.topdownproteomics.org/</a></li>
-</ul>
-<h3 id="-regulomedb-">--- RegulomeDB ---</h3>
-<p><a href="http://regulomedb.org/">http://regulomedb.org/</a></p>
-<h3 id="-roadmap-">--- Roadmap ---</h3>
-<p><a href="http://www.roadmapepigenomics.org/">http://www.roadmapepigenomics.org/</a></p>
-<h3 id="-snakemake-workflow-catalogue-">--- snakemake workflow catalogue ---</h3>
-<p><a href="https://snakemake.github.io/snakemake-workflow-catalog/">https://snakemake.github.io/snakemake-workflow-catalog/</a></p>
-<h3 id="-twas-">--- TWAS ---</h3>
-<p><a href="https://github.com/hakyimlab/MetaXcan">https://github.com/hakyimlab/MetaXcan</a></p>
-<p><a href="http://gusevlab.org/projects/fusion/">http://gusevlab.org/projects/fusion/</a></p>
-<h3 id="-eqtl-catalog-">--- eQTL Catalog ---</h3>
-<p><a href="https://www.ebi.ac.uk/eqtl/">https://www.ebi.ac.uk/eqtl/</a></p>
-<h3 id="-gwas-catalog-">--- GWAS Catalog ---</h3>
-<p><a href="https://www.ebi.ac.uk/gwas/">https://www.ebi.ac.uk/gwas/</a></p>
-<h3 id="-pgs-catalog-">--- PGS Catalog ---</h3>
-<p><a href="https://www.pgscatalog.org/">https://www.pgscatalog.org/</a></p>
-<h3 id="-phewas-catalog-">--- PheWAS Catalog ---</h3>
-<p><a href="https://phewascatalog.org/">https://phewascatalog.org/</a></p>
-<h3 id="-rentrez-">--- rentrez ---</h3>
-<p>The relevant URLs are as follows, </p>
-<ul>
-<li><a href="https://cran.r-project.org/web/packages/rentrez/vignettes/rentrez_tutorial.html">https://cran.r-project.org/web/packages/rentrez/vignettes/rentrez_tutorial.html</a></li>
-<li><a href="https://pubmed.ncbi.nlm.nih.gov/">https://pubmed.ncbi.nlm.nih.gov/</a></li>
-<li><a href="https://www.ncbi.nlm.nih.gov/pmc/pmctopmid/">https://www.ncbi.nlm.nih.gov/pmc/pmctopmid/</a></li>
-</ul>
-<p>with example code,</p>
-<pre><code class="language-r">library(rentrez)
-entrez_dbs()
-entrez_db_links(&quot;pubmed&quot;)
-pubmed_fields &lt;- entrez_db_searchable(&quot;pubmed&quot;)
-# set_entrez_key(&quot;&quot;)
-Sys.getenv(&quot;ENTREZ_KEY&quot;)
-term &lt;- &quot;pQTLs OR (protein AND quantitative AND trait AND loci) AND human [MH] AND (plasma OR Serum)&quot;
-r &lt;- entrez_search(db=&quot;pubmed&quot;,term=term,use_history=TRUE)
-class(r)
-names(r)
-with(r,web_history)
-unlink(paste(&quot;pubmed&quot;,c(&quot;fetch&quot;,&quot;summary&quot;),sep=&quot;.&quot;))
-fields &lt;- c(&quot;uid&quot;, &quot;pubdate&quot;, &quot;sortfirstauthor&quot;, &quot;title&quot;, &quot;source&quot;, &quot;volume&quot;, &quot;pages&quot;)
-for(i in seq(1,with(r,count),50))
-{
-  cat(i+49, &quot;records downloaded\r&quot;)
-  f &lt;- entrez_fetch(db=&quot;pubmed&quot;, web_history=with(r,web_history), rettype=&quot;text&quot;, retmax=50, retstart=i)
-  write.table(f, col.names=FALSE, row.names=FALSE, file=&quot;pubmed.fetch&quot;, append=TRUE)
-  s &lt;- entrez_summary(db=&quot;pubmed&quot;, web_history=with(r,web_history), rettype=&quot;text&quot;, retmax=50, retstart=i)
-  e &lt;- extract_from_esummary(s, fields)
-  write.table(t(e), col.names=FALSE, row.names=FALSE, file=&quot;pubmed.summary&quot;, append=TRUE, sep=&quot;\t&quot;)
-}
-id &lt;- 600807
-upload &lt;- entrez_post(db=&quot;omim&quot;, id=id)
-asthma_variants &lt;- entrez_link(dbfrom=&quot;omim&quot;, db=&quot;clinvar&quot;, cmd=&quot;neighbor_history&quot;, web_history=upload)
-asthma_variants
-snp_links &lt;- entrez_link(dbfrom=&quot;clinvar&quot;, db=&quot;snp&quot;, web_history=asthma_variants$web_histories$omim_clinvar, cmd=&quot;neighbor_history&quot;)
-all_links &lt;- entrez_link(dbfrom='pubmed', id=id, db='all')
-</code></pre>
-<h3 id="-sequence-ontology-">--- Sequence Ontology ---</h3>
-<p><a href="http://www.sequenceontology.org/">http://www.sequenceontology.org/</a></p>
-<h3 id="-twas-hub-">--- TWAS-hub ---</h3>
-<p><a href="http://twas-hub.org/">http://twas-hub.org/</a></p>
-<h3 id="-biobanks-">--- Biobanks ---</h3>
-<ul>
-<li>China Kadoorie Biobank</li>
-<li><a href="https://www.ckbiobank.org/">https://www.ckbiobank.org/</a></li>
-<li><a href="https://pheweb.ckbiobank.org/">https://pheweb.ckbiobank.org/</a></li>
-<li>Estonian Biobank</li>
-<li><a href="https://genomics.ut.ee/en/">https://genomics.ut.ee/en/</a></li>
-<li>FinGenn</li>
-<li><a href="https://www.finngen.fi/en">https://www.finngen.fi/en</a></li>
-<li>Japan Biobank</li>
-<li><a href="https://biobankjp.org/">https://biobankjp.org/</a></li>
-<li><a href="https://humandbs.biosciencedbc.jp/en/hum0014-v21">https://humandbs.biosciencedbc.jp/en/hum0014-v21</a></li>
-<li>UK Biobank</li>
-<li><a href="https://ams.ukbiobank.ac.uk/ams/">AMS</a> (<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#99;&#99;&#101;&#115;&#115;&#64;&#117;&#107;&#98;&#105;&#111;&#98;&#97;&#110;&#107;&#46;&#97;&#99;&#46;&#117;&#107;">&#97;&#99;&#99;&#101;&#115;&#115;&#64;&#117;&#107;&#98;&#105;&#111;&#98;&#97;&#110;&#107;&#46;&#97;&#99;&#46;&#117;&#107;</a>), <a href="https://www.ukbiobank.ac.uk/wp-content/uploads/2019/09/Access_019-Access-Management-System-User-Guide-V4.0.pdf">Access_019-Access-Management-System-User-Guide-V4.0.pdf</a>, <a href="https://bbams.ndph.ox.ac.uk/ams/resMessages">messages</a>.</li>
-<li>Accessing data guide, <a href="http://biobank.ctsu.ox.ac.uk/crystal/exinfo.cgi?src=AccessingData">http://biobank.ctsu.ox.ac.uk/crystal/exinfo.cgi?src=AccessingData</a>.</li>
-<li>Allele frequency browser, <a href="https://afb.ukbiobank.ac.uk/">https://afb.ukbiobank.ac.uk/</a>.</li>
-<li>AstraZeneca PheWAS Portal, <a href="https://azphewas.com/">https://azphewas.com/</a> (<a href="https://astrazeneca-cgr-publications.github.io/pqtl-browser/">CGR Proteogenomics Portal</a>).</li>
-<li>Data access guide 3.2, <a href="https://biobank.ndph.ox.ac.uk/~bbdatan/Data_Access_Guide_v3.2.pdf">https://biobank.ndph.ox.ac.uk/~bbdatan/Data_Access_Guide_v3.2.pdf</a>.</li>
-<li>DNAnexus, <a href="https://github.com/dnanexus">GitHub</a>, <a href="https://ukbiobank.dnanexus.com/landing">landing</a>, <a href="https://www.dnanexus.com/partnerships/ukbiobank">partnerships</a></li>
-<li>Evoker, <a href="https://www.sanger.ac.uk/tool/evoker/">https://www.sanger.ac.uk/tool/evoker/</a>.</li>
-<li>Imputation, <a href="http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf">http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf</a>.</li>
-<li>Gene ATLAS, <a href="http://geneatlas.roslin.ed.ac.uk/">http://geneatlas.roslin.ed.ac.uk/</a>.</li>
-<li><a href="https://genebass.org/">genebass</a>.</li>
-<li>UKB-Biobank, <a href="https://github.com/UK-Biobank">https://github.com/UK-Biobank</a> (<a href="https://github.com/lcpilling/ukbrapR">ukbrapR</a>, <a href="https://cran.r-project.org/package=ukbnmr">ukbnmr</a>)</li>
-<li><a href="https://github.com/MRCIEU/PHESANT">PHESANT</a>.</li>
-<li>Online showcase, <a href="https://biobank.ndph.ox.ac.uk/ukb/">https://biobank.ndph.ox.ac.uk/ukb/</a> (<a href="https://biobank.ctsu.ox.ac.uk/crystal/crystal/exinfo/ShowcaseUserGuide.pdf">Showcase User Guide</a>).</li>
-<li><a href="https://pan.ukbb.broadinstitute.org/">Pan-UK Biobank</a>, <a href="http://www.nealelab.is/blog/2019/9/16/biomarkers-gwas-results">GWAS sumstats</a> and <a href="https://github.com/Nealelab/UK_Biobank_GWAS">GitHub</a>.</li>
-<li>COVID-19 <a href="http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19">data</a>, <a href="http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19_tests">format</a> and <a href="http://biobank.ctsu.ox.ac.uk/ukb/field.cgi?id=40100">field</a>.</li>
-</ul>
-<h3 id="-other-links-">--- Other links ---</h3>
-<ul>
-<li><a href="https://www.ucl.ac.uk/health-informatics/caliber">CALIBER</a>.</li>
-<li>deCode <a href="https://www.decode.com/summarydata/">summary statistics</a></li>
-<li><a href="https://usegalaxy.eu/">Galaxy Europe</a></li>
-<li><a href="https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/">Genome in a Bottle WGS samples</a></li>
-<li><a href="https://portal.genego.com/">genego</a>.</li>
-<li>MVP GWAS summary statistics, <a href="https://ftp.ncbi.nlm.nih.gov/dbgap/studies/phs002453/analyses/">https://ftp.ncbi.nlm.nih.gov/dbgap/studies/phs002453/analyses/</a>.</li>
-<li><a href="https://github.com/aehrc">The Australian e-Health Research Centre</a>.</li>
-<li><a href="https://github.com/hmgu-itg">Institute of Translational Genomics</a> and <a href="https://omicscience.org/">omicscience</a>.</li>
-<li><a href="http://bioinformatics.sdstate.edu/idep/">idep</a></li>
-<li><a href="https://www.ncbi.nlm.nih.gov/myncbi/">NCBI account</a> (<a href="https://www.ncbi.nlm.nih.gov/account/settings/">settings</a>).</li>
-<li><a href="https://snipa.helmholtz-muenchen.de/snipa3/">SNiPA</a>.</li>
-</ul></div>
+<p><img src="eQTL/eQTL.png" height="400" width="500" align="right"></p></div>
             </div>
         </div>
 
@@ -407,3 +202,8 @@ all_links &lt;- entrez_link(dbfrom='pubmed', id=id, db='all')
 
     </body>
 </html>
+
+<!--
+MkDocs version : 1.5.3
+Build Date UTC : 2024-12-09 14:39:50.422728+00:00
+-->
