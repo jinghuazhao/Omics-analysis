@@ -1,0 +1,244 @@
+Variant Annotation:
+All variants are found in either dbSNP (version 138) or 1000 Genomes phase 3 (MAF>=0.5% biallelic or small indel)
+
+GWAS associations:
+All variants are found in the GWAS database
+
+GWAS catalogues:
+All variants are found in the GWAS catalogues database
+
+Metabolite associations:
+rs1000940 is not found in the Kettunen J metabolites database
+rs10132280 is not found in the Kettunen J metabolites database
+rs1016287 is not found in the Kettunen J metabolites database
+rs10182181 is not found in the Kettunen J metabolites database
+rs10733682 is not found in the Kettunen J metabolites database
+rs10938397 is not found in the Kettunen J metabolites database
+rs10968576 is not found in the Kettunen J metabolites database
+rs11030104 is not found in the Kettunen J metabolites database
+rs11057405 is not found in the Kettunen J metabolites database
+rs11126666 is not found in the Kettunen J metabolites database
+rs11165643 is not found in the Kettunen J metabolites database
+rs11191560 is not found in the Kettunen J metabolites database
+rs11583200 is not found in the Kettunen J metabolites database
+rs1167827 is not found in the Kettunen J metabolites database
+rs11688816 is not found in the Kettunen J metabolites database
+rs11727676 is not found in the Kettunen J metabolites database
+rs11847697 is not found in the Kettunen J metabolites database
+rs12286929 is not found in the Kettunen J metabolites database
+rs12401738 is not found in the Kettunen J metabolites database
+rs12429545 is not found in the Kettunen J metabolites database
+rs12446632 is not found in the Kettunen J metabolites database
+rs12566985 is not found in the Kettunen J metabolites database
+rs12885454 is not found in the Kettunen J metabolites database
+rs12940622 is not found in the Kettunen J metabolites database
+rs13021737 is not found in the Kettunen J metabolites database
+rs13078960 is not found in the Kettunen J metabolites database
+rs13107325 is not found in the Kettunen J metabolites database
+rs13191362 is not found in the Kettunen J metabolites database
+rs13201877 is not found in the Kettunen J metabolites database
+rs1441264 is not found in the Kettunen J metabolites database
+rs1460676 is not found in the Kettunen J metabolites database
+rs1516725 is not found in the Kettunen J metabolites database
+rs1528435 is not found in the Kettunen J metabolites database
+rs1558902 is not found in the Kettunen J metabolites database
+rs16851483 is not found in the Kettunen J metabolites database
+rs16907751 is not found in the Kettunen J metabolites database
+rs16951275 is not found in the Kettunen J metabolites database
+rs17001654 is not found in the Kettunen J metabolites database
+rs17094222 is not found in the Kettunen J metabolites database
+rs17203016 is not found in the Kettunen J metabolites database
+rs17405819 is not found in the Kettunen J metabolites database
+rs17724992 is not found in the Kettunen J metabolites database
+rs1808579 is not found in the Kettunen J metabolites database
+rs1928295 is not found in the Kettunen J metabolites database
+rs2033529 is not found in the Kettunen J metabolites database
+rs2033732 is not found in the Kettunen J metabolites database
+rs205262 is not found in the Kettunen J metabolites database
+rs2080454 is not found in the Kettunen J metabolites database
+rs2121279 is not found in the Kettunen J metabolites database
+rs2176598 is not found in the Kettunen J metabolites database
+rs2207139 is not found in the Kettunen J metabolites database
+rs2245368 is not found in the Kettunen J metabolites database
+rs2287019 is not found in the Kettunen J metabolites database
+rs2365389 is not found in the Kettunen J metabolites database
+rs2650492 is not found in the Kettunen J metabolites database
+rs2820292 is not found in the Kettunen J metabolites database
+rs2836754 is not found in the Kettunen J metabolites database
+rs29941 is not found in the Kettunen J metabolites database
+rs3101336 is not found in the Kettunen J metabolites database
+rs3736485 is not found in the Kettunen J metabolites database
+rs3810291 is not found in the Kettunen J metabolites database
+rs3817334 is not found in the Kettunen J metabolites database
+rs3849570 is not found in the Kettunen J metabolites database
+rs3888190 is not found in the Kettunen J metabolites database
+rs4256980 is not found in the Kettunen J metabolites database
+rs4740619 is not found in the Kettunen J metabolites database
+rs4787491 is not found in the Kettunen J metabolites database
+rs492400 is not found in the Kettunen J metabolites database
+rs543874 is not found in the Kettunen J metabolites database
+rs6091540 is not found in the Kettunen J metabolites database
+rs6465468 is not found in the Kettunen J metabolites database
+rs6477694 is not found in the Kettunen J metabolites database
+rs6567160 is not found in the Kettunen J metabolites database
+rs657452 is not found in the Kettunen J metabolites database
+rs6804842 is not found in the Kettunen J metabolites database
+rs7138803 is not found in the Kettunen J metabolites database
+rs7141420 is not found in the Kettunen J metabolites database
+rs7164727 is not found in the Kettunen J metabolites database
+rs7239883 is not found in the Kettunen J metabolites database
+rs7243357 is not found in the Kettunen J metabolites database
+rs758747 is not found in the Kettunen J metabolites database
+rs7599312 is not found in the Kettunen J metabolites database
+rs7715256 is not found in the Kettunen J metabolites database
+rs7899106 is not found in the Kettunen J metabolites database
+rs7903146 is not found in the Kettunen J metabolites database
+rs9374842 is not found in the Kettunen J metabolites database
+rs9400239 is not found in the Kettunen J metabolites database
+rs9540493 is not found in the Kettunen J metabolites database
+rs12016871 is not found in the Kettunen J metabolites database
+rs9641123 is not found in the Kettunen J metabolites database
+rs977747 is not found in the Kettunen J metabolites database
+rs9914578 is not found in the Kettunen J metabolites database
+rs9925964 is not found in the Kettunen J metabolites database
+rs1000940 is not found in the Shin SY metabolites database
+rs10132280 is not found in the Shin SY metabolites database
+rs1016287 is not found in the Shin SY metabolites database
+rs10182181 is not found in the Shin SY metabolites database
+rs10733682 is not found in the Shin SY metabolites database
+rs10938397 is not found in the Shin SY metabolites database
+rs10968576 is not found in the Shin SY metabolites database
+rs11030104 is not found in the Shin SY metabolites database
+rs11057405 is not found in the Shin SY metabolites database
+rs11126666 is not found in the Shin SY metabolites database
+rs11165643 is not found in the Shin SY metabolites database
+rs11191560 is not found in the Shin SY metabolites database
+rs11583200 is not found in the Shin SY metabolites database
+rs1167827 is not found in the Shin SY metabolites database
+rs11688816 is not found in the Shin SY metabolites database
+rs11727676 is not found in the Shin SY metabolites database
+rs11847697 is not found in the Shin SY metabolites database
+rs12286929 is not found in the Shin SY metabolites database
+rs12401738 is not found in the Shin SY metabolites database
+rs12429545 is not found in the Shin SY metabolites database
+rs12446632 is not found in the Shin SY metabolites database
+rs12566985 is not found in the Shin SY metabolites database
+rs12885454 is not found in the Shin SY metabolites database
+rs12940622 is not found in the Shin SY metabolites database
+rs13021737 is not found in the Shin SY metabolites database
+rs13078960 is not found in the Shin SY metabolites database
+rs13107325 is not found in the Shin SY metabolites database
+rs13191362 is not found in the Shin SY metabolites database
+rs13201877 is not found in the Shin SY metabolites database
+rs1441264 is not found in the Shin SY metabolites database
+rs1460676 is not found in the Shin SY metabolites database
+rs1516725 is not found in the Shin SY metabolites database
+rs1528435 is not found in the Shin SY metabolites database
+rs1558902 is not found in the Shin SY metabolites database
+rs16851483 is not found in the Shin SY metabolites database
+rs16907751 is not found in the Shin SY metabolites database
+rs16951275 is not found in the Shin SY metabolites database
+rs17001654 is not found in the Shin SY metabolites database
+rs17024393 is not found in the Shin SY metabolites database
+rs17094222 is not found in the Shin SY metabolites database
+rs17203016 is not found in the Shin SY metabolites database
+rs17405819 is not found in the Shin SY metabolites database
+rs17724992 is not found in the Shin SY metabolites database
+rs1808579 is not found in the Shin SY metabolites database
+rs1928295 is not found in the Shin SY metabolites database
+rs2033529 is not found in the Shin SY metabolites database
+rs2033732 is not found in the Shin SY metabolites database
+rs205262 is not found in the Shin SY metabolites database
+rs2075650 is not found in the Shin SY metabolites database
+rs2080454 is not found in the Shin SY metabolites database
+rs2112347 is not found in the Shin SY metabolites database
+rs2121279 is not found in the Shin SY metabolites database
+rs2176040 is not found in the Shin SY metabolites database
+rs2176598 is not found in the Shin SY metabolites database
+rs2207139 is not found in the Shin SY metabolites database
+rs2245368 is not found in the Shin SY metabolites database
+rs2287019 is not found in the Shin SY metabolites database
+rs2365389 is not found in the Shin SY metabolites database
+rs2650492 is not found in the Shin SY metabolites database
+rs2820292 is not found in the Shin SY metabolites database
+rs2836754 is not found in the Shin SY metabolites database
+rs29941 is not found in the Shin SY metabolites database
+rs3101336 is not found in the Shin SY metabolites database
+rs3736485 is not found in the Shin SY metabolites database
+rs3810291 is not found in the Shin SY metabolites database
+rs3817334 is not found in the Shin SY metabolites database
+rs3849570 is not found in the Shin SY metabolites database
+rs3888190 is not found in the Shin SY metabolites database
+rs4256980 is not found in the Shin SY metabolites database
+rs4740619 is not found in the Shin SY metabolites database
+rs4787491 is not found in the Shin SY metabolites database
+rs492400 is not found in the Shin SY metabolites database
+rs543874 is not found in the Shin SY metabolites database
+rs6091540 is not found in the Shin SY metabolites database
+rs6465468 is not found in the Shin SY metabolites database
+rs6477694 is not found in the Shin SY metabolites database
+rs6567160 is not found in the Shin SY metabolites database
+rs657452 is not found in the Shin SY metabolites database
+rs6804842 is not found in the Shin SY metabolites database
+rs7138803 is not found in the Shin SY metabolites database
+rs7141420 is not found in the Shin SY metabolites database
+rs7164727 is not found in the Shin SY metabolites database
+rs7239883 is not found in the Shin SY metabolites database
+rs7243357 is not found in the Shin SY metabolites database
+rs758747 is not found in the Shin SY metabolites database
+rs7599312 is not found in the Shin SY metabolites database
+rs7715256 is not found in the Shin SY metabolites database
+rs7899106 is not found in the Shin SY metabolites database
+rs7903146 is not found in the Shin SY metabolites database
+rs9374842 is not found in the Shin SY metabolites database
+rs9400239 is not found in the Shin SY metabolites database
+rs9540493 is not found in the Shin SY metabolites database
+rs12016871 is not found in the Shin SY metabolites database
+rs9641123 is not found in the Shin SY metabolites database
+rs977747 is not found in the Shin SY metabolites database
+rs9914578 is not found in the Shin SY metabolites database
+rs9925964 is not found in the Shin SY metabolites database
+
+eQTL associations:
+rs10132280 is not found in the eQTL database
+rs1016287 is not found in the eQTL database
+rs10733682 is not found in the eQTL database
+rs10938397 is not found in the eQTL database
+rs10968576 is not found in the eQTL database
+rs11057405 is not found in the eQTL database
+rs11126666 is not found in the eQTL database
+rs11583200 is not found in the eQTL database
+rs11847697 is not found in the eQTL database
+rs12429545 is not found in the eQTL database
+rs12566985 is not found in the eQTL database
+rs12885454 is not found in the eQTL database
+rs13021737 is not found in the eQTL database
+rs13078960 is not found in the eQTL database
+rs13107325 is not found in the eQTL database
+rs13201877 is not found in the eQTL database
+rs1441264 is not found in the eQTL database
+rs1460676 is not found in the eQTL database
+rs1528435 is not found in the eQTL database
+rs17001654 is not found in the eQTL database
+rs17094222 is not found in the eQTL database
+rs17405819 is not found in the eQTL database
+rs2033529 is not found in the eQTL database
+rs2033732 is not found in the eQTL database
+rs2080454 is not found in the eQTL database
+rs2121279 is not found in the eQTL database
+rs3849570 is not found in the eQTL database
+rs6091540 is not found in the eQTL database
+rs6465468 is not found in the eQTL database
+rs6567160 is not found in the eQTL database
+rs657452 is not found in the eQTL database
+rs6804842 is not found in the eQTL database
+rs7141420 is not found in the eQTL database
+rs7164727 is not found in the eQTL database
+rs7239883 is not found in the eQTL database
+rs7243357 is not found in the eQTL database
+rs7715256 is not found in the eQTL database
+rs7899106 is not found in the eQTL database
+rs7903146 is not found in the eQTL database
+rs9374842 is not found in the eQTL database
+rs9540493 is not found in the eQTL database
+rs9641123 is not found in the eQTL database
