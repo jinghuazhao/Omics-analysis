@@ -1,4 +1,4 @@
-# Genomics-related sites
+# Genomics
 
 - bigOmics, <https://bigomics.ch/>
 - Bioconductor support, <https://support.bioconductor.org/>
