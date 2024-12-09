@@ -2,26 +2,13 @@
 
 <img src="BMI.png" width="600" height="400" align="right">
 
----
-
-* [Visualisation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#visualisation)
-* [Independent signals](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#independent-signals)
-* [Annotation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#annotation)
-* [Pathway analysis](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#pathway-analysis)
-* [Partitioned heritabilty](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#partitioned-heritabilty)
-* [Mendelian Randomisation](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#mendelian-randomisation)
-* [TWAS](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#twas)
-* [References](https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#references)
-
----
-
 We next work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018), including both the genomewide
 ```bash
 wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
 ```
 and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded below on the fly. We would refer to [software-notes](https://github.com/jinghuazhao/software-notes) where information specific software can be seen from their respective directories.
 
-### Visualisation
+## Visualisation
 
 The first thing is to see the Manhattan plot; in this case the P values could be extremely small and we resort to a
 truncated version.

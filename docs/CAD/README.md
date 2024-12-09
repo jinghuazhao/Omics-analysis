@@ -1,10 +1,5 @@
 # CAD/MI
 
----
-* [MR](https://github.com/jinghuazhao/Omics-analysis/tree/master/CAD#mr)
-* [Pathway analysis](https://github.com/jinghuazhao/Omics-analysis/tree/master/CAD#pathway-analysis)
----
-
 The summary statistics is from http://www.cardiogramplusc4d.org/, notably
 * [CARDIoGRAM GWA meta-analysis](http://www.cardiogramplusc4d.org/media/cardiogramplusc4d-consortium/data-downloads/cardiogram_gwas_results.zip)
 
