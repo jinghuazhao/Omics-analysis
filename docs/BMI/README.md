@@ -203,7 +203,7 @@ Note again the header/column is customised differently from its DEPICT counterpa
 
 Two additional aspects are useful to explore:
 
-### Fine-mapping
+## Fine-mapping
 
 In line with the fact that both TWAS and GWAS z scores are available, the option `--caviar` natually put them as input files for `CARIAR`,
 ```bash
@@ -221,7 +221,7 @@ done
 ```
 which are CAVIAR.EQTL.Z, CAVIAR.GWAS.Z, CAVIAR.LD triplets with prefix caviar.genename.
 
-### Colocalisation
+## Colocalisation
 
 This is furnished with `--coloc_P --GWASN`,
 ```bash
@@ -239,11 +239,11 @@ Rscript FUSION.assoc_test.R \
 done
 ```
 
-### Prediction
+## Prediction
 
 See [software-notes](https://github.com/jinghuazhao/software-notes) on the use of `utils/make_score.R`, which is based on the best model.
 
-### Approximately independent LD blocks
+## Approximately independent LD blocks
 
 We can use these blocks genomewide or a specific gene, e.g., MC4R,
 ```bash
@@ -280,7 +280,7 @@ vegas2v2 -G -snpandp MC4R.snpandp -custom $PWD/g1000p3_EUR -glist glist-hg19 -ge
 ```
 The reason to use ldsc.txt is to allow for the possibility of finemapping.
 
-### Colocalisation analysis
+## Colocalisation analysis
 
 This can be explored with https://github.com/joepickrell/gwas-pw. Assuming that bmi_height.gz has per-SNP z values and variances, the analysis proceeds with
 ```bash
