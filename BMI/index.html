@@ -141,6 +141,26 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#fine-mapping" class="nav-link">Fine-mapping</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#colocalisation" class="nav-link">Colocalisation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#prediction" class="nav-link">Prediction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#approximately-independent-ld-blocks" class="nav-link">Approximately independent LD blocks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#colocalisation-analysis" class="nav-link">Colocalisation analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
               <ul class="nav flex-column">
               </ul>
@@ -319,7 +339,7 @@ done
 </code></pre>
 <p>Note again the header/column is customised differently from its DEPICT counterpart and results are obtained by chromosome.</p>
 <p>Two additional aspects are useful to explore:</p>
-<h3 id="fine-mapping">Fine-mapping</h3>
+<h2 id="fine-mapping">Fine-mapping</h2>
 <p>In line with the fact that both TWAS and GWAS z scores are available, the option <code>--caviar</code> natually put them as input files for <code>CARIAR</code>,</p>
 <pre><code class="language-bash">for chr in $(seq 22)
 do
@@ -334,7 +354,7 @@ Rscript FUSION.assoc_test.R \
 done
 </code></pre>
 <p>which are CAVIAR.EQTL.Z, CAVIAR.GWAS.Z, CAVIAR.LD triplets with prefix caviar.genename.</p>
-<h3 id="colocalisation">Colocalisation</h3>
+<h2 id="colocalisation">Colocalisation</h2>
 <p>This is furnished with <code>--coloc_P --GWASN</code>,</p>
 <pre><code class="language-bash">for chr in $(seq 22)
 do
@@ -349,9 +369,9 @@ Rscript FUSION.assoc_test.R \
 --out coloc$chr.dat
 done
 </code></pre>
-<h3 id="prediction">Prediction</h3>
+<h2 id="prediction">Prediction</h2>
 <p>See <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> on the use of <code>utils/make_score.R</code>, which is based on the best model.</p>
-<h3 id="approximately-independent-ld-blocks">Approximately independent LD blocks</h3>
+<h2 id="approximately-independent-ld-blocks">Approximately independent LD blocks</h2>
 <p>We can use these blocks genomewide or a specific gene, e.g., MC4R,</p>
 <pre><code class="language-bash">awk 'NR&gt;1' ldsc.txt | sort -k1,1n -k2,2n | awk '
 {
@@ -385,7 +405,7 @@ echo MC4R &gt; MC4R.genelist
 vegas2v2 -G -snpandp MC4R.snpandp -custom $PWD/g1000p3_EUR -glist glist-hg19 -genelist MC4R.genelist -out MC4R
 </code></pre>
 <p>The reason to use ldsc.txt is to allow for the possibility of finemapping.</p>
-<h3 id="colocalisation-analysis">Colocalisation analysis</h3>
+<h2 id="colocalisation-analysis">Colocalisation analysis</h2>
 <p>This can be explored with https://github.com/joepickrell/gwas-pw. Assuming that bmi_height.gz has per-SNP z values and variances, the analysis proceeds with
 ```bash
 gwas-pw -i bmi_height.gz -bed EUR.bed -phenos BMI HEIGHT
