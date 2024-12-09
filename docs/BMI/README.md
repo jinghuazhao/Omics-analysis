@@ -1,4 +1,4 @@
-## BMI
+# BMI
 
 <img src="BMI.png" width="600" height="400" align="right">
 
