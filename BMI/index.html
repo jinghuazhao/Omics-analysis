@@ -141,10 +141,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#approximately-independent-ld-blocks" class="nav-link">Approximately independent LD blocks</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
               <ul class="nav flex-column">
               </ul>
@@ -355,7 +351,7 @@ done
 </code></pre>
 <h3 id="prediction">Prediction</h3>
 <p>See <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> on the use of <code>utils/make_score.R</code>, which is based on the best model.</p>
-<h2 id="approximately-independent-ld-blocks">Approximately independent LD blocks</h2>
+<h3 id="approximately-independent-ld-blocks">Approximately independent LD blocks</h3>
 <p>We can use these blocks genomewide or a specific gene, e.g., MC4R,</p>
 <pre><code class="language-bash">awk 'NR&gt;1' ldsc.txt | sort -k1,1n -k2,2n | awk '
 {
