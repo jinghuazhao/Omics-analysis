@@ -1,0 +1,171 @@
+> gz <- gzfile("BMI-COJO.gz")
+> d <- read.delim(gz,as.is=TRUE)
+> library(TwoSampleMR)
+> exposure_dat <- format_data(d, type="exposure", snp_col = "SNP", effect_allele_col = "Tested_Allele", other_allele_col = "Other_Allele",
++                             eaf_col = "Freq_Tested_Allele_in_HRS", beta_col = "BETA_COJO", se_col = "SE_COJO", pval_col = "P_COJO", samplesize_col = "N")
+> ao <- available_outcomes()
+> subset(ao,consortium=="DIAGRAM")
+     access    author category consortium                             filename
+283  public Mahajan A  Disease    DIAGRAM    diagram.mega-meta.txt.tab.all_pos
+305  public   Gaulton  Disease    DIAGRAM DIAGRAM_Gaulton_2015.txt.tab.all_pos
+316  public    Morris  Disease    DIAGRAM  DIAGRAMv3.2012DEC17.txt.tab.all_pos
+1084 public    Morris  Disease    DIAGRAM           DIAGRAM.noWTCCC.out.gz.tab
+      id mr ncase ncontrol
+283   23  1 26488    83964
+305   25  1 27206    57574
+316   26  1 12171    56862
+1084 976  1 10247    53924
+                                                                                   note
+283                               Effect allele frequencies are missing; forward strand
+305                                                                      forward strand
+316                               Effect allele frequencies are missing; forward strand
+1084 DIAGRAM excluding the WTCCC; effect allele frequencies are missing; forward strand
+        nsnp
+283  2915012
+305    45944
+316  2473442
+1084 2662411
+                                                                                          path
+283                                     /projects/MRC-IEU/publicdata/GWAS_summary_data/DIAGRAM
+305                                     /projects/MRC-IEU/publicdata/GWAS_summary_data/diagram
+316                                     /projects/MRC-IEU/publicdata/GWAS_summary_data/DIAGRAM
+1084 /projects/MRC-IEU/research/data/evidencehub/summary/gwas/raw/DIAGRAMnoWTCCC_Diabetes/data
+         pmid population priority sample_size sd               sex subcategory
+283  24509480      Mixed        1      110452 NA Males and females    Diabetes
+305  26551672      Mixed        4       84780 NA Males and females    Diabetes
+316  22885922   European        2       69033 NA Males and females    Diabetes
+1084 22885922      Mixed        5       64171 NA Males and females    Diabetes
+               trait     unit year
+283  Type 2 diabetes log odds 2014
+305  Type 2 diabetes log odds 2015
+316  Type 2 diabetes log odds 2012
+1084 Type 2 diabetes log odds 2012
+> outcome_dat <- extract_outcome_data(exposure_dat$SNP, 23, proxies = 1, rsq = 0.8, align_alleles = 1, palindromes = 1, maf_threshold = 0.3)
+> dat <- harmonise_data(exposure_dat, outcome_dat, action = 2)
+> res_mr <- mr(dat)
+> mr_heterogeneity(dat)
+  id.exposure id.outcome                  outcome exposure
+1      4bD6VX         23 Type 2 diabetes || id:23 exposure
+2      4bD6VX         23 Type 2 diabetes || id:23 exposure
+3      4bD6VX         23 Type 2 diabetes || id:23 exposure
+                     method        Q Q_df        Q_pval
+1        Maximum likelihood 1995.276  797 5.495035e-104
+2                  MR Egger 1947.105  796  6.217868e-98
+3 Inverse variance weighted 1997.334  797 2.956293e-104
+> mr_pleiotropy_test(dat)
+  id.exposure id.outcome                  outcome exposure egger_intercept
+1      4bD6VX         23 Type 2 diabetes || id:23 exposure     0.006393753
+           se        pval
+1 0.001410967 6.75595e-06
+> res_single <- mr_singlesnp(dat)
+> res_loo <- mr_leaveoneout(dat)
+> pdf("MR.pdf")
+> mr_scatter_plot(res_mr, dat)
+$`4bD6VX.23`
+
+attr(,"split_type")
+[1] "data.frame"
+attr(,"split_labels")
+  id.exposure id.outcome
+1      4bD6VX         23
+> mr_forest_plot(res_single)
+$`4bD6VX.23`
+
+attr(,"split_type")
+[1] "data.frame"
+attr(,"split_labels")
+  id.exposure id.outcome
+1      4bD6VX         23
+> mr_leaveoneout_plot(res_loo)
+$`4bD6VX.23`
+
+attr(,"split_type")
+[1] "data.frame"
+attr(,"split_labels")
+  id.exposure id.outcome
+1      4bD6VX         23
+> mr_funnel_plot(res_single)
+$`4bD6VX.23`
+
+attr(,"split_type")
+[1] "data.frame"
+attr(,"split_labels")
+  id.exposure id.outcome
+1      4bD6VX         23
+> 
+> library(MendelianRandomization)
+> MRInputObject <- with(dat, mr_input(bx = beta.exposure, bxse = se.exposure, by = beta.outcome, byse = se.outcome,
++                                     exposure = "Body mass index", outcome = "T2D", snps = SNP))
+> mr_ivw(MRInputObject, model = "default", robust = FALSE, penalized = FALSE, weights = "simple", distribution = "normal", alpha = 0.05)
+
+Inverse-variance weighted method
+(variants uncorrelated, random-effect model)
+
+Number of Variants : 937 
+
+------------------------------------------------------------------
+ Method Estimate Std Error 95% CI       p-value
+    IVW    0.276     0.035 0.208, 0.345   0.000
+------------------------------------------------------------------
+Residual standard error =  1.554 
+Heterogeneity test statistic = 2260.7934 on 936 degrees of freedom, (p-value = 0.0000)
+> mr_egger(MRInputObject, robust = FALSE, penalized = FALSE, distribution = "normal", alpha = 0.05)
+
+MR-Egger method
+(variants uncorrelated, random-effect model)
+
+Number of Variants =  937 
+
+------------------------------------------------------------------
+      Method Estimate Std Error  95% CI       p-value
+    MR-Egger    0.052     0.057 -0.061, 0.164   0.365
+ (intercept)    0.006     0.001  0.004, 0.009   0.000
+------------------------------------------------------------------
+Residual Standard Error :  1.535 
+Heterogeneity test statistic = 2204.2411 on 935 degrees of freedom, (p-value = 0.0000)
+I^2_GX statistic: 96.3%
+> mr_maxlik(MRInputObject, model = "default", distribution = "normal", alpha = 0.05)
+
+Maximum-likelihood method
+(variants uncorrelated, random-effect model)
+
+Number of Variants : 937 
+------------------------------------------------------------------
+ Method Estimate Std Error 95% CI       p-value
+ MaxLik    0.277     0.036 0.207, 0.347   0.000
+------------------------------------------------------------------
+Residual standard error =  1.553 
+Heterogeneity test statistic = 2258.8539 on 936 degrees of freedom, (p-value = 0.0000)
+> mr_median(MRInputObject, weighting = "weighted", distribution = "normal", alpha = 0.05, iterations = 10000, seed = 314159265)
+
+ Weighted median method 
+
+Number of Variants : 937 
+------------------------------------------------------------------
+                 Method Estimate Std Error 95% CI       p-value
+ Weighted median method    0.170     0.043 0.085, 0.255   0.000
+------------------------------------------------------------------
+> mr_allmethods(MRInputObject, method = "all")
+                    Method Estimate Std Error 95% CI        P-value
+             Simple median    0.582     0.047   0.489 0.674   0.000
+           Weighted median    0.170     0.043   0.085 0.255   0.000
+ Penalized weighted median    0.170     0.044   0.085 0.256   0.000
+                                                                   
+                       IVW    0.276     0.035   0.208 0.345   0.000
+             Penalized IVW    0.401     0.030   0.343 0.460   0.000
+                Robust IVW    0.293     0.034   0.225 0.361   0.000
+      Penalized robust IVW    0.394     0.032   0.332 0.455   0.000
+                                                                   
+                  MR-Egger    0.052     0.057  -0.061 0.164   0.365
+               (intercept)    0.006     0.001   0.004 0.009   0.000
+        Penalized MR-Egger   -0.015     0.043  -0.100 0.071   0.736
+               (intercept)    0.009     0.001   0.007 0.011   0.000
+           Robust MR-Egger   -0.004     0.047  -0.097 0.089   0.930
+               (intercept)    0.008     0.001   0.006 0.011   0.000
+ Penalized robust MR-Egger   -0.015     0.047  -0.106 0.077   0.756
+               (intercept)    0.009     0.001   0.007 0.011   0.000
+> mr_plot(MRInputObject, error = TRUE, orientate = FALSE, interactive = TRUE, labels = TRUE, line = "ivw")
+> dev.off()
+null device 
+          1 
+> 

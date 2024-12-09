@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Index - Omics-analysis</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/Bash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/HTML.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/Java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/JavaScript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/Perl.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/Python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/R.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">Omics-analysis</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link"></a>
+                            </li>
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Resources</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Genomics <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../docs/genomics.md" class="dropdown-item">None</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Proteomics <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../docs/proteomics.md" class="dropdown-item">None</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/jinghuazhao/Omics-analysis" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#bmi" class="nav-link">BMI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#independent-signals" class="nav-link">Independent signals</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#annotation" class="nav-link">Annotation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#pathway-analysis" class="nav-link">Pathway analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#partitioned-heritabilty" class="nav-link">Partitioned heritabilty</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#mendelian-randomisation" class="nav-link">Mendelian Randomisation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#twas" class="nav-link">TWAS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#references" class="nav-link">References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="bmi">BMI</h2>
+<p><img src="BMI.png" width="600" height="400" align="right"></p>
+<hr />
+<ul>
+<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#visualisation">Visualisation</a></li>
+<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#independent-signals">Independent signals</a></li>
+<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#annotation">Annotation</a></li>
+<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#pathway-analysis">Pathway analysis</a></li>
+<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#partitioned-heritabilty">Partitioned heritabilty</a></li>
+<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#mendelian-randomisation">Mendelian Randomisation</a></li>
+<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#twas">TWAS</a></li>
+<li><a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/BMI#references">References</a></li>
+</ul>
+<hr />
+<p>We next work on the latest GIANT+Biiobank data on BMI (Yengo et al. 2018), including both the genomewide</p>
+<pre><code class="language-bash">wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
+</code></pre>
+<p>and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded below on the fly. We would refer to <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> where information specific software can be seen from their respective directories.</p>
+<h3 id="visualisation">Visualisation</h3>
+<p>The first thing is to see the Manhattan plot; in this case the P values could be extremely small and we resort to a
+truncated version.</p>
+<pre><code class="language-r">options(width=120)
+gz &lt;- gzfile(&quot;Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz&quot;)
+BMI &lt;- within(read.delim(gz,as.is=TRUE), {Z &lt;- BETA/SE})
+print(subset(BMI[c(&quot;CHR&quot;,&quot;POS&quot;,&quot;SNP&quot;,&quot;P&quot;)],CHR!=16 &amp; P&lt;=1e-150))
+library(Rmpfr)
+print(within(subset(BMI, P==0, select=c(CHR,POS,SNP,Z)), 
+             {P &lt;- format(2*pnorm(mpfr(abs(Z),100),lower.tail=FALSE)); Pvalue &lt;- pvalue(Z); log10P &lt;- -log10p(Z)}))
+png(&quot;BMI.png&quot;, res=300, units=&quot;in&quot;, width=9, height=6)
+par(oma=c(0,0,0,0), mar=c(5,6.5,1,1))
+mhtplot.trunc(BMI, chr=&quot;CHR&quot;, bp=&quot;POS&quot;, z=&quot;Z&quot;, snp=&quot;SNP&quot;,
+              suggestiveline=FALSE, genomewideline=-log10(1e-8),
+              cex.mtext=1.2, cex.text=1.2,
+              annotatelog10P=156, annotateTop = FALSE, highlight=c(&quot;rs13021737&quot;,&quot;rs17817449&quot;,&quot;rs6567160&quot;),
+              mtext.line=3, y.brk1=200, y.brk2=280, cex.axis=1.2, cex.y=1.2, cex=0.5,
+              y.ax.space=20,
+              col = c(&quot;blue4&quot;, &quot;skyblue&quot;)
+)
+dev.off()
+</code></pre>
+<p>Note especially those P values equal to zero -- <code>pvalue()</code> and <code>R/Rmpfr</code> both give the minimum approximately 1.26e-479. Nevertheless, it is safer
+to generate -log10(P) on the fly -- in <a href="BMI.png">the plot</a> chromosome.16 stands out which would not be so should we restrict ourselves only
+to nonzero P values. We went further to highlight three SNPs.</p>
+<h2 id="independent-signals">Independent signals</h2>
+<pre><code class="language-bash">(
+  zcat Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz | \
+  head -1
+  zcat Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz | \
+  awk '(NR&gt;1 &amp;&amp; $9&lt;=1e-8)' | \
+  sort -k1,1n -k2,2n
+) &gt; BMI.dat
+module load gcc/5.2.0
+R --no-save -q &lt; BMI.R &gt; BMI.out
+</code></pre>
+<p>where the <code>module</code> command prepares for appropriate version of R to be enabled and <code>BMI.R</code> selects independent signals as follows,</p>
+<pre><code class="language-r">options(echo=FALSE)
+BMI &lt;- read.delim(&quot;BMI.dat&quot;,as.is=TRUE)[c(&quot;CHR&quot;,&quot;POS&quot;,&quot;SNP&quot;,&quot;BETA&quot;,&quot;SE&quot;,&quot;P&quot;)]
+require(reshape)
+BMI &lt;- rename(BMI,c(CHR=&quot;Chrom&quot;,POS=&quot;End&quot;,SNP=&quot;MarkerName&quot;,BETA=&quot;Effect&quot;,SE=&quot;StdErr&quot;,P=&quot;P.value&quot;))
+require(gap)
+chrs &lt;- with(BMI,unique(Chrom))
+for(chr in chrs)
+{
+  print(chr)
+  ps &lt;- subset(BMI[c(&quot;Chrom&quot;,&quot;End&quot;,&quot;MarkerName&quot;,&quot;Effect&quot;,&quot;StdErr&quot;)],Chrom==chr)
+  row.names(ps) &lt;- 1:nrow(ps)
+  sentinels(ps,chr,1)
+}
+</code></pre>
+<p>It is noted that awk has problem dealing with very small values and the code is altered slightly as follows,</p>
+<pre><code class="language-bash">(
+  zcat Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz | \
+  head -1
+  zcat Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz | \
+  awk '
+    function abs(x)
+    {
+      if (x&lt;0) return -x;
+      else return x;
+    }
+    (NR&gt;1 &amp;&amp; abs($7/$8) &gt;= 5.730729)' | \
+  sort -k1,1n -k2,2n
+) &gt; BMI.dat
+
+R --no-save -q &lt; BMI.R &gt; BMI.out
+</code></pre>
+<p>Then BMI.out has 632 entries instead of 626, i.e., six were recovered. Note also the magic value 5.730729 is obtained from <code>qnorm(1-0.5e-8)</code> from R.</p>
+<h2 id="annotation">Annotation</h2>
+<p>As a follow-up to the earlier GIANT analysis, we have in the directory results from PhenoScanner for the 97 SNPs described in the SUMSTATS repository</p>
+<pre><code class="language-bash">module load phenoscanner/phenoscanner_v2
+phenoscanner -c All -l No -p 0.00001 -i 97.snps -o 97
+</code></pre>
+<p>For the GIANT+UKB data above, the setup is</p>
+<pre><code class="language-bash">awk 'NR&gt;1' BMI.dat | \
+cut -f3 &gt; BMI.rsid
+phenoscanner -c All -l No -p 0.00001 -i BMI.rsid -o BMI
+</code></pre>
+<p>in both cases, results could be expanded by allowing for LD.</p>
+<h2 id="pathway-analysis">Pathway analysis</h2>
+<pre><code class="language-bash">gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | awk '
+{
+   FS=OFS=&quot;\t&quot;
+   if(NR==1) print &quot;SNP&quot;,&quot;Chr&quot;,&quot;Pos&quot;,&quot;P&quot;
+   else if($9&lt;=5e-8) print $3,$1,$2,$9
+}' | gzip -f &gt; BMI.txt.gz
+
+</code></pre>
+<p>where we opt to customise the header/column rather than the DEPICT configuration file. Moreover, the (hg19) chromosomal positions are <em>eventually</em> back in the data which would facilitate GCTA --cojo analysis and mirrors https://github.com/jinghuazhao/SUMSTATS.</p>
+<p>As usual, we make a call to <a href="BMI.cfg">BMI.cfg</a> via</p>
+<pre><code class="language-bash">depict.py BMI.cfg
+</code></pre>
+<p>where the <code>DEPICT_v1_rel194.tar.gz</code> version is used. Once started, there was complaint that</p>
+<pre><code>Retrieving background loci
+Exiting.. To few background files in data/backgrounds/nloci723_nperm500_kb500_rsq0.1_mhc25000000-35000000_colld0.5-collection-1000genomespilot-depict-150429/. Please remove the folder, rerun DEPICT and contact tunepers@broadinstitute.org if the error prevails.
+</code></pre>
+<p>Follow instruction and remove the directory. It is very slow-going, ~20 hours on our Linux node but surprisingly half that time under my Windows 10 whose directory zipped and then unzipped under Linux and run<code>depict.py</code>there.</p>
+<p>We then generate <a href="BMI.xlsx">BMI.xlsx</a> as in <a href="https://github.com/jinghuazhao/PW-pipeline/wiki">PW-pipelne</a>. While there are 859 genesets with FDR&lt;0.05, tissue enrichment shows compelingly an overwhelming role of the nervous system.</p>
+<p>This is detailed from <a href="https://github.com/jinghuazhao/PW-pipeline/wiki">PW-pipeline/wiki</a> for the analysis.</p>
+<h2 id="partitioned-heritabilty">Partitioned heritabilty</h2>
+<p>Information for the documentation example is available from <a href="https://github.com/jinghuazhao/software-notes/">software-notes</a>. Here we carry on with the .gz file above.</p>
+<pre><code class="language-bash">gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz &gt; ldsc.txt
+python munge_sumstats.py --sumstats ldsc.txt --a1 Tested_Allele --a2 Other_allele --merge-alleles w_hm3.snplist --out ldsc --a1-inc
+</code></pre>
+<p>where we fix the header with appropriate command-line parameters. We see <a href="ldsc.sumstats.gz">ldsc.sumstats.gz</a> and <a href="ldsc.log">ldsc.log</a> and carry on with</p>
+<pre><code class="language-bash">python ldsc.py --h2 ldsc.sumstats.gz\
+        --ref-ld-chr baseline_v1.1/baseline.\
+        --w-ld-chr 1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.\
+        --overlap-annot\
+        --frqfile-chr 1000G_Phase3_frq/1000G.EUR.QC.\
+        --out ldsc_baseline
+</code></pre>
+<p>to generate <a href="ldsc_baseline.results">ldsc_baseline.results</a> and <a href="ldsc_baseline.log">ldsc_baseline.log</a> and</p>
+<pre><code class="language-bash">python ldsc.py --h2 ldsc.sumstats.gz\
+        --w-ld-chr 1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.\
+        --ref-ld-chr 1000G_Phase3_cell_type_groups/cell_type_group.3.,baseline_v1.1/baseline.\
+        --overlap-annot\
+        --frqfile-chr 1000G_Phase3_frq/1000G.EUR.QC.\
+        --out ldsc_CNS\
+        --print-coefficients
+</code></pre>
+<p>for <a href="ldsc_CNS.results">ldsc_baseline.results</a> and <a href="ldsc_CNS.log">ldsc_baseline.log</a>.</p>
+<h2 id="mendelian-randomisation">Mendelian Randomisation</h2>
+<p>A documented example on BMI-lung cancer is adapted in <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> but our focus here is on BMI-T2D from DIAGRAM,</p>
+<pre><code class="language-bash">wget -qO- https://portals.broadinstitute.org/collaboration/giant/images/e/e2/Meta-analysis_Locke_et_al+UKBiobank_2018_top_941_from_COJO_analysis_UPDATED.txt.gz &gt; BMI-COJO.gz
+R --no-save -q &lt; MR.R &gt; MR.log
+</code></pre>
+<p>and call <a href="MR.R">MR.R</a> to generate <a href="MR.log">MR.log</a> and <a href="MR.pdf">MR.pdf</a>.</p>
+<h2 id="twas">TWAS</h2>
+<p>We start with <code>MetaXcan</code> as follows,</p>
+<pre><code class="language-bash">cd /home/jhz22/D/genetics/hakyimlab/MetaXcan/software
+
+./MetaXcan.py \
+--model_db_path /home/jhz22/D/genetics/hakyimlab/PredictDB/GTEx-V7_HapMap-2017-11-29/gtex_v7_Brain_Amygdala_imputed_europeans_tw_0.5_signif.db \
+--covariance /home/jhz22/D/genetics/hakyimlab/PredictDB/GTEx-V7_HapMap-2017-11-29/gtex_v7_Brain_Amygdala_imputed_eur_covariances.txt.gz \
+--gwas_file ldsc.txt \
+--snp_column SNP \
+--effect_allele_column Tested_Allele \
+--non_effect_allele_column Other_Allele \
+--beta_column BETA \
+--pvalue_column P \
+--output_file MX.csv
+</code></pre>
+<p>where instead of chromosome-specific summary statistics as shown in <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> we use <code>ldsc.txt</code> created above directly with results contained in <a href="MX.csv">MX.csv</a> and screen output <a href="MX.log">MX.log</a>.</p>
+<p>We would also be tempting to contrast results with FUSION,</p>
+<pre><code class="language-bash">gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | awk '
+{
+   FS=OFS=&quot;\t&quot;
+   if(NR==1) print &quot;SNP&quot;,&quot;A1&quot;,&quot;A2&quot;,&quot;Z&quot;
+   else print $3,$4,$5,$7/$8
+}' &gt; fusion.txt
+for chr in $(seq 22)
+do
+    Rscript FUSION.assoc_test.R --sumstats fusion.txt \
+                                --weight1s WEIGHTS/NTR.BLOOD.RNAARR.pos --weights_dir WEIGHTS/ \
+                                --ref_ld_chr LDREF/1000G.EUR. --chr $chr --out fusion.$chr.dat
+done
+</code></pre>
+<p>Note again the header/column is customised differently from its DEPICT counterpart and results are obtained by chromosome.</p>
+<p>Two additional aspects are useful to explore:</p>
+<h3 id="fine-mapping">Fine-mapping</h3>
+<p>In line with the fact that both TWAS and GWAS z scores are available, the option <code>--caviar</code> natually put them as input files for <code>CARIAR</code>,</p>
+<pre><code class="language-bash">for chr in $(seq 22)
+do
+Rscript FUSION.assoc_test.R \
+--sumstats fusion.txt \
+--weights /home/jhz22/D/mrc/genetics/FUSION/GE/CMC.BRAIN.RNASEQ.pos \
+--weights_dir /home/jhz22/D/mrc/genetics/FUSION/GE/ \
+--ref_ld_chr /home/jhz22/D/genetics/fusion_twas/LDREF/1000G.EUR. \
+--chr $chr \
+--caviar \
+--out caviar
+done
+</code></pre>
+<p>which are CAVIAR.EQTL.Z, CAVIAR.GWAS.Z, CAVIAR.LD triplets with prefix caviar.genename.</p>
+<h3 id="colocalisation">Colocalisation</h3>
+<p>This is furnished with <code>--coloc_P --GWASN</code>,</p>
+<pre><code class="language-bash">for chr in $(seq 22)
+do
+Rscript FUSION.assoc_test.R \
+--sumstats fusion.txt \
+--weights /home/jhz22/D/mrc/genetics/FUSION/GE/CMC.BRAIN.RNASEQ.pos \
+--weights_dir /home/jhz22/D/mrc/genetics/FUSION/GE/ \
+--ref_ld_chr /home/jhz22/D/genetics/fusion_twas/LDREF/1000G.EUR. \
+--chr $chr \
+--coloc_P 5e-8 \
+--GWASN 70000 \
+--out coloc$chr.dat
+done
+</code></pre>
+<h3 id="prediction">Prediction</h3>
+<p>See <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> on the use of <code>utils/make_score.R</code>, which is based on the best model.</p>
+<h3 id="approximately-independent-ld-blocks">Approximately independent LD blocks</h3>
+<p>We can use these blocks genomewide or a specific gene, e.g., MC4R,</p>
+<pre><code class="language-bash">awk 'NR&gt;1' ldsc.txt | sort -k1,1n -k2,2n | awk '
+{
+  OFS=&quot;\t&quot;
+  if (NR==1) print &quot;#chrom&quot;, &quot;Start&quot;, &quot;End&quot;, &quot;SNP&quot;, &quot;A1&quot;, &quot;A2&quot;, &quot;FreqA1&quot;, &quot;BETA&quot;, &quot;SE&quot;, &quot;P&quot;, &quot;N&quot;
+  print &quot;chr&quot; $1, $2-1, $2, $3, $4, $5, $6, $7, $8, $9, $10
+}' &gt; BMI.bed
+
+# EUR.bed is now with FM-pipeline
+intersectBed -a BMI.bed -b EUR.bed -loj | cut -f12-14 --complement &gt; BMI.txt
+
+cut -f4,10 BMI.txt &gt; BMI.snpandp
+# gene-based association
+vegas2v2 -G -snpandp BMI.snpandp -custom $PWD/g1000p3_EUR -glist glist-hg19 -out genes
+# pathway-based association
+awk '(NR&gt;1){OFS=&quot;\t&quot;;gsub(/&quot;/,&quot;&quot;,$0);print $2,$8}' genes.out &gt; BMI.geneandp
+vegas2v2 -P -geneandp BMI.geneandp -glist glist-hg19 -geneandpath biosystems20160324.vegas2pathSYM -out pathways
+
+# grep MC4R glist-hg19 --&gt; 18 58038563 58040001 MC4R
+# 1439 bp
+# EUR.bed -- &gt; 1563   chr18 57630483 59020751 region1563
+# 1390268 bp
+
+awk /region1563/ BMI.txt &gt; MC4R.txt
+
+# wc -l MC4R.txt
+# 1342 SNPs
+
+cut -f4,10 MC4R.txt &gt; MC4R.snpandp
+echo MC4R &gt; MC4R.genelist
+vegas2v2 -G -snpandp MC4R.snpandp -custom $PWD/g1000p3_EUR -glist glist-hg19 -genelist MC4R.genelist -out MC4R
+</code></pre>
+<p>The reason to use ldsc.txt is to allow for the possibility of finemapping.</p>
+<h3 id="colocalisation-analysis">Colocalisation analysis</h3>
+<p>This can be explored with https://github.com/joepickrell/gwas-pw. Assuming that bmi_height.gz has per-SNP z values and variances, the analysis proceeds with
+```bash
+gwas-pw -i bmi_height.gz -bed EUR.bed -phenos BMI HEIGHT
+````
+giving results on four models (1. BMI only, 2. HEIGHT only, 3. both, 4. separate) significance.</p>
+<h2 id="references">References</h2>
+<p>Yengo L, et al (2018). Meta-analysis of genome-wide association studies for height and body mass index in ~700,000 individuals of European ancestry. <em>Hum Mol Genet</em> 27(20):3641–3649, BioRxiv,
+https://www.biorxiv.org/content/10.1101/274654v2.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../javascripts/config.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

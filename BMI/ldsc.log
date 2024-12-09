@@ -1,0 +1,48 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.0
+* (C) 2014-2015 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./munge_sumstats.py \
+--out ldsc \
+--merge-alleles w_hm3.snplist \
+--a1-inc  \
+--a1 Tested_Allele \
+--a2 Other_allele \
+--sumstats ldsc.txt 
+
+Interpreting column names as follows:
+P:	p-Value
+Other_Allele:	Allele 2, interpreted as non-ref allele for signed sumstat.
+Tested_Allele:	Allele 1, interpreted as ref allele for signed sumstat.
+SNP:	Variant ID (e.g., rs number)
+N:	Sample size
+
+Reading list of SNPs for allele merge from w_hm3.snplist
+Read 1217311 SNPs for allele merge.
+Reading sumstats from ldsc.txt into memory 5000000 SNPs at a time.
+WARNING: 1 SNPs had P outside of (0,1]. The P column may be mislabeled.
+Read 2348397 SNPs from --sumstats file.
+Removed 1323282 SNPs not in --merge-alleles.
+Removed 0 SNPs with missing values.
+Removed 0 SNPs with INFO <= 0.9.
+Removed 0 SNPs with MAF <= 0.01.
+Removed 1 SNPs with out-of-bounds p-values.
+Removed 0 variants that were not SNPs or were strand-ambiguous.
+1025114 SNPs remain.
+Removed 2 SNPs with duplicated rs numbers (1025112 SNPs remain).
+Removed 0 SNPs with N < 461633.333333 (1025112 SNPs remain).
+Removed 0 SNPs whose alleles did not match --merge-alleles (1025112 SNPs remain).
+Writing summary statistics for 1217311 SNPs (1025112 with nonmissing beta) to ldsc.sumstats.gz.
+
+Metadata:
+Mean chi^2 = 3.465
+Lambda GC = 2.566
+Max chi^2 = 1416.756
+13191 Genome-wide significant SNPs (some may have been removed by filtering).
+
+Conversion finished at Sat Jun 23 00:46:44 2018
+Total time elapsed: 8.0h:23.0m:47.25s
