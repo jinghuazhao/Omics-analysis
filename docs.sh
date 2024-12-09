@@ -15,9 +15,7 @@ setup
 mkdocs build
 mkdocs gh-deploy
 
-git add README.md
-git commit -m "README"
-for d in docs
+for d in README.md .gitignore docs mkdocs.yml
 do
    git add $d
    git commit -m "$d"
