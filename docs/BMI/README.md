@@ -1,6 +1,6 @@
-<img src="BMI.png" width="800" height="400" align="right">
-
 # BMI
+
+<img src="BMI.png" width="800" height="400" align="right">
 
 We work on the GIANT+Biiobank data on BMI (Yengo et al. 2018), including both the genomewide
 ```bash
