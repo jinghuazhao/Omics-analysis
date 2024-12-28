@@ -56,6 +56,12 @@ gencode <- as.data.frame(gtf)
     * [Pan-UK Biobank](https://pan.ukbb.broadinstitute.org/), [GWAS sumstats](http://www.nealelab.is/blog/2019/9/16/biomarkers-gwas-results) and [GitHub](https://github.com/Nealelab/UK_Biobank_GWAS).
     * COVID-19 [data](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19), [format](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19_tests) and [field](http://biobank.ctsu.ox.ac.uk/ukb/field.cgi?id=40100).
 
+## Catalog
+
+- eQTL Catalog, <https://www.ebi.ac.uk/eqtl/>
+- GWAS Catalog, <https://www.ebi.ac.uk/gwas/>
+- PheWAS Catalog, <https://phewascatalog.org/>
+
 ## EFO
 
 <https://www.ebi.ac.uk/efo/>
@@ -92,12 +98,6 @@ library(ontologyPlot)
 onto_plot(efo,efo_0000540)
 dev.off()
 ```
-
-## Catalog
-
-- eQTL Catalog, <https://www.ebi.ac.uk/eqtl/>
-- GWAS Catalog, <https://www.ebi.ac.uk/gwas/>
-- PheWAS Catalog, <https://phewascatalog.org/>
 
 ## rentrez
 
