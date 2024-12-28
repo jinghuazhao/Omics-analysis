@@ -163,11 +163,11 @@ all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
 
 ## TWAS
 
-    - MetaXcan, <https://github.com/hakyimlab/MetaXcan>
-    - FUSION, <http://gusevlab.org/projects/fusion/>
-    - OmicsPred, <https://www.omicspred.org/>
-    - PredictDB data repository, <http://predictdb.org/>
-    - TWAS-hub, <http://twas-hub.org/>
+- MetaXcan, <https://github.com/hakyimlab/MetaXcan>
+- FUSION, <http://gusevlab.org/projects/fusion/>
+- OmicsPred, <https://www.omicspred.org/>
+- PredictDB data repository, <http://predictdb.org/>
+- TWAS-hub, <http://twas-hub.org/>
 
 ## Other links
 
