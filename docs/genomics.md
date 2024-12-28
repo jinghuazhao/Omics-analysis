@@ -8,13 +8,13 @@
 - Course on GWAS by Matti Pirinen, <https://www.mv.helsinki.fi/home/mjxpirin/GWAS_course/>
 - d3blocks, <https://github.com/d3blocks/d3blocks> ([documentation](https://d3blocks.github.io/d3blocks/pages/html/index.html#))
 - FUMA GWAS, <https://fuma.ctglab.nl/> (<https://github.com/Kyoko-wtnb/FUMA-webapp/>)
+- GA4GH, <https://www.ga4gh.org/>
 - GATK, <https://gatk.broadinstitute.org/hc/en-us>
 - GBMI, <https://www.globalbiobankmeta.org/resources>
-- GA4GH, <https://www.ga4gh.org/>
 - Glossary of Genetics, <https://www.genome.gov/genetics-glossary>
 * G*Power, <https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower>, <https://stats.oarc.ucla.edu/other/gpower/>
 - GRCh38 reference genome, <https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/>
-- GTEx, <https://gtexportal.org/home/datasets>
+- GTEx, <https://www.gtexportal.org/home/> ([datasets](https://gtexportal.org/home/datasets))
 - GWAS atlas, <https://atlas.ctglab.nl/traitDB>
 - GWAS Catalog, <https://www.ebi.ac.uk/gwas/>
 - GWAS Central, <https://www.gwascentral.org/>

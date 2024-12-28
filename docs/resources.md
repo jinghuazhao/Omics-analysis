@@ -99,10 +99,9 @@ onto_plot(efo,efo_0000540)
 dev.off()
 ```
 
-## GTEx and eQTLGen
+## eQTLGen
 
-* <https://www.gtexportal.org/home/> ([datasets](https://gtexportal.org/home/datasets))
-* <http://www.eqtlgen.org/>
+<http://www.eqtlgen.org/>
 
 ## MetaMapLite
 
