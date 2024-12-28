@@ -133,10 +133,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#fuma-gwas" class="nav-link">FUMA GWAS</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#gtex-and-eqtlgen" class="nav-link">GTEx and eQTLGen</a>
               <ul class="nav flex-column">
               </ul>
@@ -268,10 +264,11 @@ onto_plot(efo,efo_0000540)
 dev.off()
 </code></pre>
 <h2 id="catalog">Catalog</h2>
-<pre><code>- eQTL Catalog, &lt;https://www.ebi.ac.uk/eqtl/&gt;
-- GWAS Catalog, &lt;https://www.ebi.ac.uk/gwas/&gt;
-- PheWAS Catalog, &lt;https://phewascatalog.org/&gt;
-</code></pre>
+<ul>
+<li>eQTL Catalog, <a href="https://www.ebi.ac.uk/eqtl/">https://www.ebi.ac.uk/eqtl/</a></li>
+<li>GWAS Catalog, <a href="https://www.ebi.ac.uk/gwas/">https://www.ebi.ac.uk/gwas/</a></li>
+<li>PheWAS Catalog, <a href="https://phewascatalog.org/">https://phewascatalog.org/</a></li>
+</ul>
 <h2 id="rentrez">rentrez</h2>
 <p>The relevant URLs are as follows, </p>
 <ul>
@@ -309,8 +306,6 @@ asthma_variants
 snp_links &lt;- entrez_link(dbfrom=&quot;clinvar&quot;, db=&quot;snp&quot;, web_history=asthma_variants$web_histories$omim_clinvar, cmd=&quot;neighbor_history&quot;)
 all_links &lt;- entrez_link(dbfrom='pubmed', id=id, db='all')
 </code></pre>
-<h2 id="fuma-gwas">FUMA GWAS</h2>
-<p><a href="https://fuma.ctglab.nl/">https://fuma.ctglab.nl/</a> (<a href="https://github.com/Kyoko-wtnb/FUMA-webapp/">https://github.com/Kyoko-wtnb/FUMA-webapp/</a>)</p>
 <h2 id="gtex-and-eqtlgen">GTEx and eQTLGen</h2>
 <ul>
 <li><a href="https://www.gtexportal.org/home/">https://www.gtexportal.org/home/</a> (<a href="https://gtexportal.org/home/datasets">datasets</a>)</li>
