@@ -99,6 +99,20 @@ onto_plot(efo,efo_0000540)
 dev.off()
 ```
 
+## GTEx and eQTLGen
+
+* <https://www.gtexportal.org/home/> ([datasets](https://gtexportal.org/home/datasets))
+* <http://www.eqtlgen.org/>
+
+## MetaMapLite
+
+<https://metamap.nlm.nih.gov/MetaMapLite.shtml>
+
+## MR-Base/OpenGWAS
+
+* <http://www.mrbase.org> ([MRCIEU demo](https://github.com/MRCIEU/ieu-gwas-db-demo/))
+* <https://gwas.mrcieu.ac.uk>
+
 ## rentrez
 
 The relevant URLs are as follows, 
@@ -138,20 +152,6 @@ asthma_variants
 snp_links <- entrez_link(dbfrom="clinvar", db="snp", web_history=asthma_variants$web_histories$omim_clinvar, cmd="neighbor_history")
 all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
 ```
-
-## GTEx and eQTLGen
-
-* <https://www.gtexportal.org/home/> ([datasets](https://gtexportal.org/home/datasets))
-* <http://www.eqtlgen.org/>
-
-## MetaMapLite
-
-<https://metamap.nlm.nih.gov/MetaMapLite.shtml>
-
-## MR-Base/OpenGWAS
-
-* <http://www.mrbase.org> ([MRCIEU demo](https://github.com/MRCIEU/ieu-gwas-db-demo/))
-* <https://gwas.mrcieu.ac.uk>
 
 ## Roadmap
 
