@@ -94,9 +94,10 @@ dev.off()
 ```
 
 ## Catalog
-    - eQTL Catalog, <https://www.ebi.ac.uk/eqtl/>
-    - GWAS Catalog, <https://www.ebi.ac.uk/gwas/>
-    - PheWAS Catalog, <https://phewascatalog.org/>
+
+- eQTL Catalog, <https://www.ebi.ac.uk/eqtl/>
+- GWAS Catalog, <https://www.ebi.ac.uk/gwas/>
+- PheWAS Catalog, <https://phewascatalog.org/>
 
 ## rentrez
 
@@ -137,10 +138,6 @@ asthma_variants
 snp_links <- entrez_link(dbfrom="clinvar", db="snp", web_history=asthma_variants$web_histories$omim_clinvar, cmd="neighbor_history")
 all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
 ```
-
-## FUMA GWAS
-
-<https://fuma.ctglab.nl/> (<https://github.com/Kyoko-wtnb/FUMA-webapp/>)
 
 ## GTEx and eQTLGen
 
