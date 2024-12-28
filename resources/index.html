@@ -129,10 +129,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#rentrez" class="nav-link">rentrez</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#gtex-and-eqtlgen" class="nav-link">GTEx and eQTLGen</a>
               <ul class="nav flex-column">
               </ul>
@@ -142,6 +138,10 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#mr-baseopengwas" class="nav-link">MR-Base/OpenGWAS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rentrez" class="nav-link">rentrez</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -269,6 +269,18 @@ library(ontologyPlot)
 onto_plot(efo,efo_0000540)
 dev.off()
 </code></pre>
+<h2 id="gtex-and-eqtlgen">GTEx and eQTLGen</h2>
+<ul>
+<li><a href="https://www.gtexportal.org/home/">https://www.gtexportal.org/home/</a> (<a href="https://gtexportal.org/home/datasets">datasets</a>)</li>
+<li><a href="http://www.eqtlgen.org/">http://www.eqtlgen.org/</a></li>
+</ul>
+<h2 id="metamaplite">MetaMapLite</h2>
+<p><a href="https://metamap.nlm.nih.gov/MetaMapLite.shtml">https://metamap.nlm.nih.gov/MetaMapLite.shtml</a></p>
+<h2 id="mr-baseopengwas">MR-Base/OpenGWAS</h2>
+<ul>
+<li><a href="http://www.mrbase.org">http://www.mrbase.org</a> (<a href="https://github.com/MRCIEU/ieu-gwas-db-demo/">MRCIEU demo</a>)</li>
+<li><a href="https://gwas.mrcieu.ac.uk">https://gwas.mrcieu.ac.uk</a></li>
+</ul>
 <h2 id="rentrez">rentrez</h2>
 <p>The relevant URLs are as follows, </p>
 <ul>
@@ -306,18 +318,6 @@ asthma_variants
 snp_links &lt;- entrez_link(dbfrom=&quot;clinvar&quot;, db=&quot;snp&quot;, web_history=asthma_variants$web_histories$omim_clinvar, cmd=&quot;neighbor_history&quot;)
 all_links &lt;- entrez_link(dbfrom='pubmed', id=id, db='all')
 </code></pre>
-<h2 id="gtex-and-eqtlgen">GTEx and eQTLGen</h2>
-<ul>
-<li><a href="https://www.gtexportal.org/home/">https://www.gtexportal.org/home/</a> (<a href="https://gtexportal.org/home/datasets">datasets</a>)</li>
-<li><a href="http://www.eqtlgen.org/">http://www.eqtlgen.org/</a></li>
-</ul>
-<h2 id="metamaplite">MetaMapLite</h2>
-<p><a href="https://metamap.nlm.nih.gov/MetaMapLite.shtml">https://metamap.nlm.nih.gov/MetaMapLite.shtml</a></p>
-<h2 id="mr-baseopengwas">MR-Base/OpenGWAS</h2>
-<ul>
-<li><a href="http://www.mrbase.org">http://www.mrbase.org</a> (<a href="https://github.com/MRCIEU/ieu-gwas-db-demo/">MRCIEU demo</a>)</li>
-<li><a href="https://gwas.mrcieu.ac.uk">https://gwas.mrcieu.ac.uk</a></li>
-</ul>
 <h2 id="roadmap">Roadmap</h2>
 <p><a href="http://www.roadmapepigenomics.org/">http://www.roadmapepigenomics.org/</a></p>
 <h2 id="snakemake-workflow-catalogue">snakemake workflow catalogue</h2>
