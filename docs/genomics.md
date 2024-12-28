@@ -7,23 +7,30 @@
 - cerno Biosciencec, <https://cernobioscience.com/>
 - Course on GWAS by Matti Pirinen, <https://www.mv.helsinki.fi/home/mjxpirin/GWAS_course/>
 - d3blocks, <https://github.com/d3blocks/d3blocks> ([documentation](https://d3blocks.github.io/d3blocks/pages/html/index.html#))
-- hail, <https://hail.is/index.html>
-- LocusTrack, <https://gump.qimr.edu.au/general/gabrieC/LocusTrack/index.html>
 - GATK, <https://gatk.broadinstitute.org/hc/en-us>
 - GBMI, <https://www.globalbiobankmeta.org/resources>
 - GA4GH, <https://www.ga4gh.org/>
+- Glossary of Genetics, <https://www.genome.gov/genetics-glossary>
 * G*Power, <https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower>, <https://stats.oarc.ucla.edu/other/gpower/>
+- GRCh38 reference genome, <https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/>
 - GTEx, <https://gtexportal.org/home/datasets>
 - GWAS atlas, <https://atlas.ctglab.nl/traitDB>
 - GWAS Catalog, <https://www.ebi.ac.uk/gwas/>
 - GWAS Central, <https://www.gwascentral.org/>
+- hail, <https://hail.is/index.html>
+- LDlink, <https://ldlink.nci.nih.gov/?tab=home.>
+- LocusTrack, <https://gump.qimr.edu.au/general/gabrieC/LocusTrack/index.html>
 - JASPAR, <https://jaspar.genereg.net/>
 - NCBI, <https://www.ncbi.nlm.nih.gov/>
+- NyuWa Chinese Population Variant Database (NCVD): <http://bigdata.ibp.ac.cn/NyuWa_variants/>
 - OpenTargets, <https://genetics.opentargets.org/>
 - Our Future Health, <https://ourfuturehealth.org.uk/>
 - PGSCatalog, <http://www.pgscatalog.org/> ([*Calculator*](https://pgsc-calc.readthedocs.io/en/latest/), [*Nat Genet*](https://www.nature.com/articles/s41588-021-00783-5) & [*Cell Genomics*](https://www.cell.com/cell-genomics/fulltext/S2666-979X(22)00042-8) papers)
 - Pheno.AI, <https://knowledgebase.pheno.ai/>
 - PerkinElmer, <https://www.perkinelmer.com/>
 - PLINK2 mailing list, <https://groups.google.com/g/plink2-users>
+- RegulomeDB, <https://regulomedb.org/regulome-search/>
+- Sequence Ontology, <http://www.sequenceontology.org/>
+- SNiPA, <https://snipa.helmholtz-muenchen.de/snipa3/>
 - SNP2TFBS, <https://ccg.epfl.ch/snp2tfbs/>
 - Systems-Genomics, <https://systems-genomics.slack.com/>
