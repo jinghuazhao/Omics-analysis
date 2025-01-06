@@ -284,6 +284,7 @@ dev.off()
 </ul>
 <h2 id="opentargets">OpenTargets</h2>
 <p>These reflects v4 using GraphQL, <a href="https://platform-docs.opentargets.org/data-access/graphql-api">https://platform-docs.opentargets.org/data-access/graphql-api</a>.</p>
+<p>Our first example is from the example whose output is as <code>ERAP2.json</code>.</p>
 <pre><code class="language-bash">#!/usr/bin/bash
 
 # https://platform.opentargets.org/api
@@ -298,12 +299,9 @@ Rscript -e '
   diseases_data &lt;- tidyr::unnest(diseases_data, cols = everything(), names_sep = &quot;_&quot;)
   write.table(diseases_data, file = &quot;ERAP2.tsv&quot;, sep = &quot;\t&quot;, row.names = FALSE, quote = FALSE)
 '
-
-# https://platform-docs.opentargets.org/data-access/graphql-api
-
-## Bash
-
-curl 'https://api.platform.opentargets.org/api/v4/graphql' \
+</code></pre>
+<p>A Bash implementation is copied here</p>
+<pre><code class="language-bash">curl 'https://api.platform.opentargets.org/api/v4/graphql' \
      -H 'Accept-Encoding: gzip, deflate, br' \
      -H 'Content-Type: application/json' \
      -H 'Accept: application/json' \
@@ -312,11 +310,9 @@ curl 'https://api.platform.opentargets.org/api/v4/graphql' \
      -H 'Origin: https://api.platform.opentargets.org' \
      --data-binary '{&quot;query&quot;:&quot;query targetInfo {\n  target(ensemblId: \&quot;ENSG00000169083\&quot;) {\n    id\n    approvedSymbol\n    biotype\n    geneticConstraint {\n      constraintType\n      exp\n      obs\n      score\n      oe\n      oeLower\n      oeUpper\n    }\n    tractability {\n      label\n      modality\n      value\n    }\n  }\n}\n&quot;}' \
      --compressed
-
-## Python: Used directly without change
-
-python3 &lt;&lt;END
-import requests
+</code></pre>
+<p>The Python script can be used directly without change</p>
+<pre><code class="language-python3">import requests
 import json
 
 gene_id = &quot;ENSG00000164308&quot;
@@ -349,12 +345,9 @@ r = requests.post(base_url, json={&quot;query&quot;: query_string, &quot;variabl
 print(r.status_code)
 api_response = json.loads(r.text)
 print(api_response)
-END
-
-## R: necessary to get around httr::content(r) for iconvlist() with iconv().
-
-Rscript -e '
-library(httr)
+</code></pre>
+<p>Lastly we turn to R, which is necessary to get around <code>httr::content(r)</code> for <code>iconvlist()</code> with <code>iconv()</code>.</p>
+<pre><code class="language-r">library(httr)
 library(jsonlite)
 
 gene_id &lt;- &quot;ENSG00000164308&quot;
@@ -387,7 +380,6 @@ post_body &lt;- list(query = query_string, variables = variables)
 r &lt;- httr::POST(url=base_url, body=post_body, encode='json')
 data &lt;- iconv(r, &quot;latin1&quot;, &quot;ASCII&quot;)
 content &lt;- jsonlite::fromJSON(data)
-'
 </code></pre>
 <h2 id="rentrez">rentrez</h2>
 <p>The relevant URLs are as follows, </p>
