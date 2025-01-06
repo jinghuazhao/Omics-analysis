@@ -116,6 +116,8 @@ dev.off()
 
 These reflects v4 using GraphQL, <https://platform-docs.opentargets.org/data-access/graphql-api>.
 
+Our first example is from the example whose output is as `ERAP2.json`.
+
 ```bash
 #!/usr/bin/bash
 
@@ -131,11 +133,11 @@ Rscript -e '
   diseases_data <- tidyr::unnest(diseases_data, cols = everything(), names_sep = "_")
   write.table(diseases_data, file = "ERAP2.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
 '
+```
 
-# https://platform-docs.opentargets.org/data-access/graphql-api
+A Bash implementation is copied here
 
-## Bash
-
+```bash
 curl 'https://api.platform.opentargets.org/api/v4/graphql' \
      -H 'Accept-Encoding: gzip, deflate, br' \
      -H 'Content-Type: application/json' \
@@ -145,10 +147,11 @@ curl 'https://api.platform.opentargets.org/api/v4/graphql' \
      -H 'Origin: https://api.platform.opentargets.org' \
      --data-binary '{"query":"query targetInfo {\n  target(ensemblId: \"ENSG00000169083\") {\n    id\n    approvedSymbol\n    biotype\n    geneticConstraint {\n      constraintType\n      exp\n      obs\n      score\n      oe\n      oeLower\n      oeUpper\n    }\n    tractability {\n      label\n      modality\n      value\n    }\n  }\n}\n"}' \
      --compressed
+```
 
-## Python: Used directly without change
+The Python script can be used directly without change
 
-python3 <<END
+```python3
 import requests
 import json
 
@@ -182,11 +185,11 @@ r = requests.post(base_url, json={"query": query_string, "variables": variables}
 print(r.status_code)
 api_response = json.loads(r.text)
 print(api_response)
-END
+```
 
-## R: necessary to get around httr::content(r) for iconvlist() with iconv().
+Lastly we turn to R, which is necessary to get around `httr::content(r)` for `iconvlist()` with `iconv()`.
 
-Rscript -e '
+```r
 library(httr)
 library(jsonlite)
 
@@ -220,7 +223,6 @@ post_body <- list(query = query_string, variables = variables)
 r <- httr::POST(url=base_url, body=post_body, encode='json')
 data <- iconv(r, "latin1", "ASCII")
 content <- jsonlite::fromJSON(data)
-'
 ```
 
 ## rentrez
