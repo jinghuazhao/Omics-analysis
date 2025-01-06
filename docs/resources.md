@@ -134,6 +134,18 @@ Rscript -e '
 
 # https://platform-docs.opentargets.org/data-access/graphql-api
 
+## Bash
+
+curl 'https://api.platform.opentargets.org/api/v4/graphql' \
+     -H 'Accept-Encoding: gzip, deflate, br' \
+     -H 'Content-Type: application/json' \
+     -H 'Accept: application/json' \
+     -H 'Connection: keep-alive' \
+     -H 'DNT: 1' \
+     -H 'Origin: https://api.platform.opentargets.org' \
+     --data-binary '{"query":"query targetInfo {\n  target(ensemblId: \"ENSG00000169083\") {\n    id\n    approvedSymbol\n    biotype\n    geneticConstraint {\n      constraintType\n      exp\n      obs\n      score\n      oe\n      oeLower\n      oeUpper\n    }\n    tractability {\n      label\n      modality\n      value\n    }\n  }\n}\n"}' \
+     --compressed
+
 ## Python: Used directly without change
 
 python3 <<END
