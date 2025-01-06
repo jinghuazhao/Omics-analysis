@@ -284,11 +284,10 @@ dev.off()
 </ul>
 <h2 id="opentargets">OpenTargets</h2>
 <p>These reflects v4 using GraphQL, <a href="https://platform-docs.opentargets.org/data-access/graphql-api">https://platform-docs.opentargets.org/data-access/graphql-api</a>.</p>
-<p>Our first example is from the example whose output is as <code>ERAP2.json</code>.</p>
+<p>Our first example is from the document (except ENSG00000164308) whose output is as <code>ERAP2.json</code>.</p>
 <pre><code class="language-bash">#!/usr/bin/bash
 
 # https://platform.opentargets.org/api
-# ENSG00000164308
 
 module load ceuadmin/R
 Rscript -e '
@@ -300,6 +299,42 @@ Rscript -e '
   write.table(diseases_data, file = &quot;ERAP2.tsv&quot;, sep = &quot;\t&quot;, row.names = FALSE, quote = FALSE)
 '
 </code></pre>
+<p>In fact it is effectively done as follows,</p>
+<pre><code class="language-r">library(httr)
+library(jsonlite)
+gene_id &lt;- &quot;ENSG00000164308&quot;
+query_string &lt;- &quot;
+  query target($ensemblId: String!){
+    target(ensemblId: $ensemblId){
+      id
+      approvedSymbol
+      associatedDiseases {
+        count
+        rows {
+          disease {
+            id
+            name
+          }
+          datasourceScores {
+            id
+            score
+          }
+        }
+      }
+    }
+  }
+&quot;
+base_url &lt;- &quot;https://api.platform.opentargets.org/api/v4/graphql&quot;
+variables &lt;- list(&quot;ensemblId&quot; = gene_id)
+post_body &lt;- list(query = query_string, variables = variables)
+r &lt;- httr::POST(url = base_url, body = post_body, encode = 'json')
+if (status_code(r) == 200) {
+  data &lt;- iconv(r, &quot;latin1&quot;, &quot;ASCII&quot;)
+  content &lt;- jsonlite::fromJSON(data)
+} else {
+  print(paste(&quot;Request failed with status code&quot;, status_code(r)))
+}
+</code></pre>
 <p>A Bash implementation is copied here</p>
 <pre><code class="language-bash">curl 'https://api.platform.opentargets.org/api/v4/graphql' \
      -H 'Accept-Encoding: gzip, deflate, br' \
@@ -308,7 +343,7 @@ Rscript -e '
      -H 'Connection: keep-alive' \
      -H 'DNT: 1' \
      -H 'Origin: https://api.platform.opentargets.org' \
-     --data-binary '{&quot;query&quot;:&quot;query targetInfo {\n  target(ensemblId: \&quot;ENSG00000169083\&quot;) {\n    id\n    approvedSymbol\n    biotype\n    geneticConstraint {\n      constraintType\n      exp\n      obs\n      score\n      oe\n      oeLower\n      oeUpper\n    }\n    tractability {\n      label\n      modality\n      value\n    }\n  }\n}\n&quot;}' \
+     --data-binary '{&quot;query&quot;:&quot;query targetInfo {\n  target(ensemblId: \&quot;ENSG00000164308\&quot;) {\n    id\n    approvedSymbol\n    biotype\n    geneticConstraint {\n      constraintType\n      exp\n      obs\n      score\n      oe\n      oeLower\n      oeUpper\n    }\n    tractability {\n      label\n      modality\n      value\n    }\n  }\n}\n&quot;}' \
      --compressed
 </code></pre>
 <p>The Python script can be used directly without change</p>
