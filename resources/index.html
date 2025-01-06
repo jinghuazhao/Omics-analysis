@@ -141,6 +141,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#opentargets" class="nav-link">OpenTargets</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#rentrez" class="nav-link">rentrez</a>
               <ul class="nav flex-column">
               </ul>
@@ -278,6 +282,101 @@ dev.off()
 <li><a href="http://www.mrbase.org">http://www.mrbase.org</a> (<a href="https://github.com/MRCIEU/ieu-gwas-db-demo/">MRCIEU demo</a>)</li>
 <li><a href="https://gwas.mrcieu.ac.uk">https://gwas.mrcieu.ac.uk</a></li>
 </ul>
+<h2 id="opentargets">OpenTargets</h2>
+<p>These reflects v4 using GraphQL, <a href="https://platform-docs.opentargets.org/data-access/graphql-api">https://platform-docs.opentargets.org/data-access/graphql-api</a>.</p>
+<pre><code class="language-bash">#!/usr/bin/bash
+
+# https://platform.opentargets.org/api
+# ENSG00000164308
+
+module load ceuadmin/R
+Rscript -e '
+  ERAP2 &lt;- subset(pQTLdata::caprion,Gene==&quot;ERAP2&quot;)
+  ERAP2$ensGenes
+  data &lt;- jsonlite::fromJSON(&quot;ERAP2.json&quot;)
+  diseases_data &lt;- data$data$target$associatedDiseases$rows
+  diseases_data &lt;- tidyr::unnest(diseases_data, cols = everything(), names_sep = &quot;_&quot;)
+  write.table(diseases_data, file = &quot;ERAP2.tsv&quot;, sep = &quot;\t&quot;, row.names = FALSE, quote = FALSE)
+'
+
+# https://platform-docs.opentargets.org/data-access/graphql-api
+
+## Python: Used directly without change
+
+python3 &lt;&lt;END
+import requests
+import json
+
+gene_id = &quot;ENSG00000164308&quot;
+query_string = &quot;&quot;&quot;
+  query target($ensemblId: String!){
+    target(ensemblId: $ensemblId){
+      id
+      approvedSymbol
+      biotype
+      geneticConstraint {
+        constraintType
+        exp
+        obs
+        score
+        oe
+        oeLower
+        oeUpper
+      }
+      tractability {
+        label
+        modality
+        value
+      }
+    }
+  }
+&quot;&quot;&quot;
+variables = {&quot;ensemblId&quot;: gene_id}
+base_url = &quot;https://api.platform.opentargets.org/api/v4/graphql&quot;
+r = requests.post(base_url, json={&quot;query&quot;: query_string, &quot;variables&quot;: variables})
+print(r.status_code)
+api_response = json.loads(r.text)
+print(api_response)
+END
+
+## R: necessary to get around httr::content(r) for iconvlist() with iconv().
+
+Rscript -e '
+library(httr)
+library(jsonlite)
+
+gene_id &lt;- &quot;ENSG00000164308&quot;
+query_string = &quot;
+  query target($ensemblId: String!){
+    target(ensemblId: $ensemblId){
+      id
+      approvedSymbol
+      biotype
+      geneticConstraint {
+        constraintType
+        exp
+        obs
+        score
+        oe
+        oeLower
+        oeUpper
+      }
+      tractability {
+        label
+        modality
+        value
+      }
+    }
+  }
+&quot;
+base_url &lt;- &quot;https://api.platform.opentargets.org/api/v4/graphql&quot;
+variables &lt;- list(&quot;ensemblId&quot; = gene_id)
+post_body &lt;- list(query = query_string, variables = variables)
+r &lt;- httr::POST(url=base_url, body=post_body, encode='json')
+data &lt;- iconv(r, &quot;latin1&quot;, &quot;ASCII&quot;)
+content &lt;- jsonlite::fromJSON(data)
+'
+</code></pre>
 <h2 id="rentrez">rentrez</h2>
 <p>The relevant URLs are as follows, </p>
 <ul>
