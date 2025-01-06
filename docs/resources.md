@@ -116,13 +116,12 @@ dev.off()
 
 These reflects v4 using GraphQL, <https://platform-docs.opentargets.org/data-access/graphql-api>.
 
-Our first example is from the example whose output is as `ERAP2.json`.
+Our first example is from the document (except ENSG00000164308) whose output is as `ERAP2.json`.
 
 ```bash
 #!/usr/bin/bash
 
 # https://platform.opentargets.org/api
-# ENSG00000164308
 
 module load ceuadmin/R
 Rscript -e '
@@ -135,6 +134,45 @@ Rscript -e '
 '
 ```
 
+In fact it is effectively done as follows,
+
+```r
+library(httr)
+library(jsonlite)
+gene_id <- "ENSG00000164308"
+query_string <- "
+  query target($ensemblId: String!){
+    target(ensemblId: $ensemblId){
+      id
+      approvedSymbol
+      associatedDiseases {
+        count
+        rows {
+          disease {
+            id
+            name
+          }
+          datasourceScores {
+            id
+            score
+          }
+        }
+      }
+    }
+  }
+"
+base_url <- "https://api.platform.opentargets.org/api/v4/graphql"
+variables <- list("ensemblId" = gene_id)
+post_body <- list(query = query_string, variables = variables)
+r <- httr::POST(url = base_url, body = post_body, encode = 'json')
+if (status_code(r) == 200) {
+  data <- iconv(r, "latin1", "ASCII")
+  content <- jsonlite::fromJSON(data)
+} else {
+  print(paste("Request failed with status code", status_code(r)))
+}
+```
+
 A Bash implementation is copied here
 
 ```bash
@@ -145,7 +183,7 @@ curl 'https://api.platform.opentargets.org/api/v4/graphql' \
      -H 'Connection: keep-alive' \
      -H 'DNT: 1' \
      -H 'Origin: https://api.platform.opentargets.org' \
-     --data-binary '{"query":"query targetInfo {\n  target(ensemblId: \"ENSG00000169083\") {\n    id\n    approvedSymbol\n    biotype\n    geneticConstraint {\n      constraintType\n      exp\n      obs\n      score\n      oe\n      oeLower\n      oeUpper\n    }\n    tractability {\n      label\n      modality\n      value\n    }\n  }\n}\n"}' \
+     --data-binary '{"query":"query targetInfo {\n  target(ensemblId: \"ENSG00000164308\") {\n    id\n    approvedSymbol\n    biotype\n    geneticConstraint {\n      constraintType\n      exp\n      obs\n      score\n      oe\n      oeLower\n      oeUpper\n    }\n    tractability {\n      label\n      modality\n      value\n    }\n  }\n}\n"}' \
      --compressed
 ```
 
