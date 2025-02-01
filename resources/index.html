@@ -329,12 +329,13 @@ variables &lt;- list(&quot;ensemblId&quot; = gene_id)
 post_body &lt;- list(query = query_string, variables = variables)
 r &lt;- httr::POST(url = base_url, body = post_body, encode = 'json')
 if (status_code(r) == 200) {
-  data &lt;- iconv(r, &quot;latin1&quot;, &quot;ASCII&quot;)
+  data &lt;- iconv(r, &quot;&quot;, &quot;ASCII&quot;)
   content &lt;- jsonlite::fromJSON(data)
 } else {
   print(paste(&quot;Request failed with status code&quot;, status_code(r)))
 }
 </code></pre>
+<p>where <code>jsonlite::fromJSON(content(r,"text"))</code> is also possible when R is nicely compiled with libiconv.</p>
 <p>A Bash implementation is copied here</p>
 <pre><code class="language-bash">curl 'https://api.platform.opentargets.org/api/v4/graphql' \
      -H 'Accept-Encoding: gzip, deflate, br' \
