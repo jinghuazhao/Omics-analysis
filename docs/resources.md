@@ -166,12 +166,14 @@ variables <- list("ensemblId" = gene_id)
 post_body <- list(query = query_string, variables = variables)
 r <- httr::POST(url = base_url, body = post_body, encode = 'json')
 if (status_code(r) == 200) {
-  data <- iconv(r, "latin1", "ASCII")
+  data <- iconv(r, "", "ASCII")
   content <- jsonlite::fromJSON(data)
 } else {
   print(paste("Request failed with status code", status_code(r)))
 }
 ```
+
+where `jsonlite::fromJSON(content(r,"text"))` is also possible when R is nicely compiled with libiconv.
 
 A Bash implementation is copied here
 
