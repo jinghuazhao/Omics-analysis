@@ -247,7 +247,7 @@ api_response = json.loads(r.text)
 print(api_response)
 ```
 
-Lastly we turn to R, which is necessary to get around `httr::content(r)` for `iconvlist()` with `iconv()`.
+Lastly we turn to R, which again gets around `httr::content(r)` for `iconvlist()` with `iconv()`.
 
 ```r
 library(httr)
@@ -281,7 +281,7 @@ base_url <- "https://api.platform.opentargets.org/api/v4/graphql"
 variables <- list("ensemblId" = gene_id)
 post_body <- list(query = query_string, variables = variables)
 r <- httr::POST(url=base_url, body=post_body, encode='json')
-data <- iconv(r, "latin1", "ASCII")
+data <- iconv(r, "", "ASCII")
 content <- jsonlite::fromJSON(data)
 ```
 
