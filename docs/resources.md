@@ -171,6 +171,26 @@ if (status_code(r) == 200) {
 } else {
   print(paste("Request failed with status code", status_code(r)))
 }
+# Step 1: Access the nested data
+target <- content$data$target
+
+# Step 2: Extract scalar fields
+scalar_fields <- data.frame(
+  Field = c("ID", "Approved Symbol", "Biotype"),
+  Value = c(target$id, target$approvedSymbol, target$biotype)
+)
+
+# Step 3: Generate a table for scalar fields
+cat("### Scalar Fields\n")
+knitr::kable(scalar_fields, caption = "Basic Information")
+
+# Step 4: Generate a table for geneticConstraint
+cat("\n### Genetic Constraint\n")
+knitr::kable(target$geneticConstraint, caption = "Genetic Constraint Metrics")
+
+# Step 5: Generate a table for tractability
+cat("\n### Tractability\n")
+knitr::kable(target$tractability, caption = "Tractability Information")
 ```
 
 where `jsonlite::fromJSON(content(r,"text"))` is also possible when R is nicely compiled with libiconv.
