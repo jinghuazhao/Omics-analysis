@@ -402,7 +402,7 @@ print(r.status_code)
 api_response = json.loads(r.text)
 print(api_response)
 </code></pre>
-<p>Lastly we turn to R, which is necessary to get around <code>httr::content(r)</code> for <code>iconvlist()</code> with <code>iconv()</code>.</p>
+<p>Lastly we turn to R, which again gets around <code>httr::content(r)</code> for <code>iconvlist()</code> with <code>iconv()</code>.</p>
 <pre><code class="language-r">library(httr)
 library(jsonlite)
 
@@ -434,7 +434,7 @@ base_url &lt;- &quot;https://api.platform.opentargets.org/api/v4/graphql&quot;
 variables &lt;- list(&quot;ensemblId&quot; = gene_id)
 post_body &lt;- list(query = query_string, variables = variables)
 r &lt;- httr::POST(url=base_url, body=post_body, encode='json')
-data &lt;- iconv(r, &quot;latin1&quot;, &quot;ASCII&quot;)
+data &lt;- iconv(r, &quot;&quot;, &quot;ASCII&quot;)
 content &lt;- jsonlite::fromJSON(data)
 </code></pre>
 <h2 id="rentrez">rentrez</h2>
