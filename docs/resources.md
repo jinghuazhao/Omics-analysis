@@ -47,7 +47,7 @@ gencode <- as.data.frame(gtf)
     * Data access guide 3.2, <https://biobank.ndph.ox.ac.uk/~bbdatan/Data_Access_Guide_v3.2.pdf>.
     * DNAnexus, [GitHub](https://github.com/dnanexus), [landing](https://ukbiobank.dnanexus.com/landing), [partnerships](https://www.dnanexus.com/partnerships/ukbiobank)
     * Evoker, <https://www.sanger.ac.uk/tool/evoker/>.
-    * Genetic correlation between traits and disorders, <https://ukbb-rg.hail.is/>.1;5C
+    * Genetic correlation between traits and disorders, <https://ukbb-rg.hail.is/>.
     * Imputation, <http://biobank.ctsu.ox.ac.uk/crystal/crystal/docs/impute_ukb_v1.pdf>.
     * Gene ATLAS, <http://geneatlas.roslin.ed.ac.uk/>.
     * [genebass](https://genebass.org/).
