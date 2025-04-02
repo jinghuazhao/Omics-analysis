@@ -5,6 +5,7 @@
 - Consortium for Top-Down proteomics, <https://www.topdownproteomics.org/>
 - FreqPipe, <https://fragpipe.nesvilab.org/>
 - Human Proteome Project (HPP), <https://hupo.org/human-proteome-project> (Resources, <https://hupo.org/HPP-Resources>)
+- InstaNovo, <https://github.com/instadeepai/InstaNovo>
 - MassiveFold, <https://github.com/GBLille/MassiveFold>
 - MaxQuant, <https://maxquant.org/> ([Mailing list](https://lists.biochem.mpg.de/listinfo/maxquan))
 - Mass++, <https://mspp.ninja/download/>
