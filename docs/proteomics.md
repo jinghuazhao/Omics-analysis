@@ -1,6 +1,7 @@
 # Proteomics
 
 - AlphaFold3, <https://github.com/google-deepmind/alphafold3>
+- casanovo, <https://github.com/Noble-Lab/casanovo>
 - CoffeeProt, <https://coffeeprot.com/>
 - Consortium for Top-Down proteomics, <https://www.topdownproteomics.org/>
 - FreqPipe, <https://fragpipe.nesvilab.org/>
