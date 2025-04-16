@@ -34,6 +34,8 @@ markdown_extensions:
   - meta
   - pymdownx.arithmatex:
       generic: true
+validation:
+  unrecognized_links: ignore
 extra_javascript:
   - javascripts/config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
