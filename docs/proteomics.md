@@ -4,6 +4,7 @@
 - casanovo, <https://github.com/Noble-Lab/casanovo>
 - CoffeeProt, <https://coffeeprot.com/>
 - Consortium for Top-Down proteomics, <https://www.topdownproteomics.org/>
+- DiaNN, <https://github.com/vdemichev/DiaNN>
 - FreqPipe, <https://fragpipe.nesvilab.org/>
 - Human Proteome Project (HPP), <https://hupo.org/human-proteome-project> (Resources, <https://hupo.org/HPP-Resources>)
 - InstaNovo
