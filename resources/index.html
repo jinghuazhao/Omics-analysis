@@ -145,6 +145,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#pgs-searchgpt" class="nav-link">PGS (searchGPT)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#rentrez" class="nav-link">rentrez</a>
               <ul class="nav flex-column">
               </ul>
@@ -439,6 +443,103 @@ r &lt;- httr::POST(url=base_url, body=post_body, encode='json')
 data &lt;- iconv(r, &quot;&quot;, &quot;ASCII&quot;)
 content &lt;- jsonlite::fromJSON(data)
 </code></pre>
+<h2 id="pgs-searchgpt">PGS (searchGPT)</h2>
+<p><a href="https://frontlinegenomics.com/how-to-perform-polygenic-risk-score-analysis/"><img alt="perform polygenic risk score analysis" src="https://images.openai.com/thumbnails/0e8e5ab5caec6614efac03beb20c426c.png" /></a></p>
+<p>To calculate a Polygenic Risk Score (PRS) using PLINK, you typically employ a weighted sum approach, where each SNP contributes according to its effect size (e.g., from a GWAS meta-analysis). PLINK facilitates this process through the <code>--score</code> command, which computes the PRS for each individual based on specified SNPs and their associated effect sizes.(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
+<h3 id="step-by-step-guide-to-calculating-prs-with-plink">Step-by-Step Guide to Calculating PRS with PLINK</h3>
+<h4 id="1-prepare-your-input-files">1. Prepare Your Input Files</h4>
+<ul>
+<li>
+<p><strong>Genotype Data</strong>: Ensure your genotype data is in PLINK's binary format (<code>.bed</code>, <code>.bim</code>, <code>.fam</code>).</p>
+</li>
+<li>
+<p><strong>SNP Information File</strong>: This file should include SNP identifiers, effect alleles, and effect sizes (betas or odds ratios) from the base GWAS study. The format typically includes columns for SNP ID, effect allele, non-effect allele, effect size, and standard error.</p>
+</li>
+</ul>
+<h4 id="2-format-the-snp-information-file">2. Format the SNP Information File</h4>
+<p>The SNP information file should be structured with columns corresponding to:(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
+<ol>
+<li>
+<p><strong>SNP ID</strong>: Unique identifier for each SNP.</p>
+</li>
+<li>
+<p><strong>Effect Allele</strong>: The allele associated with the trait.</p>
+</li>
+<li>
+<p><strong>Non-Effect Allele</strong>: The alternative allele.</p>
+</li>
+<li>
+<p><strong>Effect Size</strong>: The estimated effect size (beta or odds ratio) for the effect allele.</p>
+</li>
+<li>
+<p><strong>Standard Error</strong>: The standard error of the effect size estimate.</p>
+</li>
+</ol>
+<p>Ensure that the SNP identifiers in this file match those in your genotype data.</p>
+<h4 id="3-execute-the-prs-calculation">3. Execute the PRS Calculation</h4>
+<p>Use the following PLINK command to calculate the PRS:(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
+<pre><code class="language-bash">plink \
+  --bfile your_genotype_data \
+  --score snp_info_file 2 4 6 header \
+  --out prscore_output
+</code></pre>
+<p>In this command:(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
+<ul>
+<li>
+<p><code>--bfile your_genotype_data</code>: Specifies the base name of your binary genotype files (<code>your_genotype_data.bed</code>, <code>.bim</code>, <code>.fam</code>).</p>
+</li>
+<li>
+<p><code>--score snp_info_file 2 4 6 header</code>: Indicates the SNP information file and specifies that the second column contains SNP IDs, the fourth column contains effect alleles, and the sixth column contains effect sizes. The <code>header</code> option tells PLINK to skip the first row.</p>
+</li>
+<li>
+<p><code>--out prscore_output</code>: Designates the prefix for the output files.</p>
+</li>
+</ul>
+<p>PLINK will generate output files with the specified prefix, containing the calculated PRS for each individual.(<a href="https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2022.818574/full?utm_source=chatgpt.com" title="Frontiers | Calculating Polygenic Risk Scores (PRS) in UK Biobank: A Practical Guide for Epidemiologists">Frontiers</a>)</p>
+<h4 id="4-interpret-the-output">4. Interpret the Output</h4>
+<p>The output file will include columns such as:</p>
+<ul>
+<li>
+<p><strong>FID</strong>: Family ID.</p>
+</li>
+<li>
+<p><strong>IID</strong>: Individual ID.</p>
+</li>
+<li>
+<p><strong>SNPs Count</strong>: Number of SNPs contributing to the PRS.(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
+</li>
+<li>
+<p><strong>PRS</strong>: The calculated polygenic risk score for each individual.</p>
+</li>
+</ul>
+<p>You can further analyze these scores to assess the genetic risk associated with the trait of interest.</p>
+<h4 id="5-optional-apply-p-value-thresholding">5. Optional: Apply P-value Thresholding</h4>
+<p>To refine your PRS, you can apply P-value thresholds to include only SNPs with P-values below a certain cutoff. This can be done using the <code>--q-score-range</code> option in PLINK, which allows you to specify a range of P-values for inclusion.(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
+<p>For example, to include SNPs with P-values less than 0.05:(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
+<pre><code class="language-bash">plink \
+  --bfile your_genotype_data \
+  --score snp_info_file 2 4 6 header \
+  --q-score-range 0.05 0.05 \
+  --out prscore_output_thresholded
+</code></pre>
+<p>This command will calculate the PRS using only SNPs with P-values less than 0.05.(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
+<h4 id="6-validate-and-interpret-the-prs">6. Validate and Interpret the PRS</h4>
+<p>After calculating the PRS, it's important to validate its predictive power and interpret its significance. This can involve:</p>
+<ul>
+<li>
+<p><strong>Association Analysis</strong>: Assessing the association between the PRS and the trait or disease phenotype.</p>
+</li>
+<li>
+<p><strong>Model Evaluation</strong>: Evaluating the performance of the PRS in predicting outcomes using metrics like R² or area under the ROC curve.</p>
+</li>
+<li>
+<p><strong>Stratification</strong>: Dividing the population into risk groups based on PRS percentiles to examine differential outcomes.</p>
+</li>
+</ul>
+<p>For more detailed guidance on these steps, refer to the tutorial provided by Choi et al. .(<a href="https://choishingwan.github.io/PRS-Tutorial/?utm_source=chatgpt.com" title="Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
+<p>If you're working with imputed data, consider using PLINK 2.0, which offers enhanced support for imputed genotypes and additional functionalities for PRS analysis. For comprehensive instructions on using PLINK 2.0 for PRS calculation, refer to the tutorial by Choi et al. .(<a href="https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2022.818574/full?utm_source=chatgpt.com" title="Frontiers | Calculating Polygenic Risk Scores (PRS) in UK Biobank: A Practical Guide for Epidemiologists">Frontiers</a>)</p>
+<p>For a practical example of calculating a PRS using UK Biobank data, refer to the guide by Jennifer Collister and Xiaonan Liu .(<a href="https://2cjenn.github.io/PRS_Pipeline/?utm_source=chatgpt.com" title="PRS Pipeline">2cjenn.github.io</a>)</p>
+<p>If you need assistance with specific aspects of PRS calculation, such as quality control, visualization, or interpretation, feel free to ask!</p>
 <h2 id="rentrez">rentrez</h2>
 <p>The relevant URLs are as follows, </p>
 <ul>
