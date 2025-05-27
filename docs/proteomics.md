@@ -5,6 +5,7 @@
 - CoffeeProt, <https://coffeeprot.com/>
 - Consortium for Top-Down proteomics, <https://www.topdownproteomics.org/>
 - DiaNN, <https://github.com/vdemichev/DiaNN>
+- FINCHES-online, <https://finches-online.com/> (<https://github.com/idptools/finches>)
 - FreqPipe, <https://fragpipe.nesvilab.org/>
 - Human Proteome Project (HPP), <https://hupo.org/human-proteome-project> (Resources, <https://hupo.org/HPP-Resources>)
 - InstaNovo
