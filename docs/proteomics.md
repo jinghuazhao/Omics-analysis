@@ -38,7 +38,7 @@
 
     > wget -r -nH --cut-dirs=2 -R "index.html*" ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
     > wget -r -nH --cut-dirs=1 -R "index.html*" ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
-    > # Somewhat more efficient
+    > ### Somewhat more efficient
     > lftp massive-ftp.ucsd.edu <<EOF
     > mirror --parallel=10 --verbose /v03/MSV000086195 ./MSV000086195
     > bye
