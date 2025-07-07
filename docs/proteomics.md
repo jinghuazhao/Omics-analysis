@@ -30,8 +30,6 @@
 - Skyline, <https://skyline.ms/project/home/begin.view>
 - Spectranaut, <https://biognosys.com/software/spectronaut/>
 
----
-
 [^wget]: **MSV000086195** download:
 
     This is a companioni to
