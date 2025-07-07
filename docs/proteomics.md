@@ -38,8 +38,8 @@
     ISBN: 978-1-119-87235-1, <https://books.wiley.com/titles/9781119872351/>.
 
     ```bash
-    ### https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000081318
+    # https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000081318
     wget -r -nH --cut-dirs=2 -R "index.html*"  ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
-    ### https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000086195
+    # https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000086195
     wget -r -nH --cut-dirs=1 -R "index.html*" ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
     ```
