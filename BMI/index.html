@@ -155,237 +155,236 @@
 
 <h1 id="bmi">BMI</h1>
 <p><img src="BMI.png" width="860" height="600" align="right"></p>
-<p>We work on the GIANT+Biiobank data on BMI (Yengo et al. 2018), including both the genomewide</p>
-<pre><code class="language-bash">wget https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
-</code></pre>
-<p>and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded below on the fly. We would refer to <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> where information specific software can be seen from their respective directories.</p>
+<p>We work on the GIANT+Biiobank data on BMI (Yengo et al. 2018), including both the genomewide
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://portals.broadinstitute.org/collaboration/giant/images/0/0f/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz
+</code></pre></div>
+and GCTA --cojo results as used in Mendelian Randomisation analysis downloaded below on the fly. We would refer to <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> where information specific software can be seen from their respective directories.</p>
 <h2 id="visualisation">Visualisation</h2>
 <p>The first thing is to see the Manhattan plot; in this case the P values could be extremely small and we resort to a
-truncated version.</p>
-<pre><code class="language-r">options(width=120)
-gz &lt;- gzfile(&quot;Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz&quot;)
-BMI &lt;- within(read.delim(gz,as.is=TRUE), {Z &lt;- BETA/SE})
-print(subset(BMI[c(&quot;CHR&quot;,&quot;POS&quot;,&quot;SNP&quot;,&quot;P&quot;)],CHR!=16 &amp; P&lt;=1e-150))
-library(Rmpfr)
-print(within(subset(BMI, P==0, select=c(CHR,POS,SNP,Z)), 
-             {P &lt;- format(2*pnorm(mpfr(abs(Z),100),lower.tail=FALSE)); Pvalue &lt;- pvalue(Z); log10P &lt;- -log10p(Z)}))
-png(&quot;BMI.png&quot;, res=300, units=&quot;in&quot;, width=9, height=6)
-par(oma=c(0,0,0,0), mar=c(5,6.5,1,1))
-mhtplot.trunc(BMI, chr=&quot;CHR&quot;, bp=&quot;POS&quot;, z=&quot;Z&quot;, snp=&quot;SNP&quot;,
-              suggestiveline=FALSE, genomewideline=-log10(1e-8),
-              cex.mtext=1.2, cex.text=1.2,
-              annotatelog10P=156, annotateTop = FALSE, highlight=c(&quot;rs13021737&quot;,&quot;rs17817449&quot;,&quot;rs6567160&quot;),
-              mtext.line=3, y.brk1=200, y.brk2=280, cex.axis=1.2, cex.y=1.2, cex=0.5,
-              y.ax.space=20,
-              col = c(&quot;blue4&quot;, &quot;skyblue&quot;)
-)
-dev.off()
-</code></pre>
-<p>Note especially those P values equal to zero -- <code>pvalue()</code> and <code>R/Rmpfr</code> both give the minimum approximately 1.26e-479. Nevertheless, it is safer
+truncated version.
+<div class="highlight"><pre><span></span><code><span class="nf">options</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="m">120</span><span class="p">)</span>
+<span class="n">gz</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">gzfile</span><span class="p">(</span><span class="s">&quot;Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz&quot;</span><span class="p">)</span>
+<span class="n">BMI</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">within</span><span class="p">(</span><span class="nf">read.delim</span><span class="p">(</span><span class="n">gz</span><span class="p">,</span><span class="n">as.is</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">),</span><span class="w"> </span><span class="p">{</span><span class="n">Z</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">BETA</span><span class="o">/</span><span class="n">SE</span><span class="p">})</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">subset</span><span class="p">(</span><span class="n">BMI</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;CHR&quot;</span><span class="p">,</span><span class="s">&quot;POS&quot;</span><span class="p">,</span><span class="s">&quot;SNP&quot;</span><span class="p">,</span><span class="s">&quot;P&quot;</span><span class="p">)],</span><span class="n">CHR</span><span class="o">!=</span><span class="m">16</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">P</span><span class="o">&lt;=</span><span class="m">1e-150</span><span class="p">))</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">Rmpfr</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">within</span><span class="p">(</span><span class="nf">subset</span><span class="p">(</span><span class="n">BMI</span><span class="p">,</span><span class="w"> </span><span class="n">P</span><span class="o">==</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">select</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">CHR</span><span class="p">,</span><span class="n">POS</span><span class="p">,</span><span class="n">SNP</span><span class="p">,</span><span class="n">Z</span><span class="p">)),</span><span class="w"> </span>
+<span class="w">             </span><span class="p">{</span><span class="n">P</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">format</span><span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="nf">pnorm</span><span class="p">(</span><span class="nf">mpfr</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">Z</span><span class="p">),</span><span class="m">100</span><span class="p">),</span><span class="n">lower.tail</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">));</span><span class="w"> </span><span class="n">Pvalue</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">pvalue</span><span class="p">(</span><span class="n">Z</span><span class="p">);</span><span class="w"> </span><span class="n">log10P</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="o">-</span><span class="nf">log10p</span><span class="p">(</span><span class="n">Z</span><span class="p">)}))</span>
+<span class="nf">png</span><span class="p">(</span><span class="s">&quot;BMI.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="o">=</span><span class="m">300</span><span class="p">,</span><span class="w"> </span><span class="n">units</span><span class="o">=</span><span class="s">&quot;in&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">oma</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">),</span><span class="w"> </span><span class="n">mar</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6.5</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+<span class="nf">mhtplot.trunc</span><span class="p">(</span><span class="n">BMI</span><span class="p">,</span><span class="w"> </span><span class="n">chr</span><span class="o">=</span><span class="s">&quot;CHR&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bp</span><span class="o">=</span><span class="s">&quot;POS&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="o">=</span><span class="s">&quot;Z&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">snp</span><span class="o">=</span><span class="s">&quot;SNP&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="n">suggestiveline</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">genomewideline</span><span class="o">=-</span><span class="nf">log10</span><span class="p">(</span><span class="m">1e-8</span><span class="p">),</span>
+<span class="w">              </span><span class="n">cex.mtext</span><span class="o">=</span><span class="m">1.2</span><span class="p">,</span><span class="w"> </span><span class="n">cex.text</span><span class="o">=</span><span class="m">1.2</span><span class="p">,</span>
+<span class="w">              </span><span class="n">annotatelog10P</span><span class="o">=</span><span class="m">156</span><span class="p">,</span><span class="w"> </span><span class="n">annotateTop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">highlight</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;rs13021737&quot;</span><span class="p">,</span><span class="s">&quot;rs17817449&quot;</span><span class="p">,</span><span class="s">&quot;rs6567160&quot;</span><span class="p">),</span>
+<span class="w">              </span><span class="n">mtext.line</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">y.brk1</span><span class="o">=</span><span class="m">200</span><span class="p">,</span><span class="w"> </span><span class="n">y.brk2</span><span class="o">=</span><span class="m">280</span><span class="p">,</span><span class="w"> </span><span class="n">cex.axis</span><span class="o">=</span><span class="m">1.2</span><span class="p">,</span><span class="w"> </span><span class="n">cex.y</span><span class="o">=</span><span class="m">1.2</span><span class="p">,</span><span class="w"> </span><span class="n">cex</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span>
+<span class="w">              </span><span class="n">y.ax.space</span><span class="o">=</span><span class="m">20</span><span class="p">,</span>
+<span class="w">              </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;blue4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;skyblue&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="nf">dev.off</span><span class="p">()</span>
+</code></pre></div>
+Note especially those P values equal to zero -- <code>pvalue()</code> and <code>R/Rmpfr</code> both give the minimum approximately 1.26e-479. Nevertheless, it is safer
 to generate -log10(P) on the fly -- in <a href="BMI.png">the plot</a> chromosome.16 stands out which would not be so should we restrict ourselves only
 to nonzero P values. We went further to highlight three SNPs.</p>
 <h2 id="independent-signals">Independent signals</h2>
-<pre><code class="language-bash">(
-  zcat Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz | \
-  head -1
-  zcat Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz | \
-  awk '(NR&gt;1 &amp;&amp; $9&lt;=1e-8)' | \
-  sort -k1,1n -k2,2n
-) &gt; BMI.dat
-module load gcc/5.2.0
-R --no-save -q &lt; BMI.R &gt; BMI.out
-</code></pre>
-<p>where the <code>module</code> command prepares for appropriate version of R to be enabled and <code>BMI.R</code> selects independent signals as follows,</p>
-<pre><code class="language-r">options(echo=FALSE)
-BMI &lt;- read.delim(&quot;BMI.dat&quot;,as.is=TRUE)[c(&quot;CHR&quot;,&quot;POS&quot;,&quot;SNP&quot;,&quot;BETA&quot;,&quot;SE&quot;,&quot;P&quot;)]
-require(reshape)
-BMI &lt;- rename(BMI,c(CHR=&quot;Chrom&quot;,POS=&quot;End&quot;,SNP=&quot;MarkerName&quot;,BETA=&quot;Effect&quot;,SE=&quot;StdErr&quot;,P=&quot;P.value&quot;))
-require(gap)
-chrs &lt;- with(BMI,unique(Chrom))
-for(chr in chrs)
-{
-  print(chr)
-  ps &lt;- subset(BMI[c(&quot;Chrom&quot;,&quot;End&quot;,&quot;MarkerName&quot;,&quot;Effect&quot;,&quot;StdErr&quot;)],Chrom==chr)
-  row.names(ps) &lt;- 1:nrow(ps)
-  sentinels(ps,chr,1)
-}
-</code></pre>
-<p>It is noted that awk has problem dealing with very small values and the code is altered slightly as follows,</p>
-<pre><code class="language-bash">(
-  zcat Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz | \
-  head -1
-  zcat Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz | \
-  awk '
-    function abs(x)
-    {
-      if (x&lt;0) return -x;
-      else return x;
-    }
-    (NR&gt;1 &amp;&amp; abs($7/$8) &gt;= 5.730729)' | \
-  sort -k1,1n -k2,2n
-) &gt; BMI.dat
+<p><div class="highlight"><pre><span></span><code><span class="o">(</span>
+<span class="w">  </span>zcat<span class="w"> </span>Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>head<span class="w"> </span>-1
+<span class="w">  </span>zcat<span class="w"> </span>Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>awk<span class="w"> </span><span class="s1">&#39;(NR&gt;1 &amp;&amp; $9&lt;=1e-8)&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>sort<span class="w"> </span>-k1,1n<span class="w"> </span>-k2,2n
+<span class="o">)</span><span class="w"> </span>&gt;<span class="w"> </span>BMI.dat
+module<span class="w"> </span>load<span class="w"> </span>gcc/5.2.0
+R<span class="w"> </span>--no-save<span class="w"> </span>-q<span class="w"> </span>&lt;<span class="w"> </span>BMI.R<span class="w"> </span>&gt;<span class="w"> </span>BMI.out
+</code></pre></div>
+where the <code>module</code> command prepares for appropriate version of R to be enabled and <code>BMI.R</code> selects independent signals as follows,
+<div class="highlight"><pre><span></span><code><span class="nf">options</span><span class="p">(</span><span class="n">echo</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="n">BMI</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.delim</span><span class="p">(</span><span class="s">&quot;BMI.dat&quot;</span><span class="p">,</span><span class="n">as.is</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)[</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;CHR&quot;</span><span class="p">,</span><span class="s">&quot;POS&quot;</span><span class="p">,</span><span class="s">&quot;SNP&quot;</span><span class="p">,</span><span class="s">&quot;BETA&quot;</span><span class="p">,</span><span class="s">&quot;SE&quot;</span><span class="p">,</span><span class="s">&quot;P&quot;</span><span class="p">)]</span>
+<span class="nf">require</span><span class="p">(</span><span class="n">reshape</span><span class="p">)</span>
+<span class="n">BMI</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rename</span><span class="p">(</span><span class="n">BMI</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="n">CHR</span><span class="o">=</span><span class="s">&quot;Chrom&quot;</span><span class="p">,</span><span class="n">POS</span><span class="o">=</span><span class="s">&quot;End&quot;</span><span class="p">,</span><span class="n">SNP</span><span class="o">=</span><span class="s">&quot;MarkerName&quot;</span><span class="p">,</span><span class="n">BETA</span><span class="o">=</span><span class="s">&quot;Effect&quot;</span><span class="p">,</span><span class="n">SE</span><span class="o">=</span><span class="s">&quot;StdErr&quot;</span><span class="p">,</span><span class="n">P</span><span class="o">=</span><span class="s">&quot;P.value&quot;</span><span class="p">))</span>
+<span class="nf">require</span><span class="p">(</span><span class="n">gap</span><span class="p">)</span>
+<span class="n">chrs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">with</span><span class="p">(</span><span class="n">BMI</span><span class="p">,</span><span class="nf">unique</span><span class="p">(</span><span class="n">Chrom</span><span class="p">))</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">chr</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">chrs</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nf">print</span><span class="p">(</span><span class="n">chr</span><span class="p">)</span>
+<span class="w">  </span><span class="n">ps</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">BMI</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Chrom&quot;</span><span class="p">,</span><span class="s">&quot;End&quot;</span><span class="p">,</span><span class="s">&quot;MarkerName&quot;</span><span class="p">,</span><span class="s">&quot;Effect&quot;</span><span class="p">,</span><span class="s">&quot;StdErr&quot;</span><span class="p">)],</span><span class="n">Chrom</span><span class="o">==</span><span class="n">chr</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">row.names</span><span class="p">(</span><span class="n">ps</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">ps</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">sentinels</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span><span class="n">chr</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+It is noted that awk has problem dealing with very small values and the code is altered slightly as follows,
+<div class="highlight"><pre><span></span><code><span class="o">(</span>
+<span class="w">  </span>zcat<span class="w"> </span>Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>head<span class="w"> </span>-1
+<span class="w">  </span>zcat<span class="w"> </span>Meta-analysis_Locke_et_al+UKBiobank_2018_UPDATED.txt.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>awk<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">    function abs(x)</span>
+<span class="s1">    {</span>
+<span class="s1">      if (x&lt;0) return -x;</span>
+<span class="s1">      else return x;</span>
+<span class="s1">    }</span>
+<span class="s1">    (NR&gt;1 &amp;&amp; abs($7/$8) &gt;= 5.730729)&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>sort<span class="w"> </span>-k1,1n<span class="w"> </span>-k2,2n
+<span class="o">)</span><span class="w"> </span>&gt;<span class="w"> </span>BMI.dat
 
-R --no-save -q &lt; BMI.R &gt; BMI.out
-</code></pre>
-<p>Then BMI.out has 632 entries instead of 626, i.e., six were recovered. Note also the magic value 5.730729 is obtained from <code>qnorm(1-0.5e-8)</code> from R.</p>
+R<span class="w"> </span>--no-save<span class="w"> </span>-q<span class="w"> </span>&lt;<span class="w"> </span>BMI.R<span class="w"> </span>&gt;<span class="w"> </span>BMI.out
+</code></pre></div>
+Then BMI.out has 632 entries instead of 626, i.e., six were recovered. Note also the magic value 5.730729 is obtained from <code>qnorm(1-0.5e-8)</code> from R.</p>
 <h2 id="annotation">Annotation</h2>
-<p>As a follow-up to the earlier GIANT analysis, we have in the directory results from PhenoScanner for the 97 SNPs described in the SUMSTATS repository</p>
-<pre><code class="language-bash">module load phenoscanner/phenoscanner_v2
-phenoscanner -c All -l No -p 0.00001 -i 97.snps -o 97
-</code></pre>
-<p>For the GIANT+UKB data above, the setup is</p>
-<pre><code class="language-bash">awk 'NR&gt;1' BMI.dat | \
-cut -f3 &gt; BMI.rsid
-phenoscanner -c All -l No -p 0.00001 -i BMI.rsid -o BMI
-</code></pre>
-<p>in both cases, results could be expanded by allowing for LD.</p>
+<p>As a follow-up to the earlier GIANT analysis, we have in the directory results from PhenoScanner for the 97 SNPs described in the SUMSTATS repository
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>phenoscanner/phenoscanner_v2
+phenoscanner<span class="w"> </span>-c<span class="w"> </span>All<span class="w"> </span>-l<span class="w"> </span>No<span class="w"> </span>-p<span class="w"> </span><span class="m">0</span>.00001<span class="w"> </span>-i<span class="w"> </span><span class="m">97</span>.snps<span class="w"> </span>-o<span class="w"> </span><span class="m">97</span>
+</code></pre></div>
+For the GIANT+UKB data above, the setup is
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;NR&gt;1&#39;</span><span class="w"> </span>BMI.dat<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+cut<span class="w"> </span>-f3<span class="w"> </span>&gt;<span class="w"> </span>BMI.rsid
+phenoscanner<span class="w"> </span>-c<span class="w"> </span>All<span class="w"> </span>-l<span class="w"> </span>No<span class="w"> </span>-p<span class="w"> </span><span class="m">0</span>.00001<span class="w"> </span>-i<span class="w"> </span>BMI.rsid<span class="w"> </span>-o<span class="w"> </span>BMI
+</code></pre></div>
+in both cases, results could be expanded by allowing for LD.</p>
 <h2 id="pathway-analysis">Pathway analysis</h2>
-<pre><code class="language-bash">gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | awk '
-{
-   FS=OFS=&quot;\t&quot;
-   if(NR==1) print &quot;SNP&quot;,&quot;Chr&quot;,&quot;Pos&quot;,&quot;P&quot;
-   else if($9&lt;=5e-8) print $3,$1,$2,$9
-}' | gzip -f &gt; BMI.txt.gz
-
-</code></pre>
-<p>where we opt to customise the header/column rather than the DEPICT configuration file. Moreover, the (hg19) chromosomal positions are <em>eventually</em> back in the data which would facilitate GCTA --cojo analysis and mirrors https://github.com/jinghuazhao/SUMSTATS.</p>
-<p>As usual, we make a call to <a href="BMI.cfg">BMI.cfg</a> via</p>
-<pre><code class="language-bash">depict.py BMI.cfg
-</code></pre>
-<p>where the <code>DEPICT_v1_rel194.tar.gz</code> version is used. Once started, there was complaint that</p>
-<pre><code>Retrieving background loci
+<p><div class="highlight"><pre><span></span><code>gunzip<span class="w"> </span>-c<span class="w"> </span>Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">   FS=OFS=&quot;\t&quot;</span>
+<span class="s1">   if(NR==1) print &quot;SNP&quot;,&quot;Chr&quot;,&quot;Pos&quot;,&quot;P&quot;</span>
+<span class="s1">   else if($9&lt;=5e-8) print $3,$1,$2,$9</span>
+<span class="s1">}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>-f<span class="w"> </span>&gt;<span class="w"> </span>BMI.txt.gz
+</code></pre></div>
+where we opt to customise the header/column rather than the DEPICT configuration file. Moreover, the (hg19) chromosomal positions are <em>eventually</em> back in the data which would facilitate GCTA --cojo analysis and mirrors https://github.com/jinghuazhao/SUMSTATS.</p>
+<p>As usual, we make a call to <a href="BMI.cfg">BMI.cfg</a> via
+<div class="highlight"><pre><span></span><code>depict.py<span class="w"> </span>BMI.cfg
+</code></pre></div>
+where the <code>DEPICT_v1_rel194.tar.gz</code> version is used. Once started, there was complaint that
+<div class="highlight"><pre><span></span><code>Retrieving background loci
 Exiting.. To few background files in data/backgrounds/nloci723_nperm500_kb500_rsq0.1_mhc25000000-35000000_colld0.5-collection-1000genomespilot-depict-150429/. Please remove the folder, rerun DEPICT and contact tunepers@broadinstitute.org if the error prevails.
-</code></pre>
-<p>Follow instruction and remove the directory. It is very slow-going, ~20 hours on our Linux node but surprisingly half that time under my Windows 10 whose directory zipped and then unzipped under Linux and run<code>depict.py</code>there.</p>
+</code></pre></div>
+Follow instruction and remove the directory. It is very slow-going, ~20 hours on our Linux node but surprisingly half that time under my Windows 10 whose directory zipped and then unzipped under Linux and run<code>depict.py</code>there.</p>
 <p>We then generate <a href="BMI.xlsx">BMI.xlsx</a> as in <a href="https://github.com/jinghuazhao/PW-pipeline/wiki">PW-pipelne</a>. While there are 859 genesets with FDR&lt;0.05, tissue enrichment shows compelingly an overwhelming role of the nervous system.</p>
 <p>This is detailed from <a href="https://github.com/jinghuazhao/PW-pipeline/wiki">PW-pipeline/wiki</a> for the analysis.</p>
 <h2 id="partitioned-heritabilty">Partitioned heritabilty</h2>
-<p>Information for the documentation example is available from <a href="https://github.com/jinghuazhao/software-notes/">software-notes</a>. Here we carry on with the .gz file above.</p>
-<pre><code class="language-bash">gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz &gt; ldsc.txt
-python munge_sumstats.py --sumstats ldsc.txt --a1 Tested_Allele --a2 Other_allele --merge-alleles w_hm3.snplist --out ldsc --a1-inc
-</code></pre>
-<p>where we fix the header with appropriate command-line parameters. We see <a href="ldsc.sumstats.gz">ldsc.sumstats.gz</a> and <a href="ldsc.log">ldsc.log</a> and carry on with</p>
-<pre><code class="language-bash">python ldsc.py --h2 ldsc.sumstats.gz\
-        --ref-ld-chr baseline_v1.1/baseline.\
-        --w-ld-chr 1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.\
-        --overlap-annot\
-        --frqfile-chr 1000G_Phase3_frq/1000G.EUR.QC.\
-        --out ldsc_baseline
-</code></pre>
-<p>to generate <a href="ldsc_baseline.results">ldsc_baseline.results</a> and <a href="ldsc_baseline.log">ldsc_baseline.log</a> and</p>
-<pre><code class="language-bash">python ldsc.py --h2 ldsc.sumstats.gz\
-        --w-ld-chr 1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.\
-        --ref-ld-chr 1000G_Phase3_cell_type_groups/cell_type_group.3.,baseline_v1.1/baseline.\
-        --overlap-annot\
-        --frqfile-chr 1000G_Phase3_frq/1000G.EUR.QC.\
-        --out ldsc_CNS\
-        --print-coefficients
-</code></pre>
-<p>for <a href="ldsc_CNS.results">ldsc_baseline.results</a> and <a href="ldsc_CNS.log">ldsc_baseline.log</a>.</p>
+<p>Information for the documentation example is available from <a href="https://github.com/jinghuazhao/software-notes/">software-notes</a>. Here we carry on with the .gz file above.
+<div class="highlight"><pre><span></span><code>gunzip<span class="w"> </span>-c<span class="w"> </span>Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz<span class="w"> </span>&gt;<span class="w"> </span>ldsc.txt
+python<span class="w"> </span>munge_sumstats.py<span class="w"> </span>--sumstats<span class="w"> </span>ldsc.txt<span class="w"> </span>--a1<span class="w"> </span>Tested_Allele<span class="w"> </span>--a2<span class="w"> </span>Other_allele<span class="w"> </span>--merge-alleles<span class="w"> </span>w_hm3.snplist<span class="w"> </span>--out<span class="w"> </span>ldsc<span class="w"> </span>--a1-inc
+</code></pre></div>
+where we fix the header with appropriate command-line parameters. We see <a href="ldsc.sumstats.gz">ldsc.sumstats.gz</a> and <a href="ldsc.log">ldsc.log</a> and carry on with
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>ldsc.py<span class="w"> </span>--h2<span class="w"> </span>ldsc.sumstats.gz<span class="se">\</span>
+<span class="w">        </span>--ref-ld-chr<span class="w"> </span>baseline_v1.1/baseline.<span class="se">\</span>
+<span class="w">        </span>--w-ld-chr<span class="w"> </span>1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.<span class="se">\</span>
+<span class="w">        </span>--overlap-annot<span class="se">\</span>
+<span class="w">        </span>--frqfile-chr<span class="w"> </span>1000G_Phase3_frq/1000G.EUR.QC.<span class="se">\</span>
+<span class="w">        </span>--out<span class="w"> </span>ldsc_baseline
+</code></pre></div>
+to generate <a href="ldsc_baseline.results">ldsc_baseline.results</a> and <a href="ldsc_baseline.log">ldsc_baseline.log</a> and
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>ldsc.py<span class="w"> </span>--h2<span class="w"> </span>ldsc.sumstats.gz<span class="se">\</span>
+<span class="w">        </span>--w-ld-chr<span class="w"> </span>1000G_Phase3_weights_hm3_no_MHC/weights.hm3_noMHC.<span class="se">\</span>
+<span class="w">        </span>--ref-ld-chr<span class="w"> </span>1000G_Phase3_cell_type_groups/cell_type_group.3.,baseline_v1.1/baseline.<span class="se">\</span>
+<span class="w">        </span>--overlap-annot<span class="se">\</span>
+<span class="w">        </span>--frqfile-chr<span class="w"> </span>1000G_Phase3_frq/1000G.EUR.QC.<span class="se">\</span>
+<span class="w">        </span>--out<span class="w"> </span>ldsc_CNS<span class="se">\</span>
+<span class="w">        </span>--print-coefficients
+</code></pre></div>
+for <a href="ldsc_CNS.results">ldsc_baseline.results</a> and <a href="ldsc_CNS.log">ldsc_baseline.log</a>.</p>
 <h2 id="mendelian-randomisation">Mendelian Randomisation</h2>
-<p>A documented example on BMI-lung cancer is adapted in <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> but our focus here is on BMI-T2D from DIAGRAM,</p>
-<pre><code class="language-bash">wget -qO- https://portals.broadinstitute.org/collaboration/giant/images/e/e2/Meta-analysis_Locke_et_al+UKBiobank_2018_top_941_from_COJO_analysis_UPDATED.txt.gz &gt; BMI-COJO.gz
-R --no-save -q &lt; MR.R &gt; MR.log
-</code></pre>
-<p>and call <a href="MR.R">MR.R</a> to generate <a href="MR.log">MR.log</a> and <a href="MR.pdf">MR.pdf</a>.</p>
+<p>A documented example on BMI-lung cancer is adapted in <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> but our focus here is on BMI-T2D from DIAGRAM,
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-qO-<span class="w"> </span>https://portals.broadinstitute.org/collaboration/giant/images/e/e2/Meta-analysis_Locke_et_al+UKBiobank_2018_top_941_from_COJO_analysis_UPDATED.txt.gz<span class="w"> </span>&gt;<span class="w"> </span>BMI-COJO.gz
+R<span class="w"> </span>--no-save<span class="w"> </span>-q<span class="w"> </span>&lt;<span class="w"> </span>MR.R<span class="w"> </span>&gt;<span class="w"> </span>MR.log
+</code></pre></div>
+and call <a href="MR.R">MR.R</a> to generate <a href="MR.log">MR.log</a> and <a href="MR.pdf">MR.pdf</a>.</p>
 <h2 id="twas">TWAS</h2>
-<p>We start with <code>MetaXcan</code> as follows,</p>
-<pre><code class="language-bash">cd /home/jhz22/D/genetics/hakyimlab/MetaXcan/software
+<p>We start with <code>MetaXcan</code> as follows,
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/home/jhz22/D/genetics/hakyimlab/MetaXcan/software
 
-./MetaXcan.py \
---model_db_path /home/jhz22/D/genetics/hakyimlab/PredictDB/GTEx-V7_HapMap-2017-11-29/gtex_v7_Brain_Amygdala_imputed_europeans_tw_0.5_signif.db \
---covariance /home/jhz22/D/genetics/hakyimlab/PredictDB/GTEx-V7_HapMap-2017-11-29/gtex_v7_Brain_Amygdala_imputed_eur_covariances.txt.gz \
---gwas_file ldsc.txt \
---snp_column SNP \
---effect_allele_column Tested_Allele \
---non_effect_allele_column Other_Allele \
---beta_column BETA \
---pvalue_column P \
---output_file MX.csv
-</code></pre>
-<p>where instead of chromosome-specific summary statistics as shown in <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> we use <code>ldsc.txt</code> created above directly with results contained in <a href="MX.csv">MX.csv</a> and screen output <a href="MX.log">MX.log</a>.</p>
-<p>We would also be tempting to contrast results with FUSION,</p>
-<pre><code class="language-bash">gunzip -c Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | awk '
-{
-   FS=OFS=&quot;\t&quot;
-   if(NR==1) print &quot;SNP&quot;,&quot;A1&quot;,&quot;A2&quot;,&quot;Z&quot;
-   else print $3,$4,$5,$7/$8
-}' &gt; fusion.txt
-for chr in $(seq 22)
-do
-    Rscript FUSION.assoc_test.R --sumstats fusion.txt \
-                                --weight1s WEIGHTS/NTR.BLOOD.RNAARR.pos --weights_dir WEIGHTS/ \
-                                --ref_ld_chr LDREF/1000G.EUR. --chr $chr --out fusion.$chr.dat
-done
-</code></pre>
-<p>Note again the header/column is customised differently from its DEPICT counterpart and results are obtained by chromosome.</p>
+./MetaXcan.py<span class="w"> </span><span class="se">\</span>
+--model_db_path<span class="w"> </span>/home/jhz22/D/genetics/hakyimlab/PredictDB/GTEx-V7_HapMap-2017-11-29/gtex_v7_Brain_Amygdala_imputed_europeans_tw_0.5_signif.db<span class="w"> </span><span class="se">\</span>
+--covariance<span class="w"> </span>/home/jhz22/D/genetics/hakyimlab/PredictDB/GTEx-V7_HapMap-2017-11-29/gtex_v7_Brain_Amygdala_imputed_eur_covariances.txt.gz<span class="w"> </span><span class="se">\</span>
+--gwas_file<span class="w"> </span>ldsc.txt<span class="w"> </span><span class="se">\</span>
+--snp_column<span class="w"> </span>SNP<span class="w"> </span><span class="se">\</span>
+--effect_allele_column<span class="w"> </span>Tested_Allele<span class="w"> </span><span class="se">\</span>
+--non_effect_allele_column<span class="w"> </span>Other_Allele<span class="w"> </span><span class="se">\</span>
+--beta_column<span class="w"> </span>BETA<span class="w"> </span><span class="se">\</span>
+--pvalue_column<span class="w"> </span>P<span class="w"> </span><span class="se">\</span>
+--output_file<span class="w"> </span>MX.csv
+</code></pre></div>
+where instead of chromosome-specific summary statistics as shown in <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> we use <code>ldsc.txt</code> created above directly with results contained in <a href="MX.csv">MX.csv</a> and screen output <a href="MX.log">MX.log</a>.</p>
+<p>We would also be tempting to contrast results with FUSION,
+<div class="highlight"><pre><span></span><code>gunzip<span class="w"> </span>-c<span class="w"> </span>Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">   FS=OFS=&quot;\t&quot;</span>
+<span class="s1">   if(NR==1) print &quot;SNP&quot;,&quot;A1&quot;,&quot;A2&quot;,&quot;Z&quot;</span>
+<span class="s1">   else print $3,$4,$5,$7/$8</span>
+<span class="s1">}&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>fusion.txt
+<span class="k">for</span><span class="w"> </span>chr<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">22</span><span class="k">)</span>
+<span class="k">do</span>
+<span class="w">    </span>Rscript<span class="w"> </span>FUSION.assoc_test.R<span class="w"> </span>--sumstats<span class="w"> </span>fusion.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">                                </span>--weight1s<span class="w"> </span>WEIGHTS/NTR.BLOOD.RNAARR.pos<span class="w"> </span>--weights_dir<span class="w"> </span>WEIGHTS/<span class="w"> </span><span class="se">\</span>
+<span class="w">                                </span>--ref_ld_chr<span class="w"> </span>LDREF/1000G.EUR.<span class="w"> </span>--chr<span class="w"> </span><span class="nv">$chr</span><span class="w"> </span>--out<span class="w"> </span>fusion.<span class="nv">$chr</span>.dat
+<span class="k">done</span>
+</code></pre></div>
+Note again the header/column is customised differently from its DEPICT counterpart and results are obtained by chromosome.</p>
 <p>Two additional aspects are useful to explore:</p>
 <h3 id="fine-mapping">Fine-mapping</h3>
-<p>In line with the fact that both TWAS and GWAS z scores are available, the option <code>--caviar</code> natually put them as input files for <code>CARIAR</code>,</p>
-<pre><code class="language-bash">for chr in $(seq 22)
-do
-Rscript FUSION.assoc_test.R \
---sumstats fusion.txt \
---weights /home/jhz22/D/mrc/genetics/FUSION/GE/CMC.BRAIN.RNASEQ.pos \
---weights_dir /home/jhz22/D/mrc/genetics/FUSION/GE/ \
---ref_ld_chr /home/jhz22/D/genetics/fusion_twas/LDREF/1000G.EUR. \
---chr $chr \
---caviar \
---out caviar
-done
-</code></pre>
-<p>which are CAVIAR.EQTL.Z, CAVIAR.GWAS.Z, CAVIAR.LD triplets with prefix caviar.genename.</p>
+<p>In line with the fact that both TWAS and GWAS z scores are available, the option <code>--caviar</code> natually put them as input files for <code>CARIAR</code>,
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>chr<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">22</span><span class="k">)</span>
+<span class="k">do</span>
+Rscript<span class="w"> </span>FUSION.assoc_test.R<span class="w"> </span><span class="se">\</span>
+--sumstats<span class="w"> </span>fusion.txt<span class="w"> </span><span class="se">\</span>
+--weights<span class="w"> </span>/home/jhz22/D/mrc/genetics/FUSION/GE/CMC.BRAIN.RNASEQ.pos<span class="w"> </span><span class="se">\</span>
+--weights_dir<span class="w"> </span>/home/jhz22/D/mrc/genetics/FUSION/GE/<span class="w"> </span><span class="se">\</span>
+--ref_ld_chr<span class="w"> </span>/home/jhz22/D/genetics/fusion_twas/LDREF/1000G.EUR.<span class="w"> </span><span class="se">\</span>
+--chr<span class="w"> </span><span class="nv">$chr</span><span class="w"> </span><span class="se">\</span>
+--caviar<span class="w"> </span><span class="se">\</span>
+--out<span class="w"> </span>caviar
+<span class="k">done</span>
+</code></pre></div>
+which are CAVIAR.EQTL.Z, CAVIAR.GWAS.Z, CAVIAR.LD triplets with prefix caviar.genename.</p>
 <h3 id="colocalisation">Colocalisation</h3>
-<p>This is furnished with <code>--coloc_P --GWASN</code>,</p>
-<pre><code class="language-bash">for chr in $(seq 22)
-do
-Rscript FUSION.assoc_test.R \
---sumstats fusion.txt \
---weights /home/jhz22/D/mrc/genetics/FUSION/GE/CMC.BRAIN.RNASEQ.pos \
---weights_dir /home/jhz22/D/mrc/genetics/FUSION/GE/ \
---ref_ld_chr /home/jhz22/D/genetics/fusion_twas/LDREF/1000G.EUR. \
---chr $chr \
---coloc_P 5e-8 \
---GWASN 70000 \
---out coloc$chr.dat
-done
-</code></pre>
+<p>This is furnished with <code>--coloc_P --GWASN</code>,
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>chr<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">22</span><span class="k">)</span>
+<span class="k">do</span>
+Rscript<span class="w"> </span>FUSION.assoc_test.R<span class="w"> </span><span class="se">\</span>
+--sumstats<span class="w"> </span>fusion.txt<span class="w"> </span><span class="se">\</span>
+--weights<span class="w"> </span>/home/jhz22/D/mrc/genetics/FUSION/GE/CMC.BRAIN.RNASEQ.pos<span class="w"> </span><span class="se">\</span>
+--weights_dir<span class="w"> </span>/home/jhz22/D/mrc/genetics/FUSION/GE/<span class="w"> </span><span class="se">\</span>
+--ref_ld_chr<span class="w"> </span>/home/jhz22/D/genetics/fusion_twas/LDREF/1000G.EUR.<span class="w"> </span><span class="se">\</span>
+--chr<span class="w"> </span><span class="nv">$chr</span><span class="w"> </span><span class="se">\</span>
+--coloc_P<span class="w"> </span>5e-8<span class="w"> </span><span class="se">\</span>
+--GWASN<span class="w"> </span><span class="m">70000</span><span class="w"> </span><span class="se">\</span>
+--out<span class="w"> </span>coloc<span class="nv">$chr</span>.dat
+<span class="k">done</span>
+</code></pre></div></p>
 <h3 id="prediction">Prediction</h3>
 <p>See <a href="https://github.com/jinghuazhao/software-notes">software-notes</a> on the use of <code>utils/make_score.R</code>, which is based on the best model.</p>
 <h3 id="approximately-independent-ld-blocks">Approximately independent LD blocks</h3>
-<p>We can use these blocks genomewide or a specific gene, e.g., MC4R,</p>
-<pre><code class="language-bash">awk 'NR&gt;1' ldsc.txt | sort -k1,1n -k2,2n | awk '
-{
-  OFS=&quot;\t&quot;
-  if (NR==1) print &quot;#chrom&quot;, &quot;Start&quot;, &quot;End&quot;, &quot;SNP&quot;, &quot;A1&quot;, &quot;A2&quot;, &quot;FreqA1&quot;, &quot;BETA&quot;, &quot;SE&quot;, &quot;P&quot;, &quot;N&quot;
-  print &quot;chr&quot; $1, $2-1, $2, $3, $4, $5, $6, $7, $8, $9, $10
-}' &gt; BMI.bed
+<p>We can use these blocks genomewide or a specific gene, e.g., MC4R,
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;NR&gt;1&#39;</span><span class="w"> </span>ldsc.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-k1,1n<span class="w"> </span>-k2,2n<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">  OFS=&quot;\t&quot;</span>
+<span class="s1">  if (NR==1) print &quot;#chrom&quot;, &quot;Start&quot;, &quot;End&quot;, &quot;SNP&quot;, &quot;A1&quot;, &quot;A2&quot;, &quot;FreqA1&quot;, &quot;BETA&quot;, &quot;SE&quot;, &quot;P&quot;, &quot;N&quot;</span>
+<span class="s1">  print &quot;chr&quot; $1, $2-1, $2, $3, $4, $5, $6, $7, $8, $9, $10</span>
+<span class="s1">}&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>BMI.bed
 
-# EUR.bed is now with FM-pipeline
-intersectBed -a BMI.bed -b EUR.bed -loj | cut -f12-14 --complement &gt; BMI.txt
+<span class="c1"># EUR.bed is now with FM-pipeline</span>
+intersectBed<span class="w"> </span>-a<span class="w"> </span>BMI.bed<span class="w"> </span>-b<span class="w"> </span>EUR.bed<span class="w"> </span>-loj<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f12-14<span class="w"> </span>--complement<span class="w"> </span>&gt;<span class="w"> </span>BMI.txt
 
-cut -f4,10 BMI.txt &gt; BMI.snpandp
-# gene-based association
-vegas2v2 -G -snpandp BMI.snpandp -custom $PWD/g1000p3_EUR -glist glist-hg19 -out genes
-# pathway-based association
-awk '(NR&gt;1){OFS=&quot;\t&quot;;gsub(/&quot;/,&quot;&quot;,$0);print $2,$8}' genes.out &gt; BMI.geneandp
-vegas2v2 -P -geneandp BMI.geneandp -glist glist-hg19 -geneandpath biosystems20160324.vegas2pathSYM -out pathways
+cut<span class="w"> </span>-f4,10<span class="w"> </span>BMI.txt<span class="w"> </span>&gt;<span class="w"> </span>BMI.snpandp
+<span class="c1"># gene-based association</span>
+vegas2v2<span class="w"> </span>-G<span class="w"> </span>-snpandp<span class="w"> </span>BMI.snpandp<span class="w"> </span>-custom<span class="w"> </span><span class="nv">$PWD</span>/g1000p3_EUR<span class="w"> </span>-glist<span class="w"> </span>glist-hg19<span class="w"> </span>-out<span class="w"> </span>genes
+<span class="c1"># pathway-based association</span>
+awk<span class="w"> </span><span class="s1">&#39;(NR&gt;1){OFS=&quot;\t&quot;;gsub(/&quot;/,&quot;&quot;,$0);print $2,$8}&#39;</span><span class="w"> </span>genes.out<span class="w"> </span>&gt;<span class="w"> </span>BMI.geneandp
+vegas2v2<span class="w"> </span>-P<span class="w"> </span>-geneandp<span class="w"> </span>BMI.geneandp<span class="w"> </span>-glist<span class="w"> </span>glist-hg19<span class="w"> </span>-geneandpath<span class="w"> </span>biosystems20160324.vegas2pathSYM<span class="w"> </span>-out<span class="w"> </span>pathways
 
-# grep MC4R glist-hg19 --&gt; 18 58038563 58040001 MC4R
-# 1439 bp
-# EUR.bed -- &gt; 1563   chr18 57630483 59020751 region1563
-# 1390268 bp
+<span class="c1"># grep MC4R glist-hg19 --&gt; 18 58038563 58040001 MC4R</span>
+<span class="c1"># 1439 bp</span>
+<span class="c1"># EUR.bed -- &gt; 1563   chr18 57630483 59020751 region1563</span>
+<span class="c1"># 1390268 bp</span>
 
-awk /region1563/ BMI.txt &gt; MC4R.txt
+awk<span class="w"> </span>/region1563/<span class="w"> </span>BMI.txt<span class="w"> </span>&gt;<span class="w"> </span>MC4R.txt
 
-# wc -l MC4R.txt
-# 1342 SNPs
+<span class="c1"># wc -l MC4R.txt</span>
+<span class="c1"># 1342 SNPs</span>
 
-cut -f4,10 MC4R.txt &gt; MC4R.snpandp
-echo MC4R &gt; MC4R.genelist
-vegas2v2 -G -snpandp MC4R.snpandp -custom $PWD/g1000p3_EUR -glist glist-hg19 -genelist MC4R.genelist -out MC4R
-</code></pre>
-<p>The reason to use ldsc.txt is to allow for the possibility of finemapping.</p>
+cut<span class="w"> </span>-f4,10<span class="w"> </span>MC4R.txt<span class="w"> </span>&gt;<span class="w"> </span>MC4R.snpandp
+<span class="nb">echo</span><span class="w"> </span>MC4R<span class="w"> </span>&gt;<span class="w"> </span>MC4R.genelist
+vegas2v2<span class="w"> </span>-G<span class="w"> </span>-snpandp<span class="w"> </span>MC4R.snpandp<span class="w"> </span>-custom<span class="w"> </span><span class="nv">$PWD</span>/g1000p3_EUR<span class="w"> </span>-glist<span class="w"> </span>glist-hg19<span class="w"> </span>-genelist<span class="w"> </span>MC4R.genelist<span class="w"> </span>-out<span class="w"> </span>MC4R
+</code></pre></div>
+The reason to use ldsc.txt is to allow for the possibility of finemapping.</p>
 <h3 id="colocalisation-analysis">Colocalisation analysis</h3>
 <p>This can be explored with https://github.com/joepickrell/gwas-pw. Assuming that bmi_height.gz has per-SNP z values and variances, the analysis proceeds with
 ```bash

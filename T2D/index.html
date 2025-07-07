@@ -130,48 +130,47 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="t2d">T2D</h1>
-<p>The diagram summary statistics used in the BMI-T2D analysis is available from http://www.diagram-consortium.org/downloads.html. It is necessary to check the box in front of "I agree with the terms above." to download the file, <code>TransEthnic_T2D_GWAS.MegaMeta.2014OCT16.zip</code>, so</p>
-<pre><code class="language-bash">unzip  TransEthnic_T2D_GWAS.MegaMeta.2014OCT16.zip 
-</code></pre>
-<p>gives <code>diagram.mega-meta.txt</code>.</p>
+<p>The diagram summary statistics used in the BMI-T2D analysis is available from http://www.diagram-consortium.org/downloads.html. It is necessary to check the box in front of "I agree with the terms above." to download the file, <code>TransEthnic_T2D_GWAS.MegaMeta.2014OCT16.zip</code>, so
+<div class="highlight"><pre><span></span><code>unzip<span class="w">  </span>TransEthnic_T2D_GWAS.MegaMeta.2014OCT16.zip<span class="w"> </span>
+</code></pre></div>
+gives <code>diagram.mega-meta.txt</code>.</p>
 <h2 id="pathway-analysis">Pathway analysis</h2>
-<p>As before we prepare for DEPICT file,</p>
-<pre><code class="language-bash">awk '{
-  OFS=&quot;\t&quot;
-  if(NR==1) print &quot;SNP&quot;,&quot;Chr&quot;,&quot;Pos&quot;,&quot;P&quot;
-  else print $1,$2,$3,$9
-}' diagram.mega-meta.txt | gzip -f &gt; T2D.txt.gz
-
-</code></pre>
-<p>and <a href="T2D.cfg">T2D.cfg</a> slightly changed from its BMI counterpart.</p>
+<p>As before we prepare for DEPICT file,
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">  OFS=&quot;\t&quot;</span>
+<span class="s1">  if(NR==1) print &quot;SNP&quot;,&quot;Chr&quot;,&quot;Pos&quot;,&quot;P&quot;</span>
+<span class="s1">  else print $1,$2,$3,$9</span>
+<span class="s1">}&#39;</span><span class="w"> </span>diagram.mega-meta.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>-f<span class="w"> </span>&gt;<span class="w"> </span>T2D.txt.gz
+</code></pre></div>
+and <a href="T2D.cfg">T2D.cfg</a> slightly changed from its BMI counterpart.</p>
 <h2 id="mtcojo-analysis">mtCOJO analysis</h2>
-<p>For this analysis, the latest version of GCTA is required. To imitate the documentation script, we regenerate the <code>bmi_test.raw</code> as follows</p>
-<pre><code class="language-bash">gunzip -c /home/jhz22/D/genetics/broad/ftp/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | \
-awk '{OFS=&quot;\t&quot;; if(NR==1) {print &quot;SNP&quot;,&quot;A1&quot;,&quot;A2&quot;,&quot;freq&quot;,&quot;b&quot;,&quot;se&quot;,&quot;p&quot;,&quot;N&quot;} else print $3,$4,$5,$6,$7,$8,$9,$10}' | \
-uniq &gt; bmi_test.raw
-</code></pre>
-<p>which uses <code>uniq</code> to remove duplicate lines. As for T2D,</p>
-<pre><code class="language-bash">awk '
-   function f(x) {return exp(x)/(1+exp(x))}
-   {
-     if (NR==1) print &quot;SNP&quot;,&quot;A1&quot;,&quot;A2&quot;,&quot;freq&quot;,&quot;b&quot;,&quot;se&quot;,&quot;p&quot;,&quot;N&quot;
-     print $1,$4,$5,rand(),f($6),(f($8)-f($7))/2,$9,$10
-   }
-' /home/jhz22/D/genetics/ldsc/diagram.mega-meta.txt &gt; t2d_test.raw
-</code></pre>
-<p>Since the summary statistics does not contain effect allele frequencies and we assign a random variable to run through.</p>
-<p>Now we download and unpack the LD scores from https://data.broadinstitute.org/alkesgroup/LDSCORE/,</p>
-<pre><code class="language-bash">wget -qO- https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_ref_ld_chr.tar.bz2 | tar fvxz -
-wget -qO- https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_w_ld_chr.tar.bz2 | tar fvxz -
-</code></pre>
-<p>At last we could trick GCTA with GSMR's <a href="http://cnsgenomics.com/software/gsmr/static/test_data.zip">test_data.zip</a></p>
-<pre><code class="language-bash">wget http://cnsgenomics.com/software/gsmr/static/test_data.zip
-unzip test_data
-echo gsmr_example &gt; mtcojo_ref_data.txt
-echo -e &quot;t2d t2d_test.raw 0.176306984 0.09\nbmi bmi_test.raw&quot; &gt; mtcojo_summary_data.list
-gcta64 --mbfile mtcojo_ref_data.txt --mtcojo-file mtcojo_summary_data.list --ref-ld-chr eur_w_ld_chr/ --w-ld-chr eur_w_ld_chr/ --out test_mtcojo_result
-</code></pre>
-<p>which proceeds with no complaints though the results won't be sensible in this case.</p>
+<p>For this analysis, the latest version of GCTA is required. To imitate the documentation script, we regenerate the <code>bmi_test.raw</code> as follows
+<div class="highlight"><pre><span></span><code>gunzip<span class="w"> </span>-c<span class="w"> </span>/home/jhz22/D/genetics/broad/ftp/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+awk<span class="w"> </span><span class="s1">&#39;{OFS=&quot;\t&quot;; if(NR==1) {print &quot;SNP&quot;,&quot;A1&quot;,&quot;A2&quot;,&quot;freq&quot;,&quot;b&quot;,&quot;se&quot;,&quot;p&quot;,&quot;N&quot;} else print $3,$4,$5,$6,$7,$8,$9,$10}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+uniq<span class="w"> </span>&gt;<span class="w"> </span>bmi_test.raw
+</code></pre></div>
+which uses <code>uniq</code> to remove duplicate lines. As for T2D,
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">   function f(x) {return exp(x)/(1+exp(x))}</span>
+<span class="s1">   {</span>
+<span class="s1">     if (NR==1) print &quot;SNP&quot;,&quot;A1&quot;,&quot;A2&quot;,&quot;freq&quot;,&quot;b&quot;,&quot;se&quot;,&quot;p&quot;,&quot;N&quot;</span>
+<span class="s1">     print $1,$4,$5,rand(),f($6),(f($8)-f($7))/2,$9,$10</span>
+<span class="s1">   }</span>
+<span class="s1">&#39;</span><span class="w"> </span>/home/jhz22/D/genetics/ldsc/diagram.mega-meta.txt<span class="w"> </span>&gt;<span class="w"> </span>t2d_test.raw
+</code></pre></div>
+Since the summary statistics does not contain effect allele frequencies and we assign a random variable to run through.</p>
+<p>Now we download and unpack the LD scores from https://data.broadinstitute.org/alkesgroup/LDSCORE/,
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-qO-<span class="w"> </span>https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_ref_ld_chr.tar.bz2<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>fvxz<span class="w"> </span>-
+wget<span class="w"> </span>-qO-<span class="w"> </span>https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_w_ld_chr.tar.bz2<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>fvxz<span class="w"> </span>-
+</code></pre></div></p>
+<p>At last we could trick GCTA with GSMR's <a href="http://cnsgenomics.com/software/gsmr/static/test_data.zip">test_data.zip</a>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>http://cnsgenomics.com/software/gsmr/static/test_data.zip
+unzip<span class="w"> </span>test_data
+<span class="nb">echo</span><span class="w"> </span>gsmr_example<span class="w"> </span>&gt;<span class="w"> </span>mtcojo_ref_data.txt
+<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;t2d t2d_test.raw 0.176306984 0.09\nbmi bmi_test.raw&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>mtcojo_summary_data.list
+gcta64<span class="w"> </span>--mbfile<span class="w"> </span>mtcojo_ref_data.txt<span class="w"> </span>--mtcojo-file<span class="w"> </span>mtcojo_summary_data.list<span class="w"> </span>--ref-ld-chr<span class="w"> </span>eur_w_ld_chr/<span class="w"> </span>--w-ld-chr<span class="w"> </span>eur_w_ld_chr/<span class="w"> </span>--out<span class="w"> </span>test_mtcojo_result
+</code></pre></div>
+which proceeds with no complaints though the results won't be sensible in this case.</p>
 <p>See also http://cnsgenomics.com/software/gsmr/ for the R counterpart.</p></div>
             </div>
         </div>

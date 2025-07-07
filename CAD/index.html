@@ -147,86 +147,86 @@
 <blockquote>
 <p>Nelson CP, Goel A, Butterworth AS, Kanoni S, Webb TR, et al. Association analyses based on false discovery rate implicate new loci for coronary artery disease. Nat Genet 2017 Jul 17 49(9): 1385-1391. doi: 10.1038/ng.3913</p>
 </blockquote>
-<p>For the CARDIoGRAMplusC4D 1000 Genomes-based GWAS, the setup is</p>
-<pre><code class="language-bash">wget http://www.cardiogramplusc4d.org/media/cardiogramplusc4d-consortium/data-downloads/cad.additive.Oct2015.pub.zip
-unzip cad.additive.Oct2015.pub.zip
-</code></pre>
-<p>giving `cad.add.160614.website.txt.</p>
+<p>For the CARDIoGRAMplusC4D 1000 Genomes-based GWAS, the setup is
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>http://www.cardiogramplusc4d.org/media/cardiogramplusc4d-consortium/data-downloads/cad.additive.Oct2015.pub.zip
+unzip<span class="w"> </span>cad.additive.Oct2015.pub.zip
+</code></pre></div>
+giving `cad.add.160614.website.txt.</p>
 <h2 id="mr">MR</h2>
 <p>We examine MMP-12 and CAD as in the Nature paper, the input data is generated with <a href="MMP12.sh">MMP12.sh</a>.</p>
 <p>THe analogous coding for TwoSampleMR as with MendelianRandomization in <a href="https://github.com/jinghuazhao/software-notes">software-notes</a>
 is contained in <a href="MMP12.R">MMP12.R</a>.</p>
-<p>We could also follow Generalised Summary-data-based Mendelian Randomisation (<a href="http://cnsgenomics.com/software/gcta/#Mendelianrandomisation">GSMR</a>).</p>
-<pre><code class="language-bash"># 16-7-2019 JHZ
+<p>We could also follow Generalised Summary-data-based Mendelian Randomisation (<a href="http://cnsgenomics.com/software/gcta/#Mendelianrandomisation">GSMR</a>).
+<div class="highlight"><pre><span></span><code><span class="c1"># 16-7-2019 JHZ</span>
 
-awk '
-{
-   if (NR==1) print &quot;SNP&quot;, &quot;A1&quot;, &quot;A2&quot;, &quot;freq&quot;, &quot;b&quot;, &quot;se&quot;, &quot;p&quot;, &quot;N&quot;;
-   else {
-     CHR=$2
-     POS=$3
-     a1=$4
-     a2=$5
-     if (a1&gt;a2) snpid=&quot;chr&quot; CHR &quot;:&quot; POS &quot;_&quot; a2 &quot;_&quot; a1;
-     else snpid=&quot;chr&quot; CHR &quot;:&quot; POS &quot;_&quot; a1 &quot;_&quot; a2
-     $1=snpid
-     print snpid, a1, a2, $6, $9, $10, $11, 185000
-   }
-}' CAD/cad.add.160614.website.txt &gt; gsmr_outcome.txt
+awk<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">   if (NR==1) print &quot;SNP&quot;, &quot;A1&quot;, &quot;A2&quot;, &quot;freq&quot;, &quot;b&quot;, &quot;se&quot;, &quot;p&quot;, &quot;N&quot;;</span>
+<span class="s1">   else {</span>
+<span class="s1">     CHR=$2</span>
+<span class="s1">     POS=$3</span>
+<span class="s1">     a1=$4</span>
+<span class="s1">     a2=$5</span>
+<span class="s1">     if (a1&gt;a2) snpid=&quot;chr&quot; CHR &quot;:&quot; POS &quot;_&quot; a2 &quot;_&quot; a1;</span>
+<span class="s1">     else snpid=&quot;chr&quot; CHR &quot;:&quot; POS &quot;_&quot; a1 &quot;_&quot; a2</span>
+<span class="s1">     $1=snpid</span>
+<span class="s1">     print snpid, a1, a2, $6, $9, $10, $11, 185000</span>
+<span class="s1">   }</span>
+<span class="s1">}&#39;</span><span class="w"> </span>CAD/cad.add.160614.website.txt<span class="w"> </span>&gt;<span class="w"> </span>gsmr_outcome.txt
 
-# awk 'NR==1' CAD/cad.add.160614.website.txt | sed 's|\t|\n|g' | awk '{print &quot;# &quot; NR, $1}'
-# 1 markername
-# 2 chr
-# 3 bp_hg19
-# 4 effect_allele
-# 5 noneffect_allele
-# 6 effect_allele_freq
-# 7 median_info
-# 8 model
-# 9 beta
-# 10 se_dgc
-# 11 p_dgc
-# 12 het_pvalue
-# 13 n_studies
+<span class="c1"># awk &#39;NR==1&#39; CAD/cad.add.160614.website.txt | sed &#39;s|\t|\n|g&#39; | awk &#39;{print &quot;# &quot; NR, $1}&#39;</span>
+<span class="c1"># 1 markername</span>
+<span class="c1"># 2 chr</span>
+<span class="c1"># 3 bp_hg19</span>
+<span class="c1"># 4 effect_allele</span>
+<span class="c1"># 5 noneffect_allele</span>
+<span class="c1"># 6 effect_allele_freq</span>
+<span class="c1"># 7 median_info</span>
+<span class="c1"># 8 model</span>
+<span class="c1"># 9 beta</span>
+<span class="c1"># 10 se_dgc</span>
+<span class="c1"># 11 p_dgc</span>
+<span class="c1"># 12 het_pvalue</span>
+<span class="c1"># 13 n_studies</span>
 
-xport INF=/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/INF
-echo $INF/INTERVAL/INTERVAL &gt; gsmr_ref_data
-echo IL.6 $INF/work/IL.6.ma &gt; gsmr_exposure
-echo CAD gsmr_outcome.txt &gt; gsmr_outcome
+xport<span class="w"> </span><span class="nv">INF</span><span class="o">=</span>/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/INF
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$INF</span>/INTERVAL/INTERVAL<span class="w"> </span>&gt;<span class="w"> </span>gsmr_ref_data
+<span class="nb">echo</span><span class="w"> </span>IL.6<span class="w"> </span><span class="nv">$INF</span>/work/IL.6.ma<span class="w"> </span>&gt;<span class="w"> </span>gsmr_exposure
+<span class="nb">echo</span><span class="w"> </span>CAD<span class="w"> </span>gsmr_outcome.txt<span class="w"> </span>&gt;<span class="w"> </span>gsmr_outcome
 
-gcta-1.9 --mbfile gsmr_ref_data --gsmr-file gsmr_exposure gsmr_outcome --gsmr-direction 0 --effect-plot --out gsmr_result
+gcta-1.9<span class="w"> </span>--mbfile<span class="w"> </span>gsmr_ref_data<span class="w"> </span>--gsmr-file<span class="w"> </span>gsmr_exposure<span class="w"> </span>gsmr_outcome<span class="w"> </span>--gsmr-direction<span class="w"> </span><span class="m">0</span><span class="w"> </span>--effect-plot<span class="w"> </span>--out<span class="w"> </span>gsmr_result
 
-R --no-save -q &lt;&lt;END
-  source(&quot;http://cnsgenomics.com/software/gcta/static/gsmr_plot.r&quot;)
-  gsmr_data &lt;- read_gsmr_data(&quot;gsmr_result.eff_plot.gz&quot;)
-  gsmr_summary(gsmr_data)
-  plot_gsmr_effect(gsmr_data, &quot;IL.6&quot;, &quot;cad&quot;, colors()[75])
-END
-</code></pre>
-<p>where we use IL.6 as exposure data; the effect-size plots are generated.</p>
+R<span class="w"> </span>--no-save<span class="w"> </span>-q<span class="w"> </span><span class="s">&lt;&lt;END</span>
+<span class="s">  source(&quot;http://cnsgenomics.com/software/gcta/static/gsmr_plot.r&quot;)</span>
+<span class="s">  gsmr_data &lt;- read_gsmr_data(&quot;gsmr_result.eff_plot.gz&quot;)</span>
+<span class="s">  gsmr_summary(gsmr_data)</span>
+<span class="s">  plot_gsmr_effect(gsmr_data, &quot;IL.6&quot;, &quot;cad&quot;, colors()[75])</span>
+<span class="s">END</span>
+</code></pre></div>
+where we use IL.6 as exposure data; the effect-size plots are generated.</p>
 <p>Note that <code>gcta-1.9</code> indcates GCTA 1.9.x is necessary since the <code>--mfile</code> option is not recognised by GCTA 1.26.0.</p>
 <h2 id="pathway-analysis">Pathway analysis</h2>
 <p>MAGMA is illustrated here,</p>
-<p>The GWAS summary data can either be formatted with R,</p>
-<pre><code class="language-r">R --no-save &lt;&lt;END
-d &lt;- read.delim(&quot;`cad.add.160614.website.txt&quot;,as.is=TRUE)
-db &lt;- &quot;CAD&quot;
-write.table(d[c(&quot;SNP&quot;,&quot;CHR&quot;,&quot;BP&quot;)],file=paste0(db,&quot;.snploc&quot;),quote=FALSE,row.name=FALSE,col.names=FALSE,sep=&quot;\t&quot;)
-write.table(d[c(&quot;SNP&quot;,&quot;P&quot;,&quot;NOBS&quot;)],file=paste0(db,&quot;.pval&quot;),quote=FALSE,row.name=FALSE,sep=&quot;\t&quot;)
-END
-</code></pre>
-<p>or more efficiently with bash before pathway analysis</p>
-<pre><code class="language-bash">awk -vOFS=&quot;\t&quot; '{print $2,$1,$4}' g1000_eur.bim &gt; g1000_eur.snploc
-awk -vOFS=&quot;\t&quot; '{if(NR==1) print &quot;SNP&quot;, &quot;P&quot;, &quot;NOBS&quot;; else print $1,$11,1000}' `cad.add.160614.website.txt &gt; CAD.pval
-
-# Annotation
-magma --annotate window=50,50 --snp-loc g1000_eur.snploc --gene-loc NCBI37.3.gene.loc --out CAD
-# Gene analysis - SNP p-values
-magma --bfile g1000_eur --pval CAD.pval ncol=NOBS --gene-annot CAD.genes.annot --out CAD
-# Pathway analysis
-# http://software.broadinstitute.org/gsea/downloads.jsp
-magma --gene-results CAD.genes.raw --set-annot msigdb.v6.2.entrez.gmt self-contained --model fwer --out CAD
+<p>The GWAS summary data can either be formatted with R,
+<div class="highlight"><pre><span></span><code><span class="n">R</span><span class="w"> </span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">save</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">END</span>
+<span class="n">d</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.delim</span><span class="p">(</span><span class="s">&quot;`cad.add.160614.website.txt&quot;</span><span class="p">,</span><span class="n">as.is</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;CAD&quot;</span>
+<span class="nf">write.table</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;SNP&quot;</span><span class="p">,</span><span class="s">&quot;CHR&quot;</span><span class="p">,</span><span class="s">&quot;BP&quot;</span><span class="p">)],</span><span class="n">file</span><span class="o">=</span><span class="nf">paste0</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="s">&quot;.snploc&quot;</span><span class="p">),</span><span class="n">quote</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="n">row.name</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="n">col.names</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;\t&quot;</span><span class="p">)</span>
+<span class="nf">write.table</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;SNP&quot;</span><span class="p">,</span><span class="s">&quot;P&quot;</span><span class="p">,</span><span class="s">&quot;NOBS&quot;</span><span class="p">)],</span><span class="n">file</span><span class="o">=</span><span class="nf">paste0</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="s">&quot;.pval&quot;</span><span class="p">),</span><span class="n">quote</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="n">row.name</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;\t&quot;</span><span class="p">)</span>
+<span class="n">END</span>
 </code></pre></div>
+or more efficiently with bash before pathway analysis
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span>-vOFS<span class="o">=</span><span class="s2">&quot;\t&quot;</span><span class="w"> </span><span class="s1">&#39;{print $2,$1,$4}&#39;</span><span class="w"> </span>g1000_eur.bim<span class="w"> </span>&gt;<span class="w"> </span>g1000_eur.snploc
+awk<span class="w"> </span>-vOFS<span class="o">=</span><span class="s2">&quot;\t&quot;</span><span class="w"> </span><span class="s1">&#39;{if(NR==1) print &quot;SNP&quot;, &quot;P&quot;, &quot;NOBS&quot;; else print $1,$11,1000}&#39;</span><span class="w"> </span><span class="sb">`</span>cad.add.160614.website.txt<span class="w"> </span>&gt;<span class="w"> </span>CAD.pval
+
+<span class="c1"># Annotation</span>
+magma<span class="w"> </span>--annotate<span class="w"> </span><span class="nv">window</span><span class="o">=</span><span class="m">50</span>,50<span class="w"> </span>--snp-loc<span class="w"> </span>g1000_eur.snploc<span class="w"> </span>--gene-loc<span class="w"> </span>NCBI37.3.gene.loc<span class="w"> </span>--out<span class="w"> </span>CAD
+<span class="c1"># Gene analysis - SNP p-values</span>
+magma<span class="w"> </span>--bfile<span class="w"> </span>g1000_eur<span class="w"> </span>--pval<span class="w"> </span>CAD.pval<span class="w"> </span><span class="nv">ncol</span><span class="o">=</span>NOBS<span class="w"> </span>--gene-annot<span class="w"> </span>CAD.genes.annot<span class="w"> </span>--out<span class="w"> </span>CAD
+<span class="c1"># Pathway analysis</span>
+<span class="c1"># http://software.broadinstitute.org/gsea/downloads.jsp</span>
+magma<span class="w"> </span>--gene-results<span class="w"> </span>CAD.genes.raw<span class="w"> </span>--set-annot<span class="w"> </span>msigdb.v6.2.entrez.gmt<span class="w"> </span>self-contained<span class="w"> </span>--model<span class="w"> </span>fwer<span class="w"> </span>--out<span class="w"> </span>CAD
+</code></pre></div></p></div>
             </div>
         </div>
 

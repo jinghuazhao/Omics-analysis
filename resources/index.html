@@ -184,26 +184,26 @@
 <h1 id="resources">Resources</h1>
 <h2 id="annotation">Annotation</h2>
 <p><a href="https://www.ensembl.org/info/data/mysql.html">The Ensembl public MySQL Servers</a></p>
-<p>The following script gives information on genes from ENSEMBL as well as attributes (columns) that contains <code>gene</code>.</p>
-<pre><code class="language-r">library(biomaRt)
-listMarts()
-mart &lt;- useMart(&quot;ENSEMBL_MART_FUNCGEN&quot;)
-listDatasets(mart)
-mart &lt;- useMart(&quot;ensembl&quot;)
-listDatasets(mart)
-ensembl &lt;- useMart(&quot;ensembl&quot;, dataset=&quot;hsapiens_gene_ensembl&quot;, host=&quot;grch37.ensembl.org&quot;, path=&quot;/biomart/martservice&quot;)
-attr &lt;- listAttributes(ensembl)
-attr_select &lt;- c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol', 'transcription_start_site')
-gene &lt;- getBM(attributes = attr_select, mart = ensembl)
-filter &lt;- listFilters(ensembl)
-searchFilters(mart = ensembl, pattern = &quot;gene&quot;)
-</code></pre>
-<p>See also <a href="https://sites.google.com/site/jpopgen/wgsa">https://sites.google.com/site/jpopgen/wgsa</a> for precompiled annotation. Alternatively, </p>
-<pre><code class="language-r"># GENCODE v19
-url &lt;- &quot;ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_19/gencode.v19.chr_patch_hapl_scaff.annotation.gtf.gz&quot;
-gtf &lt;- rtracklayer::import(url)
-gencode &lt;- as.data.frame(gtf)
-</code></pre>
+<p>The following script gives information on genes from ENSEMBL as well as attributes (columns) that contains <code>gene</code>.
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">biomaRt</span><span class="p">)</span>
+<span class="nf">listMarts</span><span class="p">()</span>
+<span class="n">mart</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">useMart</span><span class="p">(</span><span class="s">&quot;ENSEMBL_MART_FUNCGEN&quot;</span><span class="p">)</span>
+<span class="nf">listDatasets</span><span class="p">(</span><span class="n">mart</span><span class="p">)</span>
+<span class="n">mart</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">useMart</span><span class="p">(</span><span class="s">&quot;ensembl&quot;</span><span class="p">)</span>
+<span class="nf">listDatasets</span><span class="p">(</span><span class="n">mart</span><span class="p">)</span>
+<span class="n">ensembl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">useMart</span><span class="p">(</span><span class="s">&quot;ensembl&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">dataset</span><span class="o">=</span><span class="s">&quot;hsapiens_gene_ensembl&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">host</span><span class="o">=</span><span class="s">&quot;grch37.ensembl.org&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="o">=</span><span class="s">&quot;/biomart/martservice&quot;</span><span class="p">)</span>
+<span class="n">attr</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">listAttributes</span><span class="p">(</span><span class="n">ensembl</span><span class="p">)</span>
+<span class="n">attr_select</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;ensembl_gene_id&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;chromosome_name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;start_position&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;end_position&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;description&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;hgnc_symbol&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;transcription_start_site&#39;</span><span class="p">)</span>
+<span class="n">gene</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">getBM</span><span class="p">(</span><span class="n">attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">attr_select</span><span class="p">,</span><span class="w"> </span><span class="n">mart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ensembl</span><span class="p">)</span>
+<span class="n">filter</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">listFilters</span><span class="p">(</span><span class="n">ensembl</span><span class="p">)</span>
+<span class="nf">searchFilters</span><span class="p">(</span><span class="n">mart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ensembl</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gene&quot;</span><span class="p">)</span>
+</code></pre></div>
+See also <a href="https://sites.google.com/site/jpopgen/wgsa">https://sites.google.com/site/jpopgen/wgsa</a> for precompiled annotation. Alternatively, 
+<div class="highlight"><pre><span></span><code><span class="c1"># GENCODE v19</span>
+<span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_19/gencode.v19.chr_patch_hapl_scaff.annotation.gtf.gz&quot;</span>
+<span class="n">gtf</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rtracklayer</span><span class="o">::</span><span class="nf">import</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">gencode</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">gtf</span><span class="p">)</span>
+</code></pre></div></p>
 <h2 id="biobanks">Biobanks</h2>
 <ul>
 <li>China Kadoorie Biobank<ul>
@@ -253,37 +253,37 @@ gencode &lt;- as.data.frame(gtf)
 </ul>
 <h2 id="efo">EFO</h2>
 <p><a href="https://www.ebi.ac.uk/efo/">https://www.ebi.ac.uk/efo/</a></p>
-<p>Example code,</p>
-<pre><code class="language-r">library(ontologyIndex)
+<p>Example code,
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">ontologyIndex</span><span class="p">)</span>
 
-id &lt;- function(ontology)
-{
-  inflammatory &lt;- grep(ontology$name,pattern=&quot;inflammatory&quot;)
-  immune &lt;- grep(ontology$name,pattern=&quot;immune&quot;)
-  inf &lt;- union(inflammatory,immune)
-  list(id=ontology$id[inf],name=ontology$name[inf])
-}
-# GO
-data(go)
-goidname &lt;- id(go)
-# EFO
-file &lt;- &quot;efo.obo&quot;
-get_relation_names(file)
-efo &lt;- get_ontology(file, extract_tags=&quot;everything&quot;)
-length(efo) # 89
-length(efo$id) # 27962
-efoidname &lt;- id(efo)
-diseases &lt;- get_descendants(efo,&quot;EFO:0000408&quot;)
-efo_0000540 &lt;- get_descendants(efo,&quot;EFO:0000540&quot;)
-efo_0000540name &lt;- efo$name[efo_0000540]
-isd &lt;- data.frame(efo_0000540,efo_0000540name)
-save(efo,diseases,isd,efoidname,goidname, file=&quot;work/efo.rda&quot;)
-write.table(isd,file=&quot;efo_0000540.csv&quot;,col.names=FALSE,row.names=FALSE,sep=&quot;,&quot;)
-pdf(&quot;efo_0000540.pdf&quot;,height=15,width=15)
-library(ontologyPlot)
-onto_plot(efo,efo_0000540)
-dev.off()
-</code></pre>
+<span class="n">id</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">ontology</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">inflammatory</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">grep</span><span class="p">(</span><span class="n">ontology</span><span class="o">$</span><span class="n">name</span><span class="p">,</span><span class="n">pattern</span><span class="o">=</span><span class="s">&quot;inflammatory&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">immune</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">grep</span><span class="p">(</span><span class="n">ontology</span><span class="o">$</span><span class="n">name</span><span class="p">,</span><span class="n">pattern</span><span class="o">=</span><span class="s">&quot;immune&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">inf</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">union</span><span class="p">(</span><span class="n">inflammatory</span><span class="p">,</span><span class="n">immune</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">list</span><span class="p">(</span><span class="n">id</span><span class="o">=</span><span class="n">ontology</span><span class="o">$</span><span class="n">id</span><span class="p">[</span><span class="n">inf</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="n">ontology</span><span class="o">$</span><span class="n">name</span><span class="p">[</span><span class="n">inf</span><span class="p">])</span>
+<span class="p">}</span>
+<span class="c1"># GO</span>
+<span class="nf">data</span><span class="p">(</span><span class="n">go</span><span class="p">)</span>
+<span class="n">goidname</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">id</span><span class="p">(</span><span class="n">go</span><span class="p">)</span>
+<span class="c1"># EFO</span>
+<span class="n">file</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;efo.obo&quot;</span>
+<span class="nf">get_relation_names</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">efo</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_ontology</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">extract_tags</span><span class="o">=</span><span class="s">&quot;everything&quot;</span><span class="p">)</span>
+<span class="nf">length</span><span class="p">(</span><span class="n">efo</span><span class="p">)</span><span class="w"> </span><span class="c1"># 89</span>
+<span class="nf">length</span><span class="p">(</span><span class="n">efo</span><span class="o">$</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="c1"># 27962</span>
+<span class="n">efoidname</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">id</span><span class="p">(</span><span class="n">efo</span><span class="p">)</span>
+<span class="n">diseases</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_descendants</span><span class="p">(</span><span class="n">efo</span><span class="p">,</span><span class="s">&quot;EFO:0000408&quot;</span><span class="p">)</span>
+<span class="n">efo_0000540</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_descendants</span><span class="p">(</span><span class="n">efo</span><span class="p">,</span><span class="s">&quot;EFO:0000540&quot;</span><span class="p">)</span>
+<span class="n">efo_0000540name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">efo</span><span class="o">$</span><span class="n">name</span><span class="p">[</span><span class="n">efo_0000540</span><span class="p">]</span>
+<span class="n">isd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">efo_0000540</span><span class="p">,</span><span class="n">efo_0000540name</span><span class="p">)</span>
+<span class="nf">save</span><span class="p">(</span><span class="n">efo</span><span class="p">,</span><span class="n">diseases</span><span class="p">,</span><span class="n">isd</span><span class="p">,</span><span class="n">efoidname</span><span class="p">,</span><span class="n">goidname</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="o">=</span><span class="s">&quot;work/efo.rda&quot;</span><span class="p">)</span>
+<span class="nf">write.table</span><span class="p">(</span><span class="n">isd</span><span class="p">,</span><span class="n">file</span><span class="o">=</span><span class="s">&quot;efo_0000540.csv&quot;</span><span class="p">,</span><span class="n">col.names</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="n">row.names</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+<span class="nf">pdf</span><span class="p">(</span><span class="s">&quot;efo_0000540.pdf&quot;</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="m">15</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="m">15</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ontologyPlot</span><span class="p">)</span>
+<span class="nf">onto_plot</span><span class="p">(</span><span class="n">efo</span><span class="p">,</span><span class="n">efo_0000540</span><span class="p">)</span>
+<span class="nf">dev.off</span><span class="p">()</span>
+</code></pre></div></p>
 <h2 id="eqtlgen">eQTLGen</h2>
 <p><a href="http://www.eqtlgen.org/">http://www.eqtlgen.org/</a></p>
 <h2 id="metamaplite">MetaMapLite</h2>
@@ -296,158 +296,158 @@ dev.off()
 <h2 id="opentargets">OpenTargets</h2>
 <p>These reflects v4 using GraphQL, <a href="https://platform-docs.opentargets.org/data-access/graphql-api">https://platform-docs.opentargets.org/data-access/graphql-api</a>.</p>
 <p>Our first example is from the document (except ENSG00000164308) whose output is as <code>ERAP2.json</code>.</p>
-<pre><code class="language-bash">#!/usr/bin/bash
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/bash</span>
 
-# https://platform.opentargets.org/api
+<span class="c1"># https://platform.opentargets.org/api</span>
 
-module load ceuadmin/R
-Rscript -e '
-  ERAP2 &lt;- subset(pQTLdata::caprion,Gene==&quot;ERAP2&quot;)
-  ERAP2$ensGenes
-  data &lt;- jsonlite::fromJSON(&quot;ERAP2.json&quot;)
-  diseases_data &lt;- data$data$target$associatedDiseases$rows
-  diseases_data &lt;- tidyr::unnest(diseases_data, cols = everything(), names_sep = &quot;_&quot;)
-  write.table(diseases_data, file = &quot;ERAP2.tsv&quot;, sep = &quot;\t&quot;, row.names = FALSE, quote = FALSE)
-'
-</code></pre>
+module<span class="w"> </span>load<span class="w"> </span>ceuadmin/R
+Rscript<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">  ERAP2 &lt;- subset(pQTLdata::caprion,Gene==&quot;ERAP2&quot;)</span>
+<span class="s1">  ERAP2$ensGenes</span>
+<span class="s1">  data &lt;- jsonlite::fromJSON(&quot;ERAP2.json&quot;)</span>
+<span class="s1">  diseases_data &lt;- data$data$target$associatedDiseases$rows</span>
+<span class="s1">  diseases_data &lt;- tidyr::unnest(diseases_data, cols = everything(), names_sep = &quot;_&quot;)</span>
+<span class="s1">  write.table(diseases_data, file = &quot;ERAP2.tsv&quot;, sep = &quot;\t&quot;, row.names = FALSE, quote = FALSE)</span>
+<span class="s1">&#39;</span>
+</code></pre></div>
 <p>In fact it is effectively done as follows,</p>
-<pre><code class="language-r">library(httr)
-library(jsonlite)
-gene_id &lt;- &quot;ENSG00000164308&quot;
-query_string &lt;- &quot;
-  query target($ensemblId: String!){
-    target(ensemblId: $ensemblId){
-      id
-      approvedSymbol
-      associatedDiseases {
-        count
-        rows {
-          disease {
-            id
-            name
-          }
-          datasourceScores {
-            id
-            score
-          }
-        }
-      }
-    }
-  }
-&quot;
-base_url &lt;- &quot;https://api.platform.opentargets.org/api/v4/graphql&quot;
-variables &lt;- list(&quot;ensemblId&quot; = gene_id)
-post_body &lt;- list(query = query_string, variables = variables)
-r &lt;- httr::POST(url = base_url, body = post_body, encode = 'json')
-if (status_code(r) == 200) {
-  data &lt;- iconv(r, &quot;&quot;, &quot;ASCII&quot;)
-  content &lt;- jsonlite::fromJSON(data)
-} else {
-  print(paste(&quot;Request failed with status code&quot;, status_code(r)))
-}
-# Step 1: Access the nested data
-target &lt;- content$data$target
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">jsonlite</span><span class="p">)</span>
+<span class="n">gene_id</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;ENSG00000164308&quot;</span>
+<span class="n">query_string</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;</span>
+<span class="s">  query target($ensemblId: String!){</span>
+<span class="s">    target(ensemblId: $ensemblId){</span>
+<span class="s">      id</span>
+<span class="s">      approvedSymbol</span>
+<span class="s">      associatedDiseases {</span>
+<span class="s">        count</span>
+<span class="s">        rows {</span>
+<span class="s">          disease {</span>
+<span class="s">            id</span>
+<span class="s">            name</span>
+<span class="s">          }</span>
+<span class="s">          datasourceScores {</span>
+<span class="s">            id</span>
+<span class="s">            score</span>
+<span class="s">          }</span>
+<span class="s">        }</span>
+<span class="s">      }</span>
+<span class="s">    }</span>
+<span class="s">  }</span>
+<span class="s">&quot;</span>
+<span class="n">base_url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;https://api.platform.opentargets.org/api/v4/graphql&quot;</span>
+<span class="n">variables</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s">&quot;ensemblId&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gene_id</span><span class="p">)</span>
+<span class="n">post_body</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">query_string</span><span class="p">,</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">variables</span><span class="p">)</span>
+<span class="n">r</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">POST</span><span class="p">(</span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base_url</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">post_body</span><span class="p">,</span><span class="w"> </span><span class="n">encode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;json&#39;</span><span class="p">)</span>
+<span class="nf">if </span><span class="p">(</span><span class="nf">status_code</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">iconv</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ASCII&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">content</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">jsonlite</span><span class="o">::</span><span class="nf">fromJSON</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Request failed with status code&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">status_code</span><span class="p">(</span><span class="n">r</span><span class="p">)))</span>
+<span class="p">}</span>
+<span class="c1"># Step 1: Access the nested data</span>
+<span class="n">target</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="o">$</span><span class="n">data</span><span class="o">$</span><span class="n">target</span>
 
-# Step 2: Extract scalar fields
-scalar_fields &lt;- data.frame(
-  Field = c(&quot;ID&quot;, &quot;Approved Symbol&quot;, &quot;Biotype&quot;),
-  Value = c(target$id, target$approvedSymbol, target$biotype)
-)
+<span class="c1"># Step 2: Extract scalar fields</span>
+<span class="n">scalar_fields</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">  </span><span class="n">Field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;ID&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Approved Symbol&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Biotype&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="n">Value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">target</span><span class="o">$</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="o">$</span><span class="n">approvedSymbol</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="o">$</span><span class="n">biotype</span><span class="p">)</span>
+<span class="p">)</span>
 
-# Step 3: Generate a table for scalar fields
-cat(&quot;### Scalar Fields\n&quot;)
-knitr::kable(scalar_fields, caption = &quot;Basic Information&quot;)
+<span class="c1"># Step 3: Generate a table for scalar fields</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;### Scalar Fields\n&quot;</span><span class="p">)</span>
+<span class="n">knitr</span><span class="o">::</span><span class="nf">kable</span><span class="p">(</span><span class="n">scalar_fields</span><span class="p">,</span><span class="w"> </span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Basic Information&quot;</span><span class="p">)</span>
 
-# Step 4: Generate a table for geneticConstraint
-cat(&quot;\n### Genetic Constraint\n&quot;)
-knitr::kable(target$geneticConstraint, caption = &quot;Genetic Constraint Metrics&quot;)
+<span class="c1"># Step 4: Generate a table for geneticConstraint</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\n### Genetic Constraint\n&quot;</span><span class="p">)</span>
+<span class="n">knitr</span><span class="o">::</span><span class="nf">kable</span><span class="p">(</span><span class="n">target</span><span class="o">$</span><span class="n">geneticConstraint</span><span class="p">,</span><span class="w"> </span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Genetic Constraint Metrics&quot;</span><span class="p">)</span>
 
-# Step 5: Generate a table for tractability
-cat(&quot;\n### Tractability\n&quot;)
-knitr::kable(target$tractability, caption = &quot;Tractability Information&quot;)
-</code></pre>
+<span class="c1"># Step 5: Generate a table for tractability</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;\n### Tractability\n&quot;</span><span class="p">)</span>
+<span class="n">knitr</span><span class="o">::</span><span class="nf">kable</span><span class="p">(</span><span class="n">target</span><span class="o">$</span><span class="n">tractability</span><span class="p">,</span><span class="w"> </span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Tractability Information&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p>where <code>jsonlite::fromJSON(content(r,"text"))</code> is also possible when R is nicely compiled with libiconv.</p>
 <p>A Bash implementation is copied here</p>
-<pre><code class="language-bash">curl 'https://api.platform.opentargets.org/api/v4/graphql' \
-     -H 'Accept-Encoding: gzip, deflate, br' \
-     -H 'Content-Type: application/json' \
-     -H 'Accept: application/json' \
-     -H 'Connection: keep-alive' \
-     -H 'DNT: 1' \
-     -H 'Origin: https://api.platform.opentargets.org' \
-     --data-binary '{&quot;query&quot;:&quot;query targetInfo {\n  target(ensemblId: \&quot;ENSG00000164308\&quot;) {\n    id\n    approvedSymbol\n    biotype\n    geneticConstraint {\n      constraintType\n      exp\n      obs\n      score\n      oe\n      oeLower\n      oeUpper\n    }\n    tractability {\n      label\n      modality\n      value\n    }\n  }\n}\n&quot;}' \
-     --compressed
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s1">&#39;https://api.platform.opentargets.org/api/v4/graphql&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s1">&#39;Accept-Encoding: gzip, deflate, br&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s1">&#39;Connection: keep-alive&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s1">&#39;DNT: 1&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s1">&#39;Origin: https://api.platform.opentargets.org&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>--data-binary<span class="w"> </span><span class="s1">&#39;{&quot;query&quot;:&quot;query targetInfo {\n  target(ensemblId: \&quot;ENSG00000164308\&quot;) {\n    id\n    approvedSymbol\n    biotype\n    geneticConstraint {\n      constraintType\n      exp\n      obs\n      score\n      oe\n      oeLower\n      oeUpper\n    }\n    tractability {\n      label\n      modality\n      value\n    }\n  }\n}\n&quot;}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>--compressed
+</code></pre></div>
 <p>The Python script can be used directly without change</p>
-<pre><code class="language-python3">import requests
-import json
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
 
-gene_id = &quot;ENSG00000164308&quot;
-query_string = &quot;&quot;&quot;
-  query target($ensemblId: String!){
-    target(ensemblId: $ensemblId){
-      id
-      approvedSymbol
-      biotype
-      geneticConstraint {
-        constraintType
-        exp
-        obs
-        score
-        oe
-        oeLower
-        oeUpper
-      }
-      tractability {
-        label
-        modality
-        value
-      }
-    }
-  }
-&quot;&quot;&quot;
-variables = {&quot;ensemblId&quot;: gene_id}
-base_url = &quot;https://api.platform.opentargets.org/api/v4/graphql&quot;
-r = requests.post(base_url, json={&quot;query&quot;: query_string, &quot;variables&quot;: variables})
-print(r.status_code)
-api_response = json.loads(r.text)
-print(api_response)
-</code></pre>
+<span class="n">gene_id</span> <span class="o">=</span> <span class="s2">&quot;ENSG00000164308&quot;</span>
+<span class="n">query_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">  query target($ensemblId: String!){</span>
+<span class="s2">    target(ensemblId: $ensemblId){</span>
+<span class="s2">      id</span>
+<span class="s2">      approvedSymbol</span>
+<span class="s2">      biotype</span>
+<span class="s2">      geneticConstraint {</span>
+<span class="s2">        constraintType</span>
+<span class="s2">        exp</span>
+<span class="s2">        obs</span>
+<span class="s2">        score</span>
+<span class="s2">        oe</span>
+<span class="s2">        oeLower</span>
+<span class="s2">        oeUpper</span>
+<span class="s2">      }</span>
+<span class="s2">      tractability {</span>
+<span class="s2">        label</span>
+<span class="s2">        modality</span>
+<span class="s2">        value</span>
+<span class="s2">      }</span>
+<span class="s2">    }</span>
+<span class="s2">  }</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">variables</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ensemblId&quot;</span><span class="p">:</span> <span class="n">gene_id</span><span class="p">}</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://api.platform.opentargets.org/api/v4/graphql&quot;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="n">query_string</span><span class="p">,</span> <span class="s2">&quot;variables&quot;</span><span class="p">:</span> <span class="n">variables</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="n">api_response</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span>
+</code></pre></div>
 <p>Lastly we turn to R, which again gets around <code>httr::content(r)</code> for <code>iconvlist()</code> with <code>iconv()</code>.</p>
-<pre><code class="language-r">library(httr)
-library(jsonlite)
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">jsonlite</span><span class="p">)</span>
 
-gene_id &lt;- &quot;ENSG00000164308&quot;
-query_string = &quot;
-  query target($ensemblId: String!){
-    target(ensemblId: $ensemblId){
-      id
-      approvedSymbol
-      biotype
-      geneticConstraint {
-        constraintType
-        exp
-        obs
-        score
-        oe
-        oeLower
-        oeUpper
-      }
-      tractability {
-        label
-        modality
-        value
-      }
-    }
-  }
-&quot;
-base_url &lt;- &quot;https://api.platform.opentargets.org/api/v4/graphql&quot;
-variables &lt;- list(&quot;ensemblId&quot; = gene_id)
-post_body &lt;- list(query = query_string, variables = variables)
-r &lt;- httr::POST(url=base_url, body=post_body, encode='json')
-data &lt;- iconv(r, &quot;&quot;, &quot;ASCII&quot;)
-content &lt;- jsonlite::fromJSON(data)
-</code></pre>
+<span class="n">gene_id</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;ENSG00000164308&quot;</span>
+<span class="n">query_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;</span>
+<span class="s">  query target($ensemblId: String!){</span>
+<span class="s">    target(ensemblId: $ensemblId){</span>
+<span class="s">      id</span>
+<span class="s">      approvedSymbol</span>
+<span class="s">      biotype</span>
+<span class="s">      geneticConstraint {</span>
+<span class="s">        constraintType</span>
+<span class="s">        exp</span>
+<span class="s">        obs</span>
+<span class="s">        score</span>
+<span class="s">        oe</span>
+<span class="s">        oeLower</span>
+<span class="s">        oeUpper</span>
+<span class="s">      }</span>
+<span class="s">      tractability {</span>
+<span class="s">        label</span>
+<span class="s">        modality</span>
+<span class="s">        value</span>
+<span class="s">      }</span>
+<span class="s">    }</span>
+<span class="s">  }</span>
+<span class="s">&quot;</span>
+<span class="n">base_url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;https://api.platform.opentargets.org/api/v4/graphql&quot;</span>
+<span class="n">variables</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s">&quot;ensemblId&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gene_id</span><span class="p">)</span>
+<span class="n">post_body</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">query_string</span><span class="p">,</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">variables</span><span class="p">)</span>
+<span class="n">r</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="nf">POST</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">base_url</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="o">=</span><span class="n">post_body</span><span class="p">,</span><span class="w"> </span><span class="n">encode</span><span class="o">=</span><span class="s">&#39;json&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">iconv</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ASCII&quot;</span><span class="p">)</span>
+<span class="n">content</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">jsonlite</span><span class="o">::</span><span class="nf">fromJSON</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="pgs-searchgpt">PGS (searchGPT)</h2>
 <p><a href="https://frontlinegenomics.com/how-to-perform-polygenic-risk-score-analysis/"><img alt="perform polygenic risk score analysis" src="https://images.openai.com/thumbnails/0e8e5ab5caec6614efac03beb20c426c.png" /></a></p>
 <p>To calculate a Polygenic Risk Score (PRS) using PLINK, you typically employ a weighted sum approach, where each SNP contributes according to its effect size (e.g., from a GWAS meta-analysis). PLINK facilitates this process through the <code>--score</code> command, which computes the PRS for each individual based on specified SNPs and their associated effect sizes.(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
@@ -483,11 +483,11 @@ content &lt;- jsonlite::fromJSON(data)
 <p>Ensure that the SNP identifiers in this file match those in your genotype data.</p>
 <h4 id="3-execute-the-prs-calculation">3. Execute the PRS Calculation</h4>
 <p>Use the following PLINK command to calculate the PRS:(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
-<pre><code class="language-bash">plink \
-  --bfile your_genotype_data \
-  --score snp_info_file 2 4 6 header \
-  --out prscore_output
-</code></pre>
+<div class="highlight"><pre><span></span><code>plink<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--bfile<span class="w"> </span>your_genotype_data<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--score<span class="w"> </span>snp_info_file<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">6</span><span class="w"> </span>header<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out<span class="w"> </span>prscore_output
+</code></pre></div>
 <p>In this command:(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
 <ul>
 <li>
@@ -521,12 +521,12 @@ content &lt;- jsonlite::fromJSON(data)
 <h4 id="5-optional-apply-p-value-thresholding">5. Optional: Apply P-value Thresholding</h4>
 <p>To refine your PRS, you can apply P-value thresholds to include only SNPs with P-values below a certain cutoff. This can be done using the <code>--q-score-range</code> option in PLINK, which allows you to specify a range of P-values for inclusion.(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
 <p>For example, to include SNPs with P-values less than 0.05:(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
-<pre><code class="language-bash">plink \
-  --bfile your_genotype_data \
-  --score snp_info_file 2 4 6 header \
-  --q-score-range 0.05 0.05 \
-  --out prscore_output_thresholded
-</code></pre>
+<div class="highlight"><pre><span></span><code>plink<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--bfile<span class="w"> </span>your_genotype_data<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--score<span class="w"> </span>snp_info_file<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">6</span><span class="w"> </span>header<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--q-score-range<span class="w"> </span><span class="m">0</span>.05<span class="w"> </span><span class="m">0</span>.05<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out<span class="w"> </span>prscore_output_thresholded
+</code></pre></div>
 <p>This command will calculate the PRS using only SNPs with P-values less than 0.05.(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
 <h4 id="6-validate-and-interpret-the-prs">6. Validate and Interpret the PRS</h4>
 <p>After calculating the PRS, it's important to validate its predictive power and interpret its significance. This can involve:</p>
@@ -552,36 +552,36 @@ content &lt;- jsonlite::fromJSON(data)
 <li><a href="https://pubmed.ncbi.nlm.nih.gov/">https://pubmed.ncbi.nlm.nih.gov/</a></li>
 <li><a href="https://www.ncbi.nlm.nih.gov/pmc/pmctopmid/">https://www.ncbi.nlm.nih.gov/pmc/pmctopmid/</a></li>
 </ul>
-<p>with example code,</p>
-<pre><code class="language-r">library(rentrez)
-entrez_dbs()
-entrez_db_links(&quot;pubmed&quot;)
-pubmed_fields &lt;- entrez_db_searchable(&quot;pubmed&quot;)
-# set_entrez_key(&quot;&quot;)
-Sys.getenv(&quot;ENTREZ_KEY&quot;)
-term &lt;- &quot;pQTLs OR (protein AND quantitative AND trait AND loci) AND human [MH] AND (plasma OR Serum)&quot;
-r &lt;- entrez_search(db=&quot;pubmed&quot;,term=term,use_history=TRUE)
-class(r)
-names(r)
-with(r,web_history)
-unlink(paste(&quot;pubmed&quot;,c(&quot;fetch&quot;,&quot;summary&quot;),sep=&quot;.&quot;))
-fields &lt;- c(&quot;uid&quot;, &quot;pubdate&quot;, &quot;sortfirstauthor&quot;, &quot;title&quot;, &quot;source&quot;, &quot;volume&quot;, &quot;pages&quot;)
-for(i in seq(1,with(r,count),50))
-{
-  cat(i+49, &quot;records downloaded\r&quot;)
-  f &lt;- entrez_fetch(db=&quot;pubmed&quot;, web_history=with(r,web_history), rettype=&quot;text&quot;, retmax=50, retstart=i)
-  write.table(f, col.names=FALSE, row.names=FALSE, file=&quot;pubmed.fetch&quot;, append=TRUE)
-  s &lt;- entrez_summary(db=&quot;pubmed&quot;, web_history=with(r,web_history), rettype=&quot;text&quot;, retmax=50, retstart=i)
-  e &lt;- extract_from_esummary(s, fields)
-  write.table(t(e), col.names=FALSE, row.names=FALSE, file=&quot;pubmed.summary&quot;, append=TRUE, sep=&quot;\t&quot;)
-}
-id &lt;- 600807
-upload &lt;- entrez_post(db=&quot;omim&quot;, id=id)
-asthma_variants &lt;- entrez_link(dbfrom=&quot;omim&quot;, db=&quot;clinvar&quot;, cmd=&quot;neighbor_history&quot;, web_history=upload)
-asthma_variants
-snp_links &lt;- entrez_link(dbfrom=&quot;clinvar&quot;, db=&quot;snp&quot;, web_history=asthma_variants$web_histories$omim_clinvar, cmd=&quot;neighbor_history&quot;)
-all_links &lt;- entrez_link(dbfrom='pubmed', id=id, db='all')
-</code></pre>
+<p>with example code,
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">rentrez</span><span class="p">)</span>
+<span class="nf">entrez_dbs</span><span class="p">()</span>
+<span class="nf">entrez_db_links</span><span class="p">(</span><span class="s">&quot;pubmed&quot;</span><span class="p">)</span>
+<span class="n">pubmed_fields</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">entrez_db_searchable</span><span class="p">(</span><span class="s">&quot;pubmed&quot;</span><span class="p">)</span>
+<span class="c1"># set_entrez_key(&quot;&quot;)</span>
+<span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;ENTREZ_KEY&quot;</span><span class="p">)</span>
+<span class="n">term</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;pQTLs OR (protein AND quantitative AND trait AND loci) AND human [MH] AND (plasma OR Serum)&quot;</span>
+<span class="n">r</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">entrez_search</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="s">&quot;pubmed&quot;</span><span class="p">,</span><span class="n">term</span><span class="o">=</span><span class="n">term</span><span class="p">,</span><span class="n">use_history</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="nf">with</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">web_history</span><span class="p">)</span>
+<span class="nf">unlink</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;pubmed&quot;</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;fetch&quot;</span><span class="p">,</span><span class="s">&quot;summary&quot;</span><span class="p">),</span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;.&quot;</span><span class="p">))</span>
+<span class="n">fields</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;uid&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pubdate&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sortfirstauthor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;source&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;volume&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pages&quot;</span><span class="p">)</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="nf">with</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">count</span><span class="p">),</span><span class="m">50</span><span class="p">))</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nf">cat</span><span class="p">(</span><span class="n">i</span><span class="m">+49</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;records downloaded\r&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">f</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">entrez_fetch</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="s">&quot;pubmed&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">web_history</span><span class="o">=</span><span class="nf">with</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">web_history</span><span class="p">),</span><span class="w"> </span><span class="n">rettype</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">retmax</span><span class="o">=</span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">retstart</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">write.table</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">col.names</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="o">=</span><span class="s">&quot;pubmed.fetch&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="w">  </span><span class="n">s</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">entrez_summary</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="s">&quot;pubmed&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">web_history</span><span class="o">=</span><span class="nf">with</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">web_history</span><span class="p">),</span><span class="w"> </span><span class="n">rettype</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">retmax</span><span class="o">=</span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">retstart</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+<span class="w">  </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">extract_from_esummary</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">fields</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">write.table</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">e</span><span class="p">),</span><span class="w"> </span><span class="n">col.names</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="o">=</span><span class="s">&quot;pubmed.summary&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">append</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;\t&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">id</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">600807</span>
+<span class="n">upload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">entrez_post</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="s">&quot;omim&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="n">id</span><span class="p">)</span>
+<span class="n">asthma_variants</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">entrez_link</span><span class="p">(</span><span class="n">dbfrom</span><span class="o">=</span><span class="s">&quot;omim&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">db</span><span class="o">=</span><span class="s">&quot;clinvar&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cmd</span><span class="o">=</span><span class="s">&quot;neighbor_history&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">web_history</span><span class="o">=</span><span class="n">upload</span><span class="p">)</span>
+<span class="n">asthma_variants</span>
+<span class="n">snp_links</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">entrez_link</span><span class="p">(</span><span class="n">dbfrom</span><span class="o">=</span><span class="s">&quot;clinvar&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">db</span><span class="o">=</span><span class="s">&quot;snp&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">web_history</span><span class="o">=</span><span class="n">asthma_variants</span><span class="o">$</span><span class="n">web_histories</span><span class="o">$</span><span class="n">omim_clinvar</span><span class="p">,</span><span class="w"> </span><span class="n">cmd</span><span class="o">=</span><span class="s">&quot;neighbor_history&quot;</span><span class="p">)</span>
+<span class="n">all_links</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">entrez_link</span><span class="p">(</span><span class="n">dbfrom</span><span class="o">=</span><span class="s">&#39;pubmed&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">db</span><span class="o">=</span><span class="s">&#39;all&#39;</span><span class="p">)</span>
+</code></pre></div></p>
 <h2 id="roadmap">Roadmap</h2>
 <p><a href="http://www.roadmapepigenomics.org/">http://www.roadmapepigenomics.org/</a></p>
 <h2 id="snakemake-workflow-catalogue">snakemake workflow catalogue</h2>
