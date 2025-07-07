@@ -115,6 +115,16 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            
+            <li class="nav-item" data-level="1"><a href="#httpsmassiveucsdeduproteosafedatasetjspaccessionmsv000081318" class="nav-link">https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000081318</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#httpsmassiveucsdeduproteosafedatasetjspaccessionmsv000086195" class="nav-link">https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000086195</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -139,7 +149,7 @@
 </li>
 </ul>
 </li>
-<li>MassIVE <a href="https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000086195">MSV000086195<sup id="fnref:wget"><a class="footnote-ref" href="#fn:wget">1</a></sup></a></li>
+<li>MassIVE<sup id="fnref:wget"><a class="footnote-ref" href="#fn:wget">1</a></sup>, <a href="https://massive.ucsd.edu/ProteoSAFe/static/massive.jsp?redirect=auth">https://massive.ucsd.edu/ProteoSAFe/static/massive.jsp?redirect=auth</a></li>
 <li>MassiveFold, <a href="https://github.com/GBLille/MassiveFold">https://github.com/GBLille/MassiveFold</a></li>
 <li>MaxQuant, <a href="https://maxquant.org/">https://maxquant.org/</a> (<a href="https://lists.biochem.mpg.de/listinfo/maxquan">Mailing list</a>)</li>
 <li>Mass++, <a href="https://mspp.ninja/download/">https://mspp.ninja/download/</a></li>
@@ -160,11 +170,16 @@
 <hr />
 <ol>
 <li id="fn:wget">
-<p><strong>MSV000086195</strong> download:</p>
+<p><strong>MassIVE</strong> download:</p>
 <p>This is a companion to</p>
 <p>Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis.
 ISBN: 978-1-119-87235-1, <a href="https://books.wiley.com/titles/9781119872351/">https://books.wiley.com/titles/9781119872351/</a>.</p>
-<p><code>wget -r -nH --cut-dirs=1 -R "index.html*" ftp://massive-ftp.ucsd.edu/v03/MSV000086195/</code>&#160;<a class="footnote-backref" href="#fnref:wget" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>```bash</p>
+<h1 id="httpsmassiveucsdeduproteosafedatasetjspaccessionmsv000081318">https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000081318</h1>
+<p>wget -r -nH --cut-dirs=2 -R "index.html*"  ftp://massive-ftp.ucsd.edu/v01/MSV000081318/</p>
+<h1 id="httpsmassiveucsdeduproteosafedatasetjspaccessionmsv000086195">https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000086195</h1>
+<p>wget -r -nH --cut-dirs=1 -R "index.html*" ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
+```&#160;<a class="footnote-backref" href="#fnref:wget" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></div>
