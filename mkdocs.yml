@@ -36,6 +36,9 @@ markdown_extensions:
   - meta
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.superfences
+  - codehilite
+
 validation:
   unrecognized_links: ignore
 extra_javascript:
