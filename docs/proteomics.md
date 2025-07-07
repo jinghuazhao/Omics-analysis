@@ -30,12 +30,12 @@
 - Skyline, <https://skyline.ms/project/home/begin.view>
 - Spectranaut, <https://biognosys.com/software/spectronaut/>
 
-[^wget]: **MassIVE** download instructions:
+[^wget]: **MassIVE** download instructions
 
-    This is a companion to
-
-    Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1, <https://books.wiley.com/titles/9781119872351/>.
-    ```bash
+    > This is a companion to
+    >
+    > Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1, <https://books.wiley.com/titles/9781119872351/>.
+    >
     > wget -r -nH --cut-dirs=2 -R "index.html*" ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
     > wget -r -nH --cut-dirs=1 -R "index.html*" ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
     > ### Somewhat more efficient
@@ -43,4 +43,3 @@
     > mirror --parallel=10 --verbose /v03/MSV000086195 ./MSV000086195
     > bye
     > EOF
-    ```
