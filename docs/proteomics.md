@@ -32,7 +32,7 @@
 
 [^wget]: **MSV000086195** download:
 
-    This is a companioni to
+    This is a companion to
 
     Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis.
     ISBN: 978-1-119-87235-1, <https://books.wiley.com/titles/9781119872351/>.
