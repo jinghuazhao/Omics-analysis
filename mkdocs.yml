@@ -25,6 +25,8 @@ theme:
         - R
         - rust
         - yaml
+extra_css:
+    - stylesheets/extra.css
 plugins:
     - search
     - mermaid2
