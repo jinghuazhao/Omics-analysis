@@ -3,21 +3,21 @@
 - AlphaFold3, <https://github.com/google-deepmind/alphafold3>
 - casanovo, <https://github.com/Noble-Lab/casanovo>
 - CoffeeProt, <https://coffeeprot.com/>
-- Consortium for Top‑Down proteomics, <https://www.topdownproteomics.org/>
+- Consortium for Top-Down proteomics, <https://www.topdownproteomics.org/>
 - DiaNN, <https://github.com/vdemichev/DiaNN>
-- FINCHES‑online, <https://finches-online.com/> (<https://github.com/idptools/finches>)
+- FINCHES-online, <https://finches-online.com/> (<https://github.com/idptools/finches>)
 - FreqPipe, <https://fragpipe.nesvilab.org/>
-- Human Proteome Project (HPP), <https://hupo.org/human‑proteome-project> (Resources, <https://hupo.org/HPP‑Resources>)
-- InstaNovo  
-  * GitHub, <https://github.com/instadeepai/InstaNovo>  
-  * HuggingFace, <https://huggingface.co/spaces/InstaDeepAI/InstaNovo>  
-    + High‑confidence ProteomeTools dataset: <https://doi.org/10.57967/hf/3822>  
-    + Nine‑species benchmark: <https://doi.org/10.57967/hf/3821>
+- Human Proteome Project (HPP), <https://hupo.org/human-proteome-project> (Resources, <https://hupo.org/HPP-Resources>)
+- InstaNovo
+    * GitHub, <https://github.com/instadeepai/InstaNovo>
+    * HuggingFace, <https://huggingface.co/spaces/InstaDeepAI/InstaNovo>
+        + High-confidence ProteomeTools dataset <https://doi.org/10.57967/hf/3822>
+        + Nine species Benchmark, <https://doi.org/10.57967/hf/3821>
 - MassIVE[^wget], <https://massive.ucsd.edu/ProteoSAFe/static/massive.jsp?redirect=auth>
 - MassiveFold, <https://github.com/GBLille/MassiveFold>
 - MaxQuant, <https://maxquant.org/> ([Mailing list](https://lists.biochem.mpg.de/listinfo/maxquan))
 - Mass++, <https://mspp.ninja/download/>
-- MS‑GF+, <https://msgfplus.github.io/>
+- MS-GF+, <https://msgfplus.github.io/>
 - OpenFold, <https://openfold.io/>
 - Perseus, <https://maxquant.net/perseus/>
 - Peptigram, <http://bioware.ucd.ie/peptigram/>
@@ -28,20 +28,18 @@
 - Sage, <https://sage-docs.vercel.app/>
 - Sashimi, <https://sourceforge.net/projects/sashimi>
 - Skyline, <https://skyline.ms/project/home/begin.view>
-- Spectronaut, <https://biognosys.com/software/spectronaut/>
+- Spectranaut, <https://biognosys.com/software/spectronaut/>
 
-[^wget]: **MassIVE download instructions:**
+[^wget]: **MassIVE** download instructions:
 
     This is a companion to
 
-    Julian RK (2025). *R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis*. ISBN: 978‑1‑119‑87235‑1, <https://books.wiley.com/titles/9781119872351/>.
+    Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1, <https://books.wiley.com/titles/9781119872351/>.
 
     ```bash
-    # MSV000081318 (Julian RK, R Programming for Mass Spectrometry, 2025)
     wget -r -nH --cut-dirs=2 -R "index.html*" \
       ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
 
-    # MSV000086195
     wget -r -nH --cut-dirs=1 -R "index.html*" \
       ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
     ```
