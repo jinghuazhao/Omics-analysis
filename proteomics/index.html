@@ -157,20 +157,20 @@
 <li>Skyline, <a href="https://skyline.ms/project/home/begin.view">https://skyline.ms/project/home/begin.view</a></li>
 <li>Spectranaut, <a href="https://biognosys.com/software/spectronaut/">https://biognosys.com/software/spectronaut/</a></li>
 </ul>
-<p><code>bash
-    wget -r -nH --cut-dirs=2 -R "index.html*" ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
-    wget -r -nH --cut-dirs=1 -R "index.html*" ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
-    lftp massive-ftp.ucsd.edu &lt;&lt;EOF
-    mirror --parallel=10 --verbose /v03/MSV000086195 ./MSV000086195
-    bye
-    EOF</code></p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:wget">
 <p><strong>MassIVE</strong> download instructions</p>
 <p>This is a companion to</p>
-<p>Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1, <a href="https://books.wiley.com/titles/9781119872351/">https://books.wiley.com/titles/9781119872351/</a>.&#160;<a class="footnote-backref" href="#fnref:wget" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1, <a href="https://books.wiley.com/titles/9781119872351/">https://books.wiley.com/titles/9781119872351/</a>.</p>
+<p><div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">2</span><span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;index.html*&quot;</span><span class="w"> </span>ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
+wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">1</span><span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;index.html*&quot;</span><span class="w"> </span>ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
+lftp<span class="w"> </span>massive-ftp.ucsd.edu<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">mirror --parallel=10 --verbose /v03/MSV000086195 ./MSV000086195</span>
+<span class="s">bye</span>
+<span class="s">EOF</span>
+</code></pre></div>&#160;<a class="footnote-backref" href="#fnref:wget" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></div>
