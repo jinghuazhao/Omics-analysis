@@ -32,7 +32,7 @@
 - Skyline, <https://skyline.ms/project/home/begin.view>
 - Spectranaut, <https://biognosys.com/software/spectronaut/>
 
-[^ast]: *****
+[^ast]: **\***
 
     These are data sources.
 
