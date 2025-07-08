@@ -36,11 +36,11 @@
 
     Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1, <https://books.wiley.com/titles/9781119872351/>.
 
-    **mona/**
+    **large-data/mona/**
 
     [MoNA-export-LC-MS-MS_Positive_Mode.msp](https://mona.fiehnlab.ucdavis.edu/rest/downloads/retrieve/873fbe29-4808-46d1-a4a3-a4134ac8c755)
 
-    **MSV000081318/MSV000086195**
+    **large-data/MSV000081318/MSV000086195**
 
     ```bash
     wget -r -nH --cut-dirs=2 -R "index.html*" ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
