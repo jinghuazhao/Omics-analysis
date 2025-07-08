@@ -13,7 +13,7 @@
     * HuggingFace, <https://huggingface.co/spaces/InstaDeepAI/InstaNovo>
         + High-confidence ProteomeTools dataset <https://doi.org/10.57967/hf/3822>
         + Nine species Benchmark, <https://doi.org/10.57967/hf/3821>
-- MassIVE[^wget], <https://massive.ucsd.edu/ProteoSAFe/static/massive.jsp?redirect=auth>
+- MassIVE, <https://massive.ucsd.edu/ProteoSAFe/static/massive.jsp?redirect=auth>
 - MassiveFold, <https://github.com/GBLille/MassiveFold>
 - MaxQuant, <https://maxquant.org/> ([Mailing list](https://lists.biochem.mpg.de/listinfo/maxquan))
 - Mass++, <https://mspp.ninja/download/>
@@ -24,19 +24,16 @@
 - Protein Structure Prediction Center, <https://predictioncenter.org/>
 - ProteomeXchange, <https://www.proteomexchange.org/>
 - ProteoMapper Online, <https://peptideatlas.org/map/>
+- R Programming for Mass Spectrometry[^web], <https://books.wiley.com/titles/9781119872351/>
 - RFdiffusion, <https://github.com/RosettaCommons/RFdiffusion>
 - Sage, <https://sage-docs.vercel.app/>
 - Sashimi, <https://sourceforge.net/projects/sashimi>
 - Skyline, <https://skyline.ms/project/home/begin.view>
 - Spectranaut, <https://biognosys.com/software/spectronaut/>
 
-[^wget]: Data download instructions for *R Programming for Mass Spectrometry*
+[^web]: **Data download instructions**
 
     Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1.
-
-    **Companion website**
-
-    <https://books.wiley.com/titles/9781119872351/>.
 
     **large-data/mona/**
 
