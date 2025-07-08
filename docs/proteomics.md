@@ -30,11 +30,13 @@
 - Skyline, <https://skyline.ms/project/home/begin.view>
 - Spectranaut, <https://biognosys.com/software/spectronaut/>
 
-[^wget]: **MassIVE** download instructions
+[^wget]: Data download instructions for *R Programming for Mass Spectrometry*
 
-    This is a companion to
+    Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1.
 
-    Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1, <https://books.wiley.com/titles/9781119872351/>.
+    **Companion website**
+
+    <https://books.wiley.com/titles/9781119872351/>.
 
     **large-data/mona/**
 
