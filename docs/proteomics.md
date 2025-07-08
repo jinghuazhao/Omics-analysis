@@ -47,7 +47,6 @@
     [MoNA-export-LC-MS-MS_Positive_Mode.msp](https://mona.fiehnlab.ucdavis.edu/rest/downloads/retrieve/873fbe29-4808-46d1-a4a3-a4134ac8c755)
 
     **MTBLS4938** for Chapter 7:
-
     - [NIAID](https://data.niaid.nih.gov/resources?id=mtbls4938)
     - [MetaboLights](https://www.ebi.ac.uk/metabolights/MTBLS4938)
 
@@ -68,6 +67,5 @@
     ```
 
     **schema/** for Chapter 3:
-
     - [mzIdentML1.1.0.xsd](https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/refs/heads/master/schema/mzIdentML1.1.0.xsd)
     - [Skyline_3.73.xsd](https://raw.githubusercontent.com/ProteoWizard/pwiz/refs/heads/master/pwiz_tools/Skyline/TestUtil/Schemas/Skyline_3.73.xsd)
