@@ -48,7 +48,7 @@
 
     **MTBLS4938** for Chapter 7:
 
-    - [NIAID](https://data.niaid.nih.gov/resources?id=mtbls4938>
+    - [NIAID](https://data.niaid.nih.gov/resources?id=mtbls4938)
     - [MetaboLights](https://www.ebi.ac.uk/metabolights/MTBLS4938)
 
     **large-data/MSV000081318/MSV000086195**
