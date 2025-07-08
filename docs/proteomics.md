@@ -13,11 +13,13 @@
     * HuggingFace, <https://huggingface.co/spaces/InstaDeepAI/InstaNovo>
         + High-confidence ProteomeTools dataset <https://doi.org/10.57967/hf/3822>
         + Nine species Benchmark, <https://doi.org/10.57967/hf/3821>
+- ISA tools, <https://isa-tools.org/>
 - MassIVE*[^ast], <https://massive.ucsd.edu/ProteoSAFe/static/massive.jsp?redirect=auth>
 - MassiveFold, <https://github.com/GBLille/MassiveFold>
 - MaxQuant, <https://maxquant.org/> ([Mailing list](https://lists.biochem.mpg.de/listinfo/maxquan))
 - Mass++, <https://mspp.ninja/download/>
 - MassBank of North America (MoNA)*, <https://mona.fiehnlab.ucdavis.edu/>
+- MetaboLights*, <https://www.ebi.ac.uk/metabolights/index>
 - MS-GF+, <https://msgfplus.github.io/>
 - OpenFold, <https://openfold.io/>
 - Perseus, <https://maxquant.net/perseus/>
@@ -40,9 +42,14 @@
 
     Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1.
 
-    **large-data/mona/** for chapter 7:
+    **large-data/mona/** for Chapter 7:
 
     [MoNA-export-LC-MS-MS_Positive_Mode.msp](https://mona.fiehnlab.ucdavis.edu/rest/downloads/retrieve/873fbe29-4808-46d1-a4a3-a4134ac8c755)
+
+    **MTBLS4938** for Chapter 7:
+
+    - [NIAID](https://data.niaid.nih.gov/resources?id=mtbls4938>
+    - [MetaboLights](https://www.ebi.ac.uk/metabolights/MTBLS4938)
 
     **large-data/MSV000081318/MSV000086195**
 
@@ -60,7 +67,7 @@
     EOF
     ```
 
-    **schema/** for chapter 3:
+    **schema/** for Chapter 3:
 
     - [mzIdentML1.1.0.xsd](https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/refs/heads/master/schema/mzIdentML1.1.0.xsd)
     - [Skyline_3.73.xsd](https://raw.githubusercontent.com/ProteoWizard/pwiz/refs/heads/master/pwiz_tools/Skyline/TestUtil/Schemas/Skyline_3.73.xsd)
