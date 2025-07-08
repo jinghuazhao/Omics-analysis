@@ -13,10 +13,11 @@
     * HuggingFace, <https://huggingface.co/spaces/InstaDeepAI/InstaNovo>
         + High-confidence ProteomeTools dataset <https://doi.org/10.57967/hf/3822>
         + Nine species Benchmark, <https://doi.org/10.57967/hf/3821>
-- MassIVE, <https://massive.ucsd.edu/ProteoSAFe/static/massive.jsp?redirect=auth>
+- MassIVE*[^ast], <https://massive.ucsd.edu/ProteoSAFe/static/massive.jsp?redirect=auth>
 - MassiveFold, <https://github.com/GBLille/MassiveFold>
 - MaxQuant, <https://maxquant.org/> ([Mailing list](https://lists.biochem.mpg.de/listinfo/maxquan))
 - Mass++, <https://mspp.ninja/download/>
+- MassBank of North America (MoNA)*, <https://mona.fiehnlab.ucdavis.edu/>
 - MS-GF+, <https://msgfplus.github.io/>
 - OpenFold, <https://openfold.io/>
 - Perseus, <https://maxquant.net/perseus/>
@@ -24,12 +25,16 @@
 - Protein Structure Prediction Center, <https://predictioncenter.org/>
 - ProteomeXchange, <https://www.proteomexchange.org/>
 - ProteoMapper Online, <https://peptideatlas.org/map/>
-- R Programming for Mass Spectrometry[^web], <https://books.wiley.com/titles/9781119872351/>
+- R Programming for Mass Spectrometry*[^web], <https://books.wiley.com/titles/9781119872351/>
 - RFdiffusion, <https://github.com/RosettaCommons/RFdiffusion>
 - Sage, <https://sage-docs.vercel.app/>
 - Sashimi, <https://sourceforge.net/projects/sashimi>
 - Skyline, <https://skyline.ms/project/home/begin.view>
 - Spectranaut, <https://biognosys.com/software/spectronaut/>
+
+[^ast]: *****
+
+    These are data sources.
 
 [^web]: **Data download instructions**
 
