@@ -39,8 +39,18 @@
     ```bash
     wget -r -nH --cut-dirs=2 -R "index.html*" ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
     wget -r -nH --cut-dirs=1 -R "index.html*" ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
+    ```
+
+    An experiment on lftp is as follows,
+
+    ```bash
     lftp massive-ftp.ucsd.edu <<EOF
     mirror --parallel=10 --verbose /v03/MSV000086195 ./MSV000086195
     bye
     EOF
     ```
+
+    Files on "schema" is available as follows,
+
+    - <https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/refs/heads/master/schema/mzIdentML1.1.0.xsd>
+    - <https://raw.githubusercontent.com/ProteoWizard/pwiz/refs/heads/master/pwiz_tools/Skyline/TestUtil/Schemas/Skyline_3.73.xsd>
