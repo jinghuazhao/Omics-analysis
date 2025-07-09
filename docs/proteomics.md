@@ -65,6 +65,9 @@
     mirror --parallel=10 --verbose /v03/MSV000086195 ./MSV000086195
     bye
     EOF
+    # to resume
+    lftp -e "mirror --continue --parallel=4 /z01/MSV000086195/ccms_peak/ ccms_peak/; quit" \
+          ftp://massive-ftp.ucsd.edu
     ```
 
     A list of directory is done with `ftp massive-ftp.ucsd.edu`, name `anonymous`, `cd z01/ccms_peak/`, `prompt`, `mget *`.
