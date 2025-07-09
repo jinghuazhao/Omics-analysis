@@ -67,6 +67,8 @@
     EOF
     ```
 
+    A list of directory is done with `ftp massive-ftp.ucsd.edu`, name `anonymous`, `cd z01/ccms_peak/`, `prompt`, `mget *`.
+
     **schema/** for Chapter 3:
 
     - [mzIdentML1.1.0.xsd](https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/refs/heads/master/schema/mzIdentML1.1.0.xsd)
