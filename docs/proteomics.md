@@ -63,7 +63,7 @@
     Directory listing including file transfer can also be done with
 
     ```bash
-    ftp massive-ftp.ucsd.edu` <<EOF
+    ftp massive-ftp.ucsd.edu <<EOF
     anonymous
     ls
     cd z01/MSV000086195/ccms_peak/
@@ -72,7 +72,7 @@
     EOF
     ```
 
-    or by lftp,
+    or preferably by lftp,
 
     ```bash
     lftp massive-ftp.ucsd.edu <<EOF
