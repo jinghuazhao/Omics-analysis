@@ -53,7 +53,14 @@
 
     **large-data/MSV000081318/MSV000086195**
 
-    Directory listing including file transfer is done with
+    We start with wget
+
+    ```bash
+    wget -r -nH --cut-dirs=2 -R "index.html*" ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
+    wget -r -nH --cut-dirs=1 -R "index.html*" ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
+    ```
+
+    Directory listing including file transfer can also be done with
 
     ```bash
     ftp massive-ftp.ucsd.edu` <<EOF
@@ -65,14 +72,7 @@
     EOF
     ```
 
-    with wget counterparts
-
-    ```bash
-    wget -r -nH --cut-dirs=2 -R "index.html*" ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
-    wget -r -nH --cut-dirs=1 -R "index.html*" ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
-    ```
-
-    while lftp is furnished as follows,
+    or by lftp,
 
     ```bash
     lftp massive-ftp.ucsd.edu <<EOF
@@ -83,6 +83,8 @@
     lftp -e "mirror --continue --parallel=4 /z01/MSV000086195/ccms_peak/ ccms_peak/; quit" \
           ftp://massive-ftp.ucsd.edu
     ```
+
+    An attempt with MSConvert is made with [msc.sh](files/msc.sh) following exercises in the Caprion project.
 
     **schema/** for Chapter 3:
 
