@@ -53,12 +53,26 @@
 
     **large-data/MSV000081318/MSV000086195**
 
+    File transfer including directory listing is done with
+
+    ```bash
+    ftp massive-ftp.ucsd.edu` <<EOF
+    anonymous
+    ls
+    cd z01/ccms_peak/
+    prompt
+    mget *
+    EOF
+    ```
+
+    with wget counterparts
+
     ```bash
     wget -r -nH --cut-dirs=2 -R "index.html*" ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
     wget -r -nH --cut-dirs=1 -R "index.html*" ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
     ```
 
-    An experiment on lftp is as follows,
+    while lftp is furnished as follows,
 
     ```bash
     lftp massive-ftp.ucsd.edu <<EOF
@@ -69,8 +83,6 @@
     lftp -e "mirror --continue --parallel=4 /z01/MSV000086195/ccms_peak/ ccms_peak/; quit" \
           ftp://massive-ftp.ucsd.edu
     ```
-
-    A list of directory is done with `ftp massive-ftp.ucsd.edu`, name `anonymous`, `cd z01/ccms_peak/`, `prompt`, `mget *`.
 
     **schema/** for Chapter 3:
 
