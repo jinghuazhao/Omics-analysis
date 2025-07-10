@@ -29,3 +29,4 @@ done
 module load ceuadmin/ThermoRawFileParser
 cd $ThermoRawFileParser_HOME;
 ThermoRawFileParser.exe -i $massive/$raw
+cd -
