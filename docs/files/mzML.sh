@@ -3,6 +3,7 @@
 
 module load ceuadmin/wine/8.21
 module load ceuadmin/pwiz/3_0_24163_9bfa69a-wine
+export massive=/rds/project/rds-C1Ph08tkaOA/public/ms-proteomics/MSV000086195/raw
 export raw=ScltlMsclsMAvsCntr_Batch1_BRPhsFr5.raw
 
 singularity --version
@@ -19,8 +20,12 @@ function sif()
 for format in --mzML
 do
 singularity exec --env WINEDEBUG=-all \
-                  -B /rds/project/rds-C1Ph08tkaOA/public/ms-proteomics/MSV000086195/raw:/data \
+                  -B ${massive}:/data \
                       ${crux}/${SIF} \
                       wine msconvert ${format} /data/${raw}
 done
 # --mzXML --mz5 --mzMLb --mgf --text --ms1 --cms1 --ms2 --cms2
+
+module load ceuadmin/ThermoRawFileParser
+cd $ThermoRawFileParser_HOME;
+ThermoRawFileParser.exe -i $massive/$raw

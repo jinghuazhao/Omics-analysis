@@ -84,7 +84,7 @@
           ftp://massive-ftp.ucsd.edu
     ```
 
-    An attempt with MSConvert is made with [msc.sh](files/msc.sh) following exercises in the Caprion project.
+    An attempt is made with MSConvert (6GB!) and ThermoRawFileParser/1.4.4 (750MB) as in [mzML.sh](files/mzML.sh) following exercises in the Caprion project.
 
     **schema/** for Chapter 3:
 
