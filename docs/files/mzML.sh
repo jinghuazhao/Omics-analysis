@@ -27,6 +27,7 @@ done
 # --mzXML --mz5 --mzMLb --mgf --text --ms1 --cms1 --ms2 --cms2
 
 module load ceuadmin/ThermoRawFileParser
+export cwd=$(pwd -P)
 cd $ThermoRawFileParser_HOME;
-ThermoRawFileParser.exe -i $massive/$raw
+ThermoRawFileParser.exe -i $massive/$raw -p
 cd -
