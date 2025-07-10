@@ -179,7 +179,11 @@
 <li><a href="https://www.ebi.ac.uk/metabolights/MTBLS4938">MetaboLights</a></li>
 </ul>
 <p><strong>large-data/MSV000081318/MSV000086195</strong></p>
-<p>Directory listing including file transfer is done with</p>
+<p>We start with wget</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">2</span><span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;index.html*&quot;</span><span class="w"> </span>ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
+wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">1</span><span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;index.html*&quot;</span><span class="w"> </span>ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
+</code></pre></div>
+<p>Directory listing including file transfer can also be done with</p>
 <div class="highlight"><pre><span></span><code>ftp<span class="w"> </span>massive-ftp.ucsd.edu<span class="sb">`</span><span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <span class="s">anonymous</span>
 <span class="s">ls</span>
@@ -188,11 +192,7 @@
 <span class="s">mget *</span>
 <span class="s">EOF</span>
 </code></pre></div>
-<p>with wget counterparts</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">2</span><span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;index.html*&quot;</span><span class="w"> </span>ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
-wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">1</span><span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;index.html*&quot;</span><span class="w"> </span>ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
-</code></pre></div>
-<p>while lftp is furnished as follows,</p>
+<p>or by lftp,</p>
 <div class="highlight"><pre><span></span><code>lftp<span class="w"> </span>massive-ftp.ucsd.edu<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <span class="s">mirror --parallel=10 --verbose /v03/MSV000086195 ./MSV000086195</span>
 <span class="s">bye</span>
@@ -201,6 +201,7 @@ wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span
 lftp<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;mirror --continue --parallel=4 /z01/MSV000086195/ccms_peak/ ccms_peak/; quit&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>ftp://massive-ftp.ucsd.edu
 </code></pre></div>
+<p>An attempt with MSConvert is made with <a href="../files/msc.sh">msc.sh</a> following exercises in the Caprion project.</p>
 <p><strong>schema/</strong> for Chapter 3:</p>
 <ul>
 <li><a href="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/refs/heads/master/schema/mzIdentML1.1.0.xsd">mzIdentML1.1.0.xsd</a></li>
