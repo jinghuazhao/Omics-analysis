@@ -53,13 +53,13 @@
 
     **large-data/MSV000081318/MSV000086195**
 
-    File transfer including directory listing is done with
+    Directory listing including file transfer is done with
 
     ```bash
     ftp massive-ftp.ucsd.edu` <<EOF
     anonymous
     ls
-    cd z01/ccms_peak/
+    cd z01/MSV000086195/ccms_peak/
     prompt
     mget *
     EOF
