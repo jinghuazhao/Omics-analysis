@@ -184,7 +184,7 @@
 wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">1</span><span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;index.html*&quot;</span><span class="w"> </span>ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
 </code></pre></div>
 <p>Directory listing including file transfer can also be done with</p>
-<div class="highlight"><pre><span></span><code>ftp<span class="w"> </span>massive-ftp.ucsd.edu<span class="sb">`</span><span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<div class="highlight"><pre><span></span><code>ftp<span class="w"> </span>massive-ftp.ucsd.edu<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <span class="s">anonymous</span>
 <span class="s">ls</span>
 <span class="s">cd z01/MSV000086195/ccms_peak/</span>
@@ -192,7 +192,7 @@ wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span
 <span class="s">mget *</span>
 <span class="s">EOF</span>
 </code></pre></div>
-<p>or by lftp,</p>
+<p>or preferably by lftp,</p>
 <div class="highlight"><pre><span></span><code>lftp<span class="w"> </span>massive-ftp.ucsd.edu<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <span class="s">mirror --parallel=10 --verbose /v03/MSV000086195 ./MSV000086195</span>
 <span class="s">bye</span>
