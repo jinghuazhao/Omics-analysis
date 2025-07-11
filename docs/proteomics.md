@@ -72,7 +72,7 @@
     EOF
     ```
 
-    or preferably by lftp,
+    where `anonymous` is the user name, or preferably by lftp,
 
     ```bash
     lftp massive-ftp.ucsd.edu <<EOF
