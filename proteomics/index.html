@@ -192,7 +192,7 @@ wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span
 <span class="s">mget *</span>
 <span class="s">EOF</span>
 </code></pre></div>
-<p>or preferably by lftp,</p>
+<p>where <code>anonymous</code> is the user name, or preferably by lftp,</p>
 <div class="highlight"><pre><span></span><code>lftp<span class="w"> </span>massive-ftp.ucsd.edu<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <span class="s">mirror --parallel=10 --verbose /v03/MSV000086195 ./MSV000086195</span>
 <span class="s">bye</span>
