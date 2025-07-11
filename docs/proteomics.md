@@ -42,7 +42,8 @@
 
     Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1.
 
-    An **important** note: the supplement is in .html but it is far more useful to convert to .md.
+    Note that the supplement is in .html but it is far more useful to convert to .md, and it is handy to run from a Linux terminal than
+    otherwise nevertheless the use of .md renders the possibility to knit them.
 
     **large-data/mona/** for Chapter 7:
 
