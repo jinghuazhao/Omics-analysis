@@ -182,43 +182,15 @@ Linux terminal than otherwise nevertheless the markdown format renders can be re
 <span class="k">done</span>
 </code></pre></div>
 <p>with <a href="../files/html.lua">html.lua</a>. For instance, in order to run through the R code,</p>
-<ul>
-<li>
 <ol>
 <li><strong>data-analysis.Rmd</strong> requires caution over Bash code blocks Rscript hello.R and R CMD BATCH hello.R, and a not-R code block.</li>
-</ol>
-</li>
-<li>
-<ol>
 <li><strong>intro-ms.Rmd</strong> needs c("tidyverse").</li>
-</ol>
-</li>
-<li>
-<ol>
 <li><strong>wrangle-data.Rmd</strong> requires "tandem_result/" to be created by X!Tandem.</li>
-</ol>
-</li>
-<li>
-<ol>
 <li><strong>eda.Rmd</strong> requires c("Spectra").</li>
-</ol>
-</li>
-<li>
-<ol>
 <li><strong>spectra-analysis.Rmd</strong> needs c("tidyverse", "Spectra", "infer", "xml2", "mzID", "MSnbase") to be loaded and <code>inten_label</code> from <strong>intro-ms.Rmd</strong> and <code>pal</code> from <strong>data-analysis.Rmd</strong>, respectively.</li>
-</ol>
-</li>
-<li>
-<ol>
 <li><strong>chrom.Rmd</strong> needs c("baseline". "signal", "EnvStats", "MassSpecWavelet", "xcms", "latex2exp").</li>
-</ol>
-</li>
-<li>
-<ol>
 <li><strong>machine-learning.Rmd</strong> requires c("tidymodels", "tidyverse").</li>
 </ol>
-</li>
-</ul>
 <p>Batch load of packages can be done, e.g., pkgs &lt;- c("tidyverse", "Spectra", "infer", "mzID", "MSnbase"); lapply(pkgs,library,character.only = TRUE).</p>
 <p><strong>large-data/mona/</strong> (Chapter 7)</p>
 <p><a href="https://mona.fiehnlab.ucdavis.edu/rest/downloads/retrieve/873fbe29-4808-46d1-a4a3-a4134ac8c755">MoNA-export-LC-MS-MS_Positive_Mode.msp</a></p>
