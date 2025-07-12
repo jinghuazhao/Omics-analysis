@@ -43,7 +43,7 @@
     Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1.
 
     Note that the supplement is in .html but it is far more useful to convert to .md, and it is handy to run from a Linux terminal than
-    otherwise nevertheless the use of .md renders the possibility to render them. We have,
+    otherwise nevertheless the use of .md renders the possibility to render them. Conceptually we have,
 
     ```bash
     for f in chrom data-analysis eda intro-ms machine-learning spectra-analysis wrangle-data
@@ -56,7 +56,7 @@
     done
     ```
 
-    with [div2rchunk.lua](files/div2rchunk.lua)
+    with [div2rchunk.lua](files/div2rchunk.lua). For instance, with `spectra-analysis.md` we need loading `tidyverse`, `Spectra`, `infer`, `mzID`, `MSnbase` in order to run through the R code.
 
     **large-data/mona/** for Chapter 7:
 
