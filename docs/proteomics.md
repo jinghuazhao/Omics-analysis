@@ -49,14 +49,13 @@
     for f in chrom data-analysis eda intro-ms machine-learning spectra-analysis wrangle-data
     do
       export f=${f}
-      pandoc ${f}.html -o ${f}.md
-      pandoc ${f}.md --lua-filter=div2rchunk.lua -t markdown -o ${f}.Rmd
-      sed -i 's/{.r/{r/' ${f}.Rmd
+      pandoc ${f}.html --lua-filter=html.lua -t markdown -o ${f}.Rmd
+      sed -i 's/``` {.r/```{r/' ${f}.Rmd
       Rscript -e 'f=Sys.getenv("f");rmarkdown::render(paste0(f,".Rmd"))'
     done
     ```
 
-    with [div2rchunk.lua](files/div2rchunk.lua). For instance, `spectra-analysis.md` needs `tidyverse`, `Spectra`, `infer`, `mzID`, `MSnbase` to be loaded and `inten_label` from `intro-ms.md` and `pal` from `data-analysis.md`, respectively, in order to run through the R code.
+    with [html.lua](files/html.lua). For instance, `spectra-analysis.md` needs `tidyverse`, `Spectra`, `infer`, `mzID`, `MSnbase` to be loaded and `inten_label` from `intro-ms.md` and `pal` from `data-analysis.md`, respectively, in order to run through the R code.
 
     **large-data/mona/** for Chapter 7:
 
