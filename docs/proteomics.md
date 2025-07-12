@@ -43,7 +43,20 @@
     Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1.
 
     Note that the supplement is in .html but it is far more useful to convert to .md, and it is handy to run from a Linux terminal than
-    otherwise nevertheless the use of .md renders the possibility to knit them.
+    otherwise nevertheless the use of .md renders the possibility to render them. We have,
+
+    ```bash
+    for f in chrom data-analysis eda intro-ms machine-learning spectra-analysis wrangle-data
+    do
+      export f=${f}
+      pandoc ${f}.html -o ${f}.md
+      pandoc ${f}.md --lua-filter=div2rchunk.lua -t markdown -o ${f}.Rmd
+      sed -i 's/{.r/{r/' ${f}.Rmd
+      Rscript -e 'f=Sys.getenv("f");rmarkdown::render(paste0(f,".Rmd"))'
+    done
+    ```
+
+    with [div2rchunk.lua](files/div2rchunk.lua)
 
     **large-data/mona/** for Chapter 7:
 
