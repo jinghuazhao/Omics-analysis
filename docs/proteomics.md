@@ -56,7 +56,7 @@
     done
     ```
 
-    with [div2rchunk.lua](files/div2rchunk.lua). For instance, with `spectra-analysis.md` we need loading `tidyverse`, `Spectra`, `infer`, `mzID`, `MSnbase` in order to run through the R code.
+    with [div2rchunk.lua](files/div2rchunk.lua). For instance, `spectra-analysis.md` needs `tidyverse`, `Spectra`, `infer`, `mzID`, `MSnbase` to be loaded and `inten_label` from `intro-ms.md` and `pal` from `data-analysis.md`, respectively, in order to run through the R code.
 
     **large-data/mona/** for Chapter 7:
 
