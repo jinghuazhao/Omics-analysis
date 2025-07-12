@@ -61,11 +61,11 @@
     2. **intro-ms.Rmd** needs c("tidyverse").
     3. **wrangle-data.Rmd** requires "tandem_result/" to be created by X!Tandem.
     4. **eda.Rmd** requires c("Spectra").
-    5. **spectra-analysis.Rmd** needs c("tidyverse", "Spectra", "infer", "xml2", "mzID", "MSnbase") to be loaded and `inten_label` from **intro-ms.Rmd** and `pal` from **data-analysis.Rmd**, respectively.
-    6. **chrom.Rmd** needs c("baseline". "signal", "EnvStats", "MassSpecWavelet", "xcms", "latex2exp").
-    7. **machine-learning.Rmd** requires c("tidymodels", "tidyverse").
+    5. **spectra-analysis.Rmd** needs c("tidyverse", "Spectra", "infer", "xml2", "mzID", "MSnbase") as with `inten_label` and `pal`.
+    6. **chrom.Rmd** needs c("baseline", "signal", "EnvStats", "MassSpecWavelet", "MSnbase", "xcms", "latex2exp") as with `inten_label` and `pal`.
+    7. **machine-learning.Rmd** requires c("tidymodels", "tidyverse", "visdat", "ggfortify", "factoextra", "colino", "heatmaply", "Spectra").
 
-    Batch load of packages can be done, e.g., pkgs <- c("tidyverse", "Spectra", "infer", "mzID", "MSnbase"); lapply(pkgs,library,character.only = TRUE).
+    `inten_label` and `pal` are from **intro-ms.Rmd** and **data-analysis.Rmd**, respectively. Batch load of packages can be done, e.g., pkgs <- c("tidyverse", "Spectra", "infer", "mzID", "MSnbase"); lapply(pkgs,library,character.only = TRUE).
 
     **large-data/mona/** (Chapter 7)
 
