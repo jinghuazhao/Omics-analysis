@@ -70,8 +70,18 @@
                             <li class="navitem">
                                 <a href="../genomics/" class="nav-link">Genomics</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Proteomics</a>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Proteomics <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Proteomics</a>
+</li>
+                                    
+<li>
+    <a href="../R-Programming-for-Mass-Spectrometry/" class="dropdown-item">R Programming for Mass Spectrometry</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -87,7 +97,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../R-Programming-for-Mass-Spectrometry/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -181,7 +191,7 @@ Linux terminal than otherwise nevertheless the markdown format renders can be re
 <span class="w">  </span>Rscript<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;f=Sys.getenv(&quot;f&quot;);rmarkdown::render(paste0(f,&quot;.Rmd&quot;),output_dir=&quot;output&quot;))&#39;</span>
 <span class="k">done</span>
 </code></pre></div>
-<p>with <a href="../files/html.lua">html.lua</a>. For instance, in order to run through the R code,</p>
+<p>with <a href="files/html.lua">html.lua</a>. For instance, in order to run through the R code,</p>
 <ol>
 <li><strong>data-analysis.Rmd</strong> requires caution over Bash code blocks Rscript hello.R and R CMD BATCH hello.R, and a not-R code block.</li>
 <li><strong>intro-ms.Rmd</strong> needs c("tidyverse").</li>
@@ -222,7 +232,7 @@ wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span
 lftp<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;mirror --continue --parallel=4 /z01/MSV000086195/ccms_peak/ ccms_peak/; quit&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">      </span>ftp://massive-ftp.ucsd.edu
 </code></pre></div>
-<p><code>ScltlMsclsMAvsCntr_Batch1_BRPhsFr5_prof.mzML</code> in Chapters 4 &amp; 5 is made with MSConvert (6GB!) or ThermoRawFileParser/1.4.4 (6.2GB with -p but 750MB without) as in <a href="../files/mzML.sh">mzML.sh</a> following exercises in the Caprion project.</p>
+<p><code>ScltlMsclsMAvsCntr_Batch1_BRPhsFr5_prof.mzML</code> in Chapters 4 &amp; 5 is made with MSConvert (6GB!) or ThermoRawFileParser/1.4.4 (6.2GB with -p but 750MB without) as in <a href="files/mzML.sh">mzML.sh</a> following exercises in the Caprion project.</p>
 <p><strong>schema/</strong> (Chapter 3):</p>
 <ul>
 <li><a href="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/refs/heads/master/schema/mzIdentML1.1.0.xsd">mzIdentML1.1.0.xsd</a></li>
