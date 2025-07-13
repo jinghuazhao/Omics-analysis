@@ -1,6 +1,6 @@
 # R Programming for Mass Spectrometry[^ref]
 
-**Data download instructions**
+## Data download instructions
 
 The supplement is in .html for each chapter but it is more useful to convert to markdown, and it is handy to run from a
 Linux terminal than otherwise nevertheless the markdown format renders can be rendered as follows,
