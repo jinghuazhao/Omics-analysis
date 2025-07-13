@@ -1,8 +1,12 @@
 # R Programming for Mass Spectrometry
 
+## The supplement
+
+Web: <https://books.wiley.com/titles/9781119872351/>
+
 ## Data download instructions
 
-The supplement is in .html for each chapter but it is more useful to convert to markdown, and it is handy to run from a
+The supplement is a zip file with .html for each chapter but it is more useful to convert to markdown, and it is handy to run from a
 Linux terminal than otherwise nevertheless the markdown format renders can be rendered as follows,
 
 ```bash
