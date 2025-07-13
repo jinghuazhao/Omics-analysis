@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bioml>
+  <note type="input" label="spectrum, fragment monoisotopic mass error">0.4</note>
+  <note type="input" label="spectrum, dynamically range">100.0</note>
+  <note type="input" label="protein, cleavage site">[RK]|{P}</note>
+  <note type="input" label="scoring, maximum missed cleavage sites">2</note>
+  <note type="input" label="output, results">valid</note>
+  <!-- etc. -->
+</bioml>

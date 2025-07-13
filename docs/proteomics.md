@@ -59,10 +59,10 @@
 
     1. **data-analysis.Rmd** requires caution over Bash code blocks Rscript hello.R and R CMD BATCH hello.R, and a not-R code block.
     2. **intro-ms.Rmd** needs c("tidyverse").
-    3. **wrangle-data.Rmd** requires c("tidyverse") and "tandem_result/" to be created by X!Tandem.
+    3. **wrangle-data.Rmd** requires c("tidyverse") and "tandem_result/" to be created by X!Tandem -- coneputually via [tandem.sh](files/tandem.sh).
     4. **eda.Rmd** requires c("Spectra").
     5. **spectra-analysis.Rmd** needs c("tidyverse", "Spectra", "infer", "xml2", "mzID", "MSnbase") as with `inten_label` and `pal`.
-    6. **chrom.Rmd** needs c("baseline", "signal", "EnvStats", "MassSpecWavelet", "MSnbase", "xcms", "latex2exp") as with `inten_label` and `pal`.
+    6. **chrom.Rmd** needs c("tidyverse", "baseline", "signal", "EnvStats", "MassSpecWavelet", "MSnbase", "xcms", "latex2exp", "ggpubr", "fda.usc") as with `inten_label` and `pal`.
     7. **machine-learning.Rmd** requires c("tidymodels", "tidyverse", "visdat", "ggfortify", "factoextra", "colino", "heatmaply", "Spectra").
 
     `inten_label` and `pal` are from **intro-ms.Rmd** and **data-analysis.Rmd**, respectively. Batch load of packages can be done, e.g., pkgs <- c("tidyverse", "Spectra", "infer", "mzID", "MSnbase"); lapply(pkgs,library,character.only = TRUE).
