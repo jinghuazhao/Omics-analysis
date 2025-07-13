@@ -179,66 +179,7 @@
 <p>These are data sources.&#160;<a class="footnote-backref" href="#fnref:ast" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:web">
-<p><strong>Data download instructions</strong></p>
-<p>Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1.</p>
-<p>The supplement is in .html for each chapter but it is more useful to convert to markdown, and it is handy to run from a
-Linux terminal than otherwise nevertheless the markdown format renders can be rendered as follows,</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>f<span class="w"> </span><span class="k">in</span><span class="w"> </span>data-analysis<span class="w"> </span>intro-ms<span class="w"> </span>wrangle-data<span class="w"> </span>eda<span class="w"> </span>spectra-analysis<span class="w"> </span>chrom<span class="w"> </span>machine-learning
-<span class="k">do</span>
-<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">f</span><span class="o">=</span><span class="si">${</span><span class="nv">f</span><span class="si">}</span>
-<span class="w">  </span>pandoc<span class="w"> </span><span class="si">${</span><span class="nv">f</span><span class="si">}</span>.html<span class="w"> </span>--lua-filter<span class="o">=</span>html.lua<span class="w"> </span>-t<span class="w"> </span>markdown<span class="w"> </span>-o<span class="w"> </span><span class="si">${</span><span class="nv">f</span><span class="si">}</span>.Rmd
-<span class="w">  </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/``` {.r/```{r/&#39;</span><span class="w"> </span><span class="si">${</span><span class="nv">f</span><span class="si">}</span>.Rmd
-<span class="w">  </span>Rscript<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;f=Sys.getenv(&quot;f&quot;);rmarkdown::render(paste0(f,&quot;.Rmd&quot;),output_dir=&quot;output&quot;))&#39;</span>
-<span class="k">done</span>
-</code></pre></div>
-<p>with <a href="files/html.lua">html.lua</a>. For instance, in order to run through the R code,</p>
-<ol>
-<li><strong>data-analysis.Rmd</strong> requires caution over Bash code blocks Rscript hello.R and R CMD BATCH hello.R, and a not-R code block.</li>
-<li><strong>intro-ms.Rmd</strong> needs c("tidyverse").</li>
-<li><strong>wrangle-data.Rmd</strong> requires c("tidyverse") and "tandem_result/" created by X!Tandem (tandem.sh, input.xml, default_input.xml, taxonomy.xml) shown <a href="https://github.com/jinghuazhao/Omics-analysis/tree/master/docs/files">here</a> following <a href="ftp://ftp.thegpm.org/projects/tandem/source/">ftp://ftp.thegpm.org/projects/tandem/source/</a>.</li>
-<li><strong>eda.Rmd</strong> requires c("Spectra").</li>
-<li><strong>spectra-analysis.Rmd</strong> needs c("tidyverse", "Spectra", "infer", "xml2", "mzID", "MSnbase") as with <code>inten_label</code> and <code>pal</code>.</li>
-<li><strong>chrom.Rmd</strong> needs c("tidyverse", "baseline", "signal", "EnvStats", "MassSpecWavelet", "MSnbase", "xcms", "latex2exp", "ggpubr", "fda.usc") as with <code>inten_label</code> and <code>pal</code>.</li>
-<li><strong>machine-learning.Rmd</strong> requires c("tidymodels", "tidyverse", "visdat", "ggfortify", "factoextra", "colino", "heatmaply", "Spectra").</li>
-</ol>
-<p><code>inten_label</code> and <code>pal</code> are from <strong>intro-ms.Rmd</strong> and <strong>data-analysis.Rmd</strong>, respectively. Batch load of packages can be done, e.g., pkgs &lt;- c("tidyverse", "Spectra", "infer", "mzID", "MSnbase"); lapply(pkgs,library,character.only = TRUE).</p>
-<p><strong>large-data/mona/</strong> (Chapter 7)</p>
-<p><a href="https://mona.fiehnlab.ucdavis.edu/rest/downloads/retrieve/873fbe29-4808-46d1-a4a3-a4134ac8c755">MoNA-export-LC-MS-MS_Positive_Mode.msp</a></p>
-<p><strong>MTBLS4938</strong> (Chapter 7)</p>
-<ul>
-<li><a href="https://data.niaid.nih.gov/resources?id=mtbls4938">NIAID</a></li>
-<li><a href="https://www.ebi.ac.uk/metabolights/MTBLS4938">MetaboLights</a></li>
-</ul>
-<p><strong>large-data/MSV000081318/MSV000086195</strong></p>
-<p>We start with wget</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">2</span><span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;index.html*&quot;</span><span class="w"> </span>ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
-wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">1</span><span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;index.html*&quot;</span><span class="w"> </span>ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
-</code></pre></div>
-<p>Directory listing including file transfer can also be done with</p>
-<div class="highlight"><pre><span></span><code>ftp<span class="w"> </span>massive-ftp.ucsd.edu<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-<span class="s">anonymous</span>
-<span class="s">ls</span>
-<span class="s">cd z01/MSV000086195/ccms_peak/</span>
-<span class="s">prompt</span>
-<span class="s">mget *</span>
-<span class="s">EOF</span>
-</code></pre></div>
-<p>where <code>anonymous</code> is the user name, or preferably by lftp,</p>
-<div class="highlight"><pre><span></span><code>lftp<span class="w"> </span>massive-ftp.ucsd.edu<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-<span class="s">mirror --parallel=10 --verbose /v03/MSV000086195 ./MSV000086195</span>
-<span class="s">bye</span>
-<span class="s">EOF</span>
-<span class="c1"># to resume</span>
-lftp<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;mirror --continue --parallel=4 /z01/MSV000086195/ccms_peak/ ccms_peak/; quit&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>ftp://massive-ftp.ucsd.edu
-</code></pre></div>
-<p><code>ScltlMsclsMAvsCntr_Batch1_BRPhsFr5_prof.mzML</code> in Chapters 4 &amp; 5 is made with MSConvert (6GB!) or ThermoRawFileParser/1.4.4 (6.2GB with -p but 750MB without) as in <a href="files/mzML.sh">mzML.sh</a> following exercises in the Caprion project.</p>
-<p><strong>schema/</strong> (Chapter 3):</p>
-<ul>
-<li><a href="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/refs/heads/master/schema/mzIdentML1.1.0.xsd">mzIdentML1.1.0.xsd</a></li>
-<li><a href="https://raw.githubusercontent.com/ProteoWizard/pwiz/refs/heads/master/pwiz_tools/Skyline/TestUtil/Schemas/Skyline_3.73.xsd">Skyline_3.73.xsd</a></li>
-</ul>
-<p><a class="footnote-backref" href="#fnref:web" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><strong><a href="../R-Programming-for-Mass-Spectrometry/">R Programming for Mass Spectrometry</a></strong>&#160;<a class="footnote-backref" href="#fnref:web" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></div>
