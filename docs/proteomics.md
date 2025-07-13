@@ -59,7 +59,7 @@
 
     1. **data-analysis.Rmd** requires caution over Bash code blocks Rscript hello.R and R CMD BATCH hello.R, and a not-R code block.
     2. **intro-ms.Rmd** needs c("tidyverse").
-    3. **wrangle-data.Rmd** requires c("tidyverse") and "tandem_result/" to be created by X!Tandem, an experimental script is [here](https://github.com/jinghuazhao/Omics-analysis/tree/master/docs/files) following <ftp.thegpm.org/projects/tandem/source/>.
+    3. **wrangle-data.Rmd** requires c("tidyverse") and "tandem_result/" to be created by X!Tandem, an experimental script is [here](https://github.com/jinghuazhao/Omics-analysis/tree/master/docs/files) following <ftp://ftp.thegpm.org/projects/tandem/source/>.
     4. **eda.Rmd** requires c("Spectra").
     5. **spectra-analysis.Rmd** needs c("tidyverse", "Spectra", "infer", "xml2", "mzID", "MSnbase") as with `inten_label` and `pal`.
     6. **chrom.Rmd** needs c("tidyverse", "baseline", "signal", "EnvStats", "MassSpecWavelet", "MSnbase", "xcms", "latex2exp", "ggpubr", "fda.usc") as with `inten_label` and `pal`.
