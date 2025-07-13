@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 export peak=/rds/project/rds-C1Ph08tkaOA/public/ms-proteomics/MSV000086195/peak
 export out=tandem_result
@@ -13,11 +12,12 @@ cd "$out"
 ln -sf "$peak"/*.mgf .
 ln -sf "/rds/project/rds-4o5vpvAowP0/UniProt/$fasta" "$fasta"
 
-for mgf_path in "$peak"/*.mgf; do
-  mgf=$(basename "$mgf_path")
+for mgf in *.mgf; do
   base="${mgf%.mgf}"
-  sed "s/MGF/$mgf/;s/MZID/$base.mzid/" input.xml > "${base}.xml"
+  echo "Processing $mgf → $base"
+  sed "s|MGF|$mgf|; s|MZID|${base}.mzid|" input.xml > "${base}.xml"
   tandem.exe "${base}.xml" > "${base}.log"
+  mv -v ${base}*.t.mzid ${base}.mzid
 done
 
 cd -
