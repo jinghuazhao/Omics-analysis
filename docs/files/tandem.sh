@@ -12,12 +12,10 @@ cd "$out"
 ln -sf "$peak"/*.mgf .
 ln -sf "/rds/project/rds-4o5vpvAowP0/UniProt/$fasta" "$fasta"
 
-for mgf in *.mgf; do
-  base="${mgf%.mgf}"
-  echo "Processing $mgf → $base"
-  sed "s|MGF|$mgf|; s|MZID|${base}.mzid|" input.xml > "${base}.xml"
-  tandem.exe "${base}.xml" > "${base}.log"
-  mv -v ${base}*.t.mzid ${base}.mzid
-done
-
+ls $peak | sed 's/.mgf//' | parallel -j5 -C' ' '
+  echo Processing {}
+  sed "s|MGF|{}.mgf|; s|MZID|{}.mzid|" input.xml > {}.xml
+  tandem.exe {}.xml > {}.log
+  mv -v {}*.t.mzid {}.mzid
+'
 cd -
