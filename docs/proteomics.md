@@ -34,8 +34,5 @@
 - Skyline, <https://skyline.ms/project/home/begin.view>
 - Spectranaut, <https://biognosys.com/software/spectronaut/>
 
-[^ast]: **\***
-
-    These are data sources.
-
+[^ast]: **\***. These are data sources.
 [^web]: **[R Programming for Mass Spectrometry](R-Programming-for-Mass-Spectrometry.md)**
