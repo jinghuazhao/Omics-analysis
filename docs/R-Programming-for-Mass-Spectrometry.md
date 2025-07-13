@@ -29,6 +29,23 @@ with [html.lua](R-Programming-for-Mass-Spectrometry/html.lua). For instance, in 
 6. **chrom.Rmd** needs c("tidyverse", "baseline", "signal", "EnvStats", "MassSpecWavelet", "MSnbase", "xcms", "latex2exp", "ggpubr", "fda.usc") as with `inten_label` and `pal`.
 7. **machine-learning.Rmd** requires c("tidymodels", "tidyverse", "visdat", "ggfortify", "factoextra", "colino", "heatmaply", "Spectra").
 
+Set `options(lifecycle_verbosity = "quiet")` to use `progress_estimated()` in **wrangle-data.Rmd**, but a switch has been suggested 
+
+```r
+library(progress)
+
+n <- 100
+pb <- progress_bar$new(
+  format = "  processing [:bar] :percent eta: :eta",
+  total = n, clear = FALSE, width = 60
+)
+
+for (i in seq_len(n)) {
+  pb$tick()
+  Sys.sleep(0.1)
+}
+```
+
 `inten_label` and `pal` are from **intro-ms.Rmd** and **data-analysis.Rmd**, respectively. Batch load of packages can be done, e.g., pkgs <- c("tidyverse", "Spectra", "infer", "mzID", "MSnbase"); lapply(pkgs,library,character.only = TRUE).
 
 **large-data/mona/** (Chapter 7)
