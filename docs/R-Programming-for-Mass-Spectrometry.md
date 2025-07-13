@@ -1,8 +1,6 @@
-# R Programming for Mass Spectrometry
+# R Programming for Mass Spectrometry[^ref]
 
-[^web]: **Data download instructions**
-
-Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1.
+**Data download instructions**
 
 The supplement is in .html for each chapter but it is more useful to convert to markdown, and it is handy to run from a
 Linux terminal than otherwise nevertheless the markdown format renders can be rendered as follows,
@@ -77,3 +75,5 @@ lftp -e "mirror --continue --parallel=4 /z01/MSV000086195/ccms_peak/ ccms_peak/;
 
 - [mzIdentML1.1.0.xsd](https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/refs/heads/master/schema/mzIdentML1.1.0.xsd)
 - [Skyline_3.73.xsd](https://raw.githubusercontent.com/ProteoWizard/pwiz/refs/heads/master/pwiz_tools/Skyline/TestUtil/Schemas/Skyline_3.73.xsd)
+
+[^ref]: **Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1.**
