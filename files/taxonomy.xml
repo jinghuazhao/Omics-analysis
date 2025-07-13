@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taxonomy [ ... ]>
+<taxonomy>
+  <taxon label="Homo sapiens">
+    <file URL="./uniprot_sprot.fasta"/>
+  </taxon>
+</taxonomy>
