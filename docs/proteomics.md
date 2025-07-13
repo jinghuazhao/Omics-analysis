@@ -27,7 +27,7 @@
 - Protein Structure Prediction Center, <https://predictioncenter.org/>
 - ProteomeXchange, <https://www.proteomexchange.org/>
 - ProteoMapper Online, <https://peptideatlas.org/map/>
-- R Programming for Mass Spectrometry*[^web], <https://books.wiley.com/titles/9781119872351/>
+- [R Programming for Mass Spectrometry](R-Programming-for-Mass-Spectrometry.md), <https://books.wiley.com/titles/9781119872351/>
 - RFdiffusion, <https://github.com/RosettaCommons/RFdiffusion>
 - Sage, <https://sage-docs.vercel.app/>
 - Sashimi, <https://sourceforge.net/projects/sashimi>
@@ -35,4 +35,3 @@
 - Spectranaut, <https://biognosys.com/software/spectronaut/>
 
 [^ast]: **\***. These are data sources.
-[^web]: **[R Programming for Mass Spectrometry](R-Programming-for-Mass-Spectrometry.md)**
