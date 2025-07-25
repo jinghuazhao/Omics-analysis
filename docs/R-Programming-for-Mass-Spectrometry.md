@@ -97,6 +97,21 @@ lftp -e "mirror --continue --parallel=4 /z01/MSV000086195/ccms_peak/ ccms_peak/;
 - [mzIdentML1.1.0.xsd](https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/refs/heads/master/schema/mzIdentML1.1.0.xsd)
 - [Skyline_3.73.xsd](https://raw.githubusercontent.com/ProteoWizard/pwiz/refs/heads/master/pwiz_tools/Skyline/TestUtil/Schemas/Skyline_3.73.xsd)
 
+## Miscellaneous notes
+
+This is a way around .mzid v1.2 (e.g., from **i2MasChroQ** 1.2.6) which neither PSMatch nor mzR supports; pyteomics has been made available from `~/rds/software/py3.11` therefore after `source ~/rds/software/py3.11/bin/activate` we have
+
+```python
+from pyteomics import mzid
+with mzid.read('ScltlMsclsMAvsCntr_Batch1_BRPhsFr29.mzid') as reader:
+    first = next(reader)
+    print(first['SpectrumIdentificationItem'])
+```
+
+```
+[{'passThreshold': True, 'rank': 1, 'calculatedMassToCharge': 751.43574765, 'experimentalMassToCharge': 752.4484130691, 'chargeState': 2, 'PeptideEvidenceRef': [{'isDecoy': False, 'start': 30, 'end': 41, 'pre': 'L', 'post': 'F', 'PeptideSequence': 'ARLLVVYPWTQR', 'accession': 'sp|P11025|HBE_DIDVI', 'length': 147, 'Seq': 'MVHFTPEDKTNITSVWTKVDVEDVGGESLARLLVVYPWTQRFFDSFGNLSSASAVMGNPKVKAHGKKVLTSFGEGVKNMDNLKGTFAKLSELHCDKLHVDPENFRLLGNVLIIVLASRFGKEFTPEVQASWQKLVSGVSSALGHKYH', 'protein description': 'Hemoglobin subunit epsilon-M OS=Didelphis virginiana OX=9267 GN=HBE1 PE=2 SV=2', 'location': 'D:/Downloads/tandem_result/uniprot_sprot.fasta', 'FileFormat': 'FASTA format', 'DatabaseName': {'DatabaseName': 'uniprot_sprot.fasta'}, 'DB composition target+decoy': '', 'decoy DB accession regexp': '^XXX', 'decoy DB type reverse': ''}, {'isDecoy': False, 'start': 23, 'end': 34, 'pre': 'L', 'post': 'Y', 'PeptideSequence': 'ARLLVVYPWTQR', 'accession': 'sp|P02134|HBB_PELES', 'length': 140, 'Seq': 'GSDLVSGFWGKVDAHKIGGEALARLLVVYPWTQRYFTTFGNLGSADAICHNAKVLAHGEKVLAAIGEGLKHPENLKAHYAKLSEYHSNKLHVDPANFRLLGNVFITVLARHFQHEFTPELQHALEAHFCAVGDALAKAYH', 'protein description': 'Hemoglobin subunit beta OS=Pelophylax esculentus OX=8401 GN=HBB PE=1 SV=1', 'location': 'D:/Downloads/tandem_result/uniprot_sprot.fasta', 'FileFormat': 'FASTA format', 'DatabaseName': {'DatabaseName': 'uniprot_sprot.fasta'}, 'DB composition target+decoy': '', 'decoy DB accession regexp': '^XXX', 'decoy DB type reverse': ''}], 'X!Tandem:expect': 0.00173766, 'X!Tandem:hyperscore': 27.0, 'PeptideSequence': 'ARLLVVYPWTQR'}]
+```
+
 ## Reference
 
 Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1.
