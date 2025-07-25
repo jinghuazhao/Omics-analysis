@@ -112,6 +112,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#miscellaneous-notes" class="nav-link">Miscellaneous notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#reference" class="nav-link">Reference</a>
               <ul class="nav flex-column">
               </ul>
@@ -198,6 +202,15 @@ lftp<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;mir
 <li><a href="https://raw.githubusercontent.com/HUPO-PSI/mzIdentML/refs/heads/master/schema/mzIdentML1.1.0.xsd">mzIdentML1.1.0.xsd</a></li>
 <li><a href="https://raw.githubusercontent.com/ProteoWizard/pwiz/refs/heads/master/pwiz_tools/Skyline/TestUtil/Schemas/Skyline_3.73.xsd">Skyline_3.73.xsd</a></li>
 </ul>
+<h2 id="miscellaneous-notes">Miscellaneous notes</h2>
+<p>This is a way around .mzid v1.2 (e.g., from <strong>i2MasChroQ</strong> 1.2.6) which neither PSMatch nor mzR supports; pyteomics has been made available from <code>~/rds/software/py3.11</code> therefore after <code>source ~/rds/software/py3.11/bin/activate</code> we have</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pyteomics</span> <span class="kn">import</span> <span class="n">mzid</span>
+<span class="k">with</span> <span class="n">mzid</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;ScltlMsclsMAvsCntr_Batch1_BRPhsFr29.mzid&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">first</span><span class="p">[</span><span class="s1">&#39;SpectrumIdentificationItem&#39;</span><span class="p">])</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[{&#39;passThreshold&#39;: True, &#39;rank&#39;: 1, &#39;calculatedMassToCharge&#39;: 751.43574765, &#39;experimentalMassToCharge&#39;: 752.4484130691, &#39;chargeState&#39;: 2, &#39;PeptideEvidenceRef&#39;: [{&#39;isDecoy&#39;: False, &#39;start&#39;: 30, &#39;end&#39;: 41, &#39;pre&#39;: &#39;L&#39;, &#39;post&#39;: &#39;F&#39;, &#39;PeptideSequence&#39;: &#39;ARLLVVYPWTQR&#39;, &#39;accession&#39;: &#39;sp|P11025|HBE_DIDVI&#39;, &#39;length&#39;: 147, &#39;Seq&#39;: &#39;MVHFTPEDKTNITSVWTKVDVEDVGGESLARLLVVYPWTQRFFDSFGNLSSASAVMGNPKVKAHGKKVLTSFGEGVKNMDNLKGTFAKLSELHCDKLHVDPENFRLLGNVLIIVLASRFGKEFTPEVQASWQKLVSGVSSALGHKYH&#39;, &#39;protein description&#39;: &#39;Hemoglobin subunit epsilon-M OS=Didelphis virginiana OX=9267 GN=HBE1 PE=2 SV=2&#39;, &#39;location&#39;: &#39;D:/Downloads/tandem_result/uniprot_sprot.fasta&#39;, &#39;FileFormat&#39;: &#39;FASTA format&#39;, &#39;DatabaseName&#39;: {&#39;DatabaseName&#39;: &#39;uniprot_sprot.fasta&#39;}, &#39;DB composition target+decoy&#39;: &#39;&#39;, &#39;decoy DB accession regexp&#39;: &#39;^XXX&#39;, &#39;decoy DB type reverse&#39;: &#39;&#39;}, {&#39;isDecoy&#39;: False, &#39;start&#39;: 23, &#39;end&#39;: 34, &#39;pre&#39;: &#39;L&#39;, &#39;post&#39;: &#39;Y&#39;, &#39;PeptideSequence&#39;: &#39;ARLLVVYPWTQR&#39;, &#39;accession&#39;: &#39;sp|P02134|HBB_PELES&#39;, &#39;length&#39;: 140, &#39;Seq&#39;: &#39;GSDLVSGFWGKVDAHKIGGEALARLLVVYPWTQRYFTTFGNLGSADAICHNAKVLAHGEKVLAAIGEGLKHPENLKAHYAKLSEYHSNKLHVDPANFRLLGNVFITVLARHFQHEFTPELQHALEAHFCAVGDALAKAYH&#39;, &#39;protein description&#39;: &#39;Hemoglobin subunit beta OS=Pelophylax esculentus OX=8401 GN=HBB PE=1 SV=1&#39;, &#39;location&#39;: &#39;D:/Downloads/tandem_result/uniprot_sprot.fasta&#39;, &#39;FileFormat&#39;: &#39;FASTA format&#39;, &#39;DatabaseName&#39;: {&#39;DatabaseName&#39;: &#39;uniprot_sprot.fasta&#39;}, &#39;DB composition target+decoy&#39;: &#39;&#39;, &#39;decoy DB accession regexp&#39;: &#39;^XXX&#39;, &#39;decoy DB type reverse&#39;: &#39;&#39;}], &#39;X!Tandem:expect&#39;: 0.00173766, &#39;X!Tandem:hyperscore&#39;: 27.0, &#39;PeptideSequence&#39;: &#39;ARLLVVYPWTQR&#39;}]
+</code></pre></div>
 <h2 id="reference">Reference</h2>
 <p>Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1.</p></div>
             </div>
