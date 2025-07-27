@@ -11,6 +11,7 @@ if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-q" ]; then
    module load ceuadmin/openssh/9.7p1-icelake
 fi
 
+export LD_PRELOAD=/usr/lib64/libcrypto.so.1.1
 setup
 mkdocs build
 mkdocs gh-deploy
