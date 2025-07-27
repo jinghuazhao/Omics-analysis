@@ -3,7 +3,6 @@ repo_url: https://github.com/jinghuazhao/Omics-analysis
 edit_uri: ""
 nav:
   - "": README.md
-  - resources.md
   - Cases:
     - AF/README.md
     - BMI/README.md
@@ -11,6 +10,7 @@ nav:
     - T2D/README.md
   - Genomics: genomics.md
   - Proteomics: proteomics.md
+  - resources.md
 theme:
     name: mkdocs
     nav_style: dark
