@@ -22,6 +22,7 @@
 - LDlink, <https://ldlink.nci.nih.gov/?tab=home.>
 - LocusTrack, <https://gump.qimr.edu.au/general/gabrieC/LocusTrack/index.html>
 - JASPAR, <https://jaspar.genereg.net/>
+- MitoCarta3.0, <https://www.broadinstitute.org/mitocarta/mitocarta30-inventory-mammalian-mitochondrial-proteins-and-pathways>
 - NCBI, <https://www.ncbi.nlm.nih.gov/>
 - NyuWa Chinese Population Variant Database (NCVD): <http://bigdata.ibp.ac.cn/NyuWa_variants/>
 - OpenTargets, <https://genetics.opentargets.org/>
