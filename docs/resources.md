@@ -111,7 +111,7 @@ dev.off()
 
 ## MitoCarta3.0
 
-* <https://www.broadinstitute.org/mitocarta/mitocarta30-inventory-mammalian-mitochondrial-proteins-and-pathways>
+* [An Inventory of Mammalian Mitochondrial Proteins and Pathways](https://www.broadinstitute.org/mitocarta/mitocarta30-inventory-mammalian-mitochondrial-proteins-and-pathways)
 
 ## MR-Base/OpenGWAS
 
