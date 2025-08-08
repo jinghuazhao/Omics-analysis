@@ -451,6 +451,11 @@ all_links <- entrez_link(dbfrom='pubmed', id=id, db='all')
 - PredictDB data repository, <http://predictdb.org/>
 - TWAS-hub, <http://twas-hub.org/>
 
+
+## UCSC
+
+Add Custom Tracks, <https://genome.ucsc.edu/cgi-bin/hgCustom>
+
 ## UK10K imputation
 
 Sanger Imputation Service, <https://imputation.sanger.ac.uk/>
