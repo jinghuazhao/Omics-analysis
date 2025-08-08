@@ -105,6 +105,10 @@ dev.off()
 
 <http://www.eqtlgen.org/>
 
+## gnomAD
+
+<https://gnomad.broadinstitute.org/>
+
 ## MetaMapLite
 
 <https://metamap.nlm.nih.gov/MetaMapLite.shtml>
