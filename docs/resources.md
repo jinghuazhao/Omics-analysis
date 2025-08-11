@@ -117,8 +117,9 @@ dev.off()
 
 * MitoCarta3.0, [An Inventory of Mammalian Mitochondrial Proteins and Pathways](https://www.broadinstitute.org/mitocarta/mitocarta30-inventory-mammalian-mitochondrial-proteins-and-pathways)
 * MITOMAP, <https://mitomap.org/MITOMAP>
-    - curl -O "https://mitomap.org/cgi-bin/disease.cgi?format=vcf"
-    - curl -O "https://mitomap.org/cgi-bin/disease.cgi?format=vcf"
+    - vep -i input.vcf --cache --custom polymorphisms.vcf.gz,MITOMAP,vcf,exact,0 --vcf
+    - curl "https://mitomap.org/cgi-bin/disease.cgi?format=vcf" > disease.vcf
+    - curl "https://mitomap.org/cgi-bin/polymorphisms.cgi?format=vcf" > polymorphisms.vcf
 
 ## MR-Base/OpenGWAS
 
