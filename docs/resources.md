@@ -113,9 +113,12 @@ dev.off()
 
 <https://metamap.nlm.nih.gov/MetaMapLite.shtml>
 
-## MitoCarta3.0
+## Mitochondria
 
-* [An Inventory of Mammalian Mitochondrial Proteins and Pathways](https://www.broadinstitute.org/mitocarta/mitocarta30-inventory-mammalian-mitochondrial-proteins-and-pathways)
+* MitoCarta3.0, [An Inventory of Mammalian Mitochondrial Proteins and Pathways](https://www.broadinstitute.org/mitocarta/mitocarta30-inventory-mammalian-mitochondrial-proteins-and-pathways)
+* MITOMAP, <https://mitomap.org/MITOMAP>
+    - curl -O "https://mitomap.org/cgi-bin/disease.cgi?format=vcf"
+    - curl -O "https://mitomap.org/cgi-bin/disease.cgi?format=vcf"
 
 ## MR-Base/OpenGWAS
 
