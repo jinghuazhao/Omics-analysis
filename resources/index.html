@@ -306,8 +306,9 @@ See also <a href="https://sites.google.com/site/jpopgen/wgsa">https://sites.goog
 <ul>
 <li>MitoCarta3.0, <a href="https://www.broadinstitute.org/mitocarta/mitocarta30-inventory-mammalian-mitochondrial-proteins-and-pathways">An Inventory of Mammalian Mitochondrial Proteins and Pathways</a></li>
 <li>MITOMAP, <a href="https://mitomap.org/MITOMAP">https://mitomap.org/MITOMAP</a><ul>
-<li>curl -O "https://mitomap.org/cgi-bin/disease.cgi?format=vcf"</li>
-<li>curl -O "https://mitomap.org/cgi-bin/disease.cgi?format=vcf"</li>
+<li>vep -i input.vcf --cache --custom polymorphisms.vcf.gz,MITOMAP,vcf,exact,0 --vcf</li>
+<li>curl "https://mitomap.org/cgi-bin/disease.cgi?format=vcf" &gt; disease.vcf</li>
+<li>curl "https://mitomap.org/cgi-bin/polymorphisms.cgi?format=vcf" &gt; polymorphisms.vcf</li>
 </ul>
 </li>
 </ul>
