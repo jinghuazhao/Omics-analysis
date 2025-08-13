@@ -64,6 +64,10 @@ gencode <- as.data.frame(gtf)
 - GWAS Catalog, <https://www.ebi.ac.uk/gwas/>
 - PheWAS Catalog, <https://phewascatalog.org/>
 
+## COSMIC
+
+<https://cancer.sanger.ac.uk/cosmic/> & <https://cancer.sanger.ac.uk/cosmic3d/>
+
 ## EFO
 
 <https://www.ebi.ac.uk/efo/>
