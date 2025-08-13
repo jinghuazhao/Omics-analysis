@@ -7,6 +7,7 @@
 - cerno Biosciencec, <https://cernobioscience.com/>
 - Course on GWAS by Matti Pirinen, <https://www.mv.helsinki.fi/home/mjxpirin/GWAS_course/>
 - d3blocks, <https://github.com/d3blocks/d3blocks> ([documentation](https://d3blocks.github.io/d3blocks/pages/html/index.html#))
+- Evolutionary tools for genomic analysis, <https://www.ebi.ac.uk/research/goldman/software/>
 - FUMA GWAS, <https://fuma.ctglab.nl/> (<https://github.com/Kyoko-wtnb/FUMA-webapp/>)
 - GA4GH, <https://www.ga4gh.org/>
 - GATK, <https://gatk.broadinstitute.org/hc/en-us>
