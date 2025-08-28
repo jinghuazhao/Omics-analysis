@@ -119,6 +119,13 @@ dev.off()
 
 ## Mitochondria
 
+To list Ensembl Genes
+
+```r
+library(EnsDb.Hsapiens.v75)
+genes(EnsDb.Hsapiens.v75, filter = ~ seq_name == "MT")
+```
+
 * MitoCarta3.0, [An Inventory of Mammalian Mitochondrial Proteins and Pathways](https://www.broadinstitute.org/mitocarta/mitocarta30-inventory-mammalian-mitochondrial-proteins-and-pathways)
 * MITOMAP, <https://mitomap.org/MITOMAP>
     - vep -i input.vcf --cache --custom polymorphisms.vcf.gz,MITOMAP,vcf,exact,0 --vcf
