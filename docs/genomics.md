@@ -20,6 +20,7 @@
 - GWAS Catalog, <https://www.ebi.ac.uk/gwas/>
 - GWAS Central, <https://www.gwascentral.org/>
 - hail, <https://hail.is/index.html>
+- KCCG, <https://github.com/KCCG>
 - LDlink, <https://ldlink.nci.nih.gov/?tab=home.>
 - LocusTrack, <https://gump.qimr.edu.au/general/gabrieC/LocusTrack/index.html>
 - JASPAR, <https://jaspar.genereg.net/>
