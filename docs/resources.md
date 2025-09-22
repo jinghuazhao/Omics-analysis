@@ -58,6 +58,18 @@ gencode <- as.data.frame(gtf)
     * [Pan-UK Biobank](https://pan.ukbb.broadinstitute.org/), [GWAS sumstats](http://www.nealelab.is/blog/2019/9/16/biomarkers-gwas-results) and [GitHub](https://github.com/Nealelab/UK_Biobank_GWAS).
     * COVID-19 [data](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19), [format](http://biobank.ndph.ox.ac.uk/ukb/exinfo.cgi?src=COVID19_tests) and [field](http://biobank.ctsu.ox.ac.uk/ukb/field.cgi?id=40100).
 
+    * Data Access and Resources from the WGS/WES paper:
+
+    - [UK Biobank Research Analysis Platform](https://ukbiobank.dnanexus.com/landing)  
+    - [Apply for UK Biobank Access](https://www.ukbiobank.ac.uk/enable-your-research/apply-for-access)  
+    - [Allele Frequency Browser](https://afb.ukbiobank.ac.uk/)  
+    - [GWAS Catalog – Single-variant results](https://www.ebi.ac.uk/gwas/)  
+    - [AZ PheWAS Portal – Rare variant associations](http://azphewas.com/)  
+    - [deCODE SV Summary Data](https://www.decode.com/summarydata/)  
+    - [GRCh38 Human Reference Genome (1000 Genomes)](http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/)  
+    - [Genome in a Bottle (GIAB) WGS Samples](https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/)  
+    - [ENSEMBL Annotation Data (versions 92 & 101)](https://m.ensembl.org/info/data/mysql.html)
+
 ## Catalog
 
 - eQTL Catalog, <https://www.ebi.ac.uk/eqtl/>
