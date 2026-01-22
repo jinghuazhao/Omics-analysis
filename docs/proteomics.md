@@ -24,6 +24,7 @@
 - OpenFold, <https://openfold.io/>
 - Perseus, <https://maxquant.net/perseus/>
 - Peptigram, <http://bioware.ucd.ie/peptigram/>
+- PhosphositePlus, <https://www.phosphosite.org/>
 - Protein Structure Prediction Center, <https://predictioncenter.org/>
 - ProteomeXchange, <https://www.proteomexchange.org/>
 - ProteoMapper Online, <https://peptideatlas.org/map/>

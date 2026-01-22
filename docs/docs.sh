@@ -3,7 +3,7 @@
 function setup()
 {
   module load python/3.8
-  source ~/rds/public_databases/software/py38/bin/activate
+  source ~/rds/software/py38/bin/activate
 }
 
 if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-q" ]; then
