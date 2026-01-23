@@ -1,6 +1,7 @@
 # Proteomics
 
 - AlphaFold3, <https://github.com/google-deepmind/alphafold3>
+- AlphaFold Server, <https://alphafoldserver.com/>
 - casanovo, <https://github.com/Noble-Lab/casanovo>
 - CoffeeProt, <https://coffeeprot.com/>
 - Consortium for Top-Down proteomics, <https://www.topdownproteomics.org/>
@@ -14,11 +15,13 @@
         + High-confidence ProteomeTools dataset <https://doi.org/10.57967/hf/3822>
         + Nine species Benchmark, <https://doi.org/10.57967/hf/3821>
 - ISA tools, <https://isa-tools.org/>
+- KSEA, <https://github.com/casecpb/KSEA>
 - MassIVE*[^ast], <https://massive.ucsd.edu/ProteoSAFe/static/massive.jsp?redirect=auth>
 - MassiveFold, <https://github.com/GBLille/MassiveFold>
 - MaxQuant, <https://maxquant.org/> ([Mailing list](https://lists.biochem.mpg.de/listinfo/maxquan))
 - Mass++, <https://mspp.ninja/download/>
 - MassBank of North America (MoNA)*, <https://mona.fiehnlab.ucdavis.edu/>
+- MeMe, <https://meme-suite.org/meme/index.html>
 - MetaboLights*, <https://www.ebi.ac.uk/metabolights/index>
 - MS-GF+, <https://msgfplus.github.io/>
 - OpenFold, <https://openfold.io/>
