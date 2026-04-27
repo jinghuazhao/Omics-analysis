@@ -39,3 +39,4 @@
 - SNiPA, <https://snipa.helmholtz-muenchen.de/snipa3/>
 - SNP2TFBS, <https://ccg.epfl.ch/snp2tfbs/>
 - Systems-Genomics, <https://systems-genomics.slack.com/>
+- TOPMed Imputation Server, <https://imputation.biodatacatalyst.nhlbi.nih.gov/>
