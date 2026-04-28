@@ -35,7 +35,7 @@
 - PerkinElmer, <https://www.perkinelmer.com/>
 - PLINK2 mailing list, <https://groups.google.com/g/plink2-users>
 - RegulomeDB, <https://regulomedb.org/regulome-search/>
-- S.A.G.E., <https://github.com/elstonsage>
+- S.A.G.E., <http://darwin.cwru.edu/sage/> ([GitHub](https://github.com/elstonsage))
 - Sequence Ontology, <http://www.sequenceontology.org/>
 - SNiPA, <https://snipa.helmholtz-muenchen.de/snipa3/>
 - SNP2TFBS, <https://ccg.epfl.ch/snp2tfbs/>
