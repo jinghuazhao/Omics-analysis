@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +10,13 @@
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>T2D - Omics-analysis</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <link href="../stylesheets/extra.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/Bash.min.js"></script>
@@ -32,7 +36,7 @@
             <div class="container">
                 <a class="navbar-brand" href="..">Omics-analysis</a>
                 <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -40,11 +44,11 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href=".." class="nav-link"></a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cases <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Cases</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -60,24 +64,24 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">T2D</a>
+    <a href="./" class="dropdown-item active" aria-current="page">T2D</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../genomics/" class="nav-link">Genomics</a>
                             </li>
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../proteomics/" class="nav-link">Proteomics</a>
                             </li>
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../resources/" class="nav-link">Resources</a>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav ml-auto">
+                    <ul class="nav navbar-nav ms-md-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
@@ -92,7 +96,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="https://github.com/jinghuazhao/Omics-analysis" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                                <a href="https://github.com/jinghuazhao/Omics-analysis" class="nav-link"><i class="fa-brands fa-github"></i> GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -101,24 +105,24 @@
 
         <div class="container">
             <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
             <span class="fa fa-angle-down"></span>
         </button>
     </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#t2d" class="nav-link">T2D</a>
+            <li class="nav-item" data-bs-level="1"><a href="#t2d" class="nav-link">T2D</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#pathway-analysis" class="nav-link">Pathway analysis</a>
+            <li class="nav-item" data-bs-level="2"><a href="#pathway-analysis" class="nav-link">Pathway analysis</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#mtcojo-analysis" class="nav-link">mtCOJO analysis</a>
+            <li class="nav-item" data-bs-level="2"><a href="#mtcojo-analysis" class="nav-link">mtCOJO analysis</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -131,45 +135,40 @@
 
 <h1 id="t2d">T2D</h1>
 <p>The diagram summary statistics used in the BMI-T2D analysis is available from http://www.diagram-consortium.org/downloads.html. It is necessary to check the box in front of "I agree with the terms above." to download the file, <code>TransEthnic_T2D_GWAS.MegaMeta.2014OCT16.zip</code>, so
-<div class="highlight"><pre><span></span><code>unzip<span class="w">  </span>TransEthnic_T2D_GWAS.MegaMeta.2014OCT16.zip<span class="w"> </span>
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">unzip  TransEthnic_T2D_GWAS.MegaMeta.2014OCT16.zip </code></pre>
 gives <code>diagram.mega-meta.txt</code>.</p>
 <h2 id="pathway-analysis">Pathway analysis</h2>
 <p>As before we prepare for DEPICT file,
-<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">  OFS=&quot;\t&quot;</span>
-<span class="s1">  if(NR==1) print &quot;SNP&quot;,&quot;Chr&quot;,&quot;Pos&quot;,&quot;P&quot;</span>
-<span class="s1">  else print $1,$2,$3,$9</span>
-<span class="s1">}&#39;</span><span class="w"> </span>diagram.mega-meta.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>-f<span class="w"> </span>&gt;<span class="w"> </span>T2D.txt.gz
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">awk '{
+  OFS="\t"
+  if(NR==1) print "SNP","Chr","Pos","P"
+  else print $1,$2,$3,$9
+}' diagram.mega-meta.txt | gzip -f &gt; T2D.txt.gz
+</code></pre>
 and <a href="T2D.cfg">T2D.cfg</a> slightly changed from its BMI counterpart.</p>
 <h2 id="mtcojo-analysis">mtCOJO analysis</h2>
 <p>For this analysis, the latest version of GCTA is required. To imitate the documentation script, we regenerate the <code>bmi_test.raw</code> as follows
-<div class="highlight"><pre><span></span><code>gunzip<span class="w"> </span>-c<span class="w"> </span>/home/jhz22/D/genetics/broad/ftp/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
-awk<span class="w"> </span><span class="s1">&#39;{OFS=&quot;\t&quot;; if(NR==1) {print &quot;SNP&quot;,&quot;A1&quot;,&quot;A2&quot;,&quot;freq&quot;,&quot;b&quot;,&quot;se&quot;,&quot;p&quot;,&quot;N&quot;} else print $3,$4,$5,$6,$7,$8,$9,$10}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
-uniq<span class="w"> </span>&gt;<span class="w"> </span>bmi_test.raw
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">gunzip -c /home/jhz22/D/genetics/broad/ftp/Meta-analysis_Locke_et_al+UKBiobank_2018.txt.gz | \
+awk '{OFS="\t"; if(NR==1) {print "SNP","A1","A2","freq","b","se","p","N"} else print $3,$4,$5,$6,$7,$8,$9,$10}' | \
+uniq &gt; bmi_test.raw</code></pre>
 which uses <code>uniq</code> to remove duplicate lines. As for T2D,
-<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;</span>
-<span class="s1">   function f(x) {return exp(x)/(1+exp(x))}</span>
-<span class="s1">   {</span>
-<span class="s1">     if (NR==1) print &quot;SNP&quot;,&quot;A1&quot;,&quot;A2&quot;,&quot;freq&quot;,&quot;b&quot;,&quot;se&quot;,&quot;p&quot;,&quot;N&quot;</span>
-<span class="s1">     print $1,$4,$5,rand(),f($6),(f($8)-f($7))/2,$9,$10</span>
-<span class="s1">   }</span>
-<span class="s1">&#39;</span><span class="w"> </span>/home/jhz22/D/genetics/ldsc/diagram.mega-meta.txt<span class="w"> </span>&gt;<span class="w"> </span>t2d_test.raw
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">awk '
+   function f(x) {return exp(x)/(1+exp(x))}
+   {
+     if (NR==1) print "SNP","A1","A2","freq","b","se","p","N"
+     print $1,$4,$5,rand(),f($6),(f($8)-f($7))/2,$9,$10
+   }
+' /home/jhz22/D/genetics/ldsc/diagram.mega-meta.txt &gt; t2d_test.raw</code></pre>
 Since the summary statistics does not contain effect allele frequencies and we assign a random variable to run through.</p>
 <p>Now we download and unpack the LD scores from https://data.broadinstitute.org/alkesgroup/LDSCORE/,
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-qO-<span class="w"> </span>https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_ref_ld_chr.tar.bz2<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>fvxz<span class="w"> </span>-
-wget<span class="w"> </span>-qO-<span class="w"> </span>https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_w_ld_chr.tar.bz2<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>fvxz<span class="w"> </span>-
-</code></pre></div></p>
+<pre class="highlight"><code class="language-bash">wget -qO- https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_ref_ld_chr.tar.bz2 | tar fvxz -
+wget -qO- https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_w_ld_chr.tar.bz2 | tar fvxz -</code></pre></p>
 <p>At last we could trick GCTA with GSMR's <a href="http://cnsgenomics.com/software/gsmr/static/test_data.zip">test_data.zip</a>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>http://cnsgenomics.com/software/gsmr/static/test_data.zip
-unzip<span class="w"> </span>test_data
-<span class="nb">echo</span><span class="w"> </span>gsmr_example<span class="w"> </span>&gt;<span class="w"> </span>mtcojo_ref_data.txt
-<span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;t2d t2d_test.raw 0.176306984 0.09\nbmi bmi_test.raw&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>mtcojo_summary_data.list
-gcta64<span class="w"> </span>--mbfile<span class="w"> </span>mtcojo_ref_data.txt<span class="w"> </span>--mtcojo-file<span class="w"> </span>mtcojo_summary_data.list<span class="w"> </span>--ref-ld-chr<span class="w"> </span>eur_w_ld_chr/<span class="w"> </span>--w-ld-chr<span class="w"> </span>eur_w_ld_chr/<span class="w"> </span>--out<span class="w"> </span>test_mtcojo_result
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">wget http://cnsgenomics.com/software/gsmr/static/test_data.zip
+unzip test_data
+echo gsmr_example &gt; mtcojo_ref_data.txt
+echo -e "t2d t2d_test.raw 0.176306984 0.09\nbmi bmi_test.raw" &gt; mtcojo_summary_data.list
+gcta64 --mbfile mtcojo_ref_data.txt --mtcojo-file mtcojo_summary_data.list --ref-ld-chr eur_w_ld_chr/ --w-ld-chr eur_w_ld_chr/ --out test_mtcojo_result</code></pre>
 which proceeds with no complaints though the results won't be sensible in this case.</p>
 <p>See also http://cnsgenomics.com/software/gsmr/ for the R counterpart.</p></div>
             </div>
@@ -179,8 +178,7 @@ which proceeds with no complaints though the results won't be sensible in this c
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="../js/jquery-3.6.0.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
         <script>
             var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
@@ -196,7 +194,7 @@ which proceeds with no complaints though the results won't be sensible in this c
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>From here you can search these documents. Enter your search terms below.</p>
@@ -216,7 +214,7 @@ which proceeds with no complaints though the results won't be sensible in this c
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <table class="table">

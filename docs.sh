@@ -16,6 +16,8 @@ setup
 mkdocs build
 mkdocs gh-deploy
 
+source ~/py3.14/bin/activate
+
 for d in README.md .gitignore docs mkdocs.yml
 do
    git add $d
