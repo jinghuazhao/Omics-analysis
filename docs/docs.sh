@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+csd3() {
 function setup()
 {
   module load python/3.8
@@ -13,6 +14,11 @@ fi
 
 export LD_PRELOAD=/usr/lib64/libcrypto.so.1.1
 setup
+mkdocs build
+mkdocs gh-deploy
+}
+
+source ~/py3.14/bin/activate
 mkdocs build
 mkdocs gh-deploy
 
