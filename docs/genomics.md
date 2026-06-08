@@ -1,8 +1,10 @@
 # Genomics
 
+- ASReml [R](https://vsni.co.uk/software/asreml-r/) & [Python](https://vsni.co.uk/software/asreml-python/)
 - bigOmics, <https://bigomics.ch/>
 - Bioconductor support, <https://support.bioconductor.org/>
 - Bailey lab, <https://github.com/bailey-lab>
+- BLUPF90, <https://nce.ads.uga.edu/software/>
 - CellProfiler, <https://cellprofiler.org/>
 - cerno Biosciencec, <https://cernobioscience.com/>
 - Course on GWAS by Matti Pirinen, <https://www.mv.helsinki.fi/home/mjxpirin/GWAS_course/>
