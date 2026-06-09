@@ -31,7 +31,7 @@
     * ASReml [R](https://vsni.co.uk/software/asreml-r/) & [Python](https://vsni.co.uk/software/asreml-python/)
     * BLUPF90, <https://nce.ads.uga.edu/software/>
     * VCE, <https://www.openagrar.de/receive/openagrar_mods_00049816>
-    * WOMBAT, <http://didgeridoo.une.edu.au/km/wombat.php>
+    * WOMBAT (DFREML), <http://didgeridoo.une.edu.au/km/wombat.php>
 - NCBI, <https://www.ncbi.nlm.nih.gov/>
 - NyuWa Chinese Population Variant Database (NCVD): <http://bigdata.ibp.ac.cn/NyuWa_variants/>
 - OpenTargets, <https://genetics.opentargets.org/>
