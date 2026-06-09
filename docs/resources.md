@@ -12,14 +12,19 @@ mart <- useMart("ENSEMBL_MART_FUNCGEN")
 listDatasets(mart)
 mart <- useMart("ensembl")
 listDatasets(mart)
-ensembl <- useMart("ensembl", dataset="hsapiens_gene_ensembl", host="grch37.ensembl.org", path="/biomart/martservice")
+ensembl <- useMart(
+  biomart = "ensembl",
+  dataset = "hsapiens_gene_ensembl",
+  host = "https://grch37.ensembl.org"
+)
 attr <- listAttributes(ensembl)
-attr_select <- c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol', 'transcription_start_site')
+attr_select <- c('ensembl_gene_id','chromosome_name','start_position','end_position','description','hgnc_symbol','transcription_start_site')
 gene <- getBM(attributes = attr_select, mart = ensembl)
 filter <- listFilters(ensembl)
 searchFilters(mart = ensembl, pattern = "gene")
+save(list=ls(),file="ensembl.rda")
 ```
-See also [https://sites.google.com/site/jpopgen/wgsa](https://sites.google.com/site/jpopgen/wgsa) for precompiled annotation. Alternatively, 
+See also <https://sites.google.com/site/jpopgen/wgsa> for precompiled annotation. Alternatively,
 ```r
 # GENCODE v19
 url <- "ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_19/gencode.v19.chr_patch_hapl_scaff.annotation.gtf.gz"
