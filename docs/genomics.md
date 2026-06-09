@@ -1,10 +1,8 @@
 # Genomics
 
-- ASReml [R](https://vsni.co.uk/software/asreml-r/) & [Python](https://vsni.co.uk/software/asreml-python/)
 - bigOmics, <https://bigomics.ch/>
 - Bioconductor support, <https://support.bioconductor.org/>
 - Bailey lab, <https://github.com/bailey-lab>
-- BLUPF90, <https://nce.ads.uga.edu/software/>
 - CellProfiler, <https://cellprofiler.org/>
 - cerno Biosciencec, <https://cernobioscience.com/>
 - Course on GWAS by Matti Pirinen, <https://www.mv.helsinki.fi/home/mjxpirin/GWAS_course/>
@@ -29,6 +27,11 @@
 - LocusTrack, <https://gump.qimr.edu.au/general/gabrieC/LocusTrack/index.html>
 - JASPAR, <https://jaspar.genereg.net/>
 - MITOMAP, <https://www.mitomap.org/>
+- Mixed modelling
+    * ASReml [R](https://vsni.co.uk/software/asreml-r/) & [Python](https://vsni.co.uk/software/asreml-python/)
+    * BLUPF90, <https://nce.ads.uga.edu/software/>
+    * VCE, <https://www.openagrar.de/receive/openagrar_mods_00049816>
+    * WOMBAT, <http://didgeridoo.une.edu.au/km/wombat.php>
 - NCBI, <https://www.ncbi.nlm.nih.gov/>
 - NyuWa Chinese Population Variant Database (NCVD): <http://bigdata.ibp.ac.cn/NyuWa_variants/>
 - OpenTargets, <https://genetics.opentargets.org/>
