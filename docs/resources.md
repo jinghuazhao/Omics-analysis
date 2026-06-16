@@ -24,6 +24,9 @@ filter <- listFilters(ensembl)
 searchFilters(mart = ensembl, pattern = "gene")
 save(list=ls(),file="ensembl.rda")
 ```
+
+It is more flexible with local packages, see <https://jinghuazhao.github.io/pQTLtools/articles/LocusZoom.js.html#gapasplot>
+
 See also <https://sites.google.com/site/jpopgen/wgsa> for precompiled annotation. Alternatively,
 ```r
 # GENCODE v19
