@@ -506,6 +506,14 @@ Rscript<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;<
 <span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">iconv</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ASCII&quot;</span><span class="p">)</span>
 <span class="n">content</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">jsonlite</span><span class="o">::</span><span class="nf">fromJSON</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
+<p>All above is manual so a good alternative is possible, e.g.,</p>
+<div class="highlight"><pre><span></span><code><span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">requireNamespace</span><span class="p">(</span><span class="s">&quot;otargen&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">quietly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;otargen&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">otargen</span><span class="p">)</span>
+<span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">geneOntologyQuery</span><span class="p">(</span><span class="n">ensgId</span><span class="o">=</span><span class="s">&quot;ENSG00000141510&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># TP53</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="pgs-searchgpt">PGS (searchGPT)</h2>
 <p><a href="https://frontlinegenomics.com/how-to-perform-polygenic-risk-score-analysis/"><img alt="perform polygenic risk score analysis" src="https://images.openai.com/thumbnails/0e8e5ab5caec6614efac03beb20c426c.png" /></a></p>
 <p>To calculate a Polygenic Risk Score (PRS) using PLINK, you typically employ a weighted sum approach, where each SNP contributes according to its effect size (e.g., from a GWAS meta-analysis). PLINK facilitates this process through the <code>--score</code> command, which computes the PRS for each individual based on specified SNPs and their associated effect sizes.(<a href="https://choishingwan.github.io/PRS-Tutorial/plink/?utm_source=chatgpt.com" title="PLINK - Basic Tutorial for Polygenic Risk Score Analyses">Sam Choi</a>)</p>
