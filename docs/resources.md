@@ -330,6 +330,17 @@ data <- iconv(r, "", "ASCII")
 content <- jsonlite::fromJSON(data)
 ```
 
+All above is manual so a good alternative is possible, e.g.,
+
+```r
+if (!requireNamespace("otargen", quietly=TRUE)) {
+  install.packages("otargen")
+}
+library(otargen)
+result <- geneOntologyQuery(ensgId="ENSG00000141510") # TP53
+head(result)
+```
+
 ## PGS (searchGPT)
 
 [![perform polygenic risk score analysis](https://images.openai.com/thumbnails/0e8e5ab5caec6614efac03beb20c426c.png)](https://frontlinegenomics.com/how-to-perform-polygenic-risk-score-analysis/)
