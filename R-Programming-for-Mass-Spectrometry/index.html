@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +10,13 @@
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>R Programming for Mass Spectrometry - Omics-analysis</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <link href="../stylesheets/extra.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/Bash.min.js"></script>
@@ -32,7 +36,7 @@
             <div class="container">
                 <a class="navbar-brand" href="..">Omics-analysis</a>
                 <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -40,11 +44,11 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href=".." class="nav-link"></a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cases <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Cases</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -64,25 +68,25 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../genomics/" class="nav-link">Genomics</a>
                             </li>
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../proteomics/" class="nav-link">Proteomics</a>
                             </li>
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../resources/" class="nav-link">Resources</a>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav ml-auto">
+                    <ul class="nav navbar-nav ms-md-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a href="https://github.com/jinghuazhao/Omics-analysis" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                                <a href="https://github.com/jinghuazhao/Omics-analysis" class="nav-link"><i class="fa-brands fa-github"></i> GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -91,32 +95,32 @@
 
         <div class="container">
             <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
             <span class="fa fa-angle-down"></span>
         </button>
     </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#r-programming-for-mass-spectrometry" class="nav-link">R Programming for Mass Spectrometry</a>
+            <li class="nav-item" data-bs-level="1"><a href="#r-programming-for-mass-spectrometry" class="nav-link">R Programming for Mass Spectrometry</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#the-supplement" class="nav-link">The supplement</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#data-download-instructions" class="nav-link">Data download instructions</a>
+            <li class="nav-item" data-bs-level="2"><a href="#the-supplement" class="nav-link">The supplement</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#miscellaneous-notes" class="nav-link">Miscellaneous notes</a>
+            <li class="nav-item" data-bs-level="2"><a href="#data-download-instructions" class="nav-link">Data download instructions</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#reference" class="nav-link">Reference</a>
+            <li class="nav-item" data-bs-level="2"><a href="#miscellaneous-notes" class="nav-link">Miscellaneous notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#reference" class="nav-link">Reference</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -133,14 +137,13 @@
 <h2 id="data-download-instructions">Data download instructions</h2>
 <p>The supplement is a zip file with .html for each chapter but it is more useful to convert to markdown, and it is handy to run from a
 Linux terminal than otherwise nevertheless the markdown format renders can be rendered as follows,</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>f<span class="w"> </span><span class="k">in</span><span class="w"> </span>data-analysis<span class="w"> </span>intro-ms<span class="w"> </span>wrangle-data<span class="w"> </span>eda<span class="w"> </span>spectra-analysis<span class="w"> </span>chrom<span class="w"> </span>machine-learning
-<span class="k">do</span>
-<span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">f</span><span class="o">=</span><span class="si">${</span><span class="nv">f</span><span class="si">}</span>
-<span class="w">  </span>pandoc<span class="w"> </span><span class="si">${</span><span class="nv">f</span><span class="si">}</span>.html<span class="w"> </span>--lua-filter<span class="o">=</span>html.lua<span class="w"> </span>-t<span class="w"> </span>markdown<span class="w"> </span>-o<span class="w"> </span><span class="si">${</span><span class="nv">f</span><span class="si">}</span>.Rmd
-<span class="w">  </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/``` {.r/```{r/&#39;</span><span class="w"> </span><span class="si">${</span><span class="nv">f</span><span class="si">}</span>.Rmd
-<span class="w">  </span>Rscript<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;f=Sys.getenv(&quot;f&quot;);rmarkdown::render(paste0(f,&quot;.Rmd&quot;),output_dir=&quot;output&quot;))&#39;</span>
-<span class="k">done</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">for f in data-analysis intro-ms wrangle-data eda spectra-analysis chrom machine-learning
+do
+  export f=${f}
+  pandoc ${f}.html --lua-filter=html.lua -t markdown -o ${f}.Rmd
+  sed -i 's/``` {.r/```{r/' ${f}.Rmd
+  Rscript -e 'f=Sys.getenv("f");rmarkdown::render(paste0(f,".Rmd"),output_dir="output"))'
+done</code></pre>
 <p>with <a href="html.lua">html.lua</a>. For instance, in order to run through the R code,</p>
 <ol>
 <li><strong>data-analysis.Rmd</strong> requires caution over Bash code blocks Rscript hello.R and R CMD BATCH hello.R, and a not-R code block.</li>
@@ -152,19 +155,18 @@ Linux terminal than otherwise nevertheless the markdown format renders can be re
 <li><strong>machine-learning.Rmd</strong> requires c("tidymodels", "tidyverse", "visdat", "ggfortify", "factoextra", "colino", "heatmaply", "Spectra").</li>
 </ol>
 <p>Set <code>options(lifecycle_verbosity = "quiet")</code> to use <code>progress_estimated()</code> in <strong>wrangle-data.Rmd</strong>, but a switch has been suggested </p>
-<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">progress</span><span class="p">)</span>
+<pre class="highlight"><code class="language-r">library(progress)
 
-<span class="n">n</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">100</span>
-<span class="n">pb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">progress_bar</span><span class="o">$</span><span class="nf">new</span><span class="p">(</span>
-<span class="w">  </span><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;  processing [:bar] :percent eta: :eta&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">clear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">60</span>
-<span class="p">)</span>
+n &lt;- 100
+pb &lt;- progress_bar$new(
+  format = "  processing [:bar] :percent eta: :eta",
+  total = n, clear = FALSE, width = 60
+)
 
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq_len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">pb</span><span class="o">$</span><span class="nf">tick</span><span class="p">()</span>
-<span class="w">  </span><span class="nf">Sys.sleep</span><span class="p">(</span><span class="m">0.1</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+for (i in seq_len(n)) {
+  pb$tick()
+  Sys.sleep(0.1)
+}</code></pre>
 <p><code>inten_label</code> and <code>pal</code> are from <strong>intro-ms.Rmd</strong> and <strong>data-analysis.Rmd</strong>, respectively. Batch load of packages can be done, e.g., pkgs &lt;- c("tidyverse", "Spectra", "infer", "mzID", "MSnbase"); lapply(pkgs,library,character.only = TRUE).</p>
 <p><strong>large-data/mona/</strong> (Chapter 7)</p>
 <p><a href="https://mona.fiehnlab.ucdavis.edu/rest/downloads/retrieve/873fbe29-4808-46d1-a4a3-a4134ac8c755">MoNA-export-LC-MS-MS_Positive_Mode.msp</a></p>
@@ -175,27 +177,24 @@ Linux terminal than otherwise nevertheless the markdown format renders can be re
 </ul>
 <p><strong>large-data/MSV000081318/MSV000086195</strong></p>
 <p>We start with wget</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">2</span><span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;index.html*&quot;</span><span class="w"> </span>ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
-wget<span class="w"> </span>-r<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">1</span><span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;index.html*&quot;</span><span class="w"> </span>ftp://massive-ftp.ucsd.edu/v03/MSV000086195/
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">wget -r -nH --cut-dirs=2 -R "index.html*" ftp://massive-ftp.ucsd.edu/v01/MSV000081318/
+wget -r -nH --cut-dirs=1 -R "index.html*" ftp://massive-ftp.ucsd.edu/v03/MSV000086195/</code></pre>
 <p>Directory listing including file transfer can also be done with</p>
-<div class="highlight"><pre><span></span><code>ftp<span class="w"> </span>massive-ftp.ucsd.edu<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-<span class="s">anonymous</span>
-<span class="s">ls</span>
-<span class="s">cd z01/MSV000086195/ccms_peak/</span>
-<span class="s">prompt</span>
-<span class="s">mget *</span>
-<span class="s">EOF</span>
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">ftp massive-ftp.ucsd.edu &lt;&lt;EOF
+anonymous
+ls
+cd z01/MSV000086195/ccms_peak/
+prompt
+mget *
+EOF</code></pre>
 <p>where <code>anonymous</code> is the user name, or preferably by lftp,</p>
-<div class="highlight"><pre><span></span><code>lftp<span class="w"> </span>massive-ftp.ucsd.edu<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-<span class="s">mirror --parallel=10 --verbose /v03/MSV000086195 ./MSV000086195</span>
-<span class="s">bye</span>
-<span class="s">EOF</span>
-<span class="c1"># to resume</span>
-lftp<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;mirror --continue --parallel=4 /z01/MSV000086195/ccms_peak/ ccms_peak/; quit&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">      </span>ftp://massive-ftp.ucsd.edu
-</code></pre></div>
+<pre class="highlight"><code class="language-bash">lftp massive-ftp.ucsd.edu &lt;&lt;EOF
+mirror --parallel=10 --verbose /v03/MSV000086195 ./MSV000086195
+bye
+EOF
+# to resume
+lftp -e "mirror --continue --parallel=4 /z01/MSV000086195/ccms_peak/ ccms_peak/; quit" \
+      ftp://massive-ftp.ucsd.edu</code></pre>
 <p><code>ScltlMsclsMAvsCntr_Batch1_BRPhsFr5_prof.mzML</code> in Chapters 4 &amp; 5 is made with MSConvert (6GB!) or ThermoRawFileParser/1.4.4 (6.2GB with -p but 750MB without) as in <a href="mzML.sh">mzML.sh</a> following exercises in the Caprion project.</p>
 <p><strong>schema/</strong> (Chapter 3):</p>
 <ul>
@@ -204,13 +203,11 @@ lftp<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;mir
 </ul>
 <h2 id="miscellaneous-notes">Miscellaneous notes</h2>
 <p>This is a way around .mzid v1.2 (e.g., from <strong>i2MasChroQ</strong> 1.2.6) which neither PSMatch nor mzR supports; pyteomics has been made available from <code>~/rds/software/py3.11</code> therefore after <code>source ~/rds/software/py3.11/bin/activate</code> we have</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pyteomics</span> <span class="kn">import</span> <span class="n">mzid</span>
-<span class="k">with</span> <span class="n">mzid</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;ScltlMsclsMAvsCntr_Batch1_BRPhsFr29.mzid&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
-    <span class="n">first</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">first</span><span class="p">[</span><span class="s1">&#39;SpectrumIdentificationItem&#39;</span><span class="p">])</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>[{&#39;passThreshold&#39;: True, &#39;rank&#39;: 1, &#39;calculatedMassToCharge&#39;: 751.43574765, &#39;experimentalMassToCharge&#39;: 752.4484130691, &#39;chargeState&#39;: 2, &#39;PeptideEvidenceRef&#39;: [{&#39;isDecoy&#39;: False, &#39;start&#39;: 30, &#39;end&#39;: 41, &#39;pre&#39;: &#39;L&#39;, &#39;post&#39;: &#39;F&#39;, &#39;PeptideSequence&#39;: &#39;ARLLVVYPWTQR&#39;, &#39;accession&#39;: &#39;sp|P11025|HBE_DIDVI&#39;, &#39;length&#39;: 147, &#39;Seq&#39;: &#39;MVHFTPEDKTNITSVWTKVDVEDVGGESLARLLVVYPWTQRFFDSFGNLSSASAVMGNPKVKAHGKKVLTSFGEGVKNMDNLKGTFAKLSELHCDKLHVDPENFRLLGNVLIIVLASRFGKEFTPEVQASWQKLVSGVSSALGHKYH&#39;, &#39;protein description&#39;: &#39;Hemoglobin subunit epsilon-M OS=Didelphis virginiana OX=9267 GN=HBE1 PE=2 SV=2&#39;, &#39;location&#39;: &#39;D:/Downloads/tandem_result/uniprot_sprot.fasta&#39;, &#39;FileFormat&#39;: &#39;FASTA format&#39;, &#39;DatabaseName&#39;: {&#39;DatabaseName&#39;: &#39;uniprot_sprot.fasta&#39;}, &#39;DB composition target+decoy&#39;: &#39;&#39;, &#39;decoy DB accession regexp&#39;: &#39;^XXX&#39;, &#39;decoy DB type reverse&#39;: &#39;&#39;}, {&#39;isDecoy&#39;: False, &#39;start&#39;: 23, &#39;end&#39;: 34, &#39;pre&#39;: &#39;L&#39;, &#39;post&#39;: &#39;Y&#39;, &#39;PeptideSequence&#39;: &#39;ARLLVVYPWTQR&#39;, &#39;accession&#39;: &#39;sp|P02134|HBB_PELES&#39;, &#39;length&#39;: 140, &#39;Seq&#39;: &#39;GSDLVSGFWGKVDAHKIGGEALARLLVVYPWTQRYFTTFGNLGSADAICHNAKVLAHGEKVLAAIGEGLKHPENLKAHYAKLSEYHSNKLHVDPANFRLLGNVFITVLARHFQHEFTPELQHALEAHFCAVGDALAKAYH&#39;, &#39;protein description&#39;: &#39;Hemoglobin subunit beta OS=Pelophylax esculentus OX=8401 GN=HBB PE=1 SV=1&#39;, &#39;location&#39;: &#39;D:/Downloads/tandem_result/uniprot_sprot.fasta&#39;, &#39;FileFormat&#39;: &#39;FASTA format&#39;, &#39;DatabaseName&#39;: {&#39;DatabaseName&#39;: &#39;uniprot_sprot.fasta&#39;}, &#39;DB composition target+decoy&#39;: &#39;&#39;, &#39;decoy DB accession regexp&#39;: &#39;^XXX&#39;, &#39;decoy DB type reverse&#39;: &#39;&#39;}], &#39;X!Tandem:expect&#39;: 0.00173766, &#39;X!Tandem:hyperscore&#39;: 27.0, &#39;PeptideSequence&#39;: &#39;ARLLVVYPWTQR&#39;}]
-</code></pre></div>
+<pre class="highlight"><code class="language-python">from pyteomics import mzid
+with mzid.read('ScltlMsclsMAvsCntr_Batch1_BRPhsFr29.mzid') as reader:
+    first = next(reader)
+    print(first['SpectrumIdentificationItem'])</code></pre>
+<pre class="highlight"><code>[{'passThreshold': True, 'rank': 1, 'calculatedMassToCharge': 751.43574765, 'experimentalMassToCharge': 752.4484130691, 'chargeState': 2, 'PeptideEvidenceRef': [{'isDecoy': False, 'start': 30, 'end': 41, 'pre': 'L', 'post': 'F', 'PeptideSequence': 'ARLLVVYPWTQR', 'accession': 'sp|P11025|HBE_DIDVI', 'length': 147, 'Seq': 'MVHFTPEDKTNITSVWTKVDVEDVGGESLARLLVVYPWTQRFFDSFGNLSSASAVMGNPKVKAHGKKVLTSFGEGVKNMDNLKGTFAKLSELHCDKLHVDPENFRLLGNVLIIVLASRFGKEFTPEVQASWQKLVSGVSSALGHKYH', 'protein description': 'Hemoglobin subunit epsilon-M OS=Didelphis virginiana OX=9267 GN=HBE1 PE=2 SV=2', 'location': 'D:/Downloads/tandem_result/uniprot_sprot.fasta', 'FileFormat': 'FASTA format', 'DatabaseName': {'DatabaseName': 'uniprot_sprot.fasta'}, 'DB composition target+decoy': '', 'decoy DB accession regexp': '^XXX', 'decoy DB type reverse': ''}, {'isDecoy': False, 'start': 23, 'end': 34, 'pre': 'L', 'post': 'Y', 'PeptideSequence': 'ARLLVVYPWTQR', 'accession': 'sp|P02134|HBB_PELES', 'length': 140, 'Seq': 'GSDLVSGFWGKVDAHKIGGEALARLLVVYPWTQRYFTTFGNLGSADAICHNAKVLAHGEKVLAAIGEGLKHPENLKAHYAKLSEYHSNKLHVDPANFRLLGNVFITVLARHFQHEFTPELQHALEAHFCAVGDALAKAYH', 'protein description': 'Hemoglobin subunit beta OS=Pelophylax esculentus OX=8401 GN=HBB PE=1 SV=1', 'location': 'D:/Downloads/tandem_result/uniprot_sprot.fasta', 'FileFormat': 'FASTA format', 'DatabaseName': {'DatabaseName': 'uniprot_sprot.fasta'}, 'DB composition target+decoy': '', 'decoy DB accession regexp': '^XXX', 'decoy DB type reverse': ''}], 'X!Tandem:expect': 0.00173766, 'X!Tandem:hyperscore': 27.0, 'PeptideSequence': 'ARLLVVYPWTQR'}]</code></pre>
 <p>One could generate a CSV file as well through <a href="mzid.py">mzid.py</a>.</p>
 <h2 id="reference">Reference</h2>
 <p>Julian RK (2025). R Programming for Mass Spectrometry: Effective and Reproducible Data Analysis. ISBN: 978-1-119-87235-1.</p></div>
@@ -221,8 +218,7 @@ lftp<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;mir
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="../js/jquery-3.6.0.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
         <script>
             var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
@@ -238,7 +234,7 @@ lftp<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;mir
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>From here you can search these documents. Enter your search terms below.</p>
@@ -258,7 +254,7 @@ lftp<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;mir
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <table class="table">
